@@ -1,0 +1,30 @@
+species_common_name,species_science_name,survey_abbrev,survey_series_desc,year,biomass,lowerci,upperci,re,num_sets,num_pos_sets
+pacific cod,gadus macrocephalus,SYN HS,Hecate Strait Synoptic Bottom Trawl,2005,1947.96078,1147.09435,3016.20748,0.24313,198,161
+pacific cod,gadus macrocephalus,SYN HS,Hecate Strait Synoptic Bottom Trawl,2007,582.36644,355.94984,833.46961,0.20593,134,74
+pacific cod,gadus macrocephalus,SYN HS,Hecate Strait Synoptic Bottom Trawl,2009,2469.45328,792.33582,4971.98986,0.4567,156,103
+pacific cod,gadus macrocephalus,SYN HS,Hecate Strait Synoptic Bottom Trawl,2011,1872.02162,1079.6208,2984.82996,0.26323,185,125
+pacific cod,gadus macrocephalus,SYN HS,Hecate Strait Synoptic Bottom Trawl,2013,2328.26264,1407.20485,3477.38099,0.22862,175,132
+pacific cod,gadus macrocephalus,SYN HS,Hecate Strait Synoptic Bottom Trawl,2015,957.44085,630.51053,1389.78031,0.20379,148,107
+pacific cod,gadus macrocephalus,SYN HS,Hecate Strait Synoptic Bottom Trawl,2017,1555.27094,771.2523,2832.8596,0.35392,138,107
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2003,813.27166,556.48235,1101.00235,0.16842,233,101
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2004,1636.5187,926.70729,2553.89445,0.26012,230,118
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2005,1517.69759,783.34352,2885.54336,0.35753,224,125
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2007,437.86043,258.40243,681.18703,0.25038,255,105
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2009,569.56042,333.37894,871.78641,0.24281,233,95
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2011,1026.60599,653.63325,1537.91717,0.21483,251,98
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2013,936.09173,668.1071,1247.81108,0.15825,240,134
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2015,1131.28196,650.45331,1902.8504,0.2971,238,124
+pacific cod,gadus macrocephalus,SYN QCS,Queen Charlotte Sound Synoptic Bottom Trawl,2017,525.98336,358.94737,705.15056,0.169,240,90
+pacific cod,gadus macrocephalus,SYN WCHG,West Coast Haida Gwaii Synoptic Bottom Trawl,2006,52.00259,30.9329,77.07766,0.23372,110,36
+pacific cod,gadus macrocephalus,SYN WCHG,West Coast Haida Gwaii Synoptic Bottom Trawl,2007,33.84046,10.82247,65.25561,0.42243,111,23
+pacific cod,gadus macrocephalus,SYN WCHG,West Coast Haida Gwaii Synoptic Bottom Trawl,2008,12.69216,6.53149,19.45895,0.26456,118,20
+pacific cod,gadus macrocephalus,SYN WCHG,West Coast Haida Gwaii Synoptic Bottom Trawl,2010,21.95378,7.72313,47.52565,0.49365,129,27
+pacific cod,gadus macrocephalus,SYN WCHG,West Coast Haida Gwaii Synoptic Bottom Trawl,2012,40.78714,18.85026,69.56649,0.31754,130,34
+pacific cod,gadus macrocephalus,SYN WCHG,West Coast Haida Gwaii Synoptic Bottom Trawl,2016,33.06932,23.1106,43.99399,0.1598,112,42
+pacific cod,gadus macrocephalus,SYN WCVI,West Coast Vancouver Island Synoptic Bottom Trawl,2004,1144.90628,700.90139,1676.84603,0.22065,89,54
+pacific cod,gadus macrocephalus,SYN WCVI,West Coast Vancouver Island Synoptic Bottom Trawl,2006,1166.85536,655.78723,1795.7727,0.24098,164,88
+pacific cod,gadus macrocephalus,SYN WCVI,West Coast Vancouver Island Synoptic Bottom Trawl,2008,518.50464,238.76174,980.00908,0.39164,159,65
+pacific cod,gadus macrocephalus,SYN WCVI,West Coast Vancouver Island Synoptic Bottom Trawl,2010,1595.98213,1138.88239,2165.87393,0.16532,136,100
+pacific cod,gadus macrocephalus,SYN WCVI,West Coast Vancouver Island Synoptic Bottom Trawl,2012,931.79949,643.52216,1294.71314,0.18045,151,94
+pacific cod,gadus macrocephalus,SYN WCVI,West Coast Vancouver Island Synoptic Bottom Trawl,2014,2172.22968,1374.98994,3170.3925,0.21312,146,110
+pacific cod,gadus macrocephalus,SYN WCVI,West Coast Vancouver Island Synoptic Bottom Trawl,2016,2047.39079,1346.98003,2911.2422,0.19481,140,99

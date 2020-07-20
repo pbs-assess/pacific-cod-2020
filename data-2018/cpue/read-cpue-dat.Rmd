@@ -1,0 +1,194 @@
+---
+title: "Exploring CPUE for Pacific Cod"
+author: "Sean Anderson and Elise Keppel"
+output: html_document
+---
+
+
+```{r, knitr-opts, echo=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.asp = 0.618,
+  autodep = TRUE,
+  cache = TRUE,
+  cache.comments = FALSE
+)
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(gfplot)
+```
+
+Extract p cod catch and effort data from all databases:
+
+```{r, eval=FALSE}
+database <- c("GFFOS", "GFCatch", "PacHarvest")
+sql <- readLines("data/pcod-cpue.sql")
+d <- gfplot:::run_sql(database = database, query = sql)
+saveRDS(d, file = "../data-generated/pcod-cpue.rds", compress = FALSE)
+```
+
+Read the data in, clean up the column names, and create columns for the major statistical areas:
+
+```{r}
+d <- readRDS("../data-generated/pcod-cpue.rds")
+names(d) <- tolower(names(d))
+d <- dplyr::rename(d, total = totcatch_kg, minor_stat_area_code = min)
+d$hours_fished <- as.numeric(as.character(d$hours_fished))
+d$database_name <- tolower(d$database_name)
+d$gear <- tolower(d$gear)
+d$locality_description <- tolower(d$locality_description)
+
+areas <- c("3[CD]+", "5[AB]+", "5[CD]+")
+d$area <- NA
+for (i in seq_along(areas)) {
+  d[grepl(areas[[i]], d$major_stat_area_description), "area"] <-
+    gsub("\\[|\\]|\\+", "", areas[[i]])
+}
+specific_areas <- c("3C", "3D", "5A", "5B", "5C", "5D")
+d$specific_area <- NA
+for (i in seq_along(specific_areas)) {
+  d[grepl(specific_areas[[i]], d$major_stat_area_description), "specific_area"] <-
+    specific_areas[[i]]
+}
+```
+
+Filter down to only the fishing events with P cod and remove all rows of data with missing hours fished, missing total catch, or when the total catch or hours fished are 0. Also, create a logical column for whether the data comes from one of the "key localities". This requires a combination of the major statistical area, the minor statistical area, and the locality code.
+
+```{r}
+d <- d %>%
+  filter(species_code == "222") %>%
+  filter(!is.na(hours_fished), !is.na(total), total > 0, hours_fished > 0) %>%
+  filter(!is.na(fyear)) %>%
+  mutate(key_locality =
+    specific_area == "5A" & locality_code %in% c(1, 2, 3, 4) |
+    specific_area == "5B" & locality_code %in% c(1, 2, 3, 4) |
+    specific_area == "5C" & minor_stat_area_code == "02" & locality_code %in% c(1, 2, 3) |
+    specific_area == "5C" & minor_stat_area_code == "06" & locality_code %in% c(1, 2, 10) |
+    specific_area == "5D" & minor_stat_area_code == "01" & locality_code %in% c(5) |
+    specific_area == "5D" & minor_stat_area_code == "04" & locality_code %in% c(1, 2) |
+    specific_area == "5D" & minor_stat_area_code == "05" & locality_code %in% c(1, 3)) %>%
+  mutate(locality_concat = paste(specific_area, minor_stat_area_code,
+    locality_code, sep = "-"))
+```
+
+How many rows of data end up attributed to key localities?
+
+```{r}
+table(d$key_locality)
+table(d$specific_area, d$key_locality)
+```
+
+Now let's create a data set that has both the entire data set and the key locality version. We will then calculate the arithmetic and geometric mean CPUE for each fishing year:
+
+```{r}
+d_loc <- d %>% filter(key_locality)
+d_loc$type <- "key localities"
+d$type <- "all localities"
+
+d_sum <- bind_rows(d, d_loc) %>%
+  group_by(type, area, fyear) %>%
+  summarise(
+    catch = sum(total, na.rm = TRUE),
+    sum_hours_fished = sum(hours_fished, na.rm = TRUE),
+    arith_cpue = sum(total, na.rm = TRUE) / sum(hours_fished, na.rm = TRUE),
+    geo_cpue = exp(mean(log(total / hours_fished), na.rm = TRUE))
+  ) %>%
+  ungroup()
+```
+
+Let's create a version that is scaled by the geometric mean for plotting to mimic past research documents:
+
+```{r}
+d_scaled <- d_sum %>%
+  mutate(arith_cpue = arith_cpue / exp(mean(log(arith_cpue)))) %>%
+  mutate(geo_cpue = geo_cpue / exp(mean(log(geo_cpue))))
+```
+
+Plot of the scaled version with locality/all in different columns:
+
+```{r}
+d_scaled %>%
+  tidyr::gather(cpue_type, cpue_value, arith_cpue:geo_cpue) %>%
+  ggplot(aes(fyear, cpue_value, linetype = cpue_type)) +
+  geom_line() +
+  geom_vline(xintercept = 1996, lty = 3) +
+  facet_grid(area~type, scales = "free_y") +
+  xlab("") +
+  ylab("CPUE divided by geometric mean") +
+  ylim(0, NA) +
+  theme_pbs() +
+  labs(linetype = "CPUE type")
+```
+
+Plot of the scaled version with CPUE type in different columns:
+
+```{r}
+d_scaled %>%
+  tidyr::gather(cpue_type, cpue_value, arith_cpue:geo_cpue) %>%
+  ggplot(aes(fyear, cpue_value, colour = type)) +
+  geom_line() +
+  geom_vline(xintercept = 1996, lty = 3) +
+  facet_grid(area~cpue_type, scales = "free_y") +
+  xlab("") +
+  ylab("CPUE divided by geometric mean") +
+  ylim(0, NA) +
+  theme_pbs() +
+  labs(colour = "Locality type")
+```
+
+What about a basic standardization model with locality as a covariate? Let's work with just the data before 1996 as has been done in previous research documents.
+
+```{r}
+d <- mutate(d, cpue = total / hours_fished)
+d <- filter(d, fyear < 1996)
+d$fyear_factor <- as.factor(d$fyear)
+
+out <- plyr::ddply(d, "area", function(x) {
+  x$locality_factor <- gfplot::f(x$locality_description, ref = get_most_common_level)
+  m <- lm(log(cpue) ~ fyear_factor + locality_factor, data = x)
+  nd <- data.frame(fyear_factor = unique(x$fyear_factor),
+    locality_factor =
+      factor(levels(x$locality_factor)[[1]], levels = levels(x$locality_factor))) %>%
+    arrange(fyear_factor)
+  nd$cpue_pred <- predict(m, newdata = nd)
+  nd$cpue_pred_se <- predict(m, newdata = nd, se = TRUE)$se.fit
+  nd
+})
+out <- out %>% mutate(fyear = as.numeric(as.character(fyear_factor))) %>%
+    left_join(select(d_sum, area, fyear, geo_cpue), by = c("area", "fyear")) %>%
+  as_tibble()
+```
+
+Note a huge difference:
+
+(red is standardized, black is the raw geometric mean by year)
+
+```{r, fig.asp=0.3}
+out %>% group_by(area) %>%
+  mutate(
+  geo_cpue = geo_cpue / exp(mean(log(geo_cpue))),
+  cpue_pred = log(exp(cpue_pred) / exp(mean(log(exp(cpue_pred))))),
+  cpue_stand_lwr = exp(cpue_pred - 2 * cpue_pred_se),
+  cpue_stand_upr = exp(cpue_pred + 2 * cpue_pred_se)
+) %>%
+  ggplot(aes(fyear, geo_cpue)) +
+  geom_line(colour = "grey30") +
+  geom_line(aes(y = exp(cpue_pred)), colour = "red") +
+  geom_ribbon(aes(ymin = cpue_stand_lwr, ymax = cpue_stand_upr), fill = "red", alpha = 0.1) +
+  facet_wrap(~area, scales = "free_y") +
+  xlab("") +
+  ylab("CPUE") +
+  ylim(0, NA) +
+  theme_pbs()
+```
+
+Save the unstandardized and unscaled data:
+
+```{r}
+saveRDS(d_sum, file = "../data-generated/pcod-annual-cpue.rds", compress = FALSE)
+```
