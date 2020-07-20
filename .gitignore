@@ -33,6 +33,8 @@ data/cache/*
 *.upa
 *.upb
 *.doc*
+*.csv
+*.xls*
 doc/figure
 doc/res-doc.tex
 docMSE/res-docMSE.tex
