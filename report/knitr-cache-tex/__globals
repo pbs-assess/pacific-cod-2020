@@ -1,0 +1,43 @@
+load-models	file.path	rootd.R	source
+survey-maps-hs-msa	$	dat	plot_multiyear_survey_sets
+survey-maps-syn-hs	$	dat	plot_multiyear_survey_sets
+survey-maps-syn-qcs	$	dat	plot_multiyear_survey_sets
+survey-maps-syn-wcvi	$	dat	plot_multiyear_survey_sets
+surv-canadian-table	$	%>%	::	biomass	c	dat	lowerci	num_pos_sets	num_sets	re	round	Survey abbrev.	survey_abbrev	upperci	year	Year
+surv-canadian	$	%>%	::	c	dat	plot_survey_index
+surv-tri-strata-table	$	$<-	%>%	::	[<-	==	for	gsub	is.na	names	names<-	paste0	seq_along	which
+surv-trien-table	%>%	::
+tri-fig8	::	paste0
+tri-fig9	insert_paul_figure
+tri-fig10	insert_paul_figure
+cpue-funcs	::	source
+cpue-params	$<-	c	list
+surv-canadian-table-write	$	%>%	::	biomass	c	dat	lowerci	num_pos_sets	num_sets	re	round	Survey abbrev.	survey_abbrev	upperci	year	Year
+tab-catch-5abcd	$	catch.5	catch.5.discards	catch.table	max	min	paste0
+tab-catch-3cd	$	catch.3	catch.3.discards	catch.table	max	min	paste0
+tab-tac	paste0	tac	tac.table
+tab-priors-5abcd	
+tab-priors-3cd	
+tab-suggested-ref-points	suggested.ref.points
+tab-param-table-5abcd	
+tab-param-est-table-5abcd	
+tab-ref-points-table-5abcd	
+tab-post-biomass-5abcd	
+tab-post-depl-5abcd	
+tab-post-recr-5abcd	
+tab-post-f-5abcd	
+tab-param-table-3cd	
+tab-param-est-table-3cd	
+tab-ref-points-table-3cd	
+tab-post-biomass-3cd	
+tab-post-depl-3cd	
+tab-post-recr-3cd	
+tab-post-f-3cd	
+tab-ref-points-table-avg-5abcd	
+tab-post-biomass-avg-5abcd	
+tab-post-recr-avg-5abcd	
+tab-ref-points-table-avg-3cd	
+tab-post-biomass-avg-3cd	
+tab-post-recr-avg-3cd	
+tab-decision-avg-5abcd	
+tab-decision-avg-3cd	

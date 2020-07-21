@@ -1,0 +1,332 @@
+\clearpage
+
+# TABLES
+
+```{r tab-catch-5abcd}
+catch.table(catch.5,
+            catch.5.discards,
+            area = "5ABCD",
+ cap = paste0("Reported catch (mt) of Pacific Cod in Area 5ABCD ",
+              "by Canada and the USA, ",
+              min(catch.5$year), "--", max(catch.5$year),
+              ". The reported discards for the period ", min(catch.5$year),
+              "--1995 are ",
+              "unrepresentative of true discarding because the estimates were taken ",
+              "from logbooks. Discard estimates since 1996 are based on at-sea ",
+              "observations and are considered to be more representative of true discarding."))
+
+```
+
+\clearpage
+
+```{r tab-catch-3cd}
+catch.table(catch.3,
+            catch.3.discards,
+            area = "3CD",
+ cap = paste0("Reported catch (mt) of Pacific Cod in Area 3CD ",
+              "by Canada and the USA, ",
+              min(catch.3$year), "--", max(catch.3$year),
+              ". The reported discards for the period ", min(catch.3$year),
+              "--1995 are ",
+              "unrepresentative of true discarding because the estimates were taken ",
+              "from logbooks. Discard estimates since 1996 are based on at-sea ",
+              "observations and are considered to be more representative of true discarding."))
+```
+
+\clearpage
+
+```{r tab-tac}
+tac.table(tac,
+ cap = paste0("Summary of TACs by area."))
+```
+
+\clearpage
+
+```{r tab-priors-5abcd}
+# priors.table(base.model.5abcd,
+# basis.vec = c("Noninformative",
+#               "Informative-Previous assessment",
+#               "Informative-Previous assessment",
+#               "No prior-Fixed parameter",
+#               "No prior-Fixed parameter",
+#               "No prior-Fixed parameter",
+#               "No prior-Fixed parameter",
+#               "Noninformative-Technical necessity",
+#               "Noninformative-Technical necessity",
+#               "Noninformative-Technical necessity",
+#               "Noninformative-Technical necessity",
+#               "Noninformative-Technical necessity"),
+#              cap = paste0("Prior probability distributions, their parameters and initial values used in the ",
+#                           "Area 5ABCD Reference Case model. ", q.5abcd.desc))
+```
+
+\clearpage
+
+```{r tab-priors-3cd}
+# priors.table(base.model.3cd,
+# basis.vec = c("Noninformative",
+#               "Informative-Previous assessment",
+#               "Informative-Previous assessment",
+#               "No prior-Fixed parameter",
+#               "No prior-Fixed parameter",
+#               "No prior-Fixed parameter",
+#               "No prior-Fixed parameter",
+#               "Noninformative-Technical necessity",
+#               "Noninformative-Technical necessity",
+#               "Noninformative-Technical necessity",
+#               "Noninformative-Technical necessity"),
+#              cap = paste0("Prior probability distributions, their parameters and initial values used in the ",
+#                           "Area 3CD Reference Case model. ", q.3cd.desc))
+```
+
+```{r tab-suggested-ref-points}
+suggested.ref.points()
+```
+
+\clearpage
+
+## MODEL RESULTS: AREA 5ABCD
+
+```{r tab-param-table-5abcd, results='asis'}
+# make.parameters.table(base.model.5abcd,
+#   caption = paste0("Estimated and fixed parameters and prior probablilty distributions used ",
+#     "in the Reference Case, Area 5ABCD."),
+#   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
+#     "Log mean recruitment ($\\ln(\\overline{R})$)"),
+#   omit_selectivity_pars = TRUE)
+```
+
+```{r tab-param-est-table-5abcd, results='asis'}
+# pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$")
+# make.parameters.est.table(base.model.5abcd,
+#   caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+#     "97.5\\textsuperscript{th} percentile) and MPD ",
+#     "estimates of key parameters from the Reference Case, Area 5ABCD. $R_0$ is in thousands of fish. $B_0$ is in tonnes. ",
+#     q.5abcd.desc),
+#   omit_pars = pars_est_omit)
+```
+
+```{r tab-ref-points-table-5abcd, results='asis'}
+# make.ref.points.table(base.model.5abcd,
+#                       omit_msy = TRUE,
+#                       add.hist.ref = TRUE,
+#                       lrp = c(2000, 2000),
+#                       usr = c(1956, 2004),
+#                       digits = 2,
+#                       caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+#                                        "97.5\\textsuperscript{th} percentile) of reference points for Area 5ABCD. ",
+#                                        "Biomass is in tonnes."))
+```
+
+```{r tab-post-biomass-5abcd, results='asis'}
+# make.value.table(base.model.5abcd,
+#                  1,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of biomass (t) for the Reference Case, ",
+#                                   "Area 5ABCD."))
+```
+
+\clearpage
+
+```{r tab-post-depl-5abcd}
+# make.value.table(base.model.5abcd,
+#                  5,
+#                  digits = 2,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of biomass relative to $B_0$ ",
+#                                   "for the Reference Case, Area 5ABCD."))
+```
+
+\clearpage
+
+```{r tab-post-recr-5abcd, results='asis'}
+# make.value.table(base.model.5abcd,
+#                  2,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of recruitment (thousands) for the Reference Case, ",
+#                                   "Area 5ABCD."))
+```
+
+\clearpage
+
+```{r tab-post-f-5abcd, results='asis'}
+# make.value.table(base.model.5abcd,
+#                  3,
+#                  digits = 2,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of fishing mortality, F, ",
+#                                   "for the Reference Case, Area 5ABCD."))
+```
+
+\clearpage
+
+## MODEL RESULTS: AREA 3CD
+
+```{r tab-param-table-3cd, results='asis'}
+# make.parameters.table(base.model.3cd,
+#   caption = paste0("Estimated and fixed parameters and prior probablilty distributions used ",
+#     "in the Reference Case, Area 3CD."),
+#   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
+#     "Log mean recruitment ($\\ln(\\overline{R})$)"),
+#   omit_selectivity_pars = TRUE)
+```
+
+```{r tab-param-est-table-3cd, results='asis'}
+# make.parameters.est.table(base.model.3cd,
+#   caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+#     "97.5\\textsuperscript{th} percentile) and MPD ",
+#     "estimates of key parameters from the reference Case, Area 3CD. $R_0$ is in thousands of fish. $B_0$ is in tonnes.  ",
+#     q.5abcd.desc),
+#   omit_pars = pars_est_omit)
+```
+
+```{r tab-ref-points-table-3cd, results='asis'}
+# make.ref.points.table(base.model.3cd,
+#                       omit_msy = TRUE,
+#                       add.hist.ref = TRUE,
+#                       lrp = c(1986, 1986),
+#                       usr = c(1956, 2004),
+#                       digits = 2,
+#                       caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+#                                        "97.5\\textsuperscript{th} percentile) of reference points for Area 3CD. ",
+#                                        "Biomass is in tonnes."))
+```
+
+```{r tab-post-biomass-3cd, results='asis'}
+# make.value.table(base.model.3cd,
+#                  1,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of biomass (t) for ",
+#                                   "the Reference Case, Area 3CD."))
+```
+
+\clearpage
+
+```{r tab-post-depl-3cd}
+# make.value.table(base.model.3cd,
+#                  5,
+#                  digits = 2,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of biomass relative to $B_0$ ",
+#                                   "for the Reference Case, Area 3CD."))
+```
+
+\clearpage
+
+```{r tab-post-recr-3cd, results='asis'}
+# make.value.table(base.model.3cd,
+#                  2,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of recruitment (thousands) for the Reference Case,",
+#                                   "Area 3CD."))
+```
+
+\clearpage
+
+```{r tab-post-f-3cd, results='asis'}
+# make.value.table(base.model.3cd,
+#                  3,
+#                  digits = 2,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of fishing mortality, F, ",
+#                                   "for the Reference Case, Area 3CD."))
+```
+
+\clearpage
+
+## SELECTED SENSITIVITY RESULTS
+
+*Copy Sensitivity chunks from 2018 Rmd file if needed*
+
+
+\clearpage
+
+## MODEL-AVERAGED REFERENCE POINTS AND DECISION TABLES {#sec:reference-points-and-decision-tables}
+
+
+```{r tab-ref-points-table-avg-5abcd, results='asis'}
+# make.ref.points.table(c(base.model.5abcd,
+#                         sens.models.6.sub),
+#                       omit_msy = TRUE,
+#                       add.hist.ref = TRUE,
+#                       lrp = c(2000, 2000),
+#                       usr = c(1956, 2004),
+#                       digits = 2,
+#                       caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+#                                        "97.5\\textsuperscript{th} percentile) of reference points for ",
+#                                        "model-averaged Area 5ABCD. ",
+#                                        "Biomass is in tonnes."))
+```
+
+```{r tab-post-biomass-avg-5abcd, results='asis'}
+# make.value.table(c(base.model.5abcd,
+#                         sens.models.6.sub),
+#                  1,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of biomass (t) for model-averaged Area 5ABCD."))
+```
+
+```{r tab-post-recr-avg-5abcd, results='asis'}
+# make.value.table(c(base.model.5abcd,
+#                         sens.models.6.sub),
+#                  2,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of recruitment (thousands) model-averaged Area 5ABCD."))
+```
+
+```{r tab-ref-points-table-avg-3cd, results='asis'}
+# make.ref.points.table(c(base.model.3cd,
+#                         sens.models.13.sub),
+#                       omit_msy = TRUE,
+#                       add.hist.ref = TRUE,
+#                       lrp = c(1986, 1986),
+#                       usr = c(1956, 2004),
+#                       digits = 2,
+#                       caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+#                                        "97.5\\textsuperscript{th} percentile) of reference points for ",
+#                                        "model-averaged Area 3CD. ",
+#                                        "Biomass is in tonnes."))
+```
+\vspace{10pt}
+```{r tab-post-biomass-avg-3cd, results='asis'}
+# make.value.table(c(base.model.3cd,
+#                         sens.models.13.sub),
+#                  1,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of biomass (t) for model-averaged Area 3CD."))
+```
+
+```{r tab-post-recr-avg-3cd, results='asis'}
+# make.value.table(c(base.model.3cd,
+#                         sens.models.13.sub),
+#                  2,
+#                  digits = 0,
+#                  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and 97.5\\textsuperscript{th} ",
+#                                   "percentile) and MPD estimates of recruitment (thousands) model-averaged Area 3CD."))
+```
+
+
+
+```{r tab-decision-avg-5abcd, results='asis'}
+# decision.table(avg.model.5abcd,
+#                caption = paste0("Decision table with model averaging for Area 5ABCD. Models averaged are: ",
+#                                 and.string(c(base.model.5abcd.name, sens.models.name.6.sub)),
+#                                 "."))
+```
+
+
+```{r tab-decision-avg-3cd, results='asis'}
+# decision.table(avg.model.3cd,
+#                caption = paste0("Decision table with model averaging for Area 3CD. Models averaged are: ",
+#                                 and.string(c(base.model.3cd.name, sens.models.name.13.sub)),
+#                                 "."))
+```
+
+\clearpage

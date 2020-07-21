@@ -1,0 +1,43 @@
+load-models	bc	catch.3	catch.3.discards	catch.5	catch.5.discards	catch.5ab	catch.5ab.discards	catch.5cd	catch.5cd.discards	catch.5e	catch.5e.discards	common.name	Common.name	fish.name	q.3cd.desc	q.5abcd.desc	science.name
+survey-maps-hs-msa	
+survey-maps-syn-hs	
+survey-maps-syn-qcs	
+survey-maps-syn-wcvi	
+surv-canadian-table	
+surv-canadian	
+surv-tri-strata-table	i	tri_str	tri_to_shade	.Random.seed
+surv-trien-table	surv_tri
+tri-fig8	insert_paul_figure
+tri-fig9	
+tri-fig10	
+cpue-funcs	basel_level	make_bubble_dat	make_catch_effort_ts_plot	make_cpue_ts_dat	make_cpue_ts_dat_noint	make_cpue_ts_plot	make_cpue_ts_plot_noint	make_facet_bubble_plot	make_fe_plots	make_re_dat	make_re_plots	make_year_locality_plots	most_common	plot_cpue_int_res
+cpue-params	params
+surv-canadian-table-write	survout	.Random.seed
+tab-catch-5abcd	
+tab-catch-3cd	
+tab-tac	
+tab-priors-5abcd	
+tab-priors-3cd	
+tab-suggested-ref-points	
+tab-param-table-5abcd	
+tab-param-est-table-5abcd	
+tab-ref-points-table-5abcd	
+tab-post-biomass-5abcd	
+tab-post-depl-5abcd	
+tab-post-recr-5abcd	
+tab-post-f-5abcd	
+tab-param-table-3cd	
+tab-param-est-table-3cd	
+tab-ref-points-table-3cd	
+tab-post-biomass-3cd	
+tab-post-depl-3cd	
+tab-post-recr-3cd	
+tab-post-f-3cd	
+tab-ref-points-table-avg-5abcd	
+tab-post-biomass-avg-5abcd	
+tab-post-recr-avg-5abcd	
+tab-ref-points-table-avg-3cd	
+tab-post-biomass-avg-3cd	
+tab-post-recr-avg-3cd	
+tab-decision-avg-5abcd	
+tab-decision-avg-3cd	

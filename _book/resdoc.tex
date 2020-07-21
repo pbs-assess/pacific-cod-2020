@@ -1,0 +1,135 @@
+% Documents setup
+\documentclass[11pt]{book}
+
+% fix for pandoc 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{tabu} % https://tex.stackexchange.com/questions/50332/vertical-spacing-of-a-table-cell
+
+% Location of the csas-style repository: adjust path as needed
+\newcommand{\locRepo}{csas-style}
+
+% Use the style file in the csas-style repository (res-doc.sty)
+\usepackage{\locRepo/res-doc}
+
+% header-includes from R markdown entry
+
+
+% Headers and footers
+\lhead{Draft working paper --- Do not cite or circulate}
+% \lhead{}
+\rhead{}
+% \rfoot{DRAFT - DO NOT CITE}
+
+%%%% Commands for title page etc %%%%%
+
+% Publication year
+\newcommand{\rdYear}{2019}
+
+% Publication month
+\newcommand{\rdMonth}{}
+
+% Report number
+\newcommand{\rdNumber}{nnn}
+
+% Region
+\newcommand{\rdRegion}{Pacific Region}
+
+% Title
+\newcommand{\rdTitle}{Update to the assessment of Pacific Cod (\emph{Gadus macrocephalus}) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020}
+
+% Author names separated by commas and ', and' for the last author in the format 'M.H. Grinnell' (use \textsuperscript{n} for addresses)
+\newcommand{\rdAuth}{Robyn E. Forrest \ldots{}\textsuperscript{1}}
+
+% Author names reversed separated by commas in the format 'Grinnell, M.H.'
+\newcommand{\rdAuthRev}{Forrest, R.E., \ldots{}}
+
+% Author addresses (use \textsuperscript{n})
+\newcommand{\rdAuthAddy}{\textsuperscript{1}Pacific Biological Station\\
+Fisheries and Oceans Canada, 3190 Hammond Bay Road\\
+Nanaimo, British Columbia, V9T 6N7, Canada\\}
+
+\newcommand{\citationOtherLanguage}{}
+
+% Name of file with abstract and resume (see \abstract and \frenchabstract for requirements)
+\newcommand{\rdAbstract}{\abstract{The status of two stocks of Pacific Cod (\emph{Gadus macrocephalus}) in Hecate Strait/Queen Charlotte Sound (Area 5ABCD) and West Coast Vancouver Island (Area 3CD) was updated from the 2018 assessment, using Bayesian delay-difference models and data streams updated to 2019. The models were fit to fishery-independent indices of abundance and standardized commercial catch-per-unit-effort (CPUE) indices, updated from the 2018 stock assessment.}}
+
+%%%% End of title page commands %%%%%
+
+% \pdfcompresslevel=5 % faster PNGs
+
+\setcounter{section}{0}
+
+\bibliographystyle{csas-style/res-doc}
+
+\usepackage{amsmath}
+\usepackage{bm}
+
+% commands and environments needed by pandoc snippets
+% extracted from the output of `pandoc -s`
+%% Make R markdown code chunks work
+\usepackage{array}
+\usepackage{amssymb,amsmath}
+\usepackage{color}
+\usepackage{fancyvrb}
+\DefineShortVerb[commandchars=\\\{\}]{\|}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+
+%Defines cslreferences environment
+%Required by pandoc 2.8
+%Copied from https://github.com/rstudio/rmarkdown/issues/1649
+
+\DeclareGraphicsExtensions{.png,.pdf}
+\begin{document}
+
+\frontmatter
+
+\clearpage
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Update to 2018 Pacific Cod assessment (Forrest et al. \protect\hyperlink{ref-forrest2020}{2020}).
+
+\clearpage
+
+\hypertarget{references}{%
+\section*{REFERENCES}\label{references}}
+\phantomsection
+\addcontentsline{toc}{section}{REFERENCES}
+% This manually sets the header for this unnumbered chapter.
+\noindent
+\vspace{-2em}
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-forrest2020}{}%
+Forrest, R.E., Anderson, S.C., Grandin, C.J., and Starr, P.J. 2020. Assessment of Pacific Cod (\emph{Gadus macrocephalus}) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2018. DFO Can. Sci. Advis. Sec. Res. Doc. 2020/nnn(Canadian Science Advisory Secretariat (CSAS) 2020/nnn): nnn.
+
+\setlength{\parindent}{0in} \setlength{\leftskip}{0in} \setlength{\parskip}{4pt}
+
+\markboth{References}{References}
+
+\end{document}
