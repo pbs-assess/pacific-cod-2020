@@ -64,71 +64,71 @@ q.3cd.desc <- paste0("$q_1$ = West Coast Vancouver Island Synoptic Survey, ",
                      "$q_3$ = Commercial CPUE post-1995, and ",
                      "$q_4$ = NMFS Triennial Survey (Canadian portion).")
 
-b5 <- base.model.5abcd[[1]]
-start.yr5 <- b5$dat$syr
-end.yr5 <- b5$dat$nyr
-sage5 <- b5$dat$sage
-nage5 <- b5$dat$nage
-linf5 <- b5$dat$linf
-k5 <- b5$dat$k
-lwscal5 <- b5$dat$lwscal
-lwpow5 <- b5$dat$lwpow
-t05 <- b5$dat$to
-alpha.g5 <- b5$dat$dd.alpha.g
-rho.g5 <- b5$dat$dd.rho.g
-wk5 <- b5$dat$dd.wk
-
-b3 <- base.model.3cd[[1]]
-start.yr3 <- b3$dat$syr
-end.yr3 <- b3$dat$nyr
-sage3 <- b3$dat$sage
-nage3 <- b3$dat$nage
-linf3 <- b3$dat$linf
-k3 <- b3$dat$k
-lwscal3 <- b3$dat$lwscal
-lwpow3 <- b3$dat$lwpow
-t03 <- b3$dat$to
-alpha.g3 <- b3$dat$dd.alpha.g
-rho.g3 <- b3$dat$dd.rho.g
-wk3 <- b3$dat$dd.wk
-
-## Decision table variables
-dt.5abcd <- decision.table(base.model.5abcd,
-                           make.table = FALSE,
-                           make.lt.gt = FALSE)
-dt.5abcd[,-1] <- apply(dt.5abcd[,-1], 2, as.numeric)
-dt.5abcd.min.catch <- dt.5abcd[1, 1]
-dt.5abcd.max.catch <- dt.5abcd[nrow(dt.5abcd), 1]
-dt.5abcd.b.2019.2018.c0 <- dt.5abcd[1, 2] * 100
-dt.5abcd.b.2019.2018.c900 <- dt.5abcd[dt.5abcd[, 1] == 900, 2] * 100
-dt.5abcd.b.2019.2018.cmax <- dt.5abcd[nrow(dt.5abcd), 2] * 100
-dt.5abcd.b.2019.lrp.c0 <- dt.5abcd[1, 4] * 100
-dt.5abcd.b.2019.lrp.c900 <- dt.5abcd[dt.5abcd[, 1] == 900, 4] * 100
-dt.5abcd.b.2019.lrp.cmax <- dt.5abcd[nrow(dt.5abcd), 4] * 100
-dt.5abcd.b.2019.usr.c0 <- dt.5abcd[1, 5] * 100
-dt.5abcd.b.2019.usr.c900 <- dt.5abcd[dt.5abcd[, 1] == 900, 5] * 100
-dt.5abcd.b.2019.usr.cmax <- dt.5abcd[nrow(dt.5abcd), 5] * 100
-dt.5abcd.f.2018.2017.c0 <- dt.5abcd[1, 3] * 100
-dt.5abcd.f.2018.2017.cmax <- dt.5abcd[nrow(dt.5abcd), 3] * 100
-dt.5abcd.f.2018.lrr.c0 <- dt.5abcd[1, 4] * 100
-dt.5abcd.f.2018.lrr.cmax <- dt.5abcd[nrow(dt.5abcd), 4] * 100
-
-dt.3cd <- decision.table(base.model.3cd,
-                         make.table = FALSE,
-                         make.lt.gt = FALSE)
-dt.3cd[,-1] <- apply(dt.3cd[,-1], 2, as.numeric)
-dt.3cd.min.catch <- dt.3cd[1, 1]
-dt.3cd.max.catch <- dt.3cd[nrow(dt.3cd), 1]
-dt.3cd.b.2019.2018.c0 <- dt.3cd[1, 2] * 100
-dt.3cd.b.2019.2018.c500 <- dt.3cd[dt.3cd[, 1] == 500, 2] * 100
-dt.3cd.b.2019.2018.cmax <- dt.3cd[nrow(dt.3cd), 2] * 100
-dt.3cd.b.2019.lrp.c0 <- dt.3cd[1, 4] * 100
-dt.3cd.b.2019.lrp.c500 <- dt.3cd[dt.3cd[, 1] == 500, 4] * 100
-dt.3cd.b.2019.lrp.cmax <- dt.3cd[nrow(dt.3cd), 4] * 100
-dt.3cd.b.2019.usr.c0 <- dt.3cd[1, 5] * 100
-dt.3cd.b.2019.usr.c500 <- dt.3cd[dt.3cd[, 1] == 500, 5] * 100
-dt.3cd.b.2019.usr.cmax <- dt.3cd[nrow(dt.3cd), 5] * 100
-dt.3cd.f.2018.2017.c0 <- dt.3cd[1, 3] * 100
-dt.3cd.f.2018.2017.cmax <- dt.3cd[nrow(dt.3cd), 3] * 100
-dt.3cd.f.2018.lrr.c0 <- dt.3cd[1, 4] * 100
-dt.3cd.f.2018.lrr.cmax <- dt.3cd[nrow(dt.3cd), 4] * 100
+# b5 <- base.model.5abcd[[1]]
+# start.yr5 <- b5$dat$syr
+# end.yr5 <- b5$dat$nyr
+# sage5 <- b5$dat$sage
+# nage5 <- b5$dat$nage
+# linf5 <- b5$dat$linf
+# k5 <- b5$dat$k
+# lwscal5 <- b5$dat$lwscal
+# lwpow5 <- b5$dat$lwpow
+# t05 <- b5$dat$to
+# alpha.g5 <- b5$dat$dd.alpha.g
+# rho.g5 <- b5$dat$dd.rho.g
+# wk5 <- b5$dat$dd.wk
+#
+# b3 <- base.model.3cd[[1]]
+# start.yr3 <- b3$dat$syr
+# end.yr3 <- b3$dat$nyr
+# sage3 <- b3$dat$sage
+# nage3 <- b3$dat$nage
+# linf3 <- b3$dat$linf
+# k3 <- b3$dat$k
+# lwscal3 <- b3$dat$lwscal
+# lwpow3 <- b3$dat$lwpow
+# t03 <- b3$dat$to
+# alpha.g3 <- b3$dat$dd.alpha.g
+# rho.g3 <- b3$dat$dd.rho.g
+# wk3 <- b3$dat$dd.wk
+#
+# ## Decision table variables
+# dt.5abcd <- decision.table(base.model.5abcd,
+#                            make.table = FALSE,
+#                            make.lt.gt = FALSE)
+# dt.5abcd[,-1] <- apply(dt.5abcd[,-1], 2, as.numeric)
+# dt.5abcd.min.catch <- dt.5abcd[1, 1]
+# dt.5abcd.max.catch <- dt.5abcd[nrow(dt.5abcd), 1]
+# dt.5abcd.b.2019.2018.c0 <- dt.5abcd[1, 2] * 100
+# dt.5abcd.b.2019.2018.c900 <- dt.5abcd[dt.5abcd[, 1] == 900, 2] * 100
+# dt.5abcd.b.2019.2018.cmax <- dt.5abcd[nrow(dt.5abcd), 2] * 100
+# dt.5abcd.b.2019.lrp.c0 <- dt.5abcd[1, 4] * 100
+# dt.5abcd.b.2019.lrp.c900 <- dt.5abcd[dt.5abcd[, 1] == 900, 4] * 100
+# dt.5abcd.b.2019.lrp.cmax <- dt.5abcd[nrow(dt.5abcd), 4] * 100
+# dt.5abcd.b.2019.usr.c0 <- dt.5abcd[1, 5] * 100
+# dt.5abcd.b.2019.usr.c900 <- dt.5abcd[dt.5abcd[, 1] == 900, 5] * 100
+# dt.5abcd.b.2019.usr.cmax <- dt.5abcd[nrow(dt.5abcd), 5] * 100
+# dt.5abcd.f.2018.2017.c0 <- dt.5abcd[1, 3] * 100
+# dt.5abcd.f.2018.2017.cmax <- dt.5abcd[nrow(dt.5abcd), 3] * 100
+# dt.5abcd.f.2018.lrr.c0 <- dt.5abcd[1, 4] * 100
+# dt.5abcd.f.2018.lrr.cmax <- dt.5abcd[nrow(dt.5abcd), 4] * 100
+#
+# dt.3cd <- decision.table(base.model.3cd,
+#                          make.table = FALSE,
+#                          make.lt.gt = FALSE)
+# dt.3cd[,-1] <- apply(dt.3cd[,-1], 2, as.numeric)
+# dt.3cd.min.catch <- dt.3cd[1, 1]
+# dt.3cd.max.catch <- dt.3cd[nrow(dt.3cd), 1]
+# dt.3cd.b.2019.2018.c0 <- dt.3cd[1, 2] * 100
+# dt.3cd.b.2019.2018.c500 <- dt.3cd[dt.3cd[, 1] == 500, 2] * 100
+# dt.3cd.b.2019.2018.cmax <- dt.3cd[nrow(dt.3cd), 2] * 100
+# dt.3cd.b.2019.lrp.c0 <- dt.3cd[1, 4] * 100
+# dt.3cd.b.2019.lrp.c500 <- dt.3cd[dt.3cd[, 1] == 500, 4] * 100
+# dt.3cd.b.2019.lrp.cmax <- dt.3cd[nrow(dt.3cd), 4] * 100
+# dt.3cd.b.2019.usr.c0 <- dt.3cd[1, 5] * 100
+# dt.3cd.b.2019.usr.c500 <- dt.3cd[dt.3cd[, 1] == 500, 5] * 100
+# dt.3cd.b.2019.usr.cmax <- dt.3cd[nrow(dt.3cd), 5] * 100
+# dt.3cd.f.2018.2017.c0 <- dt.3cd[1, 3] * 100
+# dt.3cd.f.2018.2017.cmax <- dt.3cd[nrow(dt.3cd), 3] * 100
+# dt.3cd.f.2018.lrr.c0 <- dt.3cd[1, 4] * 100
+# dt.3cd.f.2018.lrr.cmax <- dt.3cd[nrow(dt.3cd), 4] * 100

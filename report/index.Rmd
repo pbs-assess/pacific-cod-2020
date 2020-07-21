@@ -1,44 +1,54 @@
 ---
 title: "Update to the assessment of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020"
 author: |
-  Robyn E. Forrest^1^, ...
-
+  Robyn E. Forrest ...^1^
 author_list: "Forrest, R.E., ..."
 address: |
   ^1^Pacific Biological Station\
      Fisheries and Oceans Canada, 3190 Hammond Bay Road\
-     Nanaimos, British Columbia, V9T 6N7, Canada\
+     Nanaimo, British Columbia, V9T 6N7, Canada\
 
-year: "2020"
-report_number: "nnn"
-type: res-doc
+year: 2020
+report_number: nnn
+region: Pacific Region
 abstract: |
   The status of two stocks of Pacific Cod (*Gadus macrocephalus*) in Hecate Strait/Queen Charlotte Sound (Area 5ABCD) and West Coast Vancouver Island (Area 3CD) was updated from the 2018 assessment, using Bayesian delay-difference models and data streams updated to 2019. The models were fit to fishery-independent indices of abundance and standardized commercial catch-per-unit-effort (CPUE) indices, updated from the 2018 stock assessment. 
 
-always_allow_html: yes
-link-citations: true
+header: "Draft working paper --- Do not cite or circulate" # or "" to omit
 output:
-  csasdown::resdoc_pdf
-  #csasdown::resdoc_word
-header: ""
-
-bibliography: bib/refs.bib
-region: Pacific Region
-
-# ---------------------
+ csasdown::resdoc_pdf:
+   french: false
+   copy_sty: true
+# ------------
 # End of options to set
-# ---------------------
-
 knit: bookdown::render_book
-site: bookdown::bookdown_site
-
-csl: csl/csas.csl 
-lot: true
-lof: true
-header-includes:
-- \setcounter{section}{1}
+link-citations: true
+bibliography: bib/refs.bib
+csl: csl/csas.csl # or csl/csas-french.csl for French
+# Any extra LaTeX code for the header:
+# header-includes:
+# - \usepackage{tikz}
 ---
 
+```{r load-libraries, cache=FALSE, echo=FALSE}
+# `french` and `prepub` variables are extracted from the YAML headers above and
+#  are used throughout the document. To make the document all in french, change
+#  the line in the YAML header above to `french: true`
+meta <- rmarkdown::metadata$output
+if(length(grep("pdf", names(meta)))){
+  french <- meta$`csasdown::resdoc_pdf`$french
+  prepub <- meta$`csasdown::resdoc_pdf`$prepub
+}else if(length(grep("word", names(meta)))){
+  french <- meta$`csasdown::resdoc_word`$french
+  prepub <- meta$`csasdown::resdoc_word`$prepub
+}
+if(french){
+  options(OutDec =  ",")
+}
 
-
-
+# add other packages here:
+library(dplyr)
+library(readr)
+library(tibble)
+library(csasdown)
+```

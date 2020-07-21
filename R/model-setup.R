@@ -35,7 +35,7 @@ if(verbose) cat0("Assessment year: \n  ", assess.yr)
 ## -----------------------------------------------------------------------------
 ## Year for last assessment - default is current year - 1
 ## -----------------------------------------------------------------------------
-last.assess.yr <- 2013
+last.assess.yr <- 2018
 if(verbose) cat0("Last assessment year: \n  ", last.assess.yr)
 
 ## -----------------------------------------------------------------------------
@@ -70,12 +70,12 @@ if(verbose){
 
 ## The last non-forecast year in the model. This is the year for which the
 ## mcmc outputs will be used in reference point calculations.
-end.yr <- 2018
+end.yr <- 2019
 if(verbose){
   cat0("End year for model: \n  ", end.yr)
 }
 ## Final year of data (This is what is the end year is in the model data files)
-last.data.yr <- 2018
+last.data.yr <- 2019
 if(verbose){
   cat0("Last year of model data: \n  ", last.data.yr)
 }
@@ -85,11 +85,11 @@ if(verbose){
 ## -----------------------------------------------------------------------------
 base.model.3cd.name <- "1a) Reference model 3CD"
 base.model.3cd.dir.name <- file.path(model.dir,
-                                     "1_1a_3CD_BASE_fix-localities")
+                                     "1_1a_3CD_BASE_2020")
 
 base.model.5abcd.name <- "1a) Reference model 5ABCD"
 base.model.5abcd.dir.name <- file.path(model.dir,
-                                       "0_1a_5ABCD_BASE_fix-localities")
+                                       "0_1a_5ABCD_BASE_2020")
 
 if(verbose){
   cat0("Base model directory name for reference model 5abcd:\n", base.model.5abcd.dir.name)
