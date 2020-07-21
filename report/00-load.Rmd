@@ -28,7 +28,7 @@ source(file.path(here::here(), "R", "all.R"))
 #       burnin = 1000,
 #       thin = 1)
 # load.models.into.parent.env()
-source(file.path(rootd.R, "custom-knitr-variables.R"))
+source(file.path(rootd.R, "custom-knitr-variables.R")) # Getting catch data is in this file
 ```
 
 ```{r setup-tables, cache=FALSE, echo=FALSE}

@@ -288,3 +288,17 @@ make_catch_effort_ts_plot <- function(dat) {
     ylab("Value (1000 kg or 1000 hours)") + xlab("") +
     ylim(0, NA)
 }
+
+make_catch_effort_ts_plot_modern <- function(dat) {
+  bind_rows(dat) %>% group_by(year, area) %>%
+    summarise(
+      `Species catch` = sum(spp_catch)/1000,
+      `Hours fished` = sum(effort)/1000) %>%
+    reshape2::melt(id.vars = c("year", "area")) %>%
+    ggplot(aes(year, value)) +
+    geom_line() +
+    facet_grid(variable~area, scales = "free_y") +
+    ylab("Value (1000 kg or 1000 hours)") + xlab("") +
+    ylim(0, NA)
+}
+
