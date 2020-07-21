@@ -68,3 +68,5 @@ data/generated/cpue-predictions-modern.csv
 swans.R
 index
 report-french/resdoc.Rmd
+report/knitr-cache-tex
+report/knitr-figs
