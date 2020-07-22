@@ -70,8 +70,9 @@ dat.file <- file.path(rootd.data,
 if(!file.exists(dat.file)){
   gfplot::cache_pbs_data(species = "pacific cod",
                  path = file.path(rootd.data,
-                                  "pcod-cache"),
-                 survey_sets = TRUE)
+                 "pcod-cache"),
+                 survey_sets = TRUE,
+                 unsorted_only = FALSE)
 }
 dat <- readRDS(dat.file)
 

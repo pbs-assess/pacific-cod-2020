@@ -260,7 +260,7 @@ get.mean.weight <- function(dat.comm.samples,
                                   areas = areas,
                                   include.usa = include.usa)
 
-  left_join(cs, tot.catch, by = c("year", "quarter")) %>%
+ left_join(cs, tot.catch, by = c("year", "quarter")) %>%
     calc.mean.weight() %>%
     group_by(year) %>%
     summarize(mean_weight = mean(wf)) %>%

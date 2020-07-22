@@ -13,13 +13,12 @@ resultsd <- file.path(rootd.data, "results")
 source(file.path(rootd.data, "get-data.R"))
 
 if(FALSE){
-  cache_pbs_data(species = "Pacific Cod",
+  cache_pbs_data(species = "pacific pod",
                  path = file.path(rootd.data, "pcod-cache"),
                  unsorted_only = FALSE)
 }
 
-dat <- readRDS(here::here("data/pcod-cache/Pacific-Cod.rds")) #RF ... testing another file
-#dat <- load.data(cache.dir = file.path(rootd.data, "pcod-cache")) #Original line
+dat <- load.data(cache.dir = file.path(rootd.data, "pcod-cache")) #Original line
 d <- dat$commercial_samples
 
 ################################################################
