@@ -2,9 +2,46 @@
 
 # Introduction
 
-Update to 2018 Pacific Cod assessment [@forrest2020].
+The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separarat assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)). The assessment models were delay-difference models, fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights.Survey indices were available to 2016 for Area 3CD and 2017 for Area 5ABCD. Both stocks were assessed to be in the Cautious Zone [@dfo2009].
 
-*TODO: background on the reason we did this. Refer to SAR, wherever possible. Add SAR to refs*
+Since the last advice [@dfo2019], there has been no further request for science advice. However, it has recently come to our attention that the 2018 survey index for Area 3CD was very low, approximately 25% of the previous two observations (Figure \@ref(fig:fig-wcvi-index-3cd)). While we did not see a decrease in survey indices for either Hecate Strait or Queen Charlotte Sound, which cover the Area 5ABCD stock, we have therefore taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run the stock assessment to re-assess stock status.
+
+
+```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
+library(cowplot)
+
+surv.file <- here::here("data/generated/all_surveys.csv")
+
+if(!file.exists(surv.file)){
+  message("Error: Survey indices file has not been made! Please run 04-survey-indices-app.Rmd first.")
+} else {
+  surv_index <- readr::read_csv(here::here("data/generated/all_surveys.csv"))
+}
+
+# g <- surv_index %>%  
+#   rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
+#   select(Survey, Year,Biomass, CV, Lower, Upper) %>%
+#   ggplot(aes(Year, Biomass)) + 
+#   geom_pointrange(aes(ymin=Lower, ymax=Upper))+
+#   theme_pbs() +
+#   ylab("Index")+
+#   xlab("Year") 
+
+gg <- surv_index %>%  
+  rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
+  select(Survey, Year,Biomass, CV) %>%
+  mutate("GeometricMean"= Biomass/exp(mean(log(Biomass)))) %>%
+  mutate("LowerG" = exp(log(GeometricMean))-2*CV, "UpperG"=exp(log(GeometricMean))+2*CV) %>%       
+  ggplot(aes(Year, GeometricMean)) + 
+  geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
+  theme_pbs() +
+  ylab("Index (centred by its geometric mean)")+
+  xlab("Year") 
+gg
+#cowplot::plot_grid(g,gg, ncol=1)
+
+```
+
 
 # Summary
 
