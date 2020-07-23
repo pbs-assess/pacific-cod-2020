@@ -1,6 +1,6 @@
 \clearpage
 
-# TABLES
+# TABLES {#sec:tables}
 
 ```{r tab-catch-5abcd}
 catch.table(catch.5,

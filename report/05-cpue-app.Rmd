@@ -2,7 +2,7 @@
 <!-- TODO: show shapes that Tweedie can take -->
 \clearpage
 
-# COMMERCIAL CPUE STANDARDIZATION
+# COMMERCIAL CPUE STANDARDIZATION {#app:cpue-appendix}
 
 We used the same approach for standardizing the historical (1956:1995) and modern (1996+) commercial CPUE indices as in the previous assessment [@forrest2020], with data added for 2018 and 2019.
 

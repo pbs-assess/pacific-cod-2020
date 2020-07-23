@@ -4,7 +4,9 @@
 
 The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separarat assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)). The assessment models were delay-difference models, fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights.Survey indices were available to 2016 for Area 3CD and 2017 for Area 5ABCD. Both stocks were assessed to be in the Cautious Zone [@dfo2009].
 
-Since the last advice [@dfo2019], there has been no further request for science advice. However, it has recently come to our attention that the 2018 survey index for Area 3CD was very low, approximately 25% of the previous two observations (Figure \@ref(fig:fig-wcvi-index-3cd)). While we did not see a decrease in survey indices for either Hecate Strait or Queen Charlotte Sound, which cover the Area 5ABCD stock, we have therefore taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run the stock assessment to re-assess stock status.
+Since the last advice [@dfo2019], there has been no further request for science advice. However, it has recently come to our attention that the 2018 survey index for Area 3CD was very low, approximately 25% of the previous two observations (Figure \@ref(fig:fig-wcvi-index-3cd)). The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:cpue-int-test-plot)). Catches in 2018 and 2019 in Area 3CD were also very low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
+
+While we did not see a decrease in survey or CPUE indices for either Hecate Strait or Queen Charlotte Sound (Figure \@ref(fig:surv-canadian)), which cover the Area 5ABCD stock, we have taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run the stock assessment to re-assess stock status.
 
 
 ```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
@@ -42,21 +44,78 @@ gg
 
 ```
 
+\clearpage
 
 # Summary
 
-*TODO: Put main figures here and discussion of each.*
+We re-ran both the stock assessment models with identical settings to those used in 2018 [@forrest2020]. For each area, we ran the reference model plus the six sensitivity cases that were selected by the 2019 Regional Peer Review (RPR) committee for inclusion in the model-averaged results [@dfo2019].
 
-3CD index
-3CD CPUE
-3CD Biomass
+## Data
 
-5ABCD index
-5ABCD CPUE
-5ABCD Biomass
+Data were extracted from DFO databases in the same way as described in @forrest2020, with updates to 2019. The models were fit to:
 
-A more complete set of tables and figures is provided in the following sections.
+1. Commercial catch data (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd), Figures \@ref(fig:fig-catch-5abcd) and \@ref(fig:fig-catch-3cd)); 
 
-# Full results
+2. Survey indices of abundance Figure \@ref(fig:surv-canadian)), where the 3CD model was fit to the WCVI Synoptic Survey and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series); 
 
-Briefly discuss each Table and Fig ... update text from 2018 assessment
+3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figure \@ref(fig:cpue-int-test-plot)); and
+
+4. Mean weight of Pacific Cod in the commercial bottom trawl fishery (see @forrest2020 for details).
+
+## Model scenarios
+For Area 5ABCD, the scenarios (Sc) included in the model-averaging set were:
+
+• Sc 1a Reference model.
+
+• Sc 2d Set the mean of the prior probability distribution for synoptic survey ln(q) = ln(1.0) (pro-rated by depth-stratum areas of Area 5AB and 5CD).
+
+• Sc 2e Increase the standard deviation (SD) for synoptic survey ln(q) to 0.6.
+
+• Sc 3a Set the parameters of the prior probability distribution for ln(M) to mean = ln(0.4), SD = 0.1.
+
+• Sc 5a Set knife-edged age at recruitment = 3 years.
+
+• Sc 6b Reduce the overall observation error term $\sigma_O$ = 0.15.
+
+• Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W$ = 0.15.
+
+For Area 3CD, the scenarios (Sc) included in the model-averaging set were:
+
+• Sc 1a Reference model.
+
+• Sc 2d Set the mean of the prior probability distribution for synoptic survey ln(q) = ln(1.0).
+
+• Sc 2e Increase the standard deviation (SD) for synoptic survey ln(q) to 0.6.
+
+• Sc 3a Set the parameters of the prior probability distribution for ln(M) to mean = ln(0.4), SD = 0.1.
+
+• Sc 5a Set knife-edged age at recruitment = 3 years.
+
+• Sc 6b Reduce the overall observation term $\sigma_O$ = 0.15.
+
+• Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W$ = 0.15.
+
+See @forrest2020 and @dfo2019 for further details.
+
+## Reference points
+
+As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
+
+1. $USR$ (Upper Stock Reference) is the historical mean of the biomass estimates from 1956--2004.
+2. $LRP$ (Limit Reference Point) is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
+3. $LRR$ (Limit Removal Rate) is the average fishing mortality rate from 1956--2004.
+
+
+# Summary Results {#sec:summary-results}
+
+We begin with a summary set of results for Area 3CD, followed by summary results for Area 5CD. A more complete set of tables and figures is provided in Sections \@ref(sec:tables) and \@ref(sec:figures). However, we do not discuss these in detail.
+
+*TODO: we could possibly provide some summary info on the figs and tables if this document is of interest*
+
+## Area 3CD
+
+
+
+
+
+

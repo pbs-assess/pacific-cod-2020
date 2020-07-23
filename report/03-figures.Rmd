@@ -9,7 +9,7 @@ knitr::include_graphics(here::here("report/figure/Pcod_3CD5ABCDE_Pic.png"))
 
 \clearpage
 
-## CATCH: AREA 5ABCD
+## CATCH: AREA 5ABCD {#sec:figures}
 
 ```{r fig-catch-5abcd, fig.cap="Catch for Area 5ABCD. Canadian catch includes at-sea releases."}
 make.catches.plot(catch.5)
