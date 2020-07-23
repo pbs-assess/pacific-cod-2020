@@ -591,7 +591,7 @@ load.models.into.parent.env <- function(){
   # sens.models.4 <<- load.models(sens.models.dir.name.4)
   # sens.models.5 <<- load.models(sens.models.dir.name.5)
   # sens.models.6 <<- load.models(sens.models.dir.name.6)
-  # sens.models.6.sub <<- load.models(sens.models.dir.name.6.sub)
+  sens.models.6.sub <<- load.models(sens.models.dir.name.6.sub)
   # sens.models.7 <<- load.models(sens.models.dir.name.7)
   # sens.models.108 <<- load.models(sens.models.dir.name.108)
 
@@ -608,7 +608,7 @@ load.models.into.parent.env <- function(){
   # sens.models.11 <<- load.models(sens.models.dir.name.11)
   # sens.models.12 <<- load.models(sens.models.dir.name.12)
   # sens.models.13 <<- load.models(sens.models.dir.name.13)
-  # sens.models.13.sub <<- load.models(sens.models.dir.name.13.sub)
+  sens.models.13.sub <<- load.models(sens.models.dir.name.13.sub)
   # sens.models.14 <<- load.models(sens.models.dir.name.14)
   # sens.models.15 <<- load.models(sens.models.dir.name.15)
 

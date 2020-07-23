@@ -3,3 +3,23 @@
 # Introduction
 
 Update to 2018 Pacific Cod assessment [@forrest2020].
+
+*TODO: background on the reason we did this. Refer to SAR, wherever possible. Add SAR to refs*
+
+# Summary
+
+*TODO: Put main figures here and discussion of each.*
+
+3CD index
+3CD CPUE
+3CD Biomass
+
+5ABCD index
+5ABCD CPUE
+5ABCD Biomass
+
+A more complete set of tables and figures is provided in the following sections.
+
+# Full results
+
+Briefly discuss each Table and Fig ... update text from 2018 assessment
