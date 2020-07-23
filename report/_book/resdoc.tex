@@ -154,18 +154,28 @@ While we did not see a decrease in survey or CPUE indices for either Hecate Stra
 
 \caption{West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean}\label{fig:fig-wcvi-index-3cd}
 \end{figure}
+\clearpage
+
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
-
-We summarise the main findings here. A more complete set of results are provided in the following sections.
 
 We re-ran both the stock assessment models with identical settings to those used in 2018 (Forrest et al. \protect\hyperlink{ref-forrest2020}{2020}). For each area, we ran the reference model plus the six sensitivity cases that were selected by the 2019 Regional Peer Review (RPR) committee for inclusion in the model-averaged results (DFO \protect\hyperlink{ref-dfo2019}{2019}).
 
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
 
-Data were extracted from DFO databases in the same way as described in Forrest et al. (\protect\hyperlink{ref-forrest2020}{2020}), with updates to 2019. The models were fit to commercial catch data (Tables~\ref{tab:tab-catch-5abcd} and~\ref{tab:tab-catch-3cd}, Figures~\ref{fig:fig-catch-5abcd} and~\ref{fig:fig-catch-3cd}); survey indices of abundance Figure~\ref{fig:surv-canadian} and Appendix~\ref{app:survey-appendix}; and historical (1956-1995) and modern (1996+) commercial CPUE indices (Figure~\ref{fig:cpue-int-test-plot} and Appendix~\ref{app:cpue-appendix}). Commercial biological samples were used to calculate the mean weight in the commercial bottom trawl data (see Forrest et al. (\protect\hyperlink{ref-forrest2020}{2020}) for details).
-
+Data were extracted from DFO databases in the same way as described in Forrest et al. (\protect\hyperlink{ref-forrest2020}{2020}), with updates to 2019. The models were fit to:
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Commercial catch data (Tables~\ref{tab:tab-catch-5abcd} and~\ref{tab:tab-catch-3cd}, Figures~\ref{fig:fig-catch-5abcd} and~\ref{fig:fig-catch-3cd});
+\item
+  Survey indices of abundance Figure~\ref{fig:surv-canadian}), where the 3CD model was fit to the WCVI Synoptic Survey and the NMFS triennial survey (Figure~\ref{fig:tri-fig9}, Vancouver Canadian series);
+\item
+  Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figure~\ref{fig:cpue-int-test-plot}); and
+\item
+  Mean weight of Pacific Cod in the commercial bottom trawl fishery (see Forrest et al. (\protect\hyperlink{ref-forrest2020}{2020}) for details).
+\end{enumerate}
 \hypertarget{model-scenarios}{%
 \subsection{Model scenarios}\label{model-scenarios}}
 
@@ -209,7 +219,6 @@ See Forrest et al. (\protect\hyperlink{ref-forrest2020}{2020}) and DFO (\protect
 As in the 2018 assessment (DFO \protect\hyperlink{ref-dfo2019}{2019}), historical reference points were used to assess stock status, where
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-
 \item
   \(USR\) (Upper Stock Reference) is the historical mean of the biomass estimates from 1956--2004.
 \item
@@ -218,15 +227,32 @@ As in the 2018 assessment (DFO \protect\hyperlink{ref-dfo2019}{2019}), historica
   \(LRR\) (Limit Removal Rate) is the average fishing mortality rate from 1956--2004.
 \end{enumerate}
 \hypertarget{sec:summary-results}{%
-\section{Summary Results}\label{sec:summary-results}}
+\subsection{Main Results}\label{sec:summary-results}}
 
 We begin with a summary set of results for Area 3CD, followed by summary results for Area 5CD. A more complete set of tables and figures is provided in Sections~\ref{sec:tables} and~\ref{sec:figures}. However, we do not discuss these in detail.
 
-\emph{TODO: we could possibly provide some summary info on the figs and tables if this document is of interest}
+The joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) (Fournier et al. \protect\hyperlink{ref-fournier2012}{2012}). Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
+
+\emph{TODO: we could possibly provide some summary info on the detailed figs and tables if this document is of interest}
 
 \hypertarget{area-3cd}{%
 \subsection{Area 3CD}\label{area-3cd}}
+\begin{figure}[htb]
 
+{\centering \pdftooltip{\includegraphics[width=6in]{knitr-figs/summary-fig-base-index-fits-3cd-1}}{Figure \ref{fig:summary-fig-base-index-fits-3cd}} 
+
+}
+
+\caption{MPD fits to observed indices of abundance (points) for the Area 3CD reference model from: (a) the West Coast Vancouver Island Synoptic Survey, (b) the Commercial CPUE pre-1996, (c) the Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion).}\label{fig:summary-fig-base-index-fits-3cd}
+\end{figure}
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=6in]{knitr-figs/summary-fig-base-mean-weight-3cd-1}}{Figure \ref{fig:summary-fig-base-mean-weight-3cd}} 
+
+}
+
+\caption{MPD fit to the mean weight data for Area 3CD reference model.}\label{fig:summary-fig-base-mean-weight-3cd}
+\end{figure}
 \clearpage
 
 \hypertarget{sec:tables}{%
@@ -2108,150 +2134,7 @@ SYN WCVI & 2018 & 552.9 & 0.21 & 362.3 & 805.9 & 190 & 91\tabularnewline
 \hypertarget{nmfs-triennial-survey-in-canadian-waters}{%
 \appsection{NMFS TRIENNIAL SURVEY (IN CANADIAN WATERS)}\label{nmfs-triennial-survey-in-canadian-waters}}
 
-A relative abundance index was developed for Area 3CD from data from the National Marine Fisheries Service (NMFS) Triennial survey operated off the lower half of Vancouver Island.
-
-\hypertarget{data-selection}{%
-\subsection{Data selection}\label{data-selection}}
-
-Tow-by-tow data from the US National Marine Fisheries Service (NMFS) triennial survey covering the Vancouver INPFC (International North Pacific Fisheries Commission) region were provided by Mark Wilkins (NMFS, pers. comm.) for the seven years that the survey worked in BC waters (Table~\ref{tab:surv-tri-strata-table}, Figure~\ref{fig:tri-tows})). These tows were assigned to strata by the NMFS, although the size and definition of these strata have changed over the life of the survey. The NMFS survey database also identified in which country the tow was located. This information was plotted and checked against the accepted Canada/USA marine boundary: all tows appeared to be appropriately located with respect to country, based on the tow start position Figure~\ref{fig:tri-tows})). The NMFS designations were accepted for tows located near the marine border.
-
-All usable tows had an associated median net width (with 1--99\% quantiles) of 13.4 (11.3-15.7) m and median distance travelled of 2.8 (1.4--3.5) km, allowing for the calculation of the area swept by each tow. Biomass indices and the associated analytical CVs for Pacific Cod were calculated for the total Vancouver INPFC region and for each of the Canadian- and US-Vancouver sub-regions, using appropriate area estimates for each stratum and year. Strata that were not surveyed consistently in all seven years of the survey were dropped from the analysis, allowing the remaining data to provide a comparable set of data for each year.
-\begin{longtable}[]{@{}lllllllllllllll@{}}
-\caption{\label{tab:surv-tri-strata-table}Number of tows by stratum and by survey year for the NFMS triennial survey. Strata denoted with an asterisk have been excluded from the analysis due to incomplete coverage across the seven survey years or were from locations outside the Vancouver INPFC area.}\tabularnewline
-\toprule
-Stratum No. & 1980 & 1980 & 1983 & 1983 & 1989 & 1989 & 1992 & 1992 & 1995 & 1995 & 1998 & 1998 & 2001 & 2001\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-Stratum No. & 1980 & 1980 & 1983 & 1983 & 1989 & 1989 & 1992 & 1992 & 1995 & 1995 & 1998 & 1998 & 2001 & 2001\tabularnewline
-\midrule
-\endhead
-& CDN & US & CDN & US & CDN & US & CDN & US & CDN & US & CDN & US & CDN & US\tabularnewline
-10 & & 15 & & 7 & & & & & & & & & &\tabularnewline
-11 & 38 & & & 34 & & & & & & & & & &\tabularnewline
-12 & & & 32 & & & & & & & & & & &\tabularnewline
-17N & & & & & & 8 & & 9 & & 8 & & 8 & & 8\tabularnewline
-17S* & & & & & & 27 & & 27 & & 24 & & 26 & & 25\tabularnewline
-18N* & & & & & 1 & & 1 & & & & & & &\tabularnewline
-18S & & & & & & 31 & & 20 & & 12 & & 20 & & 14\tabularnewline
-19N & & & & & 56 & & 53 & & 55 & & 48 & & 33 &\tabularnewline
-19S & & & & & & 4 & & 6 & & 3 & & 3 & & 3\tabularnewline
-27N & & & & & & 2 & & 1 & & 2 & & 2 & & 2\tabularnewline
-27S* & & & & & & 4 & & 2 & & 3 & & 4 & & 5\tabularnewline
-28N* & & & & & 1 & & 1 & & 2 & & 1 & & &\tabularnewline
-28S & & & & & & 6 & & 9 & & 7 & & 6 & & 7\tabularnewline
-29N & & & & & 7 & & 6 & & 7 & & 6 & & 3 &\tabularnewline
-29S & & & & & & 3 & & 2 & & 3 & & 3 & & 3\tabularnewline
-30 & & 4 & & 2 & & & & & & & & & &\tabularnewline
-31 & 7 & & & 11 & & & & & & & & & &\tabularnewline
-32 & & & 5 & & & & & & & & & & &\tabularnewline
-37N* & & & & & & & & & & 1 & & 1 & & 1\tabularnewline
-37S* & & & & & & & & & & 2 & & 1 & & 1\tabularnewline
-38N* & & & & & & & & & 1 & & & & &\tabularnewline
-38S* & & & & & & & & & & 2 & & & & 3\tabularnewline
-39* & & & & & & & & & 6 & & 4 & & 2 &\tabularnewline
-50 & & 4 & & 1 & & & & & & & & & &\tabularnewline
-51 & 3 & & & 10 & & & & & & & & & &\tabularnewline
-52 & & & 2 & & & & & & & & & & &\tabularnewline
-Total & 48 & 23 & 39 & 65 & 65 & 85 & 61 & 76 & 71 & 67 & 59 & 74 & 38 & 72\tabularnewline
-\bottomrule
-\end{longtable}
-The stratum definitions used in the 1980 and 1983 surveys were different than those used in subsequent surveys, particularly in Canadian waters. Consequently, these indices were not used in the 3CD stock assessment. The tow density was much higher in US waters although the overall number of tows was approximately the same for each country. This occurs because the size of the total area fished in the INPFC Vancouver area was about twice as large in Canadian waters than in US waters. Note that the northern extension of the survey has varied from year to year (Figure~\ref{fig:tri-tows}), but this difference has been compensated for by using a constant survey area for all years and assuming that catch rates in the unsampled areas were the same as in the sampled area.
-
-A reviewer from NOAA for Yellowtail Rockfish in 2014 noted that a number of the early Triennial survey tows had been deemed ``water hauls'' (catching no fish or invertebrates) and should be discarded. The tows used to estimate relative Pacific Cod biomass exclude these water haul tows.
-
-\hypertarget{triennial-survey-methods}{%
-\subsection{TRIENNIAL SURVEY METHODS}\label{triennial-survey-methods}}
-
-When calculating the variance for this survey, it was assumed that the variance and CPUE within any stratum were equal, even for strata that were split by the Canada/USA border. The total biomass within a stratum that straddled the border was split between the two countries by the ratio of the relative area within each country:
-\begin{equation}
-B_{y_{i,c}}=B_{y_{i}}\frac{A_{y_{i,c}}}{A_{y_{i}}}
-\label{eq:tri1}
-\end{equation}
-where \(A_{y_{i,c}} =\) area (km\textsuperscript{2}) within country \emph{c} in year \emph{y} and stratum \emph{i} and \emph{B} represents biomass.
-
-The variance \emph{V} for that part of stratum \emph{i} within country \emph{c} was calculated as being in proportion to the ratio of the square of the area within each country \emph{c} relative to the total area of stratum \emph{i}. This assumption resulted in the CVs within each country stratum being the same as the CV in the entire stratum:
-\begin{equation}
-V_{y_{i,c}}=V_{y_{i}}\frac{A_{y_{i,c}}^{2}}{A_{y_{i}}^{2}}.
-\label{eq:tri2}
-\end{equation}
-The partial variance for country \emph{c} was used in instead of the total variance in the stratum when calculating the variance for the total biomass in Canadian or American waters.
-
-The biomass estimates and the associated standard errors were adjusted to a constant area covered using the ratios of area surveyed. This was required to adjust the Canadian biomass estimates for 1980 and 1983 to account for the smaller area surveyed in those years compared to the succeeding surveys. he 1980 and 1983 biomass estimates from Canadian waters were consequently multiplied by the ratio 1.24 (= 9166 km\textsuperscript{2} / 7399 km\textsuperscript{2}) to make them equivalent to the coverage of the surveys from 1989 onwards.
-
-Biomass estimates were bootstrapped for 1000 random draws with replacement to obtain bias-corrected (Efron \protect\hyperlink{ref-efron1982}{1982}) 95\% confidence intervals for each year and for three area categories (total Vancouver region, Canadian-Vancouver only and US-Vancouver only) based on the distribution of biomass estimates and using the above equations.
-
-Catch and effort data for strata \(i\) in year \(y\) yield catch per unit effort (CPUE) values\({U_{yi}}\). Given a set of data \(\left\{ {{C_{yij}},{E_{yij}}} \right\}\) for tows\(j = 1, \ldots ,{n_{yi}}\),
-\begin{equation}
-{U_{yi}} = \frac{1}{{{n_{yi}}}}\sum\limits_{j = 1}^{{n_{yi}}} {\frac{{{C_{yij}}}}{{{E_{yij}}}}},
-\end{equation}
-where \({C_{yij}}\) = catch (kg) in tow \(j\), stratum \(i\), year \(y\); \({E_{yij}}\) = effort (h) in tow \(j\), stratum \(i\), year \(y\); and \({n_{yi}}\) = number of tows in stratum \(i\), year \(y\).
-
-CPUE values \({U_{yi}}\) convert to CPUE densities \({\delta _{yi}}\) (kg/km2) using:
-\begin{equation}
-{\delta _{yi}} = \frac{1}{{vw}}{U_{yi}},
-\end{equation}
-where \(v\) = average vessel speed (km/h) and \(w\) = average net width (km).
-
-Alternatively, if vessel information exists for every tow, CPUE density can be expressed
-\begin{equation}
-{\delta _{yi}} = \frac{1}{{{n_{yi}}}}\,\,\sum\limits_{j = 1}^{{n_{yi}}} {\,\frac{{{C_{yij}}}}{{{D_{yij}}{w_{yij}}}}},
-\end{equation}
-where \({C_{yij}}\) = catch weight (kg) for tow \(j\), stratum \(i\), year \(y\); \({D_{yij}}\) = distance travelled (km) for tow\(j\), stratum\(i\), year\(y\); \({w_{yij}}\) = net opening (km) for tow\(j\), stratum\(i\), year\(y\); and \({n_{yi}}\) = number of tows in stratum\(i\), year\(y\).
-
-The annual biomass estimate is then the sum of the product of CPUE densities and bottom areas across \(m\) strata:
-\begin{equation}
-{B_y} = \sum\limits_{i = 1}^m {{\delta _{yi}}{A_i}}  = \sum\limits_{i = 1}^m {{B_{yi}}},
-\end{equation}
-where \({\delta _{yi}}\) = mean CPUE density (kg/km2) for stratum \(i\), year \(y\); \({A_i}\) = area (km2) of stratum\(i\); \({B_{yi}}\) = biomass (kg) for stratum\(i\), year\(y\); and \(m\) = number of strata.
-
-The variance of the survey biomass estimate \({V_y}\) (kg\textsuperscript{2}) follows:
-\begin{equation}
-{V_y} = \sum\limits_{i = 1}^m {\frac{{\sigma _{yi}^2A_i^2}}{{{n_{yi}}}}\,}  = \,\,\,\sum\limits_{i = 1}^m {{V_{yi}}},
-\end{equation}
-where \(\sigma _{yi}^2\) = variance of CPUE density (kg\textsuperscript{2}/km\textsuperscript{4}) for stratum \(i\), year \(y\) and \({V_{yi}}\) = variance of the biomass estimate (kg\textsuperscript{2}) for stratum\(i\), year \(y\).
-
-The coefficient of variation (CV) of the annual biomass estimate for year \(y\) is
-\begin{equation}
-C{V_y} = \frac{{\sqrt {\,{V_y}} }}{{{B_y}}}.
-\end{equation}
-\hypertarget{triennial-survey-results}{%
-\subsection{TRIENNIAL SURVEY RESULTS}\label{triennial-survey-results}}
-
-Relative biomass estimates and confidence intervals are shown in Table~\ref{tab:surv-trien-table} and Figure~\ref{fig:tri-fig9}. Pacific Cod are characterized with most catches taken along the shelf edge and in the deep gully entering Juan de Fuca Strait (e.g., Figure~\ref{fig:tri-tows}). A more consistent biomass estimate was obtained by excluding deep strata that were not covered in the earlier surveys. Figure~\ref{fig:tri-fig8} shows that this species was mainly found between 57 and 256 m (1 and 99\% quantiles of bottom depth), with infrequent observations at depths up to 326 m which means that the deeper strata (\textgreater367 m) are not needed to monitor Pacific Cod. Note that the deep strata which were not used in the biomass estimation are included in Figure~\ref{fig:tri-fig8}.
-\begin{longtable}[]{@{}rrrrrrr@{}}
-\caption{\label{tab:surv-trien-table}Biomass estimates and confidence intervals for the Triennial NMFS survey relevant to Canadian waters.}\tabularnewline
-\toprule
-Year & Biomass & Mean bootstrap biomass & Lower bound biomass & Upper bound biomass & CV & CV Analytic\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-Year & Biomass & Mean bootstrap biomass & Lower bound biomass & Upper bound biomass & CV & CV Analytic\tabularnewline
-\midrule
-\endhead
-1989 & 5142 & 5022 & 2751 & 8726 & 0.30 & 0.30\tabularnewline
-1992 & 2023 & 2011 & 1091 & 3119 & 0.26 & 0.26\tabularnewline
-1995 & 1662 & 1685 & 620 & 4410 & 0.53 & 0.53\tabularnewline
-1998 & 631 & 623 & 369 & 975 & 0.24 & 0.26\tabularnewline
-2001 & 836 & 838 & 356 & 1464 & 0.33 & 0.36\tabularnewline
-\bottomrule
-\end{longtable}
-\begin{figure}[htb]
-
-{\centering \pdftooltip{\includegraphics[width=6in]{C:/GitHub/pacific-cod-2020/report/paul-figs/paul-surv-small}}{Figure \ref{fig:tri-tows}} 
-
-}
-
-\caption{(Left panels): plot of tow locations in the Vancouver INPFC region for the NMFS triennial survey in US and Canadian waters. Tow locations are colour-coded by depth range: black=55--183m; red=184-366m; grey=367-500m. Dashed line shows approximate position of the Canada/USA marine boundary. Horizontal lines are the stratum boundaries: 47 30, 47 50, 48 20 and 49 50. Tows south of the 47 30 line were not included in the analysis. (Right panels): circle sizes in the density plot are scaled across all years (1980, 1983, 1989, 1992, 1995, 1998, and 2001), with the largest circle = 7,229 kg/km2 in 1989. The red solid lines indicate the boundaries between PMFC areas 3B, 3C and 3D.}\label{fig:tri-tows}
-\end{figure}
-\begin{figure}[htb]
-
-{\centering \pdftooltip{\includegraphics[width=6in]{C:/GitHub/pacific-cod-2020/report/paul-figs/paul8}}{Figure \ref{fig:tri-fig8}} 
-
-}
-
-\caption{Distribution of Pacific Cod catch weights for each survey year summarised into 25 m depth intervals for all tows (Table B.2) in Canadian and US waters of the Vancouver INPFC area. Catches are plotted at the mid-point of the interval.  Note that the deep strata introduced in 1995 (see Table B.2) have been included in this plot but were not used in the biomass estimation.}\label{fig:tri-fig8}
-\end{figure}
+A relative abundance index was developed for Area 3CD from data from the National Marine Fisheries Service (NMFS) Triennial survey operated off the lower half of Vancouver Island. See Appendix A of Forrest et al. (\protect\hyperlink{ref-forrest2018}{2018}) for complete details.
 \begin{figure}[htb]
 
 {\centering \pdftooltip{\includegraphics[width=6in]{C:/GitHub/pacific-cod-2020/report/paul-figs/paul9}}{Figure \ref{fig:tri-fig9}} 
@@ -2522,6 +2405,12 @@ Fargo, J., Tyler, A.V., Cooper, J., Shields, S.C., and Stebbins, S. 1984. ARCTIC
 
 \leavevmode\hypertarget{ref-forrest2020}{}%
 Forrest, R.E., Anderson, S.C., Grandin, C.J., and Starr, P.J. 2020. Assessment of Pacific Cod (\emph{Gadus macrocephalus}) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2018. DFO Can. Sci. Advis. Sec. Res. Doc. 2020/nnn(Canadian Science Advisory Secretariat (CSAS) 2020/nnn): nnn.
+
+\leavevmode\hypertarget{ref-forrest2018}{}%
+Forrest, R.E., Holt, K.R., and Kronlund, A.R. 2018. Performance of alternative harvest control rules for two Pacific groundfish stocks with uncertain natural mortality: Bias, robustness and trade-offs. Can. J. Fish. Aquat. Sci. 206: 259--286.
+
+\leavevmode\hypertarget{ref-fournier2012}{}%
+Fournier, D.A., Skaug, H.J., Ancheta, J., Ianelli, J., Magnusson, A., Maunder, M.N., Nielsen, A., and Sibert, J. 2012. AD Model Builder: Using automatic differentiation for statistical inference of highly parameterized complex nonlinear models. Optim. Methods Softw. 27: 233--249.
 
 \leavevmode\hypertarget{ref-hand1994}{}%
 Hand, C.M., Robison, B.D., Fargo, J., Workman, G.D., and Stocker, M. 1994. 1994 R/V W.E. RICKER Assemblage survey of Hecate Strait, May 17-June 3, 1993. Can. Data Rep. Fish. Aquat. Sci.: 925:197.
