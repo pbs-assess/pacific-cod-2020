@@ -122,6 +122,7 @@ desc.models.5abcd.name <- c(base.model.5abcd.name,
                             "6b) Fix sigma O = 0.15",
                             "7b) Fix sigma W = 0.15")
 
+## MOST OF THESE SENSITIVITY MODELS ARE NOT USED -- DELETE FOR NOW
 ## -----------------------------------------------------------------------------
 ## Sensitivity models group 0 (5ABCD)
 ## -----------------------------------------------------------------------------
@@ -578,8 +579,8 @@ retro.names <- c("- 1 year",
 ## and sensitivity models change in the model.dir.names above..
 load.models.into.parent.env <- function(){
   base.model.5abcd <<- load.models(base.model.5abcd.dir.name)
-  # desc.models.5abcd <<- load.models(desc.models.5abcd.dir.name)
-  # avg.model.5abcd <<- avg.models(desc.models.5abcd)
+  desc.models.5abcd <<- load.models(desc.models.5abcd.dir.name)
+  avg.model.5abcd <<- avg.models(desc.models.5abcd)
   # sens.models.0 <<- load.models(sens.models.dir.name.0)
   # sens.models.1.sub <<- load.models(sens.models.dir.name.1.sub)
   # sens.models.1.sub2 <<- load.models(sens.models.dir.name.1.sub2)
@@ -595,8 +596,8 @@ load.models.into.parent.env <- function(){
   # sens.models.108 <<- load.models(sens.models.dir.name.108)
 
   base.model.3cd <<- load.models(base.model.3cd.dir.name)
-  # desc.models.3cd <<- load.models(desc.models.3cd.dir.name)
-  # avg.model.3cd <<- avg.models(desc.models.3cd)
+  desc.models.3cd <<- load.models(desc.models.3cd.dir.name)
+  avg.model.3cd <<- avg.models(desc.models.3cd)
   # sens.models.00 <<- load.models(sens.models.dir.name.00)
   # sens.models.8.sub <<- load.models(sens.models.dir.name.8.sub)
   # sens.models.8.sub2 <<- load.models(sens.models.dir.name.8.sub2)
@@ -650,37 +651,38 @@ build <- function(ovwrt.base = FALSE,
 
   ## Sensitivity models need to be unlisted from their groups
   ##  and placed into a single list for the for loop below to work right
-  # sens.models.names.list <- c(unlist(desc.models.5abcd.dir.name),
-  #                             unlist(desc.models.3cd.dir.name),
-  #                             unlist(sens.models.dir.name.0),
-  #                             unlist(sens.models.dir.name.1),
-  #                             unlist(sens.models.dir.name.2),
-  #                             unlist(sens.models.dir.name.3),
-  #                             unlist(sens.models.dir.name.4),
-  #                             unlist(sens.models.dir.name.5),
-  #                             unlist(sens.models.dir.name.6),
-  #                             unlist(sens.models.dir.name.7),
-  #                             unlist(sens.models.dir.name.108),
-  #                             unlist(sens.models.dir.name.00),
-  #                             unlist(sens.models.dir.name.8),
-  #                             unlist(sens.models.dir.name.9),
-  #                             unlist(sens.models.dir.name.10),
-  #                             unlist(sens.models.dir.name.11),
-  #                             unlist(sens.models.dir.name.12),
-  #                             unlist(sens.models.dir.name.13),
-  #                             unlist(sens.models.dir.name.14),
-  #                             unlist(sens.models.dir.name.15))
-  # ## Sensitivity models
-  # for(model.nm in sens.models.names.list){
-  #   create.rdata.file(model.nm,
-  #                     ovwrt.rdata = ovwrt.sens,
-  #                     load.proj = TRUE,
-  #                     burnin = burnin,
-  #                     thin = thin,
-  #                     low = confidence.vals[1],
-  #                     high = confidence.vals[2],
-  #                     verbose = verbose)
-  # }
+  sens.models.names.list <- c(unlist(desc.models.5abcd.dir.name),
+                              unlist(desc.models.3cd.dir.name)#,
+                              # unlist(sens.models.dir.name.0),
+                              # unlist(sens.models.dir.name.1),
+                              # unlist(sens.models.dir.name.2),
+                              # unlist(sens.models.dir.name.3),
+                              # unlist(sens.models.dir.name.4),
+                              # unlist(sens.models.dir.name.5),
+                              # unlist(sens.models.dir.name.6),
+                              # unlist(sens.models.dir.name.7),
+                              # unlist(sens.models.dir.name.108),
+                              # unlist(sens.models.dir.name.00),
+                              # unlist(sens.models.dir.name.8),
+                              # unlist(sens.models.dir.name.9),
+                              # unlist(sens.models.dir.name.10),
+                              # unlist(sens.models.dir.name.11),
+                              # unlist(sens.models.dir.name.12),
+                              # unlist(sens.models.dir.name.13),
+                              # unlist(sens.models.dir.name.14),
+                              # unlist(sens.models.dir.name.15)
+                              )
+  ## Sensitivity models
+  for(model.nm in sens.models.names.list){
+    create.rdata.file(model.nm,
+                      ovwrt.rdata = ovwrt.sens,
+                      load.proj = TRUE,
+                      burnin = burnin,
+                      thin = thin,
+                      low = confidence.vals[1],
+                      high = confidence.vals[2],
+                      verbose = verbose)
+  }
   #
   # ## Retrospective models
   # for(model.nm in retro.dir.names){
