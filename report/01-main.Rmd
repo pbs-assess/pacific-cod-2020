@@ -125,7 +125,16 @@ Posterior samples were drawn every 1,000 iterations from a chain of length 2 mil
 
 ## Area 3CD
 
+Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:summary-fig-base-catch-fit-3cd), \@ref(fig:summary-fig-base-index-fits-3cd) and \@ref(fig:summary-fig-base-mean-weight-3cd), respectively.
 
+Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:summary-fig-base-biomass-3cd) .
+Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:summary-fig-model-average-biomass-comp-3cd).
+Combined average biomass for all seven models is shown in Figure \@ref(fig:summary-fig-model-average-biomass-3cd).
+Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:summary-fig-model-average-biomass-3cd-proj).
+
+Both the reference and the model-averaged results show a very small probability that the stock is below the LRP.
+
+*TODO: probability of being below ref points ... decision tables*
 
 ```{r summary-fig-base-catch-fit-3cd, fig.cap="MPD fit to the catch data for Area 3CD reference model."}
 catch.fit.plot(base.model.3cd, every = 5, last.yr = 2015)
@@ -193,8 +202,14 @@ b.plot(avg.model.3cd,
        lrp = c(1986, 1986),
        usr = c(1956, 2004),
        proj_columns = c("B2020", "B2021"),
-       tac_vector = c(0, 500, 1000, 1500),
+       tac_vector = c(0, 250, 500, 1000),
        year_range = c(2010, 2021),
        ylim = c(0, 50000),
        x.every = 2)
+```
+
+
+```{r summary-fig-base-f-3cd, fig.cap="Fishing mortality for the Reference Model, Area 3CD."}
+f.plot(base.model.3cd,
+       base.model.3cd.name)
 ```
