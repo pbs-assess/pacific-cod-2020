@@ -2,7 +2,7 @@
 
 # Introduction
 
-The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separarat assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)).
+The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separate assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)).
 The assessment models were delay-difference models, fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights.
 Survey indices were available to 2016 for Area 3CD and 2017 for Area 5ABCD. Both stocks were assessed to be in the Cautious Zone [@dfo2009].
 
