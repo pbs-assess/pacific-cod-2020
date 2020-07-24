@@ -35,6 +35,7 @@ data/cache/*
 *.doc*
 *.csv
 *.xls*
+*.tex
 doc/figure
 doc/res-doc.tex
 docMSE/res-docMSE.tex
