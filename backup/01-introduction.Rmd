@@ -1,5 +1,0 @@
-\clearpage
-
-# Introduction
-
-Update to 2018 Pacific Cod assessment [@forrest2020].
