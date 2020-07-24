@@ -118,12 +118,13 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 We begin with a summary set of results for Area 3CD, followed by summary results for Area 5CD. A more complete set of tables and figures is provided in Sections \@ref(sec:tables) and \@ref(sec:figures). 
 However, we do not discuss these in detail.
 
-The joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
-Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
 *TODO: we could possibly provide some summary info on the detailed figs and tables if this document is of interest*
 
 ### Area 3CD
+
+For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
+Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
 Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:summary-fig-base-catch-fit-3cd), \@ref(fig:summary-fig-base-index-fits-3cd) and \@ref(fig:summary-fig-base-mean-weight-3cd), respectively.
 
@@ -132,9 +133,11 @@ Posterior estimated biomass from the seven models used for model-averaging is sh
 Combined average biomass for all seven models is shown in Figure \@ref(fig:summary-fig-model-average-biomass-3cd).
 Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:summary-fig-model-average-biomass-3cd-proj).
 
-The model-averaged decision table for Area 3CD, based on a one year projection over a range of 2020 catch levels, suggests that under a 2020 catch of 500 tonnes (the current TAC), there is a 9% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd)). However, assuming the 2020 catch is of a similar magnitude to the 2018 and 2019 catches (23 and 43 tonnes, respectively), the probability of the 2021 biomass being below the LRP is between 5% and 6% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
+The model-averaged decision table for Area 3CD, based on a one year projection over a range of 2020 catch levels, suggests that under a 2020 catch of 500 tonnes (the 2018/19 TAC), there is a 9% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd)).
+However, assuming the 2020 catch is of a similar magnitude to the 2018 and 2019 catches (23 and 43 tonnes, respectively), the probability of the 2021 biomass being below the LRP is between 5% and 6% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
+The 2021 biomass is projected to be in the Cautious Zone (below the USR) with greater than 99% probability under all 2020 catch scenarios tested, including zero catch.
 
-Median estimated fishing mortality in 2019 was estimated to be 0.01 y^-1^. 
+Median estimated fishing mortality in 2019 was estimated to be 0.01 y^-1^ (Table \@ref(tab:tab-ref-points-table-avg-3cd)). 
 
 ```{r summary-fig-base-catch-fit-3cd, fig.cap="MPD fit to the catch data for Area 3CD reference model."}
 catch.fit.plot(base.model.3cd, every = 5, last.yr = 2015)
@@ -223,9 +226,22 @@ f.plot(base.model.3cd,
                                  "."))
 ```
 
+\clearpage
 
 ### Area 5ABCD
 
+Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:summary-fig-base-catch-fit-5abcd), \@ref(fig:summary-fig-base-index-fits-5abcd) and \@ref(fig:summary-fig-base-mean-weight-5abcd), respectively.
+
+Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:summary-fig-base-biomass-5abcd) .
+Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:summary-fig-model-average-biomass-comp-5abcd).
+Combined average biomass for all seven models is shown in Figure \@ref(fig:summary-fig-model-average-biomass-5abcd).
+Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:summary-fig-model-average-biomass-5abcd-proj).
+
+The model-averaged decision table for Area 5ABCD, based on a one year projection over a range of 2020 catch levels, suggests that under a 2020 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
+Assuming the 2020 catch is of a similar magnitude to the 2018 and 2019 catches (254 and 450 tonnes, respectively), the probability of the 2021 biomass being below the LRP is also less than 1% (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
+However, the 2021 biomass is projected to be in the Cautious Zone (below the USR) with greater than 99% probability under all 2020 catch scenarios tested, including zero catch.
+
+Median estimated fishing mortality in 2019 was estimated to be 0.03 y^-1^ (Table \@ref(tab:tab-ref-points-table-avg-5abcd)). 
 
 ```{r summary-fig-base-catch-fit-5abcd, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 catch.fit.plot(base.model.5abcd, every = 5, last.yr = 2015)
