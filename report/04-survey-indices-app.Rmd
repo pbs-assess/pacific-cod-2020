@@ -8,6 +8,8 @@
 
 ## CANADIAN SURVEYS
 
+All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
+
 ### HECATE STRAIT ASSEMBLAGE SURVEY
 
 A series of multi-species groundfish bottom trawl surveys was conducted in
@@ -33,8 +35,6 @@ this approach had high survey variance [@sinclair2007].
 In 2004 the Hecate
 Strait Assemblage survey was discontinued in favour of the Hecate Strait
 Synoptic survey (described below).
-
-All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
 
 ### HECATE STRAIT SYNOPTIC SURVEY
 

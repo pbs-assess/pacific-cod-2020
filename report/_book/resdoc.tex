@@ -1977,6 +1977,8 @@ The original design of this survey assigned fishing locations by 10 fm depth int
 
 The Hecate Strait Assemblage survey was designed as a systematic fixed-station survey. Despite attempts to apply post-sampling stratification, this approach had high survey variance (Sinclair et al. \protect\hyperlink{ref-sinclair2007}{2007}). In 2004 the Hecate Strait Assemblage survey was discontinued in favour of the Hecate Strait Synoptic survey (described below).
 
+All survey indices were calculated using a swept area analysis, documented in Appendix A of Forrest et al. (\protect\hyperlink{ref-forrest2020}{2020}).
+
 \hypertarget{hecate-strait-synoptic-survey}{%
 \subsection{HECATE STRAIT SYNOPTIC SURVEY}\label{hecate-strait-synoptic-survey}}
 
@@ -2024,39 +2026,6 @@ The West Coast Vancouver Island synoptic bottom trawl survey was first conducted
 \caption{Individual survey tows for the West Coast Vancouver Island (SYN WCVI) synoptic groundfish bottom trawl survey survey. Light gray crosses indicate survey sets that did not catch Pacific Cod. Circles have their area and color proportional to the density of Pacific Cod for that survey set. Eastings and Northings are for UTM zone 9.}\label{fig:survey-maps-syn-wcvi}
 \end{figure}
 \clearpage
-
-\hypertarget{swept-area-analysis}{%
-\subsection{SWEPT AREA ANALYSIS}\label{swept-area-analysis}}
-
-For all Canadian surveys, a swept area estimate of biomass in any year \(y\) was obtained by summing the product of the CPUE and the area surveyed across the surveyed strata \(i\):
-\begin{equation}
-  B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
-  \label{eq:sweptareabiomass}
-\end{equation}
-where \(C_{y_i}\) = mean CPUE density (kg/km\textsuperscript{2}) for Pacific Cod in stratum \(i\), \(A_i\) = area of stratum \(i\) (km\textsuperscript{2}), \(B_{y_i}\) = biomass of Pacific Cod in stratum \(i\) for year \(y\), and \(k\) = number of strata.
-
-CPUE (\(C_{y_i}\)) for Pacific Cod in stratum \(i\) for year \(y\) was calculated as a density in kg/km\textsuperscript{2} by
-\begin{equation}
-  C_{y_i}=\frac{1}{n_{y_i}} \sum\limits_{j=1}^{n_{y_i}} \frac{W_{y_i,j}}{D_{y_i,j}w_{y_i,j}}
-  \label{eq:sweptareacpue}
-\end{equation}
-where \(W_{y_i,j}\) = catch weight (kg) for Pacific Cod in stratum \(i\) for year \(y\) and tow \(j\), \(D_{y_i,j}\) = distance travelled (km) by tow \(j\) in stratum \(i\) for year \(y\), \(w_{y_i,j}\) = net opening (km) by tow \(j\) in stratum \(i\) for year \(y\), and \(n_{y_i}\) = number of tows in stratum \(i\).
-
-The variance of the survey biomass estimate \(V_y\) for Pacific Cod in year \(y\) was calculated in kg\textsuperscript{2} as follows:
-\begin{equation}
-  V_y=\sum_{i=1}^k\frac{\sigma_{y_i}^2A_i^2}{n_{y_i}}=\sum_{i=1}^kV_{y_i}
-  \label{eq:sweptareavariance}
-\end{equation}
-where \(\sigma_{y_i}^2\) is the variance of the CPUE in \(kg^2/km^4\) for year \(y\) in stratum \(i\), \(V_{y_i}\) is the variance of Pacific Cod in stratum \(i\) for year \(y\), and where \(\sigma_{y_i}^2\) was obtained from bootstrapped samples (see below).
-
-The CV for Pacific Cod for each year \(y\) was calculated as follows:
-\begin{equation}
-  (CV)_y=\frac{{V_y}^{1/2}}{B_y}
-  \label{eq:sweptareacv}
-\end{equation}
-where \((CV)_y\) is the CV for year \(y\).
-
-One thousand bootstrap replicates with replacement were constructed from the survey data to estimate bias corrected 95\% confidence intervals for each survey year (Efron \protect\hyperlink{ref-efron1982}{1982}). The resulting values are shown in Table~\ref{tab:surv-canadian-table} and Figure~\ref{fig:surv-canadian}.
 \begin{longtable}[]{@{}lrrrrrrr@{}}
 \caption{\label{tab:surv-canadian-table}Pacific Cod survey data for Canadian trawl surveys. Relative biomass and associated lower and upper confidence intervals (CI) are shown in metric tons (without accounting for survey catchability). Positive sets refers to the number of trawl sets that caught Pacific Cod.}\tabularnewline
 \toprule
@@ -2385,9 +2354,6 @@ DFO. 2019. Assessment of British Columbia Pacific Cod for Areas 3CD and 5ABCD in
 
 \leavevmode\hypertarget{ref-dunn1996}{}%
 Dunn, P.K., and Smyth, G.K. 1996. Randomized quantile residuals. Journal of Computational and Graphical Statistics 5(3): 236--244.
-
-\leavevmode\hypertarget{ref-efron1982}{}%
-Efron, B. 1982. The jackknife, the bootstrap and other resampling plans. SIAM CBMS-NSF Mon. 38: 92.
 
 \leavevmode\hypertarget{ref-fargo1988}{}%
 Fargo, J., Foucher, R.P., Saunders, M.W., Tyler, A.V., and Summers, P.L. 1988. 1988 F/V EASTWARD HO Assemblage survey of Hecate Strait, May 27-June 16, 1987. Can. Data Rep. Fish. Aquat. Sci.: 699:172.
