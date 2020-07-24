@@ -29,29 +29,29 @@ Some of these folders might make themselves but I can't remember which ones.
 
 ### Make the data objects
 
-You can get on the VPN and just knit the whole document, but maybe best to make the data objects first to avoid confounding issues.
+You can get on the VPN and just knit the whole document, but maybe best to make the data objects first to avoid confounding issues and lengthy waiting.
 
-Or to make things first:
+To make the data objects first, get on the VPN then:
 
-1. Run the chunks in 00-load.Rmd. This will get the main data file (in all.R) and make the catch objects (in custom-knitr-variables.R)
+1. Run the chunks in 00-load.Rmd. This will: make the main data file ("data/pcod-cache/pacific-cod.rds", made in in "R/all.R""); and make the catch objects (in "R/custom-knitr-variables.R")
 
-2. ..
+2. Run the chunks in "report/05-cpue-app.Rmd" to run the CPUE analyses and make the data objects. This will take a while the first time.
 
-
+3. Source "data/get-mean-weight.R". Do this after you have run all.R (Step 1) to avoid having to pull the data again.
 
 If problems with any of the queries, ask Robyn for the RDS files. You will need:
 
-**1. Put these files directly into the data folder:**
+1. Put these files directly into the data folder:
 
 * cpue-historic.rds
 
 * cpue-modern.rds
 
-**2. Put this file into the data/pcod-cache folder:**
+2. Put this file into the data/pcod-cache folder:
 
 * pacific-cod.rds
 
-**3. Put these files into the data/generated folder**
+3. Put these files into the data/generated folder
 
 * all_surveys.csv
 

@@ -14,21 +14,27 @@ A series of multi-species groundfish bottom trawl surveys was conducted in
 Hecate Strait in May-June of 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998,
 2000, 2002, and 2003 @westrheim1984, @fargo1984, @fargo1988, @wilson1991,
 @hand1994, @workman1996, @workman1997, @choromanski2002)  (Figure
-\@ref(fig:survey-maps-hs-msa). The results up to 2000 were reported in the 2001
+\@ref(fig:survey-maps-hs-msa).
+The results up to 2000 were reported in the 2001
 assessment [@sinclair2001] and results from 2002 and 2003 were presented in the
 2005 assessment [@sinclair2005].
 
 The original design of this survey assigned fishing locations by 10 fm depth
-intervals within a 10 nm grid of Hecate Strait. The survey was post-stratified
+intervals within a 10 nm grid of Hecate Strait.
+The survey was post-stratified
 for the purpose of calculating an abundance index for Pacific Cod
-[@sinclair2000]. The post stratification used 10 fm depth intervals for the
+[@sinclair2000].
+The post stratification used 10 fm depth intervals for the
 entire survey area, thereby treating each depth interval as a single stratum.
 
 The Hecate Strait Assemblage survey was designed as a systematic
 fixed-station survey. Despite attempts to apply post-sampling stratification,
-this approach had high survey variance [@sinclair2007]. In 2004 the Hecate
+this approach had high survey variance [@sinclair2007].
+In 2004 the Hecate
 Strait Assemblage survey was discontinued in favour of the Hecate Strait
 Synoptic survey (described below).
+
+All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
 
 ### HECATE STRAIT SYNOPTIC SURVEY
 
@@ -89,62 +95,6 @@ plot_multiyear_survey_sets(dat$survey_sets, "SYN WCVI")
 
 \clearpage
 
-### SWEPT AREA ANALYSIS
-
-For all Canadian surveys, a swept area estimate of biomass in any year $y$ was
-obtained by summing the product of the CPUE and the area surveyed across the
-surveyed strata $i$:
-
-\begin{equation}
-  B_y = \sum_{i=1}^kC_{y_i}A_i=\sum_{i=1}^kB_{y_i}
-  (\#eq:sweptareabiomass)
-\end{equation}
-
-where
-$C_{y_i}$ = mean CPUE density (kg/km^2^) for Pacific Cod in stratum $i$,
-$A_i$ = area of stratum $i$ (km^2^),
-$B_{y_i}$ = biomass of Pacific Cod in stratum $i$ for year $y$, and
-$k$ = number of strata.
-
-CPUE ($C_{y_i}$) for Pacific Cod in stratum $i$ for year $y$ was calculated as
-a density in kg/km^2^ by
-
-\begin{equation}
-  C_{y_i}=\frac{1}{n_{y_i}} \sum\limits_{j=1}^{n_{y_i}} \frac{W_{y_i,j}}{D_{y_i,j}w_{y_i,j}}
-  (\#eq:sweptareacpue)
-\end{equation}
-
-where
-$W_{y_i,j}$ = catch weight (kg) for Pacific Cod in stratum $i$ for year $y$ and tow $j$,
-$D_{y_i,j}$ = distance travelled (km) by tow $j$ in stratum $i$ for year $y$,
-$w_{y_i,j}$ = net opening (km) by tow $j$ in stratum $i$ for year $y$, and
-$n_{y_i}$ = number of tows in stratum $i$.
-
-The variance of the survey biomass estimate $V_y$ for Pacific Cod in year $y$
-was calculated in kg^2^ as follows:
-
-\begin{equation}
-  V_y=\sum_{i=1}^k\frac{\sigma_{y_i}^2A_i^2}{n_{y_i}}=\sum_{i=1}^kV_{y_i}
-  (\#eq:sweptareavariance)
-\end{equation}
-
-where $\sigma_{y_i}^2$ is the variance of the CPUE in $kg^2/km^4$ for year $y$ in
-stratum $i$, $V_{y_i}$ is the variance of Pacific Cod in stratum $i$ for year $y$,
-and where $\sigma_{y_i}^2$ was obtained from bootstrapped samples (see below).
-
-The CV for Pacific Cod for each year $y$ was calculated as follows:
-
-\begin{equation}
-  (CV)_y=\frac{{V_y}^{1/2}}{B_y}
-  (\#eq:sweptareacv)
-\end{equation}
-
-where $(CV)_y$ is the CV for year $y$.
-
-One thousand bootstrap replicates with replacement were constructed from the
-survey data to estimate bias corrected 95% confidence intervals for each survey
-year [@efron1982]. The resulting values are shown in Table
-\@ref(tab:surv-canadian-table) and Figure \@ref(fig:surv-canadian).
 
 ```{r surv-canadian-table, results='asis'}
 dplyr::filter(dat$survey_index, survey_abbrev %in%
