@@ -282,7 +282,6 @@ suggested.ref.points()
 ```
 
 -->
-\clearpage
 
 ```{r tab-decision-avg-3cd, results='asis'}
  decision.table(avg.model.3cd,
@@ -330,6 +329,8 @@ suggested.ref.points()
 ```
 
 -->
+
+\clearpage
 
 ```{r tab-decision-avg-5abcd, results='asis'}
  decision.table(avg.model.5abcd,
