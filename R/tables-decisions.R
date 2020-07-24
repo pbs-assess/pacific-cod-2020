@@ -13,20 +13,20 @@ decision.table <- function(model,
                               ncol = 6,
                               nrow = length(tac)))
   if(format == "html"){
-    col.names <- c("2019 Catch (mt)",
-                   "P(B2020 < B2019)",
-                   "P(F2019 > F2018)",
-                   "P(B2020 < LRP)",
-                   "P(B2020 < USR)",
-                   "P(F2019 > LRR)")
+    col.names <- c("2020 Catch (mt)",
+                   "P(B2021 < B2020)",
+                   "P(F2020 > F2019)",
+                   "P(B2021 < LRP)",
+                   "P(B2021 < USR)",
+                   "P(F2020 > LRR)")
 
   }else{
-    col.names <- c("$2019$ Catch (mt)",
-                   "$P(B_{2020} < B_{2019})$",
-                   "$P(F_{2019} > F_{2018})$",
-                   "$P(B_{2020} < \\mathrm{LRP})$",
-                   "$P(B_{2020} < \\mathrm{USR})$",
-                   "$P(F_{2019} > \\mathrm{LRR})$")
+    col.names <- c("$2020$ Catch (mt)",
+                   "$P(B_{2021} < B_{2020})$",
+                   "$P(F_{2020} > F_{2019})$",
+                   "$P(B_{2021} < \\mathrm{LRP})$",
+                   "$P(B_{2021} < \\mathrm{USR})$",
+                   "$P(F_{2020} > \\mathrm{LRR})$")
   }
   tac <- model$proj$tac.vec
   if(!is.na(tac.vec[1])){
@@ -36,11 +36,11 @@ decision.table <- function(model,
     d <- as.data.frame(model$mcmccalcs$proj.dat)
     d <- d[d$TAC == tac[t],]
     dat[t, 1] <- f(tac[t], 0)
-    dat[t, 2] <- f(mean(d$B2020B2019 < 1), 2)
-    dat[t, 3] <- f(mean(d$F2019F2018 > 1), 2)
-    dat[t, 4] <- f(mean(d$B2020Bmin < 1), 2)
-    dat[t, 5] <- f(mean(d$B2020BAvgS < 1), 2)
-    dat[t, 6] <- f(mean(d$F2019FAvgS > 1), 2)
+    dat[t, 2] <- f(mean(d$B2021B2020 < 1), 2)
+    dat[t, 3] <- f(mean(d$F2020F2019 > 1), 2)
+    dat[t, 4] <- f(mean(d$B2021Bmin < 1), 2)
+    dat[t, 5] <- f(mean(d$B2021BAvgS < 1), 2)
+    dat[t, 6] <- f(mean(d$F2020FAvgS > 1), 2)
   }
 
   if(make.lt.gt){
@@ -72,8 +72,8 @@ suggested.ref.points <- function(){
     referencepoint = c("$B_{\t{Min}}$",
                        "$B_{\t{Avg}}$",
                        "$F_{\t{Avg}}$",
-                       "$B_{\t{2018}}$",
-                       "$F_{\t{2017}}$"),
+                       "$B_{\t{2019}}$",
+                       "$F_{\t{2018}}$"),
     Definition = c(
       latex.mlc(c("Lowest estimated biomass agreed to be an",
                   "undesirable state to avoid ($B_{\t{2000}}$",

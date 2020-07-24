@@ -326,7 +326,7 @@ b.plot(avg.model.3cd,
        lrp = c(1986, 1986),
        usr = c(1956, 2004),
        proj_columns = c("B2020", "B2021"),
-       tac_vector = c(0, 250, 500, 1000),
+       tac_vector = c(0, 500, 1000, 1500),
        year_range = c(2010, 2021),
        ylim = c(0, 50000),
        x.every = 2)

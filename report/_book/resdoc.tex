@@ -237,6 +237,14 @@ The joint posterior distribution for each model was numerically approximated usi
 
 \hypertarget{area-3cd}{%
 \subsection{Area 3CD}\label{area-3cd}}
+
+Model fits to the catch, indices and mean weight data are shown in Figures~\ref{fig:summary-fig-base-catch-fit-3cd},~\ref{fig:summary-fig-base-index-fits-3cd} and~\ref{fig:summary-fig-base-mean-weight-3cd}, respectively.
+
+Posterior estimated biomass from the reference case model is shown in Figure~\ref{fig:summary-fig-base-biomass-3cd} . Posterior estimated biomass from the seven models used for model-averaging is shown in Figure~\ref{fig:summary-fig-model-average-biomass-comp-3cd}. Combined average biomass for all seven models is shown in Figure~\ref{fig:summary-fig-model-average-biomass-3cd}. Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure~\ref{fig:summary-fig-model-average-biomass-3cd-proj}.
+
+Both the reference and the model-averaged results show a very small probability that the stock is below the LRP.
+
+\emph{TODO: probability of being below ref points \ldots{} decision tables}
 \begin{figure}[htb]
 
 {\centering \pdftooltip{\includegraphics[width=6in]{knitr-figs/summary-fig-base-catch-fit-3cd-1}}{Figure \ref{fig:summary-fig-base-catch-fit-3cd}} 
@@ -294,6 +302,14 @@ The joint posterior distribution for each model was numerically approximated usi
 }
 
 \caption{Combined posterior estimates of biomass for the model-averaged set for Area 3CD with projections (to the end of 2019).  The upper horizontal green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The lower horizontal red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 2000. The coloured regions to the right of the vertical line represent projections based on various TACs. The line represents the posterior median and the shaded region represents the 95\% credible interval.For clarity, years before 2010 are removed.}\label{fig:summary-fig-model-average-biomass-3cd-proj}
+\end{figure}
+\begin{figure}[htb]
+
+{\centering \pdftooltip{\includegraphics[width=6in]{knitr-figs/summary-fig-base-f-3cd-1}}{Figure \ref{fig:summary-fig-base-f-3cd}} 
+
+}
+
+\caption{Fishing mortality for the Reference Model, Area 3CD.}\label{fig:summary-fig-base-f-3cd}
 \end{figure}
 \clearpage
 
@@ -556,8 +572,8 @@ The joint posterior distribution for each model was numerically approximated usi
 \(B_{ {Min}}\) & \mlc{Lowest estimated biomass agreed to be an \\ undesirable state to avoid ($B_{	{2000}}$ \\ in  5ABCD; $B_{	{1986}}$ in 3CD)} & LRP\tabularnewline
 \(B_{ {Avg}}\) & Average biomass for the period 1956-2004 & USR\tabularnewline
 \(F_{ {Avg}}\) & Average fishing mortality for the period 1956-2004 & LRR\tabularnewline
-\(B_{ {2018}}\) & Biomass in 2018 & Benchmark\tabularnewline
-\(F_{ {2017}}\) & Fishing mortality in 2017 & Benchmark\tabularnewline
+\(B_{ {2019}}\) & Biomass in 2018 & Benchmark\tabularnewline
+\(F_{ {2018}}\) & Fishing mortality in 2017 & Benchmark\tabularnewline
 \bottomrule
 \end{longtable}
 \clearpage
@@ -1305,15 +1321,6 @@ USR (1956--2004) & 19,213 & 29,360 & 45,553\tabularnewline
 2019 & 0.00 & 0.00 & 0.01 & 0.00\tabularnewline
 \bottomrule
 \end{longtable}
-\clearpage
-
-\hypertarget{selected-sensitivity-results}{%
-\subsection{SELECTED SENSITIVITY RESULTS}\label{selected-sensitivity-results}}
-
-\emph{Copy Sensitivity chunks from 2018 Rmd file if needed}
-
-\clearpage
-
 \hypertarget{sec:reference-points-and-decision-tables}{%
 \subsection{MODEL-AVERAGED REFERENCE POINTS AND DECISION TABLES}\label{sec:reference-points-and-decision-tables}}
 \begin{longtable}[]{@{}lrrr@{}}
@@ -1336,157 +1343,6 @@ LRP (2000) & 5,610 & 9,722 & 20,373\tabularnewline
 USR (1956--2004) & 19,911 & 33,091 & 59,525\tabularnewline
 \bottomrule
 \end{longtable}
-\begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:tab-post-biomass-avg-5abcd}Posterior (2.5\textsuperscript{th} percentile, Median, and 97.5\textsuperscript{th} percentile) and MPD estimates of biomass (t) for model-averaged Area 5ABCD.}\tabularnewline
-\toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
-\midrule
-\endhead
-1956 & 37,318 & 49,992 & 67,244 & 45,009\tabularnewline
-1957 & 38,943 & 49,491 & 63,508 & 45,193\tabularnewline
-1958 & 33,978 & 44,017 & 56,684 & 40,285\tabularnewline
-1959 & 26,661 & 35,913 & 47,597 & 32,630\tabularnewline
-1960 & 21,592 & 29,979 & 40,666 & 27,232\tabularnewline
-1961 & 18,062 & 25,906 & 35,915 & 23,538\tabularnewline
-1962 & 16,331 & 23,919 & 34,095 & 21,684\tabularnewline
-1963 & 42,268 & 55,923 & 73,641 & 53,781\tabularnewline
-1964 & 59,821 & 76,034 & 97,921 & 72,665\tabularnewline
-1965 & 61,624 & 75,932 & 97,205 & 71,860\tabularnewline
-1966 & 51,985 & 64,063 & 83,264 & 60,288\tabularnewline
-1967 & 38,811 & 49,299 & 66,056 & 45,918\tabularnewline
-1968 & 29,152 & 37,912 & 51,848 & 34,889\tabularnewline
-1969 & 21,931 & 29,747 & 41,060 & 27,066\tabularnewline
-1970 & 17,829 & 24,507 & 33,931 & 22,325\tabularnewline
-1971 & 16,209 & 22,591 & 31,467 & 20,740\tabularnewline
-1972 & 39,662 & 51,342 & 66,343 & 48,243\tabularnewline
-1973 & 49,609 & 65,071 & 84,595 & 60,610\tabularnewline
-1974 & 51,127 & 66,747 & 85,519 & 61,997\tabularnewline
-1975 & 45,906 & 60,965 & 78,328 & 56,528\tabularnewline
-1976 & 38,993 & 52,765 & 68,393 & 48,526\tabularnewline
-1977 & 35,324 & 48,583 & 62,174 & 44,234\tabularnewline
-1978 & 33,998 & 45,615 & 58,462 & 41,605\tabularnewline
-1979 & 33,963 & 43,531 & 54,672 & 40,588\tabularnewline
-1980 & 27,925 & 36,716 & 47,620 & 33,960\tabularnewline
-1981 & 24,308 & 32,370 & 42,602 & 29,847\tabularnewline
-1982 & 22,588 & 30,101 & 40,263 & 28,134\tabularnewline
-1983 & 20,608 & 27,738 & 37,319 & 26,000\tabularnewline
-1984 & 19,224 & 26,052 & 35,299 & 24,696\tabularnewline
-1985 & 17,780 & 24,802 & 34,330 & 24,295\tabularnewline
-1986 & 27,375 & 42,558 & 55,584 & 31,824\tabularnewline
-1987 & 43,266 & 53,996 & 68,102 & 48,444\tabularnewline
-1988 & 36,112 & 45,795 & 58,977 & 43,162\tabularnewline
-1989 & 29,669 & 38,920 & 51,154 & 37,116\tabularnewline
-1990 & 29,180 & 38,778 & 50,328 & 36,421\tabularnewline
-1991 & 33,654 & 41,056 & 50,590 & 39,073\tabularnewline
-1992 & 26,890 & 33,053 & 41,410 & 31,254\tabularnewline
-1993 & 19,857 & 25,204 & 32,836 & 23,657\tabularnewline
-1994 & 14,605 & 19,166 & 25,638 & 17,794\tabularnewline
-1995 & 12,727 & 16,798 & 22,306 & 15,587\tabularnewline
-1996 & 12,080 & 15,886 & 20,608 & 14,897\tabularnewline
-1997 & 11,120 & 14,619 & 19,032 & 13,888\tabularnewline
-1998 & 9,759 & 13,134 & 17,355 & 12,550\tabularnewline
-1999 & 8,771 & 11,845 & 16,040 & 11,380\tabularnewline
-2000 & 7,908 & 10,899 & 14,828 & 10,507\tabularnewline
-2001 & 8,974 & 12,459 & 17,298 & 11,759\tabularnewline
-2002 & 11,555 & 15,842 & 21,198 & 15,127\tabularnewline
-2003 & 13,489 & 17,911 & 23,761 & 17,298\tabularnewline
-2004 & 13,481 & 17,996 & 23,586 & 17,540\tabularnewline
-2005 & 12,428 & 16,745 & 22,002 & 16,433\tabularnewline
-2006 & 10,954 & 14,804 & 19,608 & 14,576\tabularnewline
-2007 & 9,470 & 13,092 & 17,418 & 12,846\tabularnewline
-2008 & 9,229 & 12,821 & 17,514 & 12,749\tabularnewline
-2009 & 12,040 & 16,339 & 21,729 & 15,986\tabularnewline
-2010 & 14,196 & 19,345 & 26,328 & 18,956\tabularnewline
-2011 & 14,671 & 19,804 & 26,746 & 19,349\tabularnewline
-2012 & 14,150 & 19,354 & 25,560 & 18,769\tabularnewline
-2013 & 13,847 & 18,562 & 24,686 & 18,005\tabularnewline
-2014 & 13,090 & 17,565 & 23,362 & 17,097\tabularnewline
-2015 & 12,093 & 16,391 & 22,070 & 15,937\tabularnewline
-2016 & 11,020 & 15,025 & 20,875 & 14,730\tabularnewline
-2017 & 10,708 & 14,402 & 19,945 & 14,199\tabularnewline
-2018 & 11,782 & 16,080 & 22,127 & 15,895\tabularnewline
-2019 & 13,213 & 18,091 & 24,798 & 17,983\tabularnewline
-2020 & 14,255 & 19,458 & 26,688 & 19,750\tabularnewline
-\bottomrule
-\end{longtable}
-\begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:tab-post-recr-avg-5abcd}Posterior (2.5\textsuperscript{th} percentile, Median, and 97.5\textsuperscript{th} percentile) and MPD estimates of recruitment (thousands) model-averaged Area 5ABCD.}\tabularnewline
-\toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
-\midrule
-\endhead
-1958 & 795 & 2,816 & 8,789 & 2,951\tabularnewline
-1959 & 535 & 2,413 & 7,179 & 2,871\tabularnewline
-1960 & 840 & 2,489 & 6,384 & 2,514\tabularnewline
-1961 & 662 & 2,362 & 6,877 & 2,417\tabularnewline
-1962 & 668 & 2,732 & 8,487 & 2,847\tabularnewline
-1963 & 38,990 & 58,000 & 81,866 & 57,968\tabularnewline
-1964 & 964 & 5,491 & 23,021 & 4,515\tabularnewline
-1965 & 653 & 3,231 & 12,663 & 3,998\tabularnewline
-1966 & 724 & 2,643 & 8,005 & 3,143\tabularnewline
-1967 & 540 & 2,129 & 6,017 & 2,383\tabularnewline
-1968 & 558 & 1,742 & 4,440 & 1,810\tabularnewline
-1969 & 512 & 1,793 & 4,502 & 1,976\tabularnewline
-1970 & 680 & 2,200 & 5,969 & 2,457\tabularnewline
-1971 & 868 & 3,050 & 8,005 & 3,120\tabularnewline
-1972 & 36,248 & 52,206 & 71,705 & 50,142\tabularnewline
-1973 & 751 & 3,361 & 20,027 & 3,662\tabularnewline
-1974 & 811 & 4,322 & 18,266 & 5,738\tabularnewline
-1975 & 862 & 5,116 & 16,349 & 5,644\tabularnewline
-1976 & 795 & 4,079 & 13,679 & 4,840\tabularnewline
-1977 & 1,484 & 8,316 & 22,715 & 8,773\tabularnewline
-1978 & 645 & 4,858 & 17,643 & 6,015\tabularnewline
-1979 & 992 & 6,504 & 18,767 & 7,839\tabularnewline
-1980 & 982 & 3,803 & 12,076 & 4,026\tabularnewline
-1981 & 705 & 4,776 & 13,265 & 5,055\tabularnewline
-1982 & 697 & 3,902 & 10,063 & 4,468\tabularnewline
-1983 & 700 & 2,923 & 7,504 & 3,051\tabularnewline
-1984 & 894 & 3,517 & 9,460 & 3,994\tabularnewline
-1985 & 749 & 2,949 & 9,546 & 4,191\tabularnewline
-1986 & 6,881 & 34,192 & 47,169 & 15,145\tabularnewline
-1987 & 3,437 & 7,730 & 38,842 & 28,650\tabularnewline
-1988 & 789 & 3,096 & 10,164 & 2,717\tabularnewline
-1989 & 807 & 3,336 & 10,084 & 3,156\tabularnewline
-1990 & 2,362 & 8,999 & 20,465 & 8,116\tabularnewline
-1991 & 2,781 & 11,240 & 20,544 & 12,090\tabularnewline
-1992 & 774 & 2,709 & 6,973 & 2,649\tabularnewline
-1993 & 435 & 1,462 & 3,543 & 1,559\tabularnewline
-1994 & 399 & 1,332 & 2,943 & 1,377\tabularnewline
-1995 & 480 & 1,563 & 3,454 & 1,677\tabularnewline
-1996 & 1,053 & 2,783 & 5,825 & 2,929\tabularnewline
-1997 & 441 & 1,425 & 3,283 & 1,476\tabularnewline
-1998 & 478 & 1,307 & 2,967 & 1,302\tabularnewline
-1999 & 387 & 1,085 & 2,418 & 1,112\tabularnewline
-2000 & 354 & 1,031 & 2,503 & 1,108\tabularnewline
-2001 & 1,392 & 4,747 & 9,235 & 4,161\tabularnewline
-2002 & 1,308 & 4,564 & 10,003 & 5,091\tabularnewline
-2003 & 448 & 2,155 & 5,352 & 2,245\tabularnewline
-2004 & 408 & 1,316 & 3,514 & 1,452\tabularnewline
-2005 & 316 & 892 & 2,321 & 971\tabularnewline
-2006 & 242 & 754 & 1,772 & 839\tabularnewline
-2007 & 303 & 919 & 2,248 & 965\tabularnewline
-2008 & 444 & 2,291 & 6,472 & 2,514\tabularnewline
-2009 & 1,605 & 7,012 & 13,700 & 6,591\tabularnewline
-2010 & 532 & 3,400 & 8,974 & 3,857\tabularnewline
-2011 & 562 & 1,944 & 5,555 & 2,070\tabularnewline
-2012 & 463 & 1,706 & 4,068 & 1,692\tabularnewline
-2013 & 511 & 1,683 & 3,889 & 1,731\tabularnewline
-2014 & 535 & 1,727 & 3,832 & 1,795\tabularnewline
-2015 & 466 & 1,434 & 3,346 & 1,525\tabularnewline
-2016 & 502 & 1,397 & 3,165 & 1,516\tabularnewline
-2017 & 550 & 1,689 & 4,137 & 1,759\tabularnewline
-2018 & 1,845 & 4,706 & 8,619 & 4,736\tabularnewline
-2019 & 684 & 2,781 & 7,287 & 3,140\tabularnewline
-\bottomrule
-\end{longtable}
 \begin{longtable}[]{@{}lrrr@{}}
 \caption{\label{tab:tab-ref-points-table-avg-3cd}Posterior (2.5\textsuperscript{th} percentile, Median, and 97.5\textsuperscript{th} percentile) of reference points for model-averaged Area 3CD. Biomass is in tonnes.}\tabularnewline
 \toprule
@@ -1505,158 +1361,77 @@ USR (1956--2004) & 19,911 & 33,091 & 59,525\tabularnewline
 \emph{F}\subscr{2019} & 0.00 & 0.01 & 0.01\tabularnewline
 LRP (1986) & 3,331 & 8,477 & 26,908\tabularnewline
 USR (1956--2004) & 11,558 & 27,530 & 79,594\tabularnewline
-\vspace{10pt} & & &\tabularnewline
 \bottomrule
 \end{longtable}
-\begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:tab-post-biomass-avg-3cd}Posterior (2.5\textsuperscript{th} percentile, Median, and 97.5\textsuperscript{th} percentile) and MPD estimates of biomass (t) for model-averaged Area 3CD.}\tabularnewline
+\begin{longtable}[]{@{}llllll@{}}
+\caption{\label{tab:tab-decision-avg-5abcd}Decision table with model averaging for Area 5ABCD. Models averaged are: 1a) Reference model 5ABCD, 2d) HSSS ln(q) prior mean = ln(1.0 * 0.35), QCSSS = ln(1.0 * 0.65), 2e) HSSS and QCSS ln(q) prior SD = 0.6, 3a) M prior mean = 0.4, SD = 0.1, 5a) kage = 3y and update FW parameters, 6b) Fix sigma O = 0.15 and 7b) Fix sigma W = 0.15.}\tabularnewline
 \toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
+\(2020\) Catch (mt) & \(P(B_{2021} < B_{2020})\) & \(P(F_{2020} > F_{2019})\) & \(P(B_{2021} < \mathrm{LRP})\) & \(P(B_{2021} < \mathrm{USR})\) & \(P(F_{2020} > \mathrm{LRR})\)\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
+\(2020\) Catch (mt) & \(P(B_{2021} < B_{2020})\) & \(P(F_{2020} > F_{2019})\) & \(P(B_{2021} < \mathrm{LRP})\) & \(P(B_{2021} < \mathrm{USR})\) & \(P(F_{2020} > \mathrm{LRR})\)\tabularnewline
 \midrule
 \endhead
-1956 & 24,808 & 38,920 & 62,029 & 36,889\tabularnewline
-1957 & 21,563 & 32,190 & 50,837 & 30,690\tabularnewline
-1958 & 17,442 & 26,239 & 41,234 & 24,975\tabularnewline
-1959 & 14,272 & 21,812 & 34,349 & 20,604\tabularnewline
-1960 & 11,379 & 17,722 & 28,561 & 16,736\tabularnewline
-1961 & 9,590 & 15,247 & 24,900 & 14,091\tabularnewline
-1962 & 8,723 & 14,363 & 24,523 & 12,998\tabularnewline
-1963 & 19,575 & 32,975 & 52,990 & 36,174\tabularnewline
-1964 & 25,952 & 41,303 & 64,649 & 42,455\tabularnewline
-1965 & 29,279 & 43,314 & 63,802 & 42,343\tabularnewline
-1966 & 28,025 & 41,154 & 61,367 & 39,421\tabularnewline
-1967 & 22,408 & 33,757 & 52,787 & 32,155\tabularnewline
-1968 & 17,994 & 27,970 & 44,199 & 26,354\tabularnewline
-1969 & 15,374 & 24,594 & 39,358 & 22,960\tabularnewline
-1970 & 16,024 & 31,279 & 62,040 & 23,634\tabularnewline
-1971 & 37,675 & 61,417 & 98,769 & 68,877\tabularnewline
-1972 & 44,851 & 69,712 & 112,295 & 74,095\tabularnewline
-1973 & 38,926 & 62,936 & 102,537 & 63,902\tabularnewline
-1974 & 38,020 & 58,936 & 94,972 & 59,897\tabularnewline
-1975 & 40,160 & 59,749 & 89,826 & 54,579\tabularnewline
-1976 & 35,529 & 54,035 & 81,144 & 51,509\tabularnewline
-1977 & 31,283 & 47,771 & 70,048 & 45,825\tabularnewline
-1978 & 27,197 & 41,121 & 60,724 & 39,123\tabularnewline
-1979 & 22,760 & 34,265 & 50,697 & 32,320\tabularnewline
-1980 & 18,062 & 27,272 & 40,586 & 25,644\tabularnewline
-1981 & 14,469 & 22,016 & 32,178 & 20,660\tabularnewline
-1982 & 11,526 & 17,349 & 25,675 & 16,214\tabularnewline
-1983 & 9,722 & 14,726 & 22,078 & 13,809\tabularnewline
-1984 & 8,090 & 12,463 & 18,963 & 11,620\tabularnewline
-1985 & 7,155 & 10,706 & 16,511 & 10,132\tabularnewline
-1986 & 6,110 & 9,461 & 15,037 & 8,944\tabularnewline
-1987 & 21,513 & 34,765 & 54,668 & 33,563\tabularnewline
-1988 & 32,168 & 45,207 & 67,215 & 44,334\tabularnewline
-1989 & 29,964 & 43,044 & 63,127 & 41,774\tabularnewline
-1990 & 26,417 & 37,276 & 55,178 & 36,108\tabularnewline
-1991 & 22,789 & 32,114 & 47,373 & 30,979\tabularnewline
-1992 & 19,112 & 27,276 & 39,738 & 26,548\tabularnewline
-1993 & 15,107 & 21,984 & 32,740 & 21,542\tabularnewline
-1994 & 11,239 & 16,984 & 25,894 & 16,653\tabularnewline
-1995 & 9,150 & 13,906 & 21,323 & 13,501\tabularnewline
-1996 & 8,515 & 12,563 & 19,279 & 12,345\tabularnewline
-1997 & 7,633 & 11,013 & 17,075 & 10,982\tabularnewline
-1998 & 6,739 & 9,758 & 15,047 & 9,746\tabularnewline
-1999 & 6,779 & 9,906 & 15,175 & 9,804\tabularnewline
-2000 & 7,008 & 10,408 & 16,471 & 10,561\tabularnewline
-2001 & 9,899 & 15,387 & 24,135 & 14,344\tabularnewline
-2002 & 10,959 & 16,971 & 26,644 & 17,092\tabularnewline
-2003 & 11,770 & 17,597 & 26,945 & 17,901\tabularnewline
-2004 & 10,723 & 15,686 & 24,387 & 15,948\tabularnewline
-2005 & 8,811 & 13,035 & 20,693 & 13,194\tabularnewline
-2006 & 7,220 & 10,624 & 16,555 & 10,660\tabularnewline
-2007 & 6,199 & 9,060 & 14,235 & 9,058\tabularnewline
-2008 & 5,782 & 8,651 & 13,620 & 8,713\tabularnewline
-2009 & 12,990 & 20,509 & 32,073 & 19,592\tabularnewline
-2010 & 17,387 & 25,750 & 39,878 & 25,510\tabularnewline
-2011 & 16,946 & 25,017 & 38,464 & 25,079\tabularnewline
-2012 & 15,253 & 22,448 & 34,819 & 22,334\tabularnewline
-2013 & 16,982 & 26,046 & 41,397 & 26,311\tabularnewline
-2014 & 18,717 & 27,935 & 43,153 & 28,122\tabularnewline
-2015 & 17,121 & 25,517 & 39,254 & 25,626\tabularnewline
-2016 & 14,337 & 21,286 & 32,831 & 21,324\tabularnewline
-2017 & 11,518 & 17,063 & 26,276 & 16,902\tabularnewline
-2018 & 9,206 & 13,575 & 20,680 & 13,339\tabularnewline
-2019 & 8,713 & 12,737 & 19,370 & 12,672\tabularnewline
-2020 & 8,923 & 12,860 & 19,474 & 13,203\tabularnewline
+0 & 0.14 & \textless0.01 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+100 & 0.16 & \textless0.01 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+200 & 0.18 & \textless0.01 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+300 & 0.21 & \textless0.01 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+400 & 0.25 & \textless0.01 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+500 & 0.29 & 0.61 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+600 & 0.33 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+700 & 0.38 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+800 & 0.43 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+900 & 0.48 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+1,000 & 0.53 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+1,100 & 0.57 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+1,200 & 0.61 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+1,300 & 0.64 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+1,400 & 0.67 & \textgreater0.99 & \textless0.01 & 0.99 & \textless0.01\tabularnewline
+1,500 & 0.71 & \textgreater0.99 & \textless0.01 & 0.99 & 0.01\tabularnewline
+1,600 & 0.73 & \textgreater0.99 & \textless0.01 & 0.99 & 0.03\tabularnewline
+1,700 & 0.75 & \textgreater0.99 & \textless0.01 & 0.99 & 0.06\tabularnewline
+1,800 & 0.77 & \textgreater0.99 & \textless0.01 & 0.99 & 0.10\tabularnewline
+1,900 & 0.79 & \textgreater0.99 & \textless0.01 & 0.99 & 0.14\tabularnewline
+2,000 & 0.80 & \textgreater0.99 & \textless0.01 & 0.99 & 0.21\tabularnewline
+2,100 & 0.82 & \textgreater0.99 & \textless0.01 & 0.99 & 0.28\tabularnewline
+2,200 & 0.83 & \textgreater0.99 & \textless0.01 & 0.99 & 0.36\tabularnewline
+2,300 & 0.84 & \textgreater0.99 & \textless0.01 & 0.99 & 0.46\tabularnewline
+2,400 & 0.85 & \textgreater0.99 & \textless0.01 & 0.99 & 0.55\tabularnewline
+2,500 & 0.86 & \textgreater0.99 & \textless0.01 & 0.99 & 0.63\tabularnewline
+2,600 & 0.87 & \textgreater0.99 & \textless0.01 & 0.99 & 0.71\tabularnewline
+2,700 & 0.87 & \textgreater0.99 & \textless0.01 & 0.99 & 0.77\tabularnewline
+2,800 & 0.88 & \textgreater0.99 & \textless0.01 & 0.99 & 0.82\tabularnewline
+2,900 & 0.89 & \textgreater0.99 & \textless0.01 & 0.99 & 0.87\tabularnewline
+3,000 & 0.89 & \textgreater0.99 & \textless0.01 & 0.99 & 0.90\tabularnewline
 \bottomrule
 \end{longtable}
-\begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:tab-post-recr-avg-3cd}Posterior (2.5\textsuperscript{th} percentile, Median, and 97.5\textsuperscript{th} percentile) and MPD estimates of recruitment (thousands) model-averaged Area 3CD.}\tabularnewline
+\begin{longtable}[]{@{}llllll@{}}
+\caption{\label{tab:tab-decision-avg-3cd}Decision table with model averaging for Area 3CD. Models averaged are: 1a) Reference model 3CD, 2d) WCVISS ln(q) prior mean = ln(1.0), 2e) WCVISS ln(q) prior SD = 0.6, 3a) M prior mean = 0.4, SD = 0.1, 5a) kage = 3y and update FW parameters, 6b) Fix sigma O = 0.15 and 7b) Fix sigma W = 0.15.}\tabularnewline
 \toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
+\(2020\) Catch (mt) & \(P(B_{2021} < B_{2020})\) & \(P(F_{2020} > F_{2019})\) & \(P(B_{2021} < \mathrm{LRP})\) & \(P(B_{2021} < \mathrm{USR})\) & \(P(F_{2020} > \mathrm{LRR})\)\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\textbf{Year} & \textbf{2.5\%} & \textbf{50\%} & \textbf{97.5\%} & \textbf{MPD}\tabularnewline
+\(2020\) Catch (mt) & \(P(B_{2021} < B_{2020})\) & \(P(F_{2020} > F_{2019})\) & \(P(B_{2021} < \mathrm{LRP})\) & \(P(B_{2021} < \mathrm{USR})\) & \(P(F_{2020} > \mathrm{LRR})\)\tabularnewline
 \midrule
 \endhead
-1958 & 893 & 3,088 & 8,562 & 2,961\tabularnewline
-1959 & 502 & 1,958 & 5,774 & 2,139\tabularnewline
-1960 & 526 & 1,855 & 5,197 & 1,960\tabularnewline
-1961 & 574 & 2,152 & 6,080 & 2,068\tabularnewline
-1962 & 961 & 3,083 & 9,910 & 3,077\tabularnewline
-1963 & 13,038 & 29,280 & 55,046 & 35,883\tabularnewline
-1964 & 823 & 6,680 & 31,399 & 4,717\tabularnewline
-1965 & 1,784 & 6,978 & 29,428 & 8,144\tabularnewline
-1966 & 1,628 & 6,470 & 20,938 & 7,547\tabularnewline
-1967 & 569 & 2,446 & 7,521 & 2,863\tabularnewline
-1968 & 693 & 2,651 & 8,347 & 2,913\tabularnewline
-1969 & 966 & 3,733 & 12,020 & 4,124\tabularnewline
-1970 & 2,097 & 13,585 & 55,664 & 8,010\tabularnewline
-1971 & 13,564 & 39,893 & 99,295 & 68,335\tabularnewline
-1972 & 851 & 7,858 & 58,518 & 4,462\tabularnewline
-1973 & 810 & 4,940 & 23,394 & 5,005\tabularnewline
-1974 & 1,353 & 8,338 & 34,997 & 14,017\tabularnewline
-1975 & 2,242 & 17,738 & 45,391 & 10,684\tabularnewline
-1976 & 591 & 3,717 & 31,777 & 13,353\tabularnewline
-1977 & 1,101 & 6,718 & 24,338 & 7,253\tabularnewline
-1978 & 781 & 4,411 & 16,752 & 5,087\tabularnewline
-1979 & 562 & 3,067 & 10,013 & 3,528\tabularnewline
-1980 & 473 & 2,304 & 7,323 & 2,753\tabularnewline
-1981 & 555 & 2,149 & 5,586 & 2,386\tabularnewline
-1982 & 609 & 1,807 & 4,366 & 1,897\tabularnewline
-1983 & 674 & 1,957 & 4,916 & 2,200\tabularnewline
-1984 & 457 & 1,875 & 4,509 & 1,898\tabularnewline
-1985 & 439 & 1,443 & 3,665 & 1,620\tabularnewline
-1986 & 505 & 1,467 & 3,795 & 1,517\tabularnewline
-1987 & 20,985 & 37,821 & 60,918 & 36,592\tabularnewline
-1988 & 1,491 & 7,127 & 26,171 & 10,289\tabularnewline
-1989 & 907 & 3,947 & 13,224 & 4,474\tabularnewline
-1990 & 757 & 2,982 & 8,385 & 3,269\tabularnewline
-1991 & 1,359 & 4,846 & 11,518 & 5,104\tabularnewline
-1992 & 1,295 & 5,036 & 11,338 & 5,740\tabularnewline
-1993 & 550 & 1,892 & 5,181 & 2,133\tabularnewline
-1994 & 382 & 1,671 & 4,167 & 1,849\tabularnewline
-1995 & 505 & 1,408 & 3,521 & 1,430\tabularnewline
-1996 & 773 & 2,380 & 5,200 & 2,667\tabularnewline
-1997 & 356 & 1,127 & 3,133 & 1,293\tabularnewline
-1998 & 449 & 1,307 & 2,913 & 1,397\tabularnewline
-1999 & 1,069 & 2,763 & 5,624 & 2,724\tabularnewline
-2000 & 577 & 2,467 & 6,613 & 3,071\tabularnewline
-2001 & 3,352 & 8,665 & 16,477 & 7,104\tabularnewline
-2002 & 402 & 2,501 & 9,465 & 5,113\tabularnewline
-2003 & 869 & 3,393 & 8,432 & 3,283\tabularnewline
-2004 & 402 & 1,201 & 3,044 & 1,252\tabularnewline
-2005 & 251 & 826 & 2,133 & 896\tabularnewline
-2006 & 250 & 779 & 1,904 & 823\tabularnewline
-2007 & 388 & 1,269 & 2,991 & 1,346\tabularnewline
-2008 & 676 & 1,949 & 4,556 & 2,207\tabularnewline
-2009 & 10,060 & 18,309 & 29,985 & 16,992\tabularnewline
-2010 & 772 & 4,640 & 14,101 & 6,733\tabularnewline
-2011 & 528 & 2,152 & 6,296 & 2,369\tabularnewline
-2012 & 598 & 2,087 & 5,897 & 2,148\tabularnewline
-2013 & 4,110 & 11,195 & 21,596 & 11,818\tabularnewline
-2014 & 874 & 5,539 & 12,923 & 5,918\tabularnewline
-2015 & 486 & 1,771 & 4,919 & 1,905\tabularnewline
-2016 & 316 & 1,021 & 2,867 & 1,147\tabularnewline
-2017 & 249 & 758 & 1,794 & 789\tabularnewline
-2018 & 283 & 876 & 2,107 & 936\tabularnewline
-2019 & 1,276 & 3,336 & 7,158 & 3,619\tabularnewline
+0 & 0.52 & \textless0.01 & 0.05 & 0.99 & \textless0.01\tabularnewline
+100 & 0.55 & \textgreater0.99 & 0.06 & 0.99 & \textless0.01\tabularnewline
+200 & 0.58 & \textgreater0.99 & 0.06 & 0.99 & \textless0.01\tabularnewline
+300 & 0.61 & \textgreater0.99 & 0.07 & 0.99 & \textless0.01\tabularnewline
+400 & 0.64 & \textgreater0.99 & 0.08 & 0.99 & 0.01\tabularnewline
+500 & 0.67 & \textgreater0.99 & 0.09 & 0.99 & 0.13\tabularnewline
+600 & 0.69 & \textgreater0.99 & 0.10 & 0.99 & 0.40\tabularnewline
+700 & 0.71 & \textgreater0.99 & 0.11 & 0.99 & 0.68\tabularnewline
+800 & 0.72 & \textgreater0.99 & 0.12 & 0.99 & 0.89\tabularnewline
+900 & 0.74 & \textgreater0.99 & 0.13 & 0.99 & 0.97\tabularnewline
+1,000 & 0.76 & \textgreater0.99 & 0.14 & 0.99 & 0.99\tabularnewline
+1,100 & 0.77 & \textgreater0.99 & 0.16 & 0.99 & \textgreater0.99\tabularnewline
+1,200 & 0.78 & \textgreater0.99 & 0.17 & 0.99 & \textgreater0.99\tabularnewline
+1,300 & 0.79 & \textgreater0.99 & 0.18 & 0.99 & \textgreater0.99\tabularnewline
+1,400 & 0.80 & \textgreater0.99 & 0.19 & 0.99 & \textgreater0.99\tabularnewline
+1,500 & 0.81 & \textgreater0.99 & 0.21 & 0.99 & \textgreater0.99\tabularnewline
 \bottomrule
 \end{longtable}
 \clearpage
