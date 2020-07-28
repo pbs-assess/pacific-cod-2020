@@ -47,7 +47,7 @@ make.parameters.table <- function(model,
       return(c(1,
         get.bounds(ind),
         paste0("Normal($ln(",
-          vec[4],
+          round(exp(vec[3]),3),
           "), ",
           vec[4],
           "$)")))
