@@ -25,6 +25,10 @@ catch.3 <- total.catch.yr.qtr(dat$catch,
 
 catch.3.discards <- total.catch.discards(dat$catch, areas="3[CD]+")
 
+catch.3.gear <- total.catch.yr.qtr.gear(dat$catch,
+                              areas = "3[CD]+")
+
+
 ## Example of how to view by year for 3CD:
 ## c3cd <- catch.3 %>%
 ##   group_by(year) %>%
@@ -37,6 +41,9 @@ catch.5 <- total.catch.yr.qtr(dat$catch,
                               include.usa = TRUE)
 
 catch.5.discards <- total.catch.discards(dat$catch, areas="5[ABCD]+")
+
+catch.5.gear <- total.catch.yr.qtr.gear(dat$catch,
+                                        areas = "5[ABCD]+")
 
 catch.5ab <- total.catch.yr.qtr(dat$catch,
                                 areas = "5[AB]+",

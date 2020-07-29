@@ -577,3 +577,52 @@ extrap.catch <- function(dat = load.data(cache.dir = file.path(rootd.data, "pcod
        dat.props,
        dat.last[dat.last$month == mnth,]$ccatch / pmeans[mnth])
 }
+
+#' Calculate the total catch by year, quarter and gear
+#'
+#' @param dat A tibble of the catch from gfplot package
+#' @param area A vector of regexps like this: c("3[CD]+", "5[CD]+")
+#'   Used only for USA data.
+#' @param include.usa Toggle to include the USA catch in the table and total_catch
+#'  column sums
+#'
+#' @return A tibble with the year and sum of landed and discarded catch
+#'   by year and quarter.
+total.catch.yr.qtr.gear <- function(dat,
+                               areas = NULL){
+  if(is.null(areas)){
+    stop("You must supply at least one area.")
+  }
+  dat <- mutate(dat,
+                area = assign_areas(major_stat_area_name,
+                                    area_regex = areas)) %>%
+    filter(!is.na(area))
+
+  areas <- gsub("\\[|\\]|\\+", "", areas)
+  area.num <- substr(areas[1],
+                     grep("[0-9]", areas),
+                     grep("[0-9]", areas))
+
+  mutate(dat,
+         month = month(best_date),
+         quarter = case_when(
+           month %in% c(1, 2, 3) ~ 4,
+           month %in% c(4, 5, 6) ~ 1,
+           month %in% c(7, 8, 9) ~ 2,
+           month %in% c(10, 11, 12) ~ 3
+         )) %>%
+    select(-month) %>%
+    mutate(year = if_else(quarter == 4, year - 1, as.numeric(year))) %>%
+    group_by(year, quarter, gear) %>%
+    summarize(
+      discarded = sum(discarded_kg) / 1000,
+      landed = sum(landed_kg) / 1000,
+      catch_weight = (sum(landed_kg) + sum(discarded_kg)) / 1000.0) %>%
+    rowwise() %>%
+    ## Spread the USA catch out over 4 quarters as it is year-based
+    mutate(total_catch = sum(catch_weight)) %>%
+    mutate(total_catch = round(total_catch, 3)) %>%
+    ## mutate(total_catch = sprintf("%0.3f", round(total_catch, 3))) %>%
+    ungroup()
+}
+

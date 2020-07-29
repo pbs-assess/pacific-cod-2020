@@ -77,7 +77,7 @@ if(!file.exists(dat.file)){
 }
 dat <- readRDS(dat.file)
 
-#get iphc data
+#get iphc data - not used for now
 iphc.file<- here::here("data/generated/iphc-data.rds")
 if(!file.exists(iphc.file)){
 
@@ -89,8 +89,6 @@ if(!file.exists(iphc.file)){
  saveRDS(iphc.dat, iphc.file)
 }
 iphc.dat <- readRDS(iphc.file)
-
-iphc_index <- gfiphc:::calc_iphc_full_res(iphc.dat)
 
 tac.file <- file.path(rootd.data,
                       "pcod-tac-1996-2018.csv")

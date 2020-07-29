@@ -42,7 +42,7 @@ if(!file.exists(surv.file)){
 
 ```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
 
-gg <- surv_index %>%  
+g <- surv_index %>%  
   rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
   select(Survey, Year,Biomass, CV) %>%
   mutate("GeometricMean"= Biomass/exp(mean(log(Biomass)))) %>%
@@ -51,7 +51,7 @@ gg <- surv_index %>%
   theme_pbs() +
   ylab("WCVI Survey Index (centred by its geometric mean)")+
   xlab("Year") 
-gg
+g
 
 
 ```
@@ -59,7 +59,7 @@ gg
 
 ```{r fig-cpue-index-3cd, fig.cap="Commercial CPUE estimates, centred by geometric mean", echo=FALSE}
 
-gg2 <- cpue_pred_modern %>%
+g <- cpue_pred_modern %>%
   dplyr::filter(formula_version=="Full standardization", area=="3CD") %>%
   select(year, est,se_link) %>%
   mutate("GeometricMean"= est/exp(mean(log(est)))) %>%
@@ -69,9 +69,36 @@ gg2 <- cpue_pred_modern %>%
   theme_pbs() +
   ylab("Comm. CPUE (centred by its geometric mean)")+
   xlab("Year") 
-gg2
+g
 
 ```
+
+
+```{r fig-iphc-index-3cd}
+#this is not very useful but keep the code so we know how to get iphc data in future
+
+# # Need to check which areas are included. May need to filter data first to be only 3CD,
+# # then plot either series C or D (which are coastwide)
+# iphc.3CD <- iphc.dat %>% 
+#   filter(lat <50.7) #the border of 3D is actually 50.5 but not enough obs if that is used 
+# 
+# # iphc.3CD$ser_longest is series C (does not filter for > 50.6 degrees)
+# glist <- gfiphc::calc_iphc_full_res(iphc.3CD) 
+# 
+# g <- glist$ser_longest %>% 
+#   select(year, I_tBootMean, I_tBootCV) %>%
+#   mutate("GeometricMean"= I_tBootMean/exp(mean(log(I_tBootMean)))) %>%
+#   mutate("LowerG" = exp(log(GeometricMean))-2*I_tBootCV, "UpperG"=exp(log(GeometricMean))+2*I_tBootCV) %>% 
+#   ggplot(aes(year, GeometricMean)) + 
+#   geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
+#   theme_pbs() +
+#   ylab("IPHC FISS (centred by its geometric mean)")+
+#   xlab("Year") 
+# g 
+#   
+
+```
+
 
 \clearpage
 
