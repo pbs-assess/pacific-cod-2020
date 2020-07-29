@@ -25,6 +25,7 @@ library(kableExtra)
 library(png)
 library(leaflet)
 library(svglite)
+library(gfiphc)
 
 rootd <- here::here()
 rootd.R <- file.path(rootd, "R")
@@ -75,6 +76,21 @@ if(!file.exists(dat.file)){
                  unsorted_only = FALSE)
 }
 dat <- readRDS(dat.file)
+
+#get iphc data
+iphc.file<- here::here("data/generated/iphc-data.rds")
+if(!file.exists(iphc.file)){
+
+  iphc.dat <- gfiphc::tidy_iphc_survey(
+    get_iphc_hooks("pacific cod"),
+    get_iphc_skates_info(),
+    get_iphc_sets_info()
+)
+ saveRDS(iphc.dat, iphc.file)
+}
+iphc.dat <- readRDS(iphc.file)
+
+iphc_index <- gfiphc:::calc_iphc_full_res(iphc.dat)
 
 tac.file <- file.path(rootd.data,
                       "pcod-tac-1996-2018.csv")
