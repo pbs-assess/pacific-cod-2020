@@ -6,8 +6,8 @@ The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. 
 The assessment models were delay-difference models, fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights.
 Survey indices were available to 2016 for Area 3CD and 2017 for Area 5ABCD. Both stocks were assessed to be in the Cautious Zone [@dfo2009].
 
-Since the last advice [@dfo2019], there has been no further request for science advice. However, it has recently come to our attention that the 2018 survey index for Area 3CD was very low, approximately 25% of the previous two observations (Figure \@ref(fig:fig-wcvi-index-3cd), left panel).
-The commercial CPUE index has also decreased since 2016 (Figure \@ref((fig:fig-wcvi-index-3cd), right panel). Catches in 2018 and 2019 in Area 3CD were also very low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
+Since the last advice [@dfo2019], there has been no further request for science advice. However, it has recently come to our attention that the 2018 survey index for Area 3CD was very low, approximately 25% of the previous two observations (Figure \@ref(fig:fig-wcvi-index-3cd)).
+The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-cpue-index-3cd)). Catches in 2018 and 2019 in Area 3CD were also very low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
 While we did not see a decrease in survey or CPUE indices for either Hecate Strait or Queen Charlotte Sound (Figure \@ref(fig:surv-canadian)), which cover the Area 5ABCD stock, we have taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run the stock assessment to re-assess stock status.
 
@@ -40,8 +40,7 @@ if(!file.exists(surv.file)){
 ```
 
 
-```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey and commercial CPUE estimates, centred by geometric mean", echo=FALSE}
-library(cowplot)
+```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
 
 gg <- surv_index %>%  
   rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
@@ -54,6 +53,12 @@ gg <- surv_index %>%
   xlab("Year") 
 gg
 
+
+```
+
+
+```{r fig-cpue-index-3cd, fig.cap="Commercial CPUE estimates, centred by geometric mean", echo=FALSE}
+
 gg2 <- cpue_pred_modern %>%
   dplyr::filter(formula_version=="Full standardization", area=="3CD") %>%
   select(year, est,se_link) %>%
@@ -65,8 +70,6 @@ gg2 <- cpue_pred_modern %>%
   ylab("Comm. CPUE (centred by its geometric mean)")+
   xlab("Year") 
 gg2
-
-cowplot::plot_grid(gg,gg2, ncol=2)
 
 ```
 
