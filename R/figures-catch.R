@@ -102,3 +102,28 @@ make.catches.plot.gear <- function(dat,
   p
 }
 
+make.catches.plot.vessel <- function(dat,
+                                   every = 5,
+                                   last.yr = 2015){
+  dat <- dat %>%
+    select(-total_catch) %>%
+    group_by(year, vessel_name) %>%
+    summarize(catch_weight = sum(catch_weight))
+  dat <- melt(dat, id.vars = c("year", "vessel_name"))
+  p <- ggplot(dat) +
+    aes(x = year, y = value, fill = vessel_name) +
+    geom_col() +
+    coord_cartesian(expand = FALSE) +
+    labs(x = "Year",
+         y = "Catch (t)",
+         fill = "") +
+    scale_y_continuous(labels = comma,
+                       limits = c(0, 1.2*max(dat$value))) +
+    scale_x_continuous(breaks = seq(0, last.yr, every)) +
+    theme(legend.position = c(1, 1),
+          legend.justification = c(1, 1),
+          legend.title = element_blank())
+  p
+}
+
+

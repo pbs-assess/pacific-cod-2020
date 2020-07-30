@@ -29,6 +29,16 @@ catch.3.gear.recent <- catch.3.gear %>% dplyr::filter(year>1995) %>%            
 make.catches.plot.gear(catch.3.gear.recent)
 ```
 
+```{r fig-catch-3cd-gear-vessel, fig.cap="Canadian catch for Area 3CD by gear. Catch includes at-sea releases."}
+# This plot is for exploring, do not publish
+# freezer <- c("NORTHERN ALLIANCE", "OSPREY NO 1", "VIKING ENTERPRISE", "RAW SPIRIT")
+# catch.3.gear.vessel.freezer <- catch.3.gear.vessel %>% 
+#         filter(vessel_name %in% freezer)
+# 
+# make.catches.plot.vessel(catch.3.gear.vessel.freezer)
+```
+
+
 \clearpage
 
 ## CATCH: AREA 5ABCD {#sec:figures}
