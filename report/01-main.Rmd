@@ -98,26 +98,36 @@ g
 ```
 
 
-\clearpage
+# Methods
 
-# Summary
-
-We re-ran both the stock assessment models with identical settings to those used in 2018 [@forrest2020].
-For each area, we ran the reference model plus the six sensitivity cases that were selected by the 2019 Regional Peer Review (RPR) committee for inclusion in the model-averaged results [@dfo2019].
+**TODO: Add a bare minimum description of the methods, referring to previous assessment**
 
 ## Data
+
+*TODO: add data plots*
 
 Data were extracted from DFO databases in the same way as described in @forrest2020, with updates to 2019. The models were fit to:
 
 1. Commercial catch data (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd), Figures \@ref(fig:fig-catch-5abcd) and \@ref(fig:fig-catch-3cd)); 
 
-2. Survey indices of abundance Figure \@ref(fig:surv-canadian)), where the 3CD model was fit to the WCVI Synoptic Survey and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series); 
+2. Survey indices of abundance Figure \@ref(fig:surv-canadian)), where the 3CD model was fit to the WCVI Synoptic Survey and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). Detailed methods in Appendix A of @forrest2020.; 
 
-3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figure \@ref(fig:cpue-int-test-plot)); and
+3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figure \@ref(fig:cpue-int-test-plot)). Detailed methods in Appendix B of @forrest2020.; and
 
-4. Mean weight of Pacific Cod in the commercial bottom trawl fishery (see @forrest2020 for details).
+4. Mean weight of Pacific Cod in the commercial bottom trawl fishery. Detailed methods in Appendix C of @forrest2020.
+
+
+## Model description
+
+*Add bare minimum here* 
+
+Detailed methods in Appendix D of @forrest2020.
 
 ## Model scenarios
+
+@forrest2013 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases. This was to address some of the key irresolvable uncertainties associated with the stock assessment. Other stock assessments to use a model-averaged approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
+
+In this update, we used the same model scenarios for model-averaging (updated with data to 2019) as those that were agreed upon for the 2018 assessment (@dfo2019).
 
 For Area 5ABCD, the scenarios (Sc) included in the model-averaging set were:
 
@@ -164,13 +174,14 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 3. $LRR$ (Limit Removal Rate) is the average fishing mortality rate from 1956--2004.
 
 
-## Key Results {#sec:summary-results}
+## Results {#sec:summary-results}
 
-We begin with a summary set of results for Area 3CD, followed by summary results for Area 5CD. A more complete set of tables and figures is provided in Sections \@ref(sec:tables) and \@ref(sec:figures). 
-However, we do not discuss these in detail.
+We begin with a summary set of results for Area 3CD, followed by summary results for Area 5CD. 
+<!--A more complete set of tables and figures is provided in Sections \@ref(sec:tables) and \@ref(sec:figures). 
+However, we do not discuss these in detail.-->
 
 
-*TODO: we could possibly provide some summary info on the detailed figs and tables if this document is of interest*
+*TODO: Add some summary info on the figs and tables*
 
 ### Area 3CD
 
@@ -384,3 +395,4 @@ f.plot(base.model.5abcd,
 ```
 
 \clearpage
+
