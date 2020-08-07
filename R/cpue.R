@@ -4,7 +4,7 @@ spp <- "pcod"
 if (params$era == "modern") {
   fi <- here::here("data/cpue-modern.rds")
   if (!file.exists(fi)) {
-    d1996 <- gfplot::get_cpue_index(gear = "bottom trawl", min_cpue_year = 1996)
+    d1996 <- gfdata::get_cpue_index(gear = "bottom trawl", min_cpue_year = 1996)
     readr::write_rds(d1996, fi)
   } else {
     d1996 <- readr::read_rds(fi)
@@ -12,7 +12,7 @@ if (params$era == "modern") {
 } else {
   fi <- here::here("data/cpue-historic.rds")
   if (!file.exists(fi)) {
-    d <- gfplot::get_cpue_historical(species = NULL, end_year = 1995,
+    d <- gfdata::get_cpue_historical(species = NULL, end_year = 1995,
       alt_year_start_date = "04-01")
     readr::write_rds(d, fi)
   } else {
@@ -23,7 +23,7 @@ if (params$era == "modern") {
 if (params$era == "modern") {
   define_fleet <- function(area, area_name) {
     d1996$catch_kg <- d1996$landed_kg + d1996$discarded_kg
-    d1996 <- mutate(d1996, species_common_name = ifelse(species_code == 222, "pacific cod", "ignore me"))
+    #d1996 <- mutate(d1996, species_common_name = ifelse(species_code == 222, "pacific cod", "ignore me"))
     out <- gfplot::tidy_cpue_index(d1996,
       species_common = tolower(params$species_proper),
       gear = "bottom trawl",
@@ -31,7 +31,6 @@ if (params$era == "modern") {
       use_alt_year = params$april1_year,
       year_range = c(1996, 2019),
       lat_range = c(48, Inf),
-      min_positive_fe = 100,
       min_positive_trips = 5,
       min_yrs_with_trips = 5,
       depth_band_width = 25,
@@ -43,6 +42,7 @@ if (params$era == "modern") {
     out$area <- area_name
     out
   }
+  #dfleet <- define_fleet(params$area[1], params$area_name[1]) #testing
   dfleet <- purrr::map2(params$area, params$area_name, define_fleet)
 } else {
   define_fleet <- function(area, area_name) {
@@ -150,27 +150,15 @@ predictions <- plyr::ldply(model, predict_cpue_index_tweedie)
 ## readr::write_csv(predictions,
 ##   here::here(paste0("data/generated/cpue-predictions-", spp, "-", params$era, ".csv")))
 
-if(params$era=="modern") {
-  arith_cpue <- dfleet %>%
+arith_cpue <- dfleet %>%
     bind_rows() %>%
     group_by(area, year) %>%
-    summarise(est = sum(spp_catch) / sum(effort)) %>%  #RF thinks effort is hours_fished (checked tidy_cpue_index code)
+    summarise(est = sum(spp_catch) / sum(hours_fished)) %>%  #RF thinks effort is hours_fished (checked tidy_cpue_index code)
     mutate(model = "Combined") %>%
     group_by(area) %>%
     mutate(geo_mean = exp(mean(log(est)))) %>%
     mutate(est = est/geo_mean) %>%
     ungroup()
-} else {
-  arith_cpue <- dfleet %>%
-    bind_rows() %>%
-    group_by(area, year) %>%
-    summarise(est = sum(spp_catch) / sum(hours_fished)) %>%
-    mutate(model = "Combined") %>%
-    group_by(area) %>%
-    mutate(geo_mean = exp(mean(log(est)))) %>%
-    mutate(est = est/geo_mean) %>%
-    ungroup()
-}
 
 gg_cpue$pred <- predictions %>%
   filter(formula_version %in% c("Unstandardized", "Full standardization")) %>%
