@@ -1,26 +1,23 @@
 ---
 title: "Update to the assessment of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020"
-author: |
-  Robyn E. Forrest^1^,
-  Sean C. Anderson^1^,
-  Chris J. Grandin^1^
-author_list: "Forrest, R.E., Anderson, S.C., and Grandin, C.J."
-address: |
-  ^1^Pacific Biological Station\
-     Fisheries and Oceans Canada, 3190 Hammond Bay Road\
-     Nanaimo, British Columbia, V9T 6N7, Canada\
-
 year: 2020
-report_number: nnn
+month: August
+report_number: 999
+approver: |
+  Approver Name\
+  Regional Director
+approval_year: 2020
+approval_month: September
+approval_day: 01
+branch: Science Branch
 region: Pacific Region
-abstract: |
-  The status of two stocks of Pacific Cod (*Gadus macrocephalus*) in Hecate Strait/Queen Charlotte Sound (Area 5ABCD) and West Coast Vancouver Island (Area 3CD) was updated from the 2018 assessment, using Bayesian delay-difference models and data streams updated to 2019. The models were fit to fishery-independent indices of abundance and standardized commercial catch-per-unit-effort (CPUE) indices, updated from the 2018 stock assessment. 
-
-header: "Draft working paper --- Do not cite or circulate" # or "" to omit
 output:
- csasdown::resdoc_pdf:
+ csasdown::sr_pdf:
+  # csasdown::sr_word:
    french: false
-   copy_sty: true
+   prepub: false
+type:
+  sr
 # ------------
 # End of options to set
 knit: bookdown::render_book
