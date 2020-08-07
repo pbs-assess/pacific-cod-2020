@@ -4,13 +4,15 @@
 
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
-# FISHERY-INDEPENDENT INDICES OF ABUNDANCE {#app:survey-appendix}
+# DATA
 
-## CANADIAN SURVEYS
+## FISHERY-INDEPENDENT INDICES OF ABUNDANCE {#app:data-summary}
 
-All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
+### CANADIAN SURVEYS
 
-### HECATE STRAIT ASSEMBLAGE SURVEY
+All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020. 
+
+#### HECATE STRAIT ASSEMBLAGE SURVEY
 
 A series of multi-species groundfish bottom trawl surveys was conducted in
 Hecate Strait in May-June of 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998,
@@ -36,7 +38,7 @@ In 2004 the Hecate
 Strait Assemblage survey was discontinued in favour of the Hecate Strait
 Synoptic survey (described below).
 
-### HECATE STRAIT SYNOPTIC SURVEY
+#### HECATE STRAIT SYNOPTIC SURVEY
 
 The Hecate Strait synoptic groundfish bottom trawl survey is part of
 a coordinated set of long-term surveys that together cover the continental
@@ -53,7 +55,7 @@ depth strata was determined by modeling the expected catches of groundfish and
 determining the target number of tows per stratum that would provide sufficiently
 precise catch rate data for as many species as possible.
 
-### QUEEN CHARLOTTE SOUND SYNOPTIC SURVEY
+#### QUEEN CHARLOTTE SOUND SYNOPTIC SURVEY
 
 The Queen Charlotte Sound (QCS) synoptic groundfish bottom trawl survey has
 been conducted in July--August in 2003, 2004, and in odd years since 2005
@@ -63,7 +65,7 @@ randomly selected within each depth strata. In addition, for the purposes of
 allocating blocks, the QCS survey is divided into northern and southern spatial
 strata.
 
-### WEST COAST VANCOUVER ISLAND SYNOPTIC SURVEY
+#### WEST COAST VANCOUVER ISLAND SYNOPTIC SURVEY
 
 The West Coast Vancouver Island synoptic bottom trawl survey was first
 conducted in 2004 and is conducted in alternating (even-numbered) years on
@@ -98,7 +100,7 @@ plot_multiyear_survey_sets(dat$survey_sets, "SYN WCVI")
 
 ```{r surv-canadian-table, results='asis'}
 dplyr::filter(dat$survey_index, survey_abbrev %in%
-  c("SYN QCS", "SYN WCVI", "SYN HS", "SYN WCHG", "OTHER HS MSA")) %>%
+  c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
   dplyr::select(survey_abbrev, year, biomass, re, lowerci, upperci, num_sets, num_pos_sets) %>%
   dplyr::mutate(lowerci = round(lowerci/1000, 1), upperci = round(upperci/1000, 1),
     biomass = round(biomass/1000, 1), re = round(re, 2)) %>%
@@ -113,21 +115,8 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 ```{r surv-canadian, fig.cap="Pacific Cod survey data for Canadian trawl surveys. Shown is relative biomass and associated lower and upper confidence intervals. Positive sets refers to the number of trawl sets that caught Pacific Cod."}
 gfplot::tidy_survey_index(dat$survey_index,
-  survey = c("SYN QCS", "SYN WCVI", "SYN HS", "SYN WCHG", "OTHER HS MSA")) %>%
+  survey = c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
   plot_survey_index()
-```
-
-```{r surv-canadian-table-write, results='asis'}
-survout <- dplyr::filter(dat$survey_index, survey_abbrev %in%
-  c("SYN QCS", "SYN WCVI", "SYN HS", "SYN WCHG", "OTHER HS MSA", "IPHC FISS", "SYN WCHG",    "HBLL OUT N" ,  "HBLL OUT S")) %>%
-  dplyr::select(survey_abbrev, year, biomass, re, lowerci, upperci, num_sets, num_pos_sets) %>%
-  dplyr::mutate(lowerci = round(lowerci/1000, 1), upperci = round(upperci/1000, 1),
-    biomass = round(biomass/1000, 1), re = round(re, 2)) %>%
-  dplyr::rename(`Survey abbrev.` = survey_abbrev, Year = year, Biomass = biomass,
-    CV = re, `Lower CI` = lowerci, `Upper CI` = upperci, Sets = num_sets, `Positive sets` = num_pos_sets) %>%
-  dplyr::arrange(`Survey abbrev.`, Year)
-readr::write_csv(survout, here::here("data/generated/all_surveys.csv"))
-
 ```
 
 \clearpage

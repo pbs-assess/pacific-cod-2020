@@ -1,3 +1,11 @@
+
+```{r fig-map, fig.cap="Map of the management areas 5AB (Queen Charlotte Sound), 5CD (Hecate Strait), and 3CD (West Coast Vancouver Island).", out.width="4in"}
+knitr::include_graphics(here::here("report/figure/Pcod_3CD5ABCDE_Pic.png"))
+
+```
+
+\clearpage
+
 # Introduction
 
 The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separate assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)).
@@ -104,13 +112,13 @@ g
 
 ## Data
 
-*TODO: add data plots*
+*TODO: add data plots -- put in appendix*
 
 Data were extracted from DFO databases in the same way as described in @forrest2020, with updates to 2019. The models were fit to:
 
 1. Commercial catch data (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd), Figures \@ref(fig:fig-catch-5abcd) and \@ref(fig:fig-catch-3cd)); 
 
-2. Survey indices of abundance Figure \@ref(fig:surv-canadian)), where the 3CD model was fit to the WCVI Synoptic Survey and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). Detailed methods in Appendix A of @forrest2020.; 
+2. Survey indices of abundance Figure \@ref(fig:surv-canadian)). The 3CD model was fit to the WCVI Synoptic Survey and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). The 5ABCD model was fit to the Hecate Strait Synoptic Survey, the Queen Charlotte Sound Synoptic Survey and the Hecate Strait Multispecies Assemblage Survey. Detailed methods in Appendix A of @forrest2020.; 
 
 3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figure \@ref(fig:cpue-int-test-plot)). Detailed methods in Appendix B of @forrest2020.; and
 

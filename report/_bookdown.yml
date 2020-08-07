@@ -2,6 +2,7 @@ book_filename: "sr"
 rmd_files: ["index.Rmd",
             "00-load.Rmd",
             "01-main.Rmd",
+            "02-data-app.Rmd",
             #"02-tables.Rmd",
             #"03-figures.Rmd",
             #"04-survey-indices-app.Rmd",
