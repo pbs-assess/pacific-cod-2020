@@ -112,17 +112,15 @@ g
 
 ## Data
 
-*TODO: add data plots -- put in appendix*
-
 Data were extracted from DFO databases in the same way as described in @forrest2020, with updates to 2019. The models were fit to:
 
-1. Commercial catch data (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd), Figures \@ref(fig:fig-catch-5abcd) and \@ref(fig:fig-catch-3cd)); 
+1. Commercial catch data (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd), Figures \@ref(fig:fig-catch-3cd) and \@ref(fig:fig-catch-5abcd)); 
 
-2. Survey indices of abundance Figure \@ref(fig:surv-canadian)). The 3CD model was fit to the WCVI Synoptic Survey and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). The 5ABCD model was fit to the Hecate Strait Synoptic Survey, the Queen Charlotte Sound Synoptic Survey and the Hecate Strait Multispecies Assemblage Survey. Detailed methods in Appendix A of @forrest2020.; 
+2. Survey indices of abundance. The 3CD model was fit to the WCVI Synoptic Survey (Figure \@ref(fig:surv-canadian)) and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). The 5ABCD model was fit to the Hecate Strait Synoptic Survey, the Queen Charlotte Sound Synoptic Survey and the Hecate Strait Multispecies Assemblage Survey (Figure \@ref(fig:surv-canadian)). Detailed methods in Appendix A of @forrest2020.; 
 
-3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figure \@ref(fig:cpue-int-test-plot)). Detailed methods in Appendix B of @forrest2020.; and
+3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figures \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)). Detailed methods in Appendix B of @forrest2020.; and
 
-4. Mean weight of Pacific Cod in the commercial bottom trawl fishery. Detailed methods in Appendix C of @forrest2020.
+4. Mean weight of Pacific Cod in the commercial bottom trawl fishery (Figures \@ref(fig:meanweight-3cd) and \@ref(fig:meanweight-5abcd)). Detailed methods in Appendix C of @forrest2020.
 
 
 ## Model description
@@ -137,21 +135,7 @@ Detailed methods in Appendix D of @forrest2020.
 
 In this update, we used the same model scenarios for model-averaging (updated with data to 2019) as those that were agreed upon for the 2018 assessment (@dfo2019).
 
-For Area 5ABCD, the scenarios (Sc) included in the model-averaging set were:
-
-• Sc 1a Reference model.
-
-• Sc 2d Set the mean of the prior probability distribution for synoptic survey ln(q) = ln(1.0) (pro-rated by depth-stratum areas of Area 5AB and 5CD).
-
-• Sc 2e Increase the standard deviation (SD) for synoptic survey ln(q) to 0.6.
-
-• Sc 3a Set the parameters of the prior probability distribution for ln(M) to mean = ln(0.4), SD = 0.1.
-
-• Sc 5a Set knife-edged age at recruitment = 3 years.
-
-• Sc 6b Reduce the overall observation error term $\sigma_O$ = 0.15.
-
-• Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W$ = 0.15.
+### AREA 3CD
 
 For Area 3CD, the scenarios (Sc) included in the model-averaging set were:
 
@@ -169,9 +153,27 @@ For Area 3CD, the scenarios (Sc) included in the model-averaging set were:
 
 • Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W$ = 0.15.
 
+### AREA 5ABCD
+
+For Area 5ABCD, the scenarios (Sc) included in the model-averaging set were:
+
+• Sc 1a Reference model.
+
+• Sc 2d Set the mean of the prior probability distribution for synoptic survey ln(q) = ln(1.0) (pro-rated by depth-stratum areas of Area 5AB and 5CD).
+
+• Sc 2e Increase the standard deviation (SD) for synoptic survey ln(q) to 0.6.
+
+• Sc 3a Set the parameters of the prior probability distribution for ln(M) to mean = ln(0.4), SD = 0.1.
+
+• Sc 5a Set knife-edged age at recruitment = 3 years.
+
+• Sc 6b Reduce the overall observation error term $\sigma_O$ = 0.15.
+
+• Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W$ = 0.15.
+
 See @forrest2020 and @dfo2019 for further details.
 
-## Reference points
+## REFERENCE POINTS
 
 As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
 
@@ -182,7 +184,7 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 3. $LRR$ (Limit Removal Rate) is the average fishing mortality rate from 1956--2004.
 
 
-## Results {#sec:summary-results}
+# RESULTS {#sec:summary-results}
 
 We begin with a summary set of results for Area 3CD, followed by summary results for Area 5CD. 
 <!--A more complete set of tables and figures is provided in Sections \@ref(sec:tables) and \@ref(sec:figures). 
@@ -191,7 +193,7 @@ However, we do not discuss these in detail.-->
 
 *TODO: Add some summary info on the figs and tables*
 
-### Area 3CD
+## Area 3CD
 
 For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
 Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
@@ -298,7 +300,7 @@ f.plot(base.model.3cd,
 
 \clearpage
 
-### Area 5ABCD
+## Area 5ABCD
 
 Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:summary-fig-base-catch-fit-5abcd), \@ref(fig:summary-fig-base-index-fits-5abcd) and \@ref(fig:summary-fig-base-mean-weight-5abcd), respectively.
 
