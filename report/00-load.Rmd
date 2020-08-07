@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 source(file.path(here::here(), "R", "all.R")) #Loading the data is in this file
 ```
 
-```{r load-models, cache=TRUE, echo=FALSE}
+```{r load-models, cache=TRUE, echo=FALSE, message=FALSE, results='hide'}
 #NOTE. if adding sensitivity models need to modify load.models.into.parent.env()
 # in model-setup.R (as well as path names to sensitivity folders)
 build(ovwrt.base = FALSE,

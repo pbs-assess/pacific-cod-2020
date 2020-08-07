@@ -1,5 +1,3 @@
-\clearpage
-
 # Introduction
 
 The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separate assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)).
