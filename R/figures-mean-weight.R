@@ -1,7 +1,8 @@
 mw.plot <- function(model,
                     cv = 0.2,
                     every = 5,
-                    last.yr = 2015){
+                    last.yr = 2015,
+                    french=FALSE){
 
   mpd <- model$mpd
   yrs <- model$dat$meanwtdata[,1]
@@ -25,11 +26,15 @@ mw.plot <- function(model,
               y = i$Fit,
               size = 1) +
     scale_y_continuous(limits = c(0, NA)) +
-    scale_x_continuous(breaks = seq(0, last.yr, every))
+    scale_x_continuous(breaks = seq(0, last.yr, every))+
+    labs(x = en2fr("Year",translate=french, allow_missing = TRUE),
+         y = paste(en2fr("Annual mean weight",translate=french, allow_missing = TRUE), "(kg)"))
+
   p
 }
 
-mw.compare.plot <- function(model){
+mw.compare.plot <- function(model,
+                            french=FALSE){
 
   mpd <- model$mpd
   yrs <- model$dat$meanwtdata[,1]
@@ -46,8 +51,8 @@ mw.compare.plot <- function(model){
                 intercept = 0,
                 color = "red",
                 linetype = "dashed") +
-    labs(x = "Observed annual mean weight (kg)",
-         y = "Estimated annual mean weight (kg)")
+    labs(x = paste(en2fr("Observed annual mean weight",translate=french, allow_missing = TRUE), "(kg)"),
+         y = paste(en2fr("Estimated annual mean weight",translate=french, allow_missing = TRUE), "(kg)"))
 
   p
 }

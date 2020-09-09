@@ -1,7 +1,8 @@
 catch.table <- function(dat,
                         dat.disc = NULL, # no longer used
                         area = "NA",
-                        cap = ""){
+                        cap = "",
+                        french = FALSE){
   ## dat is what comes out of data/get-data.R/total.catch.yr.qtr
   ## dat.disc is what comes out of data/get-data.R/total.catch.discards
 
@@ -9,15 +10,15 @@ catch.table <- function(dat,
     group_by(year) %>%
     summarize(Year = year[1],
       USA = sum(usa_catch),
-      `Canada landed` = sum(landed_canada),
-      `Canada released at sea` = sum(discarded_canada),
-      `Canada total` = sum(landed_canada + discarded_canada),
-      `Total catch` = `Canada total` + `USA`) %>%
+      `landings` = sum(landed_canada),
+      `released at sea` = sum(discarded_canada),
+      `total` = sum(landed_canada + discarded_canada),
+      `Total catch` = `total` + `USA`) %>%
     select(-year)
 
   j <- j[!is.na(j$`Total catch`),]
 
-  j <- j[,c("Year", "Canada landed", "Canada released at sea", "Canada total", "USA", "Total catch")]
+  j <- j[,c("Year", "landings", "released at sea", "total", "USA", "Total catch")]
 
   j[,-1] <- round(j[,-1], 0)
 
@@ -28,7 +29,21 @@ catch.table <- function(dat,
                               f(tmp)
                             })
 
+  colnames(j) <- c(en2fr(colnames(j)[1], translate = french, allow_missing = TRUE),
+                  en2fr(colnames(j)[2], translate = french, allow_missing = TRUE, case="lower"),
+                  en2fr(colnames(j)[3], translate = french, allow_missing = TRUE, case="lower"),
+                  en2fr(colnames(j)[4], translate = french, allow_missing = TRUE, case="lower"),
+                  en2fr(colnames(j)[5], translate = french, allow_missing = TRUE),
+                  en2fr(colnames(j)[6], translate = french, allow_missing = TRUE))
+
+  #Add Canada to colnames for cols 2-4
+  for(k in 2:4){
+    colnames(j)[k] <- latex.mlc(c("Canada", colnames(j)[k]))
+  }
+
+
   colnames(j) <- latex.bold(colnames(j))
+
   #do not include 2018
   kable(j[1:(nrow(j)-1),],
         caption = cap,
@@ -44,10 +59,14 @@ catch.table <- function(dat,
 }
 
 tac.table <- function(tac,
-                      cap = ""){
+                      cap = "", french = FALSE){
   ## dat is what comes out of the csv file data/pcod-tac-1996-2018.csv
 
   names(tac) <- gsub("X", "", names(tac))
+  names(tac) <- en2fr(names(tac), translate = french, allow_missing = TRUE)
+
+  #Hardcode the translation for IFMP
+  tac[1:13,6] <- "PGIP"
 
   tac[,c(2,3,4,5)] <- apply(tac[,c(2,3,4,5)],
                             2,

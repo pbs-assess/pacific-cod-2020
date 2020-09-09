@@ -13,7 +13,8 @@ b.plot <- function(models,
                    probs = c(0.025, 0.975),
                    ylim = c(0, NA),
                    col = c("red", "green"),
-                   x.every = 5 # Show x-axis label every n years
+                   x.every = 5, # Show x-axis label every n years
+                   french=FALSE
   ){
   ## lrp usr are year ranges (2-element vectors) to take the mean of
   ## the biomass for the reference points
@@ -121,7 +122,8 @@ b.plot <- function(models,
     coord_cartesian(expand = FALSE) +
     xlim(c(min(bt$Year - 1), NA)) +
     scale_x_continuous(breaks = seq(0, 3000, x.every)) +
-    ylab("Biomass (t)")
+    ylab(paste(en2fr("Biomass",translate=french, allow_missing = TRUE),"(t)"))+
+    xlab(en2fr("Year",translate=french, allow_missing = TRUE))
 
   if(!depl & add.hist.ref){
     if(is.na(lrp) || is.na(usr)){
@@ -192,7 +194,7 @@ b.plot <- function(models,
   }
 
   if(depl){
-    p <- p + ylab("Reletive biomass")
+    p <- p + ylab(en2fr("Relative biomass",translate=french, allow_missing=TRUE))
   }
 
   if(length(models) == 1){
@@ -225,7 +227,8 @@ b.plot <- function(models,
 
 b.plot.mpd <- function(models,
                        models.names,
-                       depl = FALSE){
+                       depl = FALSE,
+                       french=FALSE){
   yrs <- lapply(models,
                 function(x){
                   x$mpd$syr:(x$mpd$nyr + 1)})
@@ -284,7 +287,10 @@ b.plot.mpd <- function(models,
     scale_y_continuous(labels = comma,
                        limits = c(0, NA)) +
     coord_cartesian(expand = FALSE) +
-    scale_x_continuous(breaks = seq(0, 3000, 5))
+    scale_x_continuous(breaks = seq(0, 3000, 5))+
+    ylab(paste(en2fr("Biomass",translate=french, allow_missing = TRUE),"(t)"))+
+    xlab(en2fr("Year",translate=french, allow_missing = TRUE))
+
 
   if(!depl){
     p <- p + geom_point(data = bo,
@@ -295,7 +301,7 @@ b.plot.mpd <- function(models,
   }
 
   if(depl){
-    p <- p + ylab("Relative biomass")
+    p <- p + ylab(en2fr("Relative biomass",translate=french, allow_missing=TRUE))
   }
 
   if(length(models) == 1){

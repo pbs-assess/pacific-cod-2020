@@ -3,7 +3,8 @@ i.plot <- function(models,
                    ind,
                    every = 1,
                    leg.loc = "topright",
-                   show.fit = TRUE){
+                   show.fit = TRUE,
+                   french=FALSE){
   ## ind is the index number
   ## every is show every nth year on the x-axis
   ## leg.loc: topright, topleft, bottomright, bottomleft
@@ -60,6 +61,9 @@ i.plot <- function(models,
     scale_y_continuous(labels = comma,
                        limits = c(0, NA)) +
     coord_cartesian(expand = FALSE) +
+    labs(x = en2fr("Year",translate=french, allow_missing = TRUE),
+         y = paste(en2fr("Survey biomass index",translate=french, allow_missing = TRUE),"(t)"),
+         fill = "") +
     scale_x_continuous(breaks = seq(0, 3000, every),
                        limits = c(min(i$Year - 1),
                                   max(i$Year + 1))) #+

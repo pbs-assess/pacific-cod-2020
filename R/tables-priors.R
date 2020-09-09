@@ -1,7 +1,8 @@
 priors.table <- function(model,
                          cap = "",
                          basis.vec = NA,
-                         digits = 2){
+                         digits = 2,
+                         french = FALSE){
 
   ## basis.vec is the reasons for each prior being used.
   ##  if there is a dash - in them, that will signify a new
@@ -25,7 +26,7 @@ priors.table <- function(model,
               prior = prior,
               p1 = p1,
               p2 = p2,
-              Estimated = if_else(phz > 0, "Yes", "No"))
+              Estimated = if_else(phz > 0, en2fr("Yes",translate=french,allow_missing=TRUE), en2fr("No",translate=french,allow_missing=TRUE)))
 
   ## Add the q parameters to the prior specs table
   q.names <- paste0("q", 1:ncol(model$ctl$surv.q))
@@ -37,7 +38,7 @@ priors.table <- function(model,
               prior = priortype,
               p1 = priormeanlog,
               p2 = priorsd,
-              Estimated = "Yes")
+              Estimated = en2fr("Yes",translate=french,allow_missing=TRUE))
 
   prior.specs <- bind_rows(prior.specs, q.specs)
 
@@ -83,7 +84,6 @@ priors.table <- function(model,
                         p2))
 
   prior.specs[prior.specs$name == "steepness", 1] <- "h"
-
 
   prior.specs <- prior.specs %>%
     rename(Parameter = name) %>%
@@ -153,19 +153,23 @@ priors.table <- function(model,
                }
              })
 
-  col.names <-  c(latex.bold("Parameter"),
-    latex.mlc(c("Initial",
-                "value")),
-    latex.mlc(c("Lower",
-                "bound")),
-    latex.mlc(c("Upper",
-                "bound")),
-    latex.bold("Distribution"),
-    latex.bold("P1"),
-    latex.bold("P2"),
-    latex.bold("Estimated"))
+  col.names <-  c(latex.bold(en2fr("Parameter", translate = french, allow_missing = TRUE)),
+    latex.mlc(en2fr(c("Initial",
+                "value"), translate = french, allow_missing = TRUE)),
+    latex.mlc(c("Lower", "bound")),
+    latex.mlc(c("Upper", "bound")),
+    latex.bold(en2fr("Distribution", translate = french, allow_missing = TRUE)),
+    latex.bold(en2fr("P1", translate = french, allow_missing = TRUE)),
+    latex.bold(en2fr("P2", translate = french, allow_missing = TRUE)),
+    latex.bold(en2fr("Estimated", translate = french, allow_missing = TRUE)))
+
+  if(french==TRUE) {
+    col.names[3] <- latex.bold(latex.mlc(en2fr(c("Bound", "lower"),translate = french, allow_missing = TRUE)))
+    col.names[4] <- latex.bold(latex.mlc(en2fr(c("Bound", "upper"),translate = french, allow_missing = TRUE)))
+  }
+
   if(!is.na(basis.vec[1])){
-    col.names <- c(col.names, latex.bold("Basis"))
+    col.names <- c(col.names, latex.bold(en2fr("Basis", translate = french, allow_missing = TRUE)))
   }
   colnames(prior.specs) <- col.names
 

@@ -11,7 +11,6 @@ library(ggplot2)
 library(grid)
 library(gridExtra)
 library(gfplot)
-library(gfdata)
 library(purrr)
 library(scales)
 library(cowplot)
@@ -25,7 +24,6 @@ library(kableExtra)
 library(png)
 library(leaflet)
 library(svglite)
-library(gfiphc)
 
 rootd <- here::here()
 rootd.R <- file.path(rootd, "R")
@@ -69,26 +67,13 @@ dat.file <- file.path(rootd.data,
                       "pcod-cache",
                       "pacific-cod.rds")
 if(!file.exists(dat.file)){
-  gfplot::cache_pbs_data(species = "pacific cod",
+  cache_pbs_data(species = "pacific cod",
                  path = file.path(rootd.data,
-                 "pcod-cache"),
+                                  "pcod-cache"),
                  survey_sets = TRUE,
                  unsorted_only = FALSE)
 }
 dat <- readRDS(dat.file)
-
-#get iphc data - not used for now
-iphc.file<- here::here("data/generated/iphc-data.rds")
-if(!file.exists(iphc.file)){
-
-  iphc.dat <- gfiphc::tidy_iphc_survey(
-    get_iphc_hooks("pacific cod"),
-    get_iphc_skates_info(),
-    get_iphc_sets_info()
-)
- saveRDS(iphc.dat, iphc.file)
-}
-iphc.dat <- readRDS(iphc.file)
 
 tac.file <- file.path(rootd.data,
                       "pcod-tac-1996-2018.csv")

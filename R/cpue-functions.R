@@ -54,9 +54,39 @@ make_cpue_ts_dat <- function(dat) {
 }
 
 make_cpue_ts_plot <- function(dat) {
-  dat$stand %>%
-    filter(formula_version != "Unstandardized") %>%
-    ggplot(aes(year, est, ymin = lwr, ymax = upr, fill = formula_version)) +
+# First need to rename formula_version values if french.
+ if(french==TRUE){
+   dat$stand$formula_version <- as.character(dat$stand$formula_version) #replace doesn't work with factors
+   dat$stand <- dat$stand %>%
+      mutate(formula_version = replace(formula_version,formula_version == "Month", "Mois")) %>%
+      mutate(formula_version = replace(formula_version,formula_version == "Locality", "Lieu"))%>%
+      mutate(formula_version = replace(formula_version,formula_version == "Depth", "Profondeur"))%>%
+      mutate(formula_version = replace(formula_version,formula_version == "Vessel", "Navire"))%>%
+      mutate(formula_version = replace(formula_version,formula_version == "Unstandardized", "Non normalisée"))%>%
+      mutate(formula_version = replace(formula_version,formula_version == "Full standardization", "Normalisation\ncomplet"))%>%
+      mutate(formula_version =
+               replace(formula_version,formula_version == "Full standardization\nminus interactions", "Normalisation\ncomplet\nmois interactions")) %>%
+      filter(formula_version != "Non normalisée")
+
+   #convert back to factor so they plot in the correct order
+   if(dat$stand$year[1] <1996){
+   #historical
+      dat$stand$formula_version <- factor(dat$stand$formula_version,
+            levels=c("Profondeur","Lieu","Mois","Normalisation\ncomplet\nmois interactions","Normalisation\ncomplet"))
+   }else {
+   #modern
+   dat$stand$formula_version <- factor(dat$stand$formula_version,
+     levels=c("Profondeur","Latitude","Lieu","Mois","Navire","Normalisation\ncomplet\nmois interactions","Normalisation\ncomplet"))
+
+   }
+
+  } else {
+    dat$stand <- dat$stand %>%
+    filter(formula_version != "Unstandardized")
+  }
+
+dat$stand %>%
+   ggplot(aes(year, est, ymin = lwr, ymax = upr, fill = formula_version)) +
     geom_line() +
     geom_ribbon(data = dat$unstand, aes(x = year, ymin = lwr, ymax = upr),
       fill = "black", alpha = 0.5,
@@ -121,6 +151,15 @@ make_fe_plots <- function(object) {
   sud <- rename(sud, est = Estimate, se = `Std. Error`)
   sud <- mutate(sud, par_value = gsub("^[A-Z_a-z]+", "", param))
   sud <- mutate(sud, par_group = gsub("^([A-Z_a-z]+)[0-9.]+$", "\\1", param))
+
+  if(french==TRUE){
+    sud <- sud %>%
+      mutate(par_group = replace(par_group,par_group == "month", "mois")) %>%
+      mutate(par_group = replace(par_group,par_group == "depth", "profondeur")) %>%
+      mutate(par_group = replace(par_group,par_group == "year_factor", "annee"))
+    }
+
+
   ggplot(sud, aes_string("est", "forcats::fct_rev(par_value)",
     yend = "forcats::fct_rev(par_value)"
   )) +
@@ -151,8 +190,16 @@ make_re_dat <- function(object) {
     mutate(loc_group = gsub("^([0-9]+)[ -]*([0-9a-zA-Z-]+)$", "\\2", par_value)) %>%
     mutate(loc_year = gsub("^([0-9]+)[ -]*[0-9a-zA-Z-]+$", "\\1", par_value))
 }
+
 make_re_plots <- function(object, re_names = c("locality")) {
   re <- make_re_dat(object)
+
+  if(french==TRUE){
+    re <- re %>%
+      mutate(par_group = replace(par_group,par_group == paste(re_names), paste(en2fr(paste(re_names), translate=french, allow_missing=T, case="lower"))))
+    re_names = paste(en2fr(paste(re_names), translate=french, allow_missing=T, case="lower"))
+  }
+
   filter(re, par_group %in% re_names) %>%
     ggplot(aes_string("est", "forcats::fct_rev(par_value)")) +
     geom_vline(xintercept = 0, lty = 2, alpha = 0.4) +
@@ -161,6 +208,7 @@ make_re_plots <- function(object, re_names = c("locality")) {
     theme_pbs() + guides(shape = FALSE, colour = FALSE) +
     labs(x = "Random intercept value (log space)", y = "")
 }
+
 make_year_locality_plots <- function(object) {
   re <- make_re_dat(object)
   filter(re, par_group == "year_locality") %>%
@@ -279,26 +327,56 @@ plot_cpue_int_res <- function(model, fleet, index_data,
 make_catch_effort_ts_plot <- function(dat) {
   bind_rows(dat) %>% group_by(year, area) %>%
     summarise(
-      `Species catch` = sum(spp_catch)/1000,
-      `Hours fished` = sum(hours_fished)/1000) %>%
+      `Catch` = sum(spp_catch)/1000,
+       `Hours` = sum(hours_fished)/1000) %>%
     reshape2::melt(id.vars = c("year", "area")) %>%
     ggplot(aes(year, value)) +
     geom_line() +
     facet_grid(variable~area, scales = "free_y") +
-    ylab("Value (1000 kg or 1000 hours)") + xlab("") +
+    ylab(paste(en2fr("Value",translate=french,allow_missing=TRUE), "(1000 kg", en2fr("or",translate=french,allow_missing=TRUE, case ="lower"), "1000 hours)")) + xlab("") +
     ylim(0, NA)
 }
 
 make_catch_effort_ts_plot_modern <- function(dat) {
   bind_rows(dat) %>% group_by(year, area) %>%
     summarise(
-      `Species catch` = sum(spp_catch)/1000,
-      `Hours fished` = sum(effort)/1000) %>%
+      `Catch` = sum(spp_catch)/1000,
+      `Hours` = sum(hours_fished)/1000) %>%
     reshape2::melt(id.vars = c("year", "area")) %>%
     ggplot(aes(year, value)) +
     geom_line() +
     facet_grid(variable~area, scales = "free_y") +
-    ylab("Value (1000 kg or 1000 hours)") + xlab("") +
+    ylab(paste(en2fr("Value",translate=french,allow_missing=TRUE), "(1000 kg", en2fr("or",translate=french,allow_missing=TRUE, case ="lower"), "1000 hours)")) +
+    xlab("") +
     ylim(0, NA)
 }
+
+make_catch_effort_ts_plot_fr <- function(dat) {
+  bind_rows(dat) %>% group_by(year, area) %>%
+    summarise(
+      `Prise` = sum(spp_catch)/1000,
+      `Heures` = sum(hours_fished)/1000) %>%
+    reshape2::melt(id.vars = c("year", "area")) %>%
+    ggplot(aes(year, value)) +
+    geom_line() +
+    facet_grid(variable~area, scales = "free_y") +
+    ylab(paste(en2fr("Value",translate=french,allow_missing=TRUE), "(1000 kg", en2fr("or",translate=french,allow_missing=TRUE, case ="lower"), "1000", en2fr("hours",translate=french,allow_missing=TRUE, case ="lower"),")")) +
+    xlab("") +
+    ylim(0, NA)
+}
+
+make_catch_effort_ts_plot_modern_fr <- function(dat) {
+  bind_rows(dat) %>% group_by(year, area) %>%
+    summarise(
+      `Prise` = sum(spp_catch)/1000,
+      `Heures` = sum(hours_fished)/1000) %>%
+    reshape2::melt(id.vars = c("year", "area")) %>%
+    ggplot(aes(year, value)) +
+    geom_line() +
+    facet_grid(variable~area, scales = "free_y") +
+    ylab(paste(en2fr("Value",translate=french,allow_missing=TRUE), "(1000 kg", en2fr("or",translate=french,allow_missing=TRUE, case ="lower"), "1000", en2fr("hours",translate=french,allow_missing=TRUE, case ="lower"),")")) +
+    xlab("") +
+    ylim(0, NA)
+}
+
 

@@ -1,7 +1,8 @@
 r.plot <- function(models,
                    models.names,
                    add.meds = FALSE,
-                   x.axis.angle = 0){
+                   x.axis.angle = 0,
+                   french=FALSE){
   ## add.meds: Add median and mean line
   ## x.axis.angle: Angle of x-axis labels
 
@@ -51,7 +52,8 @@ r.plot <- function(models,
                        limits = c(0, NA)) +
     coord_cartesian(expand = FALSE) +
     scale_x_continuous(breaks = seq(0, 3000, 5)) +
-    ylab("Recruitment (thousands)")
+    ylab(paste(en2fr("Recruitment",translate=french, allow_missing = TRUE),paste0("(",en2fr("thousands",translate=french, allow_missing = TRUE, case = "lower"),")")))+
+    xlab(en2fr("Year",translate=french, allow_missing = TRUE))
 
   if(add.meds){
     j <- data.frame("Intercept" = c(rt.median, rt.mean),
@@ -72,7 +74,8 @@ r.plot <- function(models,
 
 r.devs.plot <- function(models,
                         models.names,
-                        x.axis.angle = 0){
+                        x.axis.angle = 0,
+                        french=FALSE){
 
   rt <- lapply(models,
                function(x){
@@ -120,7 +123,9 @@ r.devs.plot <- function(models,
     scale_x_continuous(breaks = seq(0, 3000, 5)) +
     geom_hline(yintercept = 0,
                linetype = "dashed",
-               size = 1)
+               size = 1)+
+    ylab(en2fr("Log recruitment deviations",translate=french, allow_missing = TRUE))+
+    xlab(en2fr("Year",translate=french, allow_missing = TRUE))
 
   if(length(models) == 1){
     p <- p + theme(legend.position = "none")

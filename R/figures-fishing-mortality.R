@@ -4,7 +4,8 @@ f.plot <- function(models,
                    models.names,
                    add.hist.ref = FALSE,
                    lrp = NA,
-                   usr = NA){
+                   usr = NA,
+                   french=FALSE){
   ## lrp usr are year ranges (2-element vectors) to take the mean of
   ## the F value for the reference points
 
@@ -46,7 +47,9 @@ f.plot <- function(models,
                        limits = c(0, NA)) +
     coord_cartesian(expand = FALSE) +
     xlim(c(min(f$Year - 1), NA)) +
-    scale_x_continuous(breaks = seq(0, 3000, 5))
+    scale_x_continuous(breaks = seq(0, 3000, 5))+
+    xlab(en2fr("Year",translate=french, allow_missing = TRUE))+
+    ylab(en2fr("Fishing mortality",translate=french, allow_missing = TRUE))
 
   if(add.hist.ref){
     if(is.na(lrp) || is.na(usr)){

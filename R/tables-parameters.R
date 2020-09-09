@@ -16,7 +16,8 @@ mcmc_monitor <- function(model) {
 make.parameters.table <- function(model,
                                   caption = "default", omit_pars = NULL,
                                   omit_selectivity_pars = FALSE,
-                                  format = "pandoc"){
+                                  format = "pandoc",
+                                  french=FALSE){
 
   get.bounds <- function(ind){
     ## Return the bounds string for row ind of the parameters
@@ -37,7 +38,7 @@ make.parameters.table <- function(model,
     vec <- as.numeric(params[ind, 4:7])
     if(vec[1] < 1){
       return(c(0,
-        "Fixed",
+        en2fr("Fixed",translate=french,allow_missing=TRUE),
         paste0("$", f(params[ind, 1], 3), "$")))
     }else if(vec[2] == 0){
       return(c(1,
@@ -99,14 +100,25 @@ make.parameters.table <- function(model,
     prior = character(),
     stringsAsFactors = FALSE)
 
+  #Need to do it this way due to different order of adjectives and nouns (e.g., mean recruitment)
+if(french==TRUE){
+  param.text <- c("Log recrutement ($ln(R_0)$)",
+                  "La pente ($h$)",
+                  paste("Log", en2fr("Natural mortality", translate=french, allow_missing=TRUE, case="lower" ), "($ln(M)$))"),
+                  "Log recrutement moyen ($\\ln(\\overline{R})$)",
+                  "Log recrutement initial ($\\ln(\\overline{R}_{init})$)",
+                  "Rapport de variance ($\\rho$)",
+                  "Variance totale inverse ($\\vartheta^2$)")
+}else{
   param.text <- c("Log recruitment ($ln(R_0)$)",
                   "Steepness ($h$)",
-                  "Log natural mortality ($ln(M)$)",
+                  "Natural mortality ($ln(M)$)",
                   "Log mean recruitment ($\\ln(\\overline{R})$)",
                   "Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
                   "Variance ratio ($\\rho$)",
-                  "Inverse total variance ($\\vartheta^2$)")
+                  "Total inverse variance ($\\vartheta^2$)")
 
+}
   param.vals <- do.call(rbind, lapply(1:nrow(params), get.vals))
 
   ## Selectivity parameters
@@ -149,16 +161,16 @@ make.parameters.table <- function(model,
   param.vals <- rbind(param.vals,
     c(surv.est,
       "[0, 1]",
-      "None"),
+      en2fr("None",translate=french,allow_missing=TRUE)),
     c(fish.est,
       "[0, 1]",
-      "None"),
+      en2fr("None",translate=french,allow_missing=TRUE)),
     c(surv.est,
       "[0, Inf)",
-      "None"),
+      en2fr("None",translate=french,allow_missing=TRUE)),
     c(fish.est,
       "[0, Inf)",
-      "None"))
+      en2fr("None",translate=french,allow_missing=TRUE)))
 
   param.text <- c(param.text,
     "Survey age at 50\\% selectivity ($\\hat{a}_k$)",
@@ -179,11 +191,11 @@ make.parameters.table <- function(model,
   num.inds <- ctl$num.indices
   param.vals <- rbind(param.vals,
     c(num.inds,
-      "None",
+      en2fr("None",translate=french,allow_missing=TRUE),
       "Normal($0.5, 1$)"))
 
   param.text <- c(param.text,
-    "Survey catchability ($q_k$)")
+    paste(en2fr("Survey catchability", translate=french, allow_missing=TRUE), "($q_k$)"))
 
   ## Fishing mortality and recruitment parameters
   ##
@@ -196,17 +208,23 @@ make.parameters.table <- function(model,
       "[-30, 3]",
       "[-30, 3]"),
     c(num.rec.params,
-      "None",
+      en2fr("None",translate=french,allow_missing=TRUE),
       "Normal($0, 2$)"),
     c(num.init.rec.params,
-      "None",
+      en2fr("None",translate=french,allow_missing=TRUE),
       "Normal($0, 2$)"))
 
+  if(french==TRUE){
+  param.text <- c(param.text,
+    paste("Log", en2fr("Fishing mortality", translate=french,allow_missing=TRUE, case="lower"), "($\\Gamma_{k,t}$)"),
+    paste(en2fr("Log recruitment deviations", translate=french,allow_missing=TRUE, case="sentence"), "($\\omega_t$)"),
+    paste(en2fr("Log recruitment deviations", translate=french,allow_missing=TRUE, case="sentence"), "inital ($\\omega_{init,t}$)"))
+  }else{
   param.text <- c(param.text,
     "Log fishing mortality values ($\\Gamma_{k,t}$)",
     "Log recruitment deviations ($\\omega_t$)",
     "Initial log recruitment deviations ($\\omega_{init,t}$)")
-
+  }
   tab <- cbind(param.text, param.vals)
 
   tab <- as.data.frame(tab)
@@ -220,13 +238,17 @@ make.parameters.table <- function(model,
   }
 
 
-  colnames(tab) <- c(latex.bold("Parameter"),
-                     latex.mlc(c("Number",
-                                 "estimated")),
-                     latex.mlc(c("Bounds",
-                                 "[low, high")),
-                     latex.mlc(c("Prior (mean, SD)",
-                                 "(single value = fixed)")))
+  colnames(tab) <- c(latex.bold(en2fr("Parameter", translate = french, allow_missing = TRUE)),
+                     latex.mlc(en2fr(c("Number",
+                                 "estimated"), translate = french, allow_missing = TRUE)),
+                     latex.mlc(en2fr(c("Bounds", "[low, high]"), translate = french, allow_missing = TRUE)),
+                     latex.mlc(c("Prior (mean, SD)", "(single value = fixed)")))
+
+  #Hardwire the last heading
+  if(french==TRUE) {
+    colnames(tab)[4] <- latex.bold(latex.mlc(c("Priori (moyenne, ET)", "(une seule valeur = fixe)")))
+  }
+
   knitr::kable(tab,
     caption = caption, format = format,
     align = get.align(ncol(tab))[-1],
@@ -238,7 +260,8 @@ make.parameters.est.table <- function(model,
                                       digits = 3,
                                       caption = "",
                                       omit_pars = NULL,
-                                      format = "pandoc"){
+                                      format = "pandoc",
+                                      french=FALSE){
   ## Returns an xtable in the proper format for parameter estimates and priors
   ##
   ## digits - number of decimal points on % columns
@@ -278,11 +301,11 @@ make.parameters.est.table <- function(model,
       pname <- "sbo"
     }
     match.sel <- grep("sel[[:digit:]]+",
-      pname)
+                      pname)
     match.sel.sd <- grep("selsd[[:digit:]]+",
-      pname)
+                         pname)
     match.q <- grep("q[[:digit:]]+",
-      pname)
+                    pname)
     ## Age value at 50%
     sel.pars <- mpd$sel_par[,3]
     ## Age SD at 50%
@@ -291,19 +314,19 @@ make.parameters.est.table <- function(model,
     if(length(match.sel) > 0){
       ## The parameter starts with "sel"
       split.val <- strsplit(pname,
-        "[^[:digit:]]")[[1]]
+                            "[^[:digit:]]")[[1]]
       sel.num <- as.numeric(split.val[length(split.val)])
       this.par <- sel.pars[sel.num]
     }else if(length(match.sel.sd) > 0){
       ## The parameter starts with "selsd"
       split.val <- strsplit(pname,
-        "[^[:digit:]]")[[1]]
+                            "[^[:digit:]]")[[1]]
       sel.num <- as.numeric(split.val[length(split.val)])
       this.par <- sel.sd.pars[sel.num]
     }else if(length(match.q) > 0){
       ## The parameter starts with "q"
       split.val <- strsplit(pname,
-        "[^[:digit:]]")[[1]]
+                            "[^[:digit:]]")[[1]]
       q.num <- as.numeric(split.val[length(split.val)])
       this.par <- q.pars[q.num]
     }else{
@@ -339,7 +362,7 @@ make.parameters.est.table <- function(model,
 
   new.col <- rownames(tab)
   new.col <- gsub("^ro$", "$R_0$", new.col)
-  new.col <- gsub("^h$", "Steepness ($h$)", new.col)
+  new.col <- gsub("^h$", "$h$", new.col)
   new.col <- gsub("^m$", "$M$", new.col)
   new.col <- gsub("^rbar$", "$\\\\overline{R}$", new.col)
   new.col <- gsub("^rinit$", "$\\\\overline{R}_{init}$", new.col)
@@ -368,12 +391,14 @@ make.parameters.est.table <- function(model,
     # tab <- dplyr::filter(tab, !`\\textbf{Parameter}` %in% omit_pars)
     tab <- dplyr::filter(tab, !`Parameter` %in% omit_pars)
   }
+
+  colnames(tab) <- en2fr(colnames(tab), translate = french, allow_missing = TRUE)
   colnames(tab) <- latex.bold(latex.perc(colnames(tab)))
 
   knitr::kable(tab,
-    caption = caption, format = format,
-    align = get.align(ncol(tab))[-1], longtable = TRUE,
-    booktabs = TRUE, linesep = "", escape = FALSE, row.names = FALSE) %>%
+               caption = caption, format = format,
+               align = get.align(ncol(tab))[-1], longtable = TRUE,
+               booktabs = TRUE, linesep = "", escape = FALSE, row.names = FALSE) %>%
     kableExtra::kable_styling(latex_options = "hold_position")
 }
 
@@ -386,7 +411,9 @@ make.ref.points.table <- function(models,
                                   usr = NA,
                                   lower = 0.025,
                                   upper = 0.975,
-                                  format = "pandoc"){
+                                  format = "pandoc",
+                                  french=FALSE)
+  {
 
   probs <- c(lower, 0.5, upper)
 
@@ -400,6 +427,10 @@ make.ref.points.table <- function(models,
     }
     tab <- model$mcmccalcs$r.quants
     tab[,-1] <- f(tab[,-1], digits)
+    if (omit_msy) tab <- dplyr::filter(tab, !grepl("MSY", `\\textbf{Reference Point}`)) #RF moved the filtering to here
+    col.names <- colnames(tab)
+    col.names[1] <- latex.bold(en2fr("Reference point", translate = french, allow_missing = TRUE))
+    colnames(tab) <- col.names
   }else{
     tab <- lapply(models,
                   function(x){
@@ -433,14 +464,11 @@ make.ref.points.table <- function(models,
     tab <- cbind.data.frame(desc.col, tab)
     col.names <- colnames(tab)
     col.names <- latex.bold(latex.perc(col.names))
-    col.names[1] <- latex.bold("Reference Point")
+    if (omit_msy) tab <- dplyr::filter(tab, !grepl("MSY",  desc.col)) #RF moved the filtering to here
+    col.names[1] <- latex.bold(en2fr("Reference point", translate = french, allow_missing = TRUE))
     colnames(tab) <- col.names
   }
 
-  if (omit_msy) {
-    tab <- dplyr::filter(tab, !grepl("MSY", `\\textbf{Reference Point}`))
-    # tab <- dplyr::filter(tab, !grepl("MSY", `Reference Point`))
-  }
   if(add.hist.ref){
     if(is.na(lrp) || is.na(usr)){
       cat0("Supply year ranges for both lrp and usr when add.hist.ref is TRUE")
@@ -471,12 +499,12 @@ make.ref.points.table <- function(models,
       usr.5 <- mean(as.numeric(cau$`2.5%`))
       usr.50 <- mean(as.numeric(cau$`50%`))
       usr.95 <- mean(as.numeric(cau$`97.5%`))
-      lrp.desc <- paste0("LRP (",
+      lrp.desc <- paste0(en2fr("LRP",translate=french,allow_missing=TRUE), " (",
                          ifelse(lrp[1] == lrp[2],
                                 lrp[1],
                                 paste0(lrp[1], "--", lrp[2])),
                          ")")
-      usr.desc <- paste0("USR (",
+      usr.desc <- paste0(en2fr("USR",translate=french,allow_missing=TRUE), " (",
                          ifelse(usr[1] == usr[2],
                                 usr[1],
                                 paste0(usr[1], "--", usr[2])),
@@ -508,7 +536,8 @@ make.ref.points.table <- function(models,
 make.value.table <- function(model,
   type,
   digits = 3,
-  caption = "default"
+  caption = "default",
+  french=FALSE
   ){
 
   if(class(model) == model.lst.class){
@@ -535,6 +564,7 @@ make.value.table <- function(model,
   tab <- f(t(out.dat), digits)
   tab <- cbind(rownames(tab), tab)
   colnames(tab)[1] <- "Year"
+  colnames(tab) <- en2fr(colnames(tab), translate = french, allow_missing = TRUE)
   colnames(tab) <- latex.bold(latex.perc(colnames(tab)))
 
   knitr::kable(tab,
@@ -559,13 +589,13 @@ model.param.desc.table <- function(cap = "",
     "\\textbf{Fixed input parameters}", "", "", "",
     "$k$",               "Age at knife-edge recruitment",                                               paste0(sage5, " y"),              paste0(sage3, " y"),
     "$L_\\infty$",       "Theoretical maximum length",                                                  paste0(linf5, " cm"),             paste0(linf3, " cm"),
-    "$K_{VB}$",          "von Bertalannfy growth rate",                                                 k5,                               k3,
-    "$a_{LW}$",          "Scaling parameter of the length/weight relationship",                         lwscal5,                          lwscal3,
-    "$b_{LW}$",          "Exponent of the length/weight relationship",                                  lwpow5,                           lwpow3,
-    "$t_0$",             "Theoretical age at 0 cm",                                                     t05,                              t03,
-    "$\\alpha_g$",       "Intercept of the Ford-Walford plot, for all ages > $k$",                      alpha.g5,                         alpha.g3,
-    "$\\rho_g$",         "Slope of the Ford-Walford plot, for all ages > $k$",                          rho.g5,                           rho.g3,
-    "$W_k$",             "Weight at age of recruitment $k$",                                            wk5,                              wk3,
+    "$K_{VB}$",          "von Bertalannfy growth rate",                                                 as.character(k5),                 as.character(k3),
+    "$a_{LW}$",          "Scaling parameter of the length/weight relationship",                         as.character(lwscal5),            as.character(lwscal3),
+    "$b_{LW}$",          "Exponent of the length/weight relationship",                                  as.character(lwpow5),             as.character(lwpow3),
+    "$t_0$",             "Theoretical age at 0 cm",                                                     as.character(t05),                as.character(t03),
+    "$\\alpha_g$",       "Intercept of the Ford-Walford plot, for all ages > $k$",                      as.character(alpha.g5),           as.character(alpha.g3),
+    "$\\rho_g$",         "Slope of the Ford-Walford plot, for all ages > $k$",                          as.character(rho.g5),             as.character(rho.g3),
+    "$W_k$",             "Weight at age of recruitment $k$",                                            as.character(wk5),                as.character(wk3),
     "\\textbf{Annual input data}", "", "", "",
     "$C_t$",             "Catch (metric tonnes)",                                                       "",                               "",
     "$W_t$",             "Mean weight of individuals in the population",                                "",                               "",
@@ -607,16 +637,12 @@ model.param.desc.table <- function(cap = "",
     "$d_{C_t}^2$",       "Residual log difference for catch data",                                      "",                               "",
     "$d_{W_t}^2$",       "Residual log difference for mean weight data",                                "",                               "")
 
-  names(j) <- paste0("\\textbf{", names(j), "}")
-
-  kable(j,
-        caption = cap,
-        booktabs = TRUE,
-        longtable = TRUE,
-        linesep = "",
-        escape = FALSE) %>%
-    kable_styling(latex_options = c("hold_position", "repeat_header"),
-                  font_size = font.size) %>%
+  csasdown::csas_table(j,
+                       format = "latex",
+                       caption = cap,
+                       bold_header = TRUE,
+                       col_names = c("Parameter", "Description", "Value 5ABCD", "Value 3CD")) %>%
+    column_spec(2, width = "5cm") %>%
     footnote(alphabet = c("Estimated in log space",
                           "Conditional MPD estimates"))
 }
