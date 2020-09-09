@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
   fig.pos = "htb"
 )
 source(file.path(here::here(), "R", "all.R")) #Loading the data is in this file
+french <- FALSE
 ```
 
 ```{r load-models, cache=TRUE, echo=FALSE, message=FALSE, results='hide'}
