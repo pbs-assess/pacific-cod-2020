@@ -30,7 +30,6 @@ make.priors.posts.plot(base.model.3cd)
 catch.fit.plot(base.model.3cd, every = 5, last.yr = 2020, french=french)
 ```
 
-
 ```{r summary-fig-base-index-fits-3cd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 3CD reference model from: (a) the West Coast Vancouver Island Synoptic Survey, (b) the Commercial CPUE pre-1996, (c) the Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion)."}
 plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french),
           i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)
@@ -44,12 +43,14 @@ plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=frenc
           label_x = c(0.15, 0.13, 0.13, 0.2))
 ```
 
+
 ```{r summary-fig-base-mean-weight-3cd, fig.cap="MPD fit to the mean weight data for Area 3CD reference model."}
 plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
           mw.compare.plot(base.model.3cd[[1]], french=french),
           nrow = 1,
           ncol = 2)
 ```
+
 
 ```{r summary-fig-base-biomass-3cd, fig.cap="Posterior estimated biomass for the Reference Model, Area 3CD. The green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 1986."}
 b.plot(base.model.3cd,
@@ -60,16 +61,35 @@ b.plot(base.model.3cd,
        usr = c(1956, 2004), french=french)
 ```
 
+
+```{r fig-base-depl-3cd, fig.cap="Relative biomass for the Reference Model, Area 3CD."}
+b.plot(base.model.3cd,
+       base.model.3cd.name,
+       depl = TRUE)
+```
+
+```{r fig-base-recr-3cd, fig.cap="Recruitment (a) and recruitment deviations (b) for the Reference Model, Area 3CD.  The green dashed line shows the mean of the MCMC posterior medians, the blue dashed line shows the median of the MCMC posterior medians."}
+plot_grid(r.plot(base.model.3cd, base.model.3cd.name, add.meds = TRUE, x.axis.angle = 90),
+          r.devs.plot(base.model.3cd, base.model.3cd.name, x.axis.angle = 90),
+          nrow = 1,
+          ncol = 2,
+          labels = c("(a)", "(b)"),
+          label_x = c(0.17, 0.1))
+```
+
 ```{r summary-fig-base-f-3cd, fig.cap="Posterior estimated fishing mortality for the Reference Model, Area 3CD."}
 f.plot(base.model.3cd,
        base.model.3cd.name, french=french)
 ```
+
+\clearpage
 
 ### Area 5ABCD
 
 ```{r summary-fig-base-catch-fit-5abcd, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 catch.fit.plot(base.model.5abcd, every = 5, last.yr = 2020, french=french)
 ```
+
 
 ```{r summary-fig-base-index-fits-5abcd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 5ABCD reference model from: (a) the Hecate Strait Assemblage survey, (b) the Queen Charlotte Sound Synoptic Survey, (c) the Hecate Strait Synoptic Survey, (d) the Commercial CPUE pre-1996, and (e) the Commercial CPUE post-1995. For clarity, only MPD results are shown"}
 plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french),
@@ -84,6 +104,7 @@ plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=f
           labels = c("(a)", "(b)", "(c)", "(d)", "(e)"),
           label_x = 0.2)
 ```
+
 
 ```{r summary-fig-base-mean-weight-5abcd, fig.cap="MPD fit to the mean weight data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
@@ -128,6 +149,8 @@ f.plot(base.model.5abcd,
        base.model.5abcd.name, french=french)
 ```
 
+\clearpage
+
 ## Model-averaged biomass estimates and projections
 
 ### Area 3CD
@@ -167,6 +190,8 @@ b.plot(avg.model.3cd,
        x.every = 2, french=french)
 ```
 
+
+\clearpage
 
 ### Area 5ABCD
 

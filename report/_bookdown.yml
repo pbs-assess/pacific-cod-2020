@@ -4,6 +4,6 @@ rmd_files: ["index.Rmd",
             "01-main.Rmd",
             "02-tables.Rmd",
             "03-figures.Rmd",
-            "04-data-app.Rmd",
+            #"04-data-app.Rmd",
             "99-references.Rmd"]
 delete_merged_file: true

@@ -1,6 +1,4 @@
 
-\clearpage
-
 # Context
 
 The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separate assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)).
@@ -43,16 +41,15 @@ if(!file.exists(surv.file)){
 
 ```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
 
-g <- surv_index %>%  
+g1 <- surv_index %>%  
   rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
   select(Survey, Year,Biomass, CV) %>%
   mutate("GeometricMean"= Biomass/exp(mean(log(Biomass)))) %>%
   mutate("LowerG" = exp(log(GeometricMean))-2*CV, "UpperG"=exp(log(GeometricMean))+2*CV) %>%   ggplot(aes(Year, GeometricMean)) + 
   geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
   theme_pbs() +
-  ylab("WCVI Survey Index (centred by its geometric mean)")+
-  xlab("Year") 
-g
+  theme(axis.title = element_blank())
+#g1
 
 
 ```
@@ -60,7 +57,7 @@ g
 
 ```{r fig-cpue-index-3cd, fig.cap="Commercial CPUE estimates, centred by geometric mean", echo=FALSE}
 
-g <- cpue_pred_modern %>%
+g2 <- cpue_pred_modern %>%
   dplyr::filter(formula_version=="Full standardization", area=="3CD") %>%
   select(year, est,se_link) %>%
   mutate("GeometricMean"= est/exp(mean(log(est)))) %>%
@@ -68,9 +65,17 @@ g <- cpue_pred_modern %>%
   ggplot(aes(year, GeometricMean)) + 
   geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
   theme_pbs() +
-  ylab("Comm. CPUE (centred by its geometric mean)")+
-  xlab("Year") 
-g
+  theme(axis.title = element_blank())
+#g2
+
+```
+
+
+```{r fig-summary-indices-3cd, fig.cap="Top: Relative index of abundance from the West Coast Vancouver Island Synoptic Survey, centred by its geometric mean. Bottom: Commercial CPUE, centred by its geometric mean", echo=FALSE}
+
+cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
+  draw_label("Relative index of abundance", x=  0, y=0.5, vjust= 1.5, angle=90)+
+  draw_label("Year", x=  0.5, y=0, vjust= 0, angle=0)
 
 ```
 
@@ -223,12 +228,12 @@ However, the 2021 biomass is projected to be in the Cautious Zone (below the USR
 Median estimated fishing mortality in 2019 was estimated to be 0.03 y^-1^ (Table \@ref(tab:tab-ref-points-table-avg-5abcd)). 
 
 
-# Model-averaged decision tables {#sec:catch-advice}
+## Model-averaged decision tables {#sec:catch-advice}
 
-## Area 3CD
+### Area 3CD
 
 
-## Area 5ABCD
+### Area 5ABCD
 
 
 # Conclusions
