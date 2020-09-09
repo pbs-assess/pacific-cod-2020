@@ -27,17 +27,17 @@ make.priors.posts.plot(base.model.3cd)
 
 
 ```{r summary-fig-base-catch-fit-3cd, fig.cap="MPD fit to the catch data for Area 3CD reference model."}
-catch.fit.plot(base.model.3cd, every = 5, last.yr = 2015)
+catch.fit.plot(base.model.3cd, every = 5, last.yr = 2020, french=french)
 ```
 
 
 ```{r summary-fig-base-index-fits-3cd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 3CD reference model from: (a) the West Coast Vancouver Island Synoptic Survey, (b) the Commercial CPUE pre-1996, (c) the Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion)."}
-plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5),
-          i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5)
+plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french),
+          i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)
             + ylab("Commercial CPUE (kg/hour)"),
-          i.plot(base.model.3cd, base.model.3cd.name, 3, every = 5)
+          i.plot(base.model.3cd, base.model.3cd.name, 3, every = 5, french=french)
             + ylab("Commercial CPUE (kg/hour)"),
-          i.plot(base.model.3cd, base.model.3cd.name, 4, every = 5),
+          i.plot(base.model.3cd, base.model.3cd.name, 4, every = 5, french=french),
           nrow = 2,
           ncol = 2,
           labels = c("(a)", "(b)", "(c)", "(d)"),
@@ -45,8 +45,8 @@ plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5),
 ```
 
 ```{r summary-fig-base-mean-weight-3cd, fig.cap="MPD fit to the mean weight data for Area 3CD reference model."}
-plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 5, last.yr = 2015),
-          mw.compare.plot(base.model.3cd[[1]]),
+plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
+          mw.compare.plot(base.model.3cd[[1]], french=french),
           nrow = 1,
           ncol = 2)
 ```
@@ -57,27 +57,27 @@ b.plot(base.model.3cd,
        depl = FALSE,
        add.hist.ref = TRUE,
        lrp = c(1986, 1986),
-       usr = c(1956, 2004))
+       usr = c(1956, 2004), french=french)
 ```
 
 ```{r summary-fig-base-f-3cd, fig.cap="Posterior estimated fishing mortality for the Reference Model, Area 3CD."}
 f.plot(base.model.3cd,
-       base.model.3cd.name)
+       base.model.3cd.name, french=french)
 ```
 
 ### Area 5ABCD
 
 ```{r summary-fig-base-catch-fit-5abcd, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
-catch.fit.plot(base.model.5abcd, every = 5, last.yr = 2015)
+catch.fit.plot(base.model.5abcd, every = 5, last.yr = 2020, french=french)
 ```
 
 ```{r summary-fig-base-index-fits-5abcd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 5ABCD reference model from: (a) the Hecate Strait Assemblage survey, (b) the Queen Charlotte Sound Synoptic Survey, (c) the Hecate Strait Synoptic Survey, (d) the Commercial CPUE pre-1996, and (e) the Commercial CPUE post-1995. For clarity, only MPD results are shown"}
-plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 4, every = 10)
+plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french),
+          i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french),
+          i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french),
+          i.plot(base.model.5abcd, base.model.5abcd.name, 4, every = 10, french=french)
             + ylab("Commercial CPUE (kg/hour)"),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 5, every = 5)
+          i.plot(base.model.5abcd, base.model.5abcd.name, 5, every = 5, french=french)
             + ylab("Commercial CPUE (kg/hour)"),
           nrow = 2,
           ncol = 3,
@@ -86,8 +86,8 @@ plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5),
 ```
 
 ```{r summary-fig-base-mean-weight-5abcd, fig.cap="MPD fit to the mean weight data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
-plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 5, last.yr = 2015),
-          mw.compare.plot(base.model.5abcd[[1]]),
+plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
+          mw.compare.plot(base.model.5abcd[[1]], french=french),
           nrow = 1,
           ncol = 2)
 ```
@@ -99,24 +99,24 @@ b.plot(base.model.5abcd,
        depl = FALSE,
        add.hist.ref = TRUE,
        lrp = c(2000, 2000),
-       usr = c(1956, 2004))
+       usr = c(1956, 2004), french=french)
 ```
 
 
 ```{r fig-base-depl-5abcd, fig.cap="Relative biomass for the Reference Model, Area 5ABCD."}
 b.plot(base.model.5abcd,
        base.model.5abcd.name,
-       depl = TRUE)
+       depl = TRUE, french=french)
 ```
 
 ```{r fig-base-recr-5abcd, fig.cap="Recruitment (a) and recruitment deviations (b) for the Reference Model, Area 5ABCD.  The green dashed line shows the mean of the MCMC posterior medians, the blue dashed line shows the median of the MCMC posterior medians."}
 plot_grid(r.plot(base.model.5abcd,
                  base.model.5abcd.name,
                  add.meds = TRUE,
-                 x.axis.angle = 90),
+                 x.axis.angle = 90, french=french),
           r.devs.plot(base.model.5abcd,
                       base.model.5abcd.name,
-                      x.axis.angle = 90),
+                      x.axis.angle = 90, french=french),
           nrow = 1,
           ncol = 2,
           labels = c("(a)", "(b)"),
@@ -125,7 +125,7 @@ plot_grid(r.plot(base.model.5abcd,
 
 ```{r fig-base-f-5abcd, fig.cap="Posterior estimated fishing mortality for the Reference Model, Area 5ABCD."}
 f.plot(base.model.5abcd,
-       base.model.5abcd.name)
+       base.model.5abcd.name, french=french)
 ```
 
 ## Model-averaged biomass estimates and projections
@@ -138,7 +138,7 @@ b.plot(desc.models.3cd,
        depl = FALSE,
        add.hist.ref = TRUE,
        lrp = c(1986, 1986),
-       usr = c(1956, 2004))
+       usr = c(1956, 2004), french=french)
 ```
 
 
@@ -148,7 +148,7 @@ b.plot(avg.model.3cd,
        depl = FALSE,
        add.hist.ref = TRUE,
        lrp = c(1986, 1986),
-       usr = c(1956, 2004))
+       usr = c(1956, 2004), french=french)
 ```
 
 \clearpage
@@ -164,7 +164,7 @@ b.plot(avg.model.3cd,
        tac_vector = c(0, 500, 1000, 1500),
        year_range = c(2010, 2021),
        ylim = c(0, 50000),
-       x.every = 2)
+       x.every = 2, french=french)
 ```
 
 
@@ -176,7 +176,7 @@ b.plot(desc.models.5abcd,
        depl = FALSE,
        add.hist.ref = TRUE,
        lrp = c(2000, 2000),
-       usr = c(1956, 2004))
+       usr = c(1956, 2004), french=french)
 ```
 
 
@@ -186,7 +186,7 @@ b.plot(avg.model.5abcd,
        depl = FALSE,
        add.hist.ref = TRUE,
        lrp = c(2000, 2000),
-       usr = c(1956, 2004))
+       usr = c(1956, 2004), french=french)
 ```
 
 \clearpage
@@ -202,7 +202,7 @@ b.plot(avg.model.5abcd,
        tac_vector = c(0, 900, 2000, 3000),
        year_range = c(2010, 2021),
        ylim = c(0, 50000),
-       x.every = 2)
+       x.every = 2, french=french)
 ```
 
 \clearpage
