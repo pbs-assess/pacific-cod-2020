@@ -3,7 +3,8 @@ decision.table <- function(model,
                            make.table = TRUE,
                            format = "pandoc",
                            tac.vec = NA,
-                           make.lt.gt = TRUE){
+                           make.lt.gt = TRUE,
+                           french=FALSE){
   ## make.lt.gt = add less than and greater than
   ## sybols in table. Changes those columns to character
 
@@ -21,13 +22,32 @@ decision.table <- function(model,
                    "P(F2020 > LRR)")
 
   }else{
-    col.names <- c("$2020$ Catch (mt)",
-                   "$P(B_{2021} < B_{2020})$",
-                   "$P(F_{2020} > F_{2019})$",
-                   "$P(B_{2021} < \\mathrm{LRP})$",
-                   "$P(B_{2021} < \\mathrm{USR})$",
-                   "$P(F_{2020} > \\mathrm{LRR})$")
+    col.names <- c(latex.mlc(c("$2020$", "$\\mathrm{Catch (mt)}$")),
+                   latex.mlc(c("$P(B_{2021} <$", "$B_{2020})$")),
+                   latex.mlc(c("$P(F_{2020} >$", "$F_{2019})$")),
+                   latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{LRP})$")),
+                   latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{USR})$")),
+                   latex.mlc(c("$P(F_{2020} >$", "$\\mathrm{LRR})$")))
   }
+  if(french==TRUE){
+    if(format == "html"){
+      col.names <- c("2020 Prise (mt)",
+                     "P(B2021 < B2020)",
+                     "P(F2020 > F2019)",
+                     "P(B2021 < PRL)",
+                     "P(B2021 < RSS)",
+                     "P(F2020 > TEL)")
+
+    }else{
+      col.names <- c(latex.mlc(c("$2020$", "$\\mathrm{Prise (mt)}$")),
+                     latex.mlc(c("$P(B_{2021}<$", "$B_{2020})$")),
+                     latex.mlc(c("$P(F_{2020} >$", "$F_{2019})$")),
+                     latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{PRL})$")),
+                     latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{RSS})$")),
+                     latex.mlc(c("$P(F_{2020} >$", "$\\mathrm{TEL})$")))
+    }
+  }
+
   tac <- model$proj$tac.vec
   if(!is.na(tac.vec[1])){
     tac <- tac.vec[tac.vec %in% tac]
@@ -67,33 +87,26 @@ decision.table <- function(model,
   }
 }
 
-suggested.ref.points <- function(){
-  df <- data.frame(
+suggested.ref.points <- function(french=FALSE, definition_text="definition", caption_text="caption"){
+
+    df <- data.frame(
     referencepoint = c("$B_{\t{Min}}$",
                        "$B_{\t{Avg}}$",
                        "$F_{\t{Avg}}$",
-                       "$B_{\t{2019}}$",
-                       "$F_{\t{2018}}$"),
-    Definition = c(
-      latex.mlc(c("Lowest estimated biomass agreed to be an",
-                  "undesirable state to avoid ($B_{\t{2000}}$",
-                  "in  5ABCD; $B_{\t{1986}}$ in 3CD)"),
-                make.bold = FALSE),
-      "Average biomass for the period 1956-2004",
-      "Average fishing mortality for the period 1956-2004",
-      "Biomass in 2018",
-      "Fishing mortality in 2017"),
-    Role = c("LRP",
-             "USR",
-             "LRR",
-             "Benchmark",
-             "Benchmark")) %>%
+                       "$B_{\t{2020}}$",
+                       "$F_{\t{2019}}$"),
+    Definition = definition_text,
+    Role = c(en2fr("LRP", translate=french, allow_missing=TRUE),
+             en2fr("USR", translate=french, allow_missing=TRUE),
+             en2fr("LRR", translate=french, allow_missing=TRUE),
+             en2fr("Benchmark", translate=french, allow_missing=TRUE),
+                   en2fr("Benchmark", translate=french, allow_missing=TRUE))) %>%
     rename("Reference point" = referencepoint)
 
+  colnames(df) <- en2fr(colnames(df), translate = french, allow_missing = TRUE)
   colnames(df) <- latex.bold(colnames(df))
   kable(df,
-        caption = paste0("Reference points for the Reference Case ",
-                         "5ABCD and 3CD models."),
+        caption = caption_text,
         booktabs = TRUE,
         linesep = "",
         escape = FALSE,
