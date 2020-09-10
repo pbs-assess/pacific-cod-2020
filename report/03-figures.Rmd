@@ -7,6 +7,7 @@ knitr::include_graphics(here::here("report/figure/Pcod_3CD5ABCDE_Pic.png"))
 
 ```
 
+<!--
 \clearpage
 
 ## Prior probability distributions
@@ -19,18 +20,23 @@ make.priors.posts.plot(base.model.5abcd)
 make.priors.posts.plot(base.model.3cd)
 ```
 
+-->
+
 \clearpage
 
 ## Reference model results
 
 ### Area 3CD
 
+<!--
 
 ```{r summary-fig-base-catch-fit-3cd, fig.cap="MPD fit to the catch data for Area 3CD reference model."}
 catch.fit.plot(base.model.3cd, every = 5, last.yr = 2020, french=french)
 ```
 
-```{r summary-fig-base-index-fits-3cd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 3CD reference model from: (a) the West Coast Vancouver Island Synoptic Survey, (b) the Commercial CPUE pre-1996, (c) the Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion)."}
+-->
+
+```{r summary-fig-base-index-fits-3cd, fig.cap="MPD fits to observed indices of abundance (points) for Area 3CD from: (a) the WCVI Synoptic Survey, (b) Commercial CPUE pre-1996, (c) Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion). For clarity, only MPD results are shown."}
 plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french),
           i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)
             + ylab("Commercial CPUE (kg/hour)"),
@@ -44,7 +50,7 @@ plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=frenc
 ```
 
 
-```{r summary-fig-base-mean-weight-3cd, fig.cap="MPD fit to the mean weight data for Area 3CD reference model."}
+```{r summary-fig-base-mean-weight-3cd, fig.cap="MPD fit to the mean weight data for Area 3CD. For clarity, only MPD results are shown."}
 plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
           mw.compare.plot(base.model.3cd[[1]], french=french),
           nrow = 1,
@@ -52,7 +58,7 @@ plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, fre
 ```
 
 
-```{r summary-fig-base-biomass-3cd, fig.cap="Posterior estimated biomass for the Reference Model, Area 3CD. The green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 1986."}
+```{r summary-fig-base-biomass-3cd, fig.cap="Posterior estimated biomass for Area 3CD. Green dashed line shows the median USR; red dashed line shows the median LRP."}
 b.plot(base.model.3cd,
        base.model.3cd.name,
        depl = FALSE,
@@ -62,13 +68,13 @@ b.plot(base.model.3cd,
 ```
 
 
-```{r fig-base-depl-3cd, fig.cap="Relative biomass for the Reference Model, Area 3CD."}
+```{r fig-base-depl-3cd, fig.cap="Relative biomass for Area 3CD."}
 b.plot(base.model.3cd,
        base.model.3cd.name,
        depl = TRUE)
 ```
 
-```{r fig-base-recr-3cd, fig.cap="Recruitment (a) and recruitment deviations (b) for the Reference Model, Area 3CD.  The green dashed line shows the mean of the MCMC posterior medians, the blue dashed line shows the median of the MCMC posterior medians."}
+```{r fig-base-recr-3cd, fig.cap="Recruitment (a) and recruitment deviations (b) for Area 3CD.  Green dashed line shows the mean of the MCMC posterior medians; blue dashed line shows the median of the MCMC posterior medians."}
 plot_grid(r.plot(base.model.3cd, base.model.3cd.name, add.meds = TRUE, x.axis.angle = 90),
           r.devs.plot(base.model.3cd, base.model.3cd.name, x.axis.angle = 90),
           nrow = 1,
@@ -77,7 +83,7 @@ plot_grid(r.plot(base.model.3cd, base.model.3cd.name, add.meds = TRUE, x.axis.an
           label_x = c(0.17, 0.1))
 ```
 
-```{r summary-fig-base-f-3cd, fig.cap="Posterior estimated fishing mortality for the Reference Model, Area 3CD."}
+```{r summary-fig-base-f-3cd, fig.cap="Posterior estimated fishing mortality for Area 3CD."}
 f.plot(base.model.3cd,
        base.model.3cd.name, french=french)
 ```
@@ -86,12 +92,15 @@ f.plot(base.model.3cd,
 
 ### Area 5ABCD
 
+<!--
+
 ```{r summary-fig-base-catch-fit-5abcd, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 catch.fit.plot(base.model.5abcd, every = 5, last.yr = 2020, french=french)
 ```
 
+-->
 
-```{r summary-fig-base-index-fits-5abcd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 5ABCD reference model from: (a) the Hecate Strait Assemblage survey, (b) the Queen Charlotte Sound Synoptic Survey, (c) the Hecate Strait Synoptic Survey, (d) the Commercial CPUE pre-1996, and (e) the Commercial CPUE post-1995. For clarity, only MPD results are shown"}
+```{r summary-fig-base-index-fits-5abcd, fig.cap="MPD fits to observed indices of abundance (points) for Area 5ABCD from: (a) the HS Assemblage survey, (b) the QCS Synoptic Survey, (c) the HS Synoptic Survey, (d) Commercial CPUE pre-1996, and (e) Commercial CPUE post-1995. For clarity, only MPD results are shown."}
 plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french),
           i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french),
           i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french),
@@ -106,7 +115,7 @@ plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=f
 ```
 
 
-```{r summary-fig-base-mean-weight-5abcd, fig.cap="MPD fit to the mean weight data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
+```{r summary-fig-base-mean-weight-5abcd, fig.cap="MPD fit to the mean weight data for Area 5ABCD. For clarity, only MPD results are shown"}
 plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
           mw.compare.plot(base.model.5abcd[[1]], french=french),
           nrow = 1,
@@ -114,7 +123,7 @@ plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, f
 ```
 
 
-```{r summary-fig-base-biomass-5abcd, fig.cap="Posterior estimated biomass for the Reference Model, Area 5ABCD.  The green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 2000."}
+```{r summary-fig-base-biomass-5abcd, fig.cap="Posterior estimated biomass for Area 5ABCD. Green dashed line shows the median USR; red dashed line shows the median LRP."}
 b.plot(base.model.5abcd,
        base.model.5abcd.name,
        depl = FALSE,
@@ -124,13 +133,13 @@ b.plot(base.model.5abcd,
 ```
 
 
-```{r fig-base-depl-5abcd, fig.cap="Relative biomass for the Reference Model, Area 5ABCD."}
+```{r fig-base-depl-5abcd, fig.cap="Relative biomass for Area 5ABCD."}
 b.plot(base.model.5abcd,
        base.model.5abcd.name,
        depl = TRUE, french=french)
 ```
 
-```{r fig-base-recr-5abcd, fig.cap="Recruitment (a) and recruitment deviations (b) for the Reference Model, Area 5ABCD.  The green dashed line shows the mean of the MCMC posterior medians, the blue dashed line shows the median of the MCMC posterior medians."}
+```{r fig-base-recr-5abcd, fig.cap="Recruitment (a) and recruitment deviations (b) for Area 5ABCD. Green dashed line shows the mean of the MCMC posterior medians; blue dashed line shows the median of the MCMC posterior medians."}
 plot_grid(r.plot(base.model.5abcd,
                  base.model.5abcd.name,
                  add.meds = TRUE,
@@ -144,7 +153,7 @@ plot_grid(r.plot(base.model.5abcd,
           label_x = c(0.15, 0.1))
 ```
 
-```{r fig-base-f-5abcd, fig.cap="Posterior estimated fishing mortality for the Reference Model, Area 5ABCD."}
+```{r fig-base-f-5abcd, fig.cap="Posterior estimated fishing mortality for Area 5ABCD."}
 f.plot(base.model.5abcd,
        base.model.5abcd.name, french=french)
 ```
@@ -155,7 +164,7 @@ f.plot(base.model.5abcd,
 
 ### Area 3CD
 
-```{r summary-fig-model-average-biomass-comp-3cd, fig.cap="Posterior estimates of biomass for the model-averaged set for Area 3CD. The green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 1986."}
+```{r summary-fig-model-average-biomass-comp-3cd, fig.cap="Posterior estimates of biomass for the model-averaged set for Area 3CD. Green dashed line shows the median USR; red dashed line shows the median LRP."}
 b.plot(desc.models.3cd,
        desc.models.3cd.name,
        depl = FALSE,
@@ -165,7 +174,7 @@ b.plot(desc.models.3cd,
 ```
 
 
-```{r summary-fig-model-average-biomass-3cd, fig.cap="Combined posterior biomass for the model-averaged set for Area 3CD.  The green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 1986."}
+```{r summary-fig-model-average-biomass-3cd, fig.cap="Combined posterior biomass for the model-averaged set for Area 3CD.  Green dashed line shows the median USR; red dashed line shows the median LRP."}
 b.plot(avg.model.3cd,
        base.model.3cd.name,
        depl = FALSE,
@@ -176,7 +185,7 @@ b.plot(avg.model.3cd,
 
 \clearpage
 
-```{r summary-fig-model-average-biomass-3cd-proj, fig.cap="Combined posterior estimates of biomass for the model-averaged set for Area 3CD with projections (to the end of 2019).  The upper horizontal green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The lower horizontal red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 2000. The coloured regions to the right of the vertical line represent projections based on various TACs. The line represents the posterior median and the shaded region represents the 95\\% credible interval.For clarity, years before 2010 are removed."}
+```{r summary-fig-model-average-biomass-3cd-proj, fig.cap="Combined posterior estimates of biomass for the model-averaged set for Area 3CD with projections (to the end of 2019). Green dashed line shows the median USR; red dashed line shows the median LRP. The coloured regions to the right of the vertical line represent projections based on various TACs. The line represents the posterior median and the shaded region represents the 95\\% credible interval.For clarity, years before 2010 are removed."}
 b.plot(avg.model.3cd,
        base.model.3cd.name,
        depl = FALSE,
@@ -195,7 +204,7 @@ b.plot(avg.model.3cd,
 
 ### Area 5ABCD
 
-```{r summary-fig-model-average-biomass-comp-5abcd, fig.cap="Posterior estimates of biomass for the model-averaged set for Area 5ABCD. The green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 2000."}
+```{r summary-fig-model-average-biomass-comp-5abcd, fig.cap="Posterior estimates of biomass for the model-averaged set for Area 5ABCD. Green dashed line shows the median USR; red dashed line shows the median LRP."}
 b.plot(desc.models.5abcd,
        desc.models.5abcd.name,
        depl = FALSE,
@@ -205,7 +214,7 @@ b.plot(desc.models.5abcd,
 ```
 
 
-```{r summary-fig-model-average-biomass-5abcd, fig.cap="Combined posterior biomass for the averaged models, Area 5ABCD. The green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 2000."}
+```{r summary-fig-model-average-biomass-5abcd, fig.cap="Combined posterior biomass for the averaged models, Area 5ABCD. Green dashed line shows the median USR; red dashed line shows the median LRP."}
 b.plot(avg.model.5abcd,
        base.model.5abcd.name,
        depl = FALSE,
@@ -216,7 +225,7 @@ b.plot(avg.model.5abcd,
 
 \clearpage
 
-```{r summary-fig-model-average-biomass-5abcd-proj, fig.cap="Combined posterior estimates of biomass for the model-averaged set for Area 5ABCD with projections (to the end of 2019).  The upper horizontal green dashed line shows the median Upper Stock Reference (USR) which is the mean biomass estimate for the years 1956--2004. The lower horizontal red dashed line shows the median Limit Reference Point (LRP) which is the lowest estimated biomass agreed to be an undesirable state to avoid, in this case it is the biomass estimate for 2000. The coloured regions to the right of the vertical line represent projections based on various TACs. The line represents the posterior median and the shaded region represents the 95\\% credible interval. For clarity, years before 2010 are removed."}
+```{r summary-fig-model-average-biomass-5abcd-proj, fig.cap="Combined posterior estimates of biomass for the model-averaged set for Area 5ABCD with projections (to the end of 2019).  Green dashed line shows the median USR; red dashed line shows the median LRP. The coloured regions to the right of the vertical line represent projections based on various TACs. The line represents the posterior median and the shaded region represents the 95\\% credible interval. For clarity, years before 2010 are removed."}
 b.plot(avg.model.5abcd,
        base.model.5abcd.name,
        depl = FALSE,
