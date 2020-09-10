@@ -1,130 +1,48 @@
 
 # Context
 
-Pacific Cod (*Gadus macrocephalus*) is a relatively short-lived, fast-growing member of the family Gadidae.
-A common name in British Columbia (BC) is grey cod (or gray cod).
-Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017]. They are also caught in very small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
-Currently, the majority of the BC Pacific Cod catch is taken from Hecate Strait (HS; Area 5CD).
-Commercial catches also come from Queen Charlotte Sound (QCS; Area 5AB) and the west coast of Vancouver Island (WCVI; Area 3CD). Near negligible catch is also taken from the west coast of Haida Gwaii, Area 5E ( < 0.5% of total average annual catch since 1985).
-
-The last Pacific Cod assessment was done in 2018, providing catch advice for 2019 [@forrest2020; @dfo2019].
-Separate assessments were done for stocks in Area 3CD (WCVI) and Area 5ABCD (QCS and HS combined) (Figure \@ref(fig:fig-map)).
-Both stocks were assessed to be in the Cautious Zone [@dfo2009].
-The assessment models were delay-difference models [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
+The last assessment for Pacific Cod in British Columbia (BC) was done in 2018, providing catch advice for 2019 [@forrest2020; @dfo2019].
+Separate assessments were done for stocks in Area 3CD (West Coast Vancouver Island: WCVI) and Area 5ABCD (Queen Charlotte Sound (QCS) and Hecate Strait (HS) combined) (Figure \@ref(fig:fig-map)).
+Both the 3CD and 5ABCD stocks were assessed to be in the Cautious Zone [@dfo2009].
 
 Fishery-independent synoptic bottom trawl surveys are conducted biennially in BC, usually occurring in even-numbered years for WCVI, and odd-numbered years in QCS and HS.
 However, due to the COVID-19 pandemic, the scheduled 2020 WCVI survey did not occur.
-The 2018 survey index for WCVI was very low, approximately 25% of the magnitude of the 2014 and 2016 observations (Figure \@ref(fig:fig-summary-indices-3cd); Table \@ref(tab:surv-canadian-table)).
+The 2018 survey index for WCVI was very low, at approximately 25% of the magnitude of the 2014 and 2016 observations (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:fig-summary-indices-3cd)).
 The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-summary-indices-3cd)).
 Catches in 2018 and 2019 in Area 3CD were also low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
-The previous advice [@dfo2019], recommended updates be provided in years immediately following the biennial groundfish synoptic bottom trawl survey in each area (i.e., when the most recent survey index point is available).
-However, given the low index of abundance in 2018 Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of BC Pacifc cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+The previous advice [@dfo2019] recommended assessment updates be provided in years immediately following the biennial groundfish synoptic bottom trawl survey in each area (i.e., when the most recent survey index point is available).
+However, given the low index of abundance in 2018 Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of BC Pacifc cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
-While there was no apparent decrease in survey or CPUE indices for either Hecate Strait or Queen Charlotte Sound (Figure \@ref(fig:surv-canadian)), which survey the Area 5ABCD stock, DFO Pacifc Science Branch has taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run both stock assessments to re-assess stock status in **2020** and provide catch advice for **2021**.
+While there was no apparent decrease in survey or CPUE indices for either QCS or HS (Figure \@ref(fig:surv-canadian)), DFO Pacifc Science Branch has taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run both stock assessments to re-assess stock status and provide catch advice.
 
 *TODO: currently data only up to 2019. Update to 2020, will have to pro-rate catch.*
 
 
-
-```{r get-recent-3CD-index-data}
-
-#CPUE
-params <- list()
-params$species_proper <- "Pacific Cod"
-params$april1_year <- TRUE
-params$area <- c("5[ABCD]+", "3[CD]+")
-params$area_name <- c("5ABCD", "3CD")
-params$skip_single_variable_models <- FALSE
-
-params$era <- "modern"
-source(here::here("R/cpue.R"))
-dfleet_modern <- dfleet
-gg_cpue_modern <- gg_cpue
-cpue_pred_modern <- predictions
-arith_cpue_modern <- arith_cpue
-
-#Survey
-surv.file <- here::here("data/generated/all_surveys.csv")
-
-if(!file.exists(surv.file)){
-  message("Error: Survey indices file has not been made! Please run 04-survey-indices-app.Rmd first.")
-} else {
-  surv_index <- readr::read_csv(here::here("data/generated/all_surveys.csv"))
-}
-
-```
-
-
-```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
-
-g1 <- surv_index %>%  
-  rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
-  select(Survey, Year,Biomass, CV) %>%
-  mutate("GeometricMean"= Biomass/exp(mean(log(Biomass)))) %>%
-  mutate("LowerG" = exp(log(GeometricMean))-2*CV, "UpperG"=exp(log(GeometricMean))+2*CV) %>%   ggplot(aes(Year, GeometricMean)) + 
-  geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
-  theme_pbs() +
-  theme(axis.title = element_blank())
-#g1
-
-
-```
-
-
-```{r fig-cpue-index-3cd, fig.cap="Commercial CPUE estimates, centred by geometric mean", echo=FALSE}
-
-g2 <- cpue_pred_modern %>%
-  dplyr::filter(formula_version=="Full standardization", area=="3CD") %>%
-  select(year, est,se_link) %>%
-  mutate("GeometricMean"= est/exp(mean(log(est)))) %>%
-  mutate("LowerG" = exp(log(GeometricMean))-2*se_link, "UpperG"=exp(log(GeometricMean))+2*se_link) %>% 
-  ggplot(aes(year, GeometricMean)) + 
-  geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
-  theme_pbs() +
-  theme(axis.title = element_blank())
-#g2
-
-```
-
-
-```{r fig-summary-indices-3cd, fig.cap="Top: Relative index of abundance from the West Coast Vancouver Island Synoptic Survey, centred by its geometric mean. Bottom: Commercial CPUE, centred by its geometric mean", echo=FALSE}
-
-cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
-  draw_label("Relative index of abundance", x=  0, y=0.5, vjust= 1.5, angle=90)+
-  draw_label("Year", x=  0.5, y=0, vjust= 0, angle=0)
-
-```
-
-
-```{r fig-iphc-index-3cd}
-#this is not very useful but keep the code so we know how to get iphc data in future
-
-# # Need to check which areas are included. May need to filter data first to be only 3CD,
-# # then plot either series C or D (which are coastwide)
-# iphc.3CD <- iphc.dat %>% 
-#   filter(lat <50.7) #the border of 3D is actually 50.5 but not enough obs if that is used 
-# 
-# # iphc.3CD$ser_longest is series C (does not filter for > 50.6 degrees)
-# glist <- gfiphc::calc_iphc_full_res(iphc.3CD) 
-# 
-# g <- glist$ser_longest %>% 
-#   select(year, I_tBootMean, I_tBootCV) %>%
-#   mutate("GeometricMean"= I_tBootMean/exp(mean(log(I_tBootMean)))) %>%
-#   mutate("LowerG" = exp(log(GeometricMean))-2*I_tBootCV, "UpperG"=exp(log(GeometricMean))+2*I_tBootCV) %>% 
-#   ggplot(aes(year, GeometricMean)) + 
-#   geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
-#   theme_pbs() +
-#   ylab("IPHC FISS (centred by its geometric mean)")+
-#   xlab("Year") 
-# g 
-#   
-
-```
-
 # Background
 
+Pacific Cod ( or Grey Cod) is a relatively short-lived (~10-13 *y*), fast-growing member of the family Gadidae.
+It is distributed throughout the north Pacific Ocean, and throughout the waters of BC. 
+
+Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B); West Coast Vancouver Island (3CD); Queen Charlotte Sound (5AB); and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and the West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
+
+The choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment in 2018 [@dfo2019], and therefore in the current advice, was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2013].
+There is also no evidence for genetic distinction between these two stocks [@forrest2013].
+
 # Description of the fishery
+
+Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017]. They are also caught in very small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
+The depth range of capture in 5ABCD ranges from around 60--200 m, with data showing a shift to deeper depths since 1996 [@forrest2020].
+
+Currently, the majority of the BC Pacific Cod catch is taken from HS (Area 5CD).
+Commercial catches also come from QCS (Area 5AB) and WCVI (Area 3CD). 
+Near negligible catch is taken from the west coast of Haida Gwaii, Area 5E ( < 0.5% of total average annual catch since 1985).
+
+The BC integrated fishery is subject to 100% at-sea and dockside monitoring.
+Since 1996, all bottom trawl vessels have carried observers, who record the catch of each species and estimate quantities of released (discarded) fish.
+Therefore, since 1996, estimates of catch and at-sea releases can be considered highly accurate.
+For the period 1956--1995 estimates of catch and releases were obtained from fishing logbooks.
+Estimates of at-sea releases for this period are likely to be under-estimates [@forrest2020]
 
 # Analysis and response
 
@@ -142,6 +60,8 @@ Data were extracted from DFO databases in the same way as described in @forrest2
 
 
 ## Stock assessment model
+
+The assessment models used were delay-difference models [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
 
 **TODO: Add a bare minimum description of the methods, referring to previous assessment**
 

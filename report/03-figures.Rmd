@@ -3,9 +3,102 @@
 # Figures
 
 ```{r fig-map, fig.cap="Map of the management areas 5AB (Queen Charlotte Sound), 5CD (Hecate Strait), and 3CD (West Coast Vancouver Island).", out.width="4in"}
-knitr::include_graphics(here::here("report/figure/Pcod_3CD5ABCDE_Pic.png"))
+knitr::include_graphics(here::here("report/figure/Pcod_3CD5ABCDE_names.png"))
 
 ```
+
+```{r get-recent-3CD-index-data}
+
+#CPUE
+params <- list()
+params$species_proper <- "Pacific Cod"
+params$april1_year <- TRUE
+params$area <- c("5[ABCD]+", "3[CD]+")
+params$area_name <- c("5ABCD", "3CD")
+params$skip_single_variable_models <- FALSE
+
+params$era <- "modern"
+source(here::here("R/cpue.R"))
+dfleet_modern <- dfleet
+gg_cpue_modern <- gg_cpue
+cpue_pred_modern <- predictions
+arith_cpue_modern <- arith_cpue
+
+#Survey
+surv.file <- here::here("data/generated/all_surveys.csv")
+
+if(!file.exists(surv.file)){
+  message("Error: Survey indices file has not been made! Please run 04-survey-indices-app.Rmd first.")
+} else {
+  surv_index <- readr::read_csv(here::here("data/generated/all_surveys.csv"))
+}
+
+```
+
+```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
+
+g1 <- surv_index %>%  
+  rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
+  select(Survey, Year,Biomass, CV) %>%
+  mutate("GeometricMean"= Biomass/exp(mean(log(Biomass)))) %>%
+  mutate("LowerG" = exp(log(GeometricMean))-2*CV, "UpperG"=exp(log(GeometricMean))+2*CV) %>%   ggplot(aes(Year, GeometricMean)) + 
+  geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
+  theme_pbs() +
+  theme(axis.title = element_blank())
+#g1
+
+
+```
+
+```{r fig-cpue-index-3cd, fig.cap="Commercial CPUE estimates, centred by geometric mean", echo=FALSE}
+
+g2 <- cpue_pred_modern %>%
+  dplyr::filter(formula_version=="Full standardization", area=="3CD") %>%
+  select(year, est,se_link) %>%
+  mutate("GeometricMean"= est/exp(mean(log(est)))) %>%
+  mutate("LowerG" = exp(log(GeometricMean))-2*se_link, "UpperG"=exp(log(GeometricMean))+2*se_link) %>% 
+  ggplot(aes(year, GeometricMean)) + 
+  geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
+  theme_pbs() +
+  theme(axis.title = element_blank())
+#g2
+
+```
+
+```{r fig-summary-indices-3cd, fig.cap="Top: Relative index of abundance from the West Coast Vancouver Island Synoptic Survey, centred by its geometric mean. Bottom: Commercial CPUE, centred by its geometric mean", echo=FALSE}
+
+cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
+  draw_label("Relative index of abundance", x=  0, y=0.5, vjust= 1.5, angle=90)+
+  draw_label("Year", x=  0.5, y=0, vjust= 0, angle=0)
+
+```
+
+```{r fig-iphc-index-3cd}
+#this is not very useful but keep the code so we know how to get iphc data in future
+
+# # Need to check which areas are included. May need to filter data first to be only 3CD,
+# # then plot either series C or D (which are coastwide)
+# iphc.3CD <- iphc.dat %>% 
+#   filter(lat <50.7) #the border of 3D is actually 50.5 but not enough obs if that is used 
+# 
+# # iphc.3CD$ser_longest is series C (does not filter for > 50.6 degrees)
+# glist <- gfiphc::calc_iphc_full_res(iphc.3CD) 
+# 
+# g <- glist$ser_longest %>% 
+#   select(year, I_tBootMean, I_tBootCV) %>%
+#   mutate("GeometricMean"= I_tBootMean/exp(mean(log(I_tBootMean)))) %>%
+#   mutate("LowerG" = exp(log(GeometricMean))-2*I_tBootCV, "UpperG"=exp(log(GeometricMean))+2*I_tBootCV) %>% 
+#   ggplot(aes(year, GeometricMean)) + 
+#   geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
+#   theme_pbs() +
+#   ylab("IPHC FISS (centred by its geometric mean)")+
+#   xlab("Year") 
+# g 
+#   
+
+```
+
+
 
 <!--
 \clearpage
