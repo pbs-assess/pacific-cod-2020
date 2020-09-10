@@ -64,10 +64,13 @@ Details of the biological data used to derive information on growth and maturity
 
 ## Stock assessment model
 
-The current assessment model is a delay-difference models [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
+The current assessment model is a Bayesian delay-difference model [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
 A full stock assessment history for both stocks is provided in @forrest2020.
 The current model is fully described in Appendix D of @forrest2020.
 All prior probability distributions for model parameters and fixed parameters in the current assessment are the same as those reported in @forrest2020.
+
+For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
+Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
 @forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
@@ -77,6 +80,7 @@ Other stock assessments that have used a model-averaging approach are Pacific Ha
 ## Model scenarios
 
 The same model scenarios as those agreed upon for the 2018 assessment (@dfo2019) were used here for model-averaging (updated with data to 2020) .
+Full details on the model configuration and assumptions for each scenario are provided in @forrest2020.
 
 ### Area 3CD
 
@@ -114,36 +118,24 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 • Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W$ = 0.15.
 
-See @forrest2020 and @dfo2019 for further details.
-
 ## Reference points
 
 As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
 
-1. $USR$ (Upper Stock Reference) is the historical mean of the biomass estimates from 1956--2004.
+1. $\textrm{USR}$ (Upper Stock Reference) is the historical mean of the biomass estimates from 1956--2004.
 
-2. $LRP$ (Limit Reference Point) is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
+2. $\textrm{LRP}$ (Limit Reference Point) is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
 
-3. $LRR$ (Limit Removal Rate) is the average fishing mortality rate from 1956--2004.
-
+3. $\textrm{LRR}$ (Limit Removal Rate) is the average fishing mortality rate from 1956--2004.
 
 # Assessment results {#sec:summary-results}
-
-We begin with a summary set of results for Area 3CD, followed by summary results for Area 5CD. 
-<!--A more complete set of tables and figures is provided in Sections \@ref(sec:tables) and \@ref(sec:figures). 
-However, we do not discuss these in detail.-->
-
-
-*TODO: Add some summary info on the figs and tables*
 
 ## Reference model results
 
 ### Area 3CD
 
-For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
-Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
-
-Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:fig-base-catch-fit-3cd), \@ref(fig:fig-base-index-fits-3cd) and \@ref(fig:fig-base-mean-weight-3cd), respectively.
+Model fits to the indices of abundance and mean weight data are shown in Figures  \@ref(fig:fig-base-index-fits-3cd) and \@ref(fig:fig-base-mean-weight-3cd), respectively.
+Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
 
 Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-3cd) .
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
