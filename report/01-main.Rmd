@@ -9,27 +9,31 @@ Fishery-independent synoptic bottom trawl surveys are conducted biennially in BC
 However, due to the COVID-19 pandemic, the scheduled 2020 WCVI survey did not occur.
 The 2018 survey index for WCVI was very low, at approximately 25% of the magnitude of the 2014 and 2016 observations (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:fig-summary-indices-3cd)).
 The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-summary-indices-3cd)).
-Catches in 2018 and 2019 in Area 3CD were also low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
+Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
-The previous advice [@dfo2019] recommended assessment updates be provided in years immediately following the biennial groundfish synoptic bottom trawl survey in each area (i.e., when the most recent survey index point is available).
-However, given the low index of abundance in 2018 Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
+However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+
+This Science Response report responds to this request and provides updated stock status advice for Pacific Cod in Areas 3CD and 5ABCD in 2020, and updates catch advice for 2021.
 
 *TODO: currently data only up to 2019. Update to 2020, will have to pro-rate catch.*
+
 
 
 # Background
 
 Pacific Cod ( or Grey Cod) is a relatively short-lived (~10-13 *y*), fast-growing member of the family Gadidae.
-It is distributed throughout the north Pacific Ocean, and throughout the waters of BC. 
+It is distributed throughout the north Pacific Ocean, and throughout the waters of BC, typically in depth ranges up to 200 m. 
 
-Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B); West Coast Vancouver Island (3CD); Queen Charlotte Sound (5AB); and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and the West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
+Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B); West Coast Vancouver Island (3CD); Queen Charlotte Sound (5AB); and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
 
 The choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment in 2018 [@dfo2019], and therefore in the current advice, was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
 There is also no evidence for genetic distinction between these two stocks [@forrest2015].
 
 # Description of the fishery
 
-Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017]. They are also caught in very small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
+Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017].
+They are also caught in very small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
 The depth range of capture in 5ABCD ranges from around 60--200 m, with data showing a shift to deeper depths since 1996 [@forrest2020].
 
 Currently, the majority of the BC Pacific Cod catch is taken from HS (Area 5CD).
@@ -38,7 +42,7 @@ Near negligible catch is taken from the west coast of Haida Gwaii, Area 5E ( < 0
 
 The BC integrated fishery is subject to 100% at-sea and dockside monitoring.
 Since 1996, all bottom trawl vessels have carried observers, who record the catch of each species and estimate quantities of released (discarded) fish.
-Therefore, since 1996, estimates of catch and at-sea releases can be considered highly accurate.
+Therefore, since 1996, estimates of catch and at-sea releases can be considered accurate.
 For the period 1956--1995 estimates of catch and releases were obtained from fishing logbooks.
 Estimates of at-sea releases for this period are likely to be under-estimates [@forrest2020]
 
@@ -46,28 +50,33 @@ Estimates of at-sea releases for this period are likely to be under-estimates [@
 
 ## Data
 
-Data were extracted from DFO databases in the same way as described in @forrest2020, with updates to 2019. The models were fit to:
+Data were extracted from DFO databases in the same way as described in @forrest2020, with updates to *2020*. The models were fit to:
 
 1. Commercial catch data (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd), Figures \@ref(fig:fig-catch-3cd) and \@ref(fig:fig-catch-5abcd)); 
 
-2. Survey indices of abundance. The 3CD model was fit to the WCVI Synoptic Survey (Figure \@ref(fig:surv-canadian)) and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). The 5ABCD model was fit to the Hecate Strait Synoptic Survey, the Queen Charlotte Sound Synoptic Survey and the Hecate Strait Multispecies Assemblage Survey (Figure \@ref(fig:surv-canadian)). Detailed methods in Appendix A of @forrest2020.; 
+2. Survey indices of abundance. The 3CD model was fit to the WCVI Synoptic Survey (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:surv-canadian)) and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). The 5ABCD model was fit to the Hecate Strait Synoptic Survey, the Queen Charlotte Sound Synoptic Survey and the Hecate Strait Multispecies Assemblage Survey (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:surv-canadian)). Detailed methods are provided in Appendix A of @forrest2020.; 
 
-3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figures \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)). Detailed methods in Appendix B of @forrest2020.; and
+3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figures \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)). Detailed methods are provided in Appendix B of @forrest2020.; and
 
-4. Mean weight of Pacific Cod in the commercial bottom trawl fishery (Figures \@ref(fig:meanweight-3cd) and \@ref(fig:meanweight-5abcd)). Detailed methods in Appendix C of @forrest2020.
+4. Mean weight of Pacific Cod in the commercial bottom trawl fishery (Figures \@ref(fig:meanweight-3cd) and \@ref(fig:meanweight-5abcd)). Detailed methods are provided in Appendix C of @forrest2020.
 
+Details of the biological data used to derive information on growth and maturity are provided in Appendix C of @forrest2020.
 
 ## Stock assessment model
 
-The assessment models used were delay-difference models [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
+The current assessment model is a delay-difference models [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
+A full stock assessment history for both stocks is provided in @forrest2020.
+The current model is fully described in Appendix D of @forrest2020.
+All prior probability distributions for model parameters and fixed parameters in the current assessment are the same as those reported in @forrest2020.
 
-**TODO: Add a bare minimum description of the methods, referring to previous assessment**
+@forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
+This was to address some of the key irresolvable uncertainties associated with the stock assessment.
+Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
+Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
 
 ## Model scenarios
 
-@forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases. This was to address some of the key irresolvable uncertainties associated with the stock assessment. Other stock assessments to use a model-averaged approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
-
-In this update, we used the same model scenarios for model-averaging (updated with data to 2019) as those that were agreed upon for the 2018 assessment (@dfo2019).
+The same model scenarios as those agreed upon for the 2018 assessment (@dfo2019) were used here for model-averaging (updated with data to 2020) .
 
 ### Area 3CD
 
@@ -89,7 +98,7 @@ For Area 3CD, the scenarios (Sc) included in the model-averaging set were:
 
 ### Area 5ABCD
 
-For Area 5ABCD, the scenarios (Sc) included in the model-averaging set were:
+For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 • Sc 1a Reference model.
 
