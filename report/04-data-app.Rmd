@@ -120,7 +120,7 @@ discards.plot(catch.5cd, french=french)
 
 All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
 
-*TODO: add brief summary text -- do we need the descriptions?*
+*TODO: add brief summary text -- do we need the descriptions? NO*
 
 #### HECATE STRAIT ASSEMBLAGE SURVEY
 

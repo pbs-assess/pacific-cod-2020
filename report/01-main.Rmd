@@ -1,14 +1,31 @@
 
 # Context
 
-The last Pacific Cod assessment was conducted in 2018 [@forrest2020; @dfo2019]. Separate assessments were provided for stocks in Area 3CD and Area 5ABCD (Figure \@ref(fig:fig-map)).
-The assessment models were delay-difference models, fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights.
-Survey indices were available to 2016 for Area 3CD and 2017 for Area 5ABCD. Both stocks were assessed to be in the Cautious Zone [@dfo2009].
+Pacific Cod (*Gadus macrocephalus*) is a relatively short-lived, fast-growing member of the family Gadidae.
+A common name in British Columbia (BC) is grey cod (or gray cod).
+Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017]. They are also caught in very small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
+Currently, the majority of the BC Pacific Cod catch is taken from Hecate Strait (HS; Area 5CD).
+Commercial catches also come from Queen Charlotte Sound (QCS; Area 5AB) and the west coast of Vancouver Island (WCVI; Area 3CD). Near negligible catch is also taken from the west coast of Haida Gwaii, Area 5E ( < 0.5% of total average annual catch since 1985).
 
-Since the last advice [@dfo2019], there has been no further request for science advice. However, it has recently come to our attention that the 2018 survey index for Area 3CD was very low, approximately 25% of the previous two observations (Figure \@ref(fig:fig-wcvi-index-3cd)).
-The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-cpue-index-3cd)). Catches in 2018 and 2019 in Area 3CD were also very low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
+The last Pacific Cod assessment was done in 2018, providing catch advice for 2019 [@forrest2020; @dfo2019].
+Separate assessments were done for stocks in Area 3CD (WCVI) and Area 5ABCD (QCS and HS combined) (Figure \@ref(fig:fig-map)).
+Both stocks were assessed to be in the Cautious Zone [@dfo2009].
+The assessment models were delay-difference models [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
 
-While we did not see a decrease in survey or CPUE indices for either Hecate Strait or Queen Charlotte Sound (Figure \@ref(fig:surv-canadian)), which cover the Area 5ABCD stock, we have taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run the stock assessment to re-assess stock status.
+Fishery-independent synoptic bottom trawl surveys are conducted biennially in BC, usually occurring in even-numbered years for WCVI, and odd-numbered years in QCS and HS.
+However, due to the COVID-19 pandemic, the scheduled 2020 WCVI survey did not occur.
+The 2018 survey index for WCVI was very low, approximately 25% of the magnitude of the 2014 and 2016 observations (Figure \@ref(fig:fig-summary-indices-3cd); Table \@ref(tab:surv-canadian-table)).
+The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-summary-indices-3cd)).
+Catches in 2018 and 2019 in Area 3CD were also low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
+
+The previous advice [@dfo2019], recommended updates be provided in years immediately following the biennial groundfish synoptic bottom trawl survey in each area (i.e., when the most recent survey index point is available).
+However, given the low index of abundance in 2018 Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of BC Pacifc cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+
+While there was no apparent decrease in survey or CPUE indices for either Hecate Strait or Queen Charlotte Sound (Figure \@ref(fig:surv-canadian)), which survey the Area 5ABCD stock, DFO Pacifc Science Branch has taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run both stock assessments to re-assess stock status in **2020** and provide catch advice for **2021**.
+
+*TODO: currently data only up to 2019. Update to 2020, will have to pro-rate catch.*
+
+
 
 ```{r get-recent-3CD-index-data}
 
