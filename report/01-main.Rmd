@@ -147,7 +147,7 @@ Data were extracted from DFO databases in the same way as described in @forrest2
 
 ## Model scenarios
 
-@forrest2013 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases. This was to address some of the key irresolvable uncertainties associated with the stock assessment. Other stock assessments to use a model-averaged approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
+@forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases. This was to address some of the key irresolvable uncertainties associated with the stock assessment. Other stock assessments to use a model-averaged approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
 
 In this update, we used the same model scenarios for model-averaging (updated with data to 2019) as those that were agreed upon for the 2018 assessment (@dfo2019).
 
