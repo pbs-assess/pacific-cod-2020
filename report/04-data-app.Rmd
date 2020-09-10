@@ -12,34 +12,6 @@
 
 ### Area 3CD
 
-```{r fig-catch-3cd, fig.cap="Catch for Area 3CD. Canadian catch includes at-sea releases."}
-make.catches.plot(catch.3, french=french)
-```
-
-```{r fig-discards-3cd, fig.cap="Estimated at-sea releases of Pacific Cod by bottom trawlers for Area 3CD."}
-discards.plot(catch.3, french=french)
-```
-
-```{r fig-catch-3cd-gear, fig.cap="Canadian catch for Area 3CD by gear. Catch includes at-sea releases."}
-make.catches.plot.gear(catch.3.gear, french=french)
-```
-
-```{r fig-catch-3cd-gear-recent, fig.cap="Canadian catch for Area 3CD by gear since 1996. Catch includes at-sea releases."}
-catch.3.gear.recent <- catch.3.gear %>% dplyr::filter(year>1995) %>%                 dplyr::filter(year<2020)
-make.catches.plot.gear(catch.3.gear.recent, french=french)
-```
-
-```{r fig-catch-3cd-gear-vessel, fig.cap="Canadian catch for Area 3CD by vessel, showing catch from freezer trawlers. Catch includes at-sea releases."}
-# This plot is for exploring, do not publish
-# freezer <- c("NORTHERN ALLIANCE", "OSPREY NO 1", "VIKING ENTERPRISE", "RAW SPIRIT")
-# catch.3.gear.vessel.freezer <- catch.3.gear.vessel %>% 
-#         filter(vessel_name %in% freezer)
-# 
-# make.catches.plot.vessel(catch.3.gear.vessel.freezer)
-```
-
-\clearpage
-
 ```{r tab-catch-3cd}
 catch.table(catch.3,
             catch.3.discards,
@@ -56,8 +28,60 @@ catch.table(catch.3,
 
 \clearpage
 
+```{r fig-catch-3cd, fig.cap="Catch for Area 3CD. Canadian catch includes at-sea releases."}
+make.catches.plot(catch.3, french=french)
+```
+
+```{r fig-discards-3cd, fig.cap="Estimated at-sea releases of Pacific Cod by bottom trawlers for Area 3CD."}
+discards.plot(catch.3, french=french)
+```
+
+<!--
+
+```{r fig-catch-3cd-gear, fig.cap="Canadian catch for Area 3CD by gear. Catch includes at-sea releases."}
+make.catches.plot.gear(catch.3.gear, french=french)
+```
+
+-->
+
+```{r fig-catch-3cd-gear-recent, fig.cap="Canadian catch for Area 3CD by gear since 1996. Catch includes at-sea releases."}
+catch.3.gear.recent <- catch.3.gear %>% dplyr::filter(year>1995) %>%                 dplyr::filter(year<2020)
+make.catches.plot.gear(catch.3.gear.recent, french=french)
+```
+
+<!--
+
+```{r fig-catch-3cd-gear-vessel, fig.cap="Canadian catch for Area 3CD by vessel, showing catch from freezer trawlers. Catch includes at-sea releases."}
+# This plot is for exploring, do not publish
+ freezer <- c("NORTHERN ALLIANCE", "OSPREY NO 1", "VIKING ENTERPRISE", "RAW SPIRIT", "VIKING ALLIANCE")
+ catch.3.gear.vessel.freezer <- catch.3.gear.vessel %>% 
+         filter(vessel_name %in% freezer)
+ 
+make.catches.plot.vessel(catch.3.gear.vessel.freezer)
+```
+
+-->
+
+\clearpage
+
 ### Area 5ABCD
 
+```{r tab-catch-5abcd}
+catch.table(catch.5,
+            catch.5.discards,
+            area = "5ABCD",
+ cap = paste0("Reported catch (mt) of Pacific Cod in Area 5ABCD ",
+              "by Canada and the USA, ",
+              min(catch.5$year), "--", max(catch.5$year),
+              ". The reported discards for the period ", min(catch.5$year),
+              "--1995 are ",
+              "unrepresentative of true discarding because the estimates were taken ",
+              "from logbooks. Discard estimates since 1996 are based on at-sea ",
+              "observations and are considered to be more representative of true discarding."),      french=french)
+
+```
+
+\clearpage
 
 ```{r fig-catch-5abcd, fig.cap="Catch for Area 5ABCD. Canadian catch includes at-sea releases."}
 make.catches.plot(catch.5, french=french)
@@ -67,6 +91,8 @@ make.catches.plot(catch.5, french=french)
 ```{r fig-discards-5abcd, fig.cap="Estimated at-sea releases of Pacific Cod by bottom trawlers for Area 5ABCD."}
 discards.plot(catch.5, french=french)
 ```
+
+<!--
 
 ```{r fig-catch-5ab, fig.cap="Catch for Area 5AB. Canadian catch includes at-sea releases."}
 make.catches.plot(catch.5ab, french=french)
@@ -84,22 +110,9 @@ make.catches.plot(catch.5cd, french=french)
 discards.plot(catch.5cd, french=french)
 ```
 
+-->
+
 \clearpage
-
-```{r tab-catch-5abcd}
-catch.table(catch.5,
-            catch.5.discards,
-            area = "5ABCD",
- cap = paste0("Reported catch (mt) of Pacific Cod in Area 5ABCD ",
-              "by Canada and the USA, ",
-              min(catch.5$year), "--", max(catch.5$year),
-              ". The reported discards for the period ", min(catch.5$year),
-              "--1995 are ",
-              "unrepresentative of true discarding because the estimates were taken ",
-              "from logbooks. Discard estimates since 1996 are based on at-sea ",
-              "observations and are considered to be more representative of true discarding."),      french=french)
-
-```
 
 ## FISHERY-INDEPENDENT INDICES OF ABUNDANCE {#app:data-summary}
 

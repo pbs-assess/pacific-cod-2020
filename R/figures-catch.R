@@ -114,7 +114,7 @@ make.catches.plot.gear <- function(dat,
                        limits = c(0, NA)) +
     scale_x_continuous(breaks = seq(0, last.yr, every)) +
     theme(legend.position = c(1, 1),
-          legend.justification = c(1, 1),
+          legend.justification = c(4.6, 1),
           legend.title = element_blank())
   p
 }
