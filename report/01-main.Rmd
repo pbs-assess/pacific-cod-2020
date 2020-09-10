@@ -12,9 +12,7 @@ The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-su
 Catches in 2018 and 2019 in Area 3CD were also low (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
 The previous advice [@dfo2019] recommended assessment updates be provided in years immediately following the biennial groundfish synoptic bottom trawl survey in each area (i.e., when the most recent survey index point is available).
-However, given the low index of abundance in 2018 Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of BC Pacifc cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
-
-While there was no apparent decrease in survey or CPUE indices for either QCS or HS (Figure \@ref(fig:surv-canadian)), DFO Pacifc Science Branch has taken the opportunity to update all the data streams for both Areas 3CD and 5ABCD and re-run both stock assessments to re-assess stock status and provide catch advice.
+However, given the low index of abundance in 2018 Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
 *TODO: currently data only up to 2019. Update to 2020, will have to pro-rate catch.*
 
@@ -26,8 +24,8 @@ It is distributed throughout the north Pacific Ocean, and throughout the waters 
 
 Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B); West Coast Vancouver Island (3CD); Queen Charlotte Sound (5AB); and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and the West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
 
-The choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment in 2018 [@dfo2019], and therefore in the current advice, was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2013].
-There is also no evidence for genetic distinction between these two stocks [@forrest2013].
+The choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment in 2018 [@dfo2019], and therefore in the current advice, was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
+There is also no evidence for genetic distinction between these two stocks [@forrest2015].
 
 # Description of the fishery
 
@@ -136,12 +134,12 @@ However, we do not discuss these in detail.-->
 For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
 Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
-Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:summary-fig-base-catch-fit-3cd), \@ref(fig:summary-fig-base-index-fits-3cd) and \@ref(fig:summary-fig-base-mean-weight-3cd), respectively.
+Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:fig-base-catch-fit-3cd), \@ref(fig:fig-base-index-fits-3cd) and \@ref(fig:fig-base-mean-weight-3cd), respectively.
 
-Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:summary-fig-base-biomass-3cd) .
-Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:summary-fig-model-average-biomass-comp-3cd).
-Combined average biomass for all seven models is shown in Figure \@ref(fig:summary-fig-model-average-biomass-3cd).
-Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:summary-fig-model-average-biomass-3cd-proj).
+Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-3cd) .
+Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
+Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
+Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
 
 The model-averaged decision table for Area 3CD, based on a one year projection over a range of 2020 catch levels, suggests that under a 2020 catch of 500 tonnes (the 2018/19 TAC), there is a 9% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd)).
 However, assuming the 2020 catch is of a similar magnitude to the 2018 and 2019 catches (23 and 43 tonnes, respectively), the probability of the 2021 biomass being below the LRP is between 5% and 6% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
@@ -151,12 +149,12 @@ Median estimated fishing mortality in 2019 was estimated to be 0.01 y^-1^ (Table
 
 ### Area 5ABCD
 
-Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:summary-fig-base-catch-fit-5abcd), \@ref(fig:summary-fig-base-index-fits-5abcd) and \@ref(fig:summary-fig-base-mean-weight-5abcd), respectively.
+Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:fig-base-catch-fit-5abcd), \@ref(fig:fig-base-index-fits-5abcd) and \@ref(fig:fig-base-mean-weight-5abcd), respectively.
 
-Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:summary-fig-base-biomass-5abcd) .
-Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:summary-fig-model-average-biomass-comp-5abcd).
-Combined average biomass for all seven models is shown in Figure \@ref(fig:summary-fig-model-average-biomass-5abcd).
-Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:summary-fig-model-average-biomass-5abcd-proj).
+Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-5abcd) .
+Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
+Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
+Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
 
 The model-averaged decision table for Area 5ABCD, based on a one year projection over a range of 2020 catch levels, suggests that under a 2020 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
 Assuming the 2020 catch is of a similar magnitude to the 2018 and 2019 catches (254 and 450 tonnes, respectively), the probability of the 2021 biomass being below the LRP is also less than 1% (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
