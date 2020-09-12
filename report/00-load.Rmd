@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
   fig.align = "center",
   fig.pos = "htb"
 )
-source(file.path(here::here(), "R", "all.R")) #Loading the data is in this file
+source(file.path(here::here(), "R", "all.R")) #Loading the data is in this file (or pulling it from GFBio if it doesn't exist yet)
 french <- FALSE
 ```
 
