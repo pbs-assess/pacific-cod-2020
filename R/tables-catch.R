@@ -22,6 +22,20 @@ catch.table <- function(dat,
 
   j[,-1] <- round(j[,-1], 0)
 
+  # REMOVE THESE!
+  Ct_extrap_5ABCD <- 0
+  Ct_extrap_3CD <- 0
+
+  # Hardwire 2020 catch ... extrapolated
+  if(area=="5ABCD") {
+    j[nrow(j), c(2,4,6)] <- Ct_extrap_5ABCD
+    j[nrow(j), c(3,5)] <- 0
+  }
+  if(area=="3CD") {
+    j[nrow(j), c(2,4,6)] <- Ct_extrap_3CD
+    j[nrow(j), c(3,5)] <- 0
+  }
+
   j[,c(2,3,4,5,6)] <- apply(j[,c(2,3,4,5,6)],
                             2,
                             function(x){
@@ -45,7 +59,7 @@ catch.table <- function(dat,
   colnames(j) <- latex.bold(colnames(j))
 
   #do not include 2018
-  kable(j[1:(nrow(j)-1),],
+  kable(j[4:nrow(j),],
         caption = cap,
         booktabs = TRUE,
         longtable = TRUE,
