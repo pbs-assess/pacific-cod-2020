@@ -1,6 +1,6 @@
 make.catches.plot <- function(dat,
                               every = 5,
-                              last.yr = 2015,
+                              last.yr = 2020,
                               french=FALSE){
   dat <- dat %>%
     select(-total_catch) %>%
@@ -40,7 +40,7 @@ discards.plot <- function(dat,
     labs(x = en2fr("Year",translate=french, allow_missing = TRUE),
          y = paste(en2fr("Catch",translate=french, allow_missing = TRUE),"(t)"),
          fill = "") +
-    scale_x_continuous(breaks = seq(0, 2015, 5))
+    scale_x_continuous(breaks = seq(0, 2020, 5))
 
   if(french==TRUE) {
     ylab <- paste("Prop.", en2fr("discarded",translate=french, allow_missing = TRUE))
@@ -55,7 +55,7 @@ discards.plot <- function(dat,
     geom_line(color = "grey50",
               size = 1,
               alpha = 0.5) +
-    scale_x_continuous(breaks = seq(0, 2015, 5))
+    scale_x_continuous(breaks = seq(0, 2020, 5))
 
 
   grid.arrange(g.top, g.bottom, heights = c(1/3, 2/3))
@@ -64,7 +64,7 @@ discards.plot <- function(dat,
 
 catch.fit.plot <- function(model,
                            every = 5,
-                           last.yr = 2015,
+                           last.yr = 2020,
                            french=FALSE){
 
   model <- model[[1]]
@@ -96,7 +96,7 @@ catch.fit.plot <- function(model,
 
 make.catches.plot.gear <- function(dat,
                                    every = 5,
-                                   last.yr = 2015,
+                                   last.yr = 2020,
                                    french=FALSE){
   dat <- dat %>%
     select(-total_catch) %>%
@@ -121,7 +121,7 @@ make.catches.plot.gear <- function(dat,
 
 make.catches.plot.vessel <- function(dat,
                                      every = 5,
-                                     last.yr = 2015,
+                                     last.yr = 2020,
                                      french=FALSE){
   dat <- dat %>%
     select(-total_catch) %>%

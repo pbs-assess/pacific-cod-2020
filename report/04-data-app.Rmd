@@ -45,7 +45,7 @@ make.catches.plot.gear(catch.3.gear, french=french)
 -->
 
 ```{r fig-catch-3cd-gear-recent, fig.cap="Canadian catch for Area 3CD by gear since 1996. Catch includes at-sea releases."}
-catch.3.gear.recent <- catch.3.gear %>% dplyr::filter(year>1995) %>%                 dplyr::filter(year<2020)
+catch.3.gear.recent <- catch.3.gear %>% dplyr::filter(year>1995) %>%                 dplyr::filter(year<2021)
 make.catches.plot.gear(catch.3.gear.recent, french=french)
 ```
 
