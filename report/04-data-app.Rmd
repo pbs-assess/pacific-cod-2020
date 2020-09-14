@@ -114,65 +114,25 @@ discards.plot(catch.5cd, french=french)
 
 \clearpage
 
-## FISHERY-INDEPENDENT INDICES OF ABUNDANCE {#app:data-summary}
+## Fishery-independent indices of abundance {#app:data-summary}
 
-### CANADIAN SURVEYS
+### Canadian bottom trawl surveys
 
+The models were fit to several relative indices of abundance for Pacific Cod (Table \@ref(tab:surv-canadian-table) and Figure (fig:surv-canadian)).
 All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
 
-*TODO: add brief summary text -- do we need the descriptions? NO*
+Abundance in Area 3CD (\@ref(fig:fig-map)) is indexed by the West Coast Vancouver Island Synoptic Survey.
+The survey was first conducted in 2004 and is conducted in alternating (even-numbered) years.
+Due to the COVID-19 pandemic there was no survey in 2020.
 
-#### HECATE STRAIT ASSEMBLAGE SURVEY
+Abundance in Area 5AB (\@ref(fig:fig-map)) is indexed by the Queen Charlotte Sound Synoptic Survey.
+The survey was first conducted in 2003 and 2004, and then in odd years since 2005.
+Abundance in Area 5CD (\@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
+Since 2005, it has been indexed in odd-numbered years by the Hecate Strait Synoptic Survey.
 
-A series of multi-species groundfish bottom trawl surveys was conducted in
-Hecate Strait in May-June of 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998,
-2000, 2002, and 2003 @westrheim1984, @fargo1984, @fargo1988, @wilson1991,
-@hand1994, @workman1996, @workman1997, @choromanski2002).
-The results up to 2000 were reported in the 2001
-assessment [@sinclair2001] and results from 2002 and 2003 were presented in the
-2005 assessment [@sinclair2005].
-
-#### HECATE STRAIT SYNOPTIC SURVEY
-
-The Hecate Strait synoptic groundfish bottom trawl survey is part of
-a coordinated set of long-term surveys that together cover the continental
-shelf and upper slope of most of the BC coast. 
-The Hecate Strait synoptic survey has been
-conducted during May-June, in odd years since 2005. 
-All the synoptic surveys
-follow a random depth stratified design. The survey area is divided into 2 km
-by 2 km blocks and each block is assigned to one of four depth strata based on
-the average bottom depth in the block. 
-The four depth strata for the Hecate
-Strait survey are 10--70m, 70--130m, 130--220m, and 220--500m. Each year blocks
-are randomly selected within each depth strata. 
-
-#### QUEEN CHARLOTTE SOUND SYNOPTIC SURVEY
-
-The Queen Charlotte Sound (QCS) synoptic groundfish bottom trawl survey has
-been conducted in July--August in 2003, 2004, and in odd years since 2005.
-The four depth strata for the QCS survey are 50--125m, 125--200m, 200--330m, and 330--500 m. 
-Each year blocks are randomly selected within each depth strata. In addition, for the purposes of
-allocating blocks, the QCS survey is divided into northern and southern spatial
-strata.
-
-#### WEST COAST VANCOUVER ISLAND SYNOPTIC SURVEY
-
-The West Coast Vancouver Island synoptic bottom trawl survey was first
-conducted in 2004 and is conducted in alternating (even-numbered) years on
-a chartered commercial trawler.
-The survey area is off the west coast of Vancouver Island from approximately 49
-$^\circ$  12$^\prime$ to 50 $^\circ$ 36$^\prime$ North latitude and
-approximately 124 $^\circ$  48$^\prime$ to 128 $^\circ$  30$^\prime$ West
-longitude.
-The southern boundary is contiguous with the Canada/U.S. boundary.
-The survey has a single aerial stratum in Pacific Fishery Management Area
-regions 3C and 3D separated into four depth strata: 50--125m; 125--200m;
-200--330m; and 330--500m. Approximately 150 to 180 4 km^2^ blocks are selected
-randomly among the four depth strata when conducting each survey.
+Details on spatial extent and depth strata of all surveys are also provided in Appendix A of @forrest2020.
 
 \clearpage
-
 
 ```{r surv-canadian-table, results='asis'}
 dplyr::filter(dat$survey_index, survey_abbrev %in%
@@ -197,11 +157,10 @@ gfplot::tidy_survey_index(dat$survey_index,
 
 \clearpage
 
-#### NMFS TRIENNIAL SURVEY (IN CANADIAN WATERS)
+#### NMFS Triennial Survey (in Canadian waters)
 
-A relative abundance index was developed for Area 3CD from data from the
-National Marine Fisheries Service (NMFS) Triennial survey operated off the
-lower half of Vancouver Island.
+An additional relative abundance index for Area 3CD was developed using data from the
+National Marine Fisheries Service (NMFS) Triennial survey operated off the lower half of West Coast Vancouver Island (Figure \@ref(fig:tri-fig9)).
 See Appendix A of @forrest2018 for complete details.
 
 ```{r tri-fig9, fig.cap="Biomass estimates for three series of Pacific Cod in the INPFC Vancouver region (total region, Canadian waters only, US waters only) with 95\\% error bars estimated from 1000 bootstraps."}
@@ -215,11 +174,16 @@ insert_paul_figure(9)
 
 \clearpage
 
-## COMMERCIAL CPUE
+## Commercial CPUE
 
-We used the same approach for standardizing the historical (1956:1995) and modern (1996+) commercial CPUE indices as in the previous assessment [@forrest2020], with data added for 2018 and 2019.
+The models were also fit to standardized commercial CPUE indices for the historical (1956:1995) and modern (1996:2019) periods (Figures \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern), respectively).
+The indices were developed using the Tweedie standardized generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
+The historical GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
+The modern GLMMs included predictors for depth, latitude, locality, month, vessel and a locality-vessel interaction (Figure )\@ref(fig:cpue-index-ts-modern)).
 
-*TODO: add brief summary text*
+*TODO: clarify which the model is fit to*
+
+
 
 ```{r cpue-funcs}
 source(here::here('R/cpue-functions.R'))
@@ -277,7 +241,7 @@ make_cpue_ts_dat(cpue_pred_modern) %>% make_cpue_ts_plot() +
 
 \clearpage
 
-## ANNUAL MEAN WEIGHT IN COMMERCIAL CATCH
+## Annual mean weight in commercial catch
 
 *TODO: Add text here*
 
@@ -287,7 +251,7 @@ mw3CD <- read_csv(here::here("data/results/AnnualMeanWeight_3CD.csv"))
 ```
 
 
-### AREA 3CD
+### Area 3CD
 
 ```{r meanweight-3cd, fig.cap="Mean weight (kg) in the commercial catch for Area 3CD", out.width="5.2in", fig.width=6.5}
 
@@ -304,7 +268,7 @@ ggplot(data=df, aes(x=year,y=mean_weight, group=1)) +
 
 \clearpage
 
-### AREA 5ABCD
+### Area 5ABCD
 
 ```{r meanweight-5abcd, fig.cap="Mean weight (kg) in the commercial catch for Area 5ABCD", out.width="5.2in", fig.width=6.5}
 df <- mw5ABCD
