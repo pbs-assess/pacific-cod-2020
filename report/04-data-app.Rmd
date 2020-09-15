@@ -181,7 +181,7 @@ The indices were developed using the Tweedie standardized generalized linear mix
 The historical GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
 The modern GLMMs included predictors for depth, latitude, locality, month, vessel and a locality-vessel interaction (Figure )\@ref(fig:cpue-index-ts-modern)).
 
-*TODO: clarify which the model is fit to*
+
 
 
 
