@@ -54,17 +54,52 @@ The fishing year for all data sources is defined as spanning April 1 to March 31
 Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
 Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020; see Appendix \@ref(app:data-appendix)).
 
-The models were fit to:
+### Commercial catch
 
-1. Commercial catch data (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd), Figures \@ref(fig:fig-catch-3cd) and \@ref(fig:fig-catch-5abcd)); 
+Commercial catch data were extracted from three different databases held by DFO: *GFCatch* (Canadian trawl landings, 1954--1995); *PacHarvTrawl* (Canadian trawl landings, 1996 to March 31, 2007); and *GFFOS* (Canadian trawl landings, April 1, 2007 to 2020).
+Catch data prior to 1981 include catch by US vessels [@forrest2015; @forrest2020].
+Fishing years are defined as beginning on April 1 for all years, and are referenced by starting year, e.g., fishing year 1957 runs from April 1, 1957 to March 31, 1958 [see @forrest2020].
 
-2. Survey indices of abundance. The 3CD model was fit to the WCVI Synoptic Survey (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:surv-canadian)) and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). The 5ABCD model was fit to the Hecate Strait Synoptic Survey, the Queen Charlotte Sound Synoptic Survey and the Hecate Strait Multispecies Assemblage Survey (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:surv-canadian)). Detailed methods are provided in Appendix A of @forrest2020.; 
+At the time of the assessment, the 2020 fishing year was incomplete.
+In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
+This proportion was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)).
 
-3. Historical (1956--1995) and modern (1996--2019) commercial CPUE indices (Figures \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)). Detailed methods are provided in Appendix B of @forrest2020.; and
+### Fishery-independent indices of abundance
 
-4. Mean weight of Pacific Cod in the commercial bottom trawl fishery (Figures \@ref(fig:meanweight-3cd) and \@ref(fig:meanweight-5abcd)). Detailed methods are provided in Appendix C of @forrest2020.
+#### Canadian bottom trawl surveys
 
-Details of the biological data used to derive information on growth and maturity are provided in Appendix C of @forrest2020.
+The assessment models were fit to several relative indices of abundance for Pacific Cod (Table \@ref(tab:surv-canadian-table) and Figure (fig:surv-canadian)).
+All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
+
+Abundance in Area 3CD (\@ref(fig:fig-map)) is indexed by the West Coast Vancouver Island Synoptic Survey.
+The survey was first conducted in 2004 and is conducted in alternating (even-numbered) years.
+Due to the COVID-19 pandemic there was no survey in 2020.
+
+Abundance in Area 5AB (\@ref(fig:fig-map)) is indexed by the Queen Charlotte Sound Synoptic Survey.
+The survey was first conducted in 2003 and 2004, and then in odd years since 2005.
+Abundance in Area 5CD (\@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
+Since 2005, it has been indexed in odd-numbered years by the Hecate Strait Synoptic Survey.
+
+Details on spatial extent and depth strata of all surveys are also provided in Appendix A of @forrest2020.
+
+#### NMFS Triennial Survey (in Canadian waters)
+
+An additional relative abundance index for Area 3CD was developed using data from the
+National Marine Fisheries Service (NMFS) Triennial survey, which operated off the lower half of West Coast Vancouver Island between 1980 and 2001 (Figure \@ref(fig:tri-fig9)).
+See Appendix A of @forrest2018 for complete details.
+
+### Commercial CPUE
+
+The assessment models were fit to standardized commercial CPUE indices for the historical (1956:1995) and modern (1996:2019) periods (full standardization models in Figures  \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)).
+The indices were developed using a new Tweedie standardized generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
+The full standardization historical period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
+The full standardization modern period GLMMs included predictors for depth, latitude, locality, month, vessel and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
+
+### Annual mean weight in commercial catch
+
+The assessment models were fit to annual mean weight data, where the mean weight in the commercial catch for each sequential fishing quarter was weighted by the commercial catch in that quarter [see Appendix C of @forrest2020 for details].
+Mean weight data were available from 1956 to 2019.
+In the absence of commercial biological samples for 2020, we assumed the same annual mean weight in 2020 as for 2019.
 
 ## Stock assessment model
 
@@ -127,6 +162,12 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 ## Reference points
 
+The DFO Fishery Decision-making Framework Incorporating the Precautionary Approach (PA) policy [@dfo2009] requires stock status to be characterized using three reference points:
+
+1. A Reference Removal Rate;
+2. A Limit Reference Point (LRP);
+3. An Upper Stock Reference point (USR).
+
 As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
 
 1. $\textrm{USR}$ (Upper Stock Reference) is the historical mean of the biomass estimates from 1956--2004.
@@ -137,7 +178,7 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 
 # Assessment results {#sec:summary-results}
 
-## Reference model results
+## Reference model fits to data
 
 ### Area 3CD
 
@@ -148,22 +189,29 @@ This is likely because of large differences between low points (2012 and 2018) a
 Similarly, while the model closely followed the major patterns in the historical CPUE index (Figure \@ref(fig:fig-base-index-fits-3cd) b), it did not capture all the peaks in the modern series (Figure \@ref(fig:fig-base-index-fits-3cd) c).
 Fits such as this tend to occur when there is no other information (such as age composition data or contrasting mean weight data) to help resolve large fluctuations in observed indices.
 
+<!--
 Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-3cd).
 Posterior relative biomass from the reference case model is shown in Figure \@ref(fig:fig-base-depl-3cd).
 Posterior estimated recruitment and recruitment anomalies from the reference case model are shown in Figure \@ref(fig:fig-base-recr-3cd).
 Posterior estimated fishing mortality from the reference case model are shown in Figure \@ref(fig:fig-base-f-3cd).
 Median estimated fishing mortality in **2020** was estimated to be very low, at 0.01 *y*^-1^ (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
+-->
 
-*TODO: update results once catch is updated*
+*TODO: update results once catch is updated. Add comment on convergence*
 
 ### Area 5ABCD
 
 Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:fig-base-catch-fit-5abcd), \@ref(fig:fig-base-index-fits-5abcd) and \@ref(fig:fig-base-mean-weight-5abcd), respectively.
 
+*TODO: discuss model fits and convergence*
+
+<!--
 Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-5abcd).
 Posterior relative biomass from the reference case model is shown in Figure \@ref(fig:fig-base-depl-5abcd).
 Posterior estimated recruitment and recruitment anomalies from the reference case model are shown in Figure \@ref(fig:fig-base-recr-5abcd).
 Posterior estimated fishing mortality from the reference case model are shown in Figure \@ref(fig:fig-base-f-5abcd).
+
+-->
 
 ## Model-averaged results and decision tables {#sec:catch-advice}
 
@@ -172,6 +220,8 @@ Posterior estimated fishing mortality from the reference case model are shown in
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
 Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
+
+*TODO: add model averaged F*
 
 The model-averaged decision table for Area 3CD, based on a one year projection over a range of **2021** catch levels, suggests that under a **2021 catch of 500 tonnes (the 2019/20 TAC), there is a 9% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd))**.
 **However, assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (23 and 43 tonnes, respectively), the probability of the 2021 biomass being below the LRP is between 5% and 6% (Table \@ref(tab:summary-tab-decision-avg-3cd)).**
@@ -183,6 +233,8 @@ The **2022 biomass is projected to be in the Cautious Zone (below the USR) with 
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
 Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
+
+*TODO: add model averaged F*
 
 The model-averaged decision table for Area 5ABCD, based on a one year projection over a range of 2020 catch levels, suggests that under a **2021 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).**
 **Assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (254 and 450 tonnes, respectively), the probability of the 2022 biomass being below the LRP is also less than 1% (Table \@ref(tab:summary-tab-decision-avg-5abcd)).**

@@ -99,6 +99,108 @@ cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
 ```
 
 
+```{r fig-catch-3cd, fig.cap="Catch for Area 3CD. Canadian catch includes at-sea releases."}
+make.catches.plot(catch.3, french=french)
+```
+
+```{r fig-catch-5abcd, fig.cap="Catch for Area 5ABCD. Canadian catch includes at-sea releases."}
+make.catches.plot(catch.5, french=french)
+```
+
+```{r surv-canadian, fig.cap="Pacific Cod survey data for Canadian trawl surveys. Shown is relative biomass and associated lower and upper confidence intervals. Positive sets refers to the number of trawl sets that caught Pacific Cod. SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey; SYN HS = Hecate Strait synoptic bottom trawl survey; OTHER HS MSA = Hecate Strait Multispecies Assemblage survey."}
+gfplot::tidy_survey_index(dat$survey_index,
+  survey = c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
+  plot_survey_index()
+```
+
+```{r tri-fig9, fig.cap="Biomass estimates for Pacific Cod in the International North Pacific Fisheries Commission Vancouver region (Canadian waters only) with 95\\% error bars estimated from 1000 bootstraps."}
+knitr::include_graphics(here::here("report/paul-figs/fig9.png"))
+```
+
+```{r cpue-funcs}
+source(here::here('R/cpue-functions.R'))
+```
+
+```{r cpue-params}
+params <- list()
+params$species_proper <- "Pacific Cod"
+params$april1_year <- TRUE
+params$area <- c("5[ABCD]+", "3[CD]+")
+params$area_name <- c("5ABCD", "3CD")
+params$skip_single_variable_models <- FALSE
+```
+
+```{r cpue-run-historic, message=FALSE, warning=FALSE, results='hide'}
+params$era <- "historic"
+source(here::here("R/cpue.R"))
+dfleet_hist <- dfleet
+gg_cpue_hist <- gg_cpue
+cpue_pred_hist <- predictions
+arith_cpue_hist <- arith_cpue
+m_historic <- readRDS(here::here("data/generated/cpue-models-pcod-historic.rds"))
+```
+
+```{r cpue-run-modern, message=FALSE, warning=FALSE, results='hide'}
+params$era <- "modern"
+source(here::here("R/cpue.R"))
+dfleet_modern <- dfleet
+gg_cpue_modern <- gg_cpue
+cpue_pred_modern <- predictions
+arith_cpue_modern <- arith_cpue
+m_modern <- readRDS(here::here("data/generated/cpue-models-pcod-modern.rds"))
+```
+
+```{r cpue-save}
+readr::write_csv(cpue_pred_modern, here::here("data/generated/cpue-predictions-modern.csv"))
+readr::write_csv(cpue_pred_hist, here::here("data/generated/cpue-predictions-historical.csv"))
+```
+
+```{r cpue-index-ts-hist, fig.asp=1.15, fig.cap="Commercial trawl CPUE standardization models. Throughout, the black line and shaded region indicate a CPUE index with only a year predictor. The coloured line and shaded ribbons indicate indices that have been standardized by one or more predictors. The first three rows illustrate standardization models that include a single predictor listed on the right. The second last row illustrates a standardization model that includes all the predictors in one model. The last row illustrates a standardization model that includes all the predictors plus locality-by-year (space-time) random effects. Locality and locality-year interactions are fit as random effects and all other variables are fit as fixed effects."}
+make_cpue_ts_dat(cpue_pred_hist) %>% make_cpue_ts_plot() +
+  ggtitle("1956-1995 CPUE") +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_fill_brewer(palette = "Dark2")
+```
+
+(ref:caption-cpue-index-ts-modern) Same as Figure \@ref(fig:cpue-index-ts-hist) but for the 1996 to 2019 data. Locality, vessel, and locality-year interactions are fit as random effects and all other variables are fit as fixed effects.
+
+```{r cpue-index-ts-modern, fig.asp=1.55, fig.cap="(ref:caption-cpue-index-ts-modern)", out.width="5.2in", fig.width=6.5}
+make_cpue_ts_dat(cpue_pred_modern) %>% make_cpue_ts_plot() +
+  ggtitle("1996+ CPUE") +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_fill_brewer(palette = "Dark2")
+```
+
+```{r}
+mw5ABCD <- read_csv(here::here("data/results/AnnualMeanWeight_5ABCD.csv"))
+mw3CD <- read_csv(here::here("data/results/AnnualMeanWeight_3CD.csv"))
+```
+
+```{r meanweight-3cd, fig.cap="Mean weight (kg) in the commercial catch for Area 3CD", out.width="5.2in", fig.width=6.5}
+
+df <- mw3CD
+ggplot(data=df, aes(x=year,y=mean_weight, group=1)) +
+  geom_line(lwd=1, colour=2) +
+  ylim(0,1.1*max(df$mean_weight)) +
+  theme(plot.title=element_text(size=14,face="bold",hjust=0.5),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold")) +
+  scale_x_continuous(breaks=seq(min(df$year),max(df$year),by=5)) +
+  labs(x= "Fishing Year", y = "Annual Mean Weight (Kg)", title="Area 3CD")
+```
+
+```{r meanweight-5abcd, fig.cap="Mean weight (kg) in the commercial catch for Area 5ABCD", out.width="5.2in", fig.width=6.5}
+df <- mw5ABCD
+ggplot(data=df, aes(x=year,y=mean_weight, group=1)) +
+  geom_line(lwd=1, colour=2) +
+  ylim(0,1.1*max(df$mean_weight)) +
+  theme(plot.title=element_text(size=14,face="bold",hjust=0.5),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold")) +
+  scale_x_continuous(breaks=seq(min(df$year),max(df$year),by=5)) +
+  labs(x= "Fishing Year", y = "Annual Mean Weight (Kg)", title="Area 5ABCD")
+```
+
 
 <!--
 \clearpage
@@ -112,11 +214,6 @@ make.priors.posts.plot(base.model.5abcd)
 ```{r fig-base-mcmc-priors-3cd, fig.cap=paste0("Prior probability distributions used in the Area 3CD reference model. ", q.3cd.desc)}
 make.priors.posts.plot(base.model.3cd)
 ```
-
--->
-
-
-<!--
 
 ```{r fig-base-catch-fit-3cd, fig.cap="MPD fit to the catch data for Area 3CD reference model."}
 catch.fit.plot(base.model.3cd, every = 5, last.yr = 2020, french=french)

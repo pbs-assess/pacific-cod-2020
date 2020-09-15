@@ -1,6 +1,5 @@
-\clearpage
 
-# Appendix A. Data \label{app:data-appendix}
+
 
 ## Commercial catch
 
@@ -252,5 +251,4 @@ ggplot(data=df, aes(x=year,y=mean_weight, group=1)) +
   scale_x_continuous(breaks=seq(min(df$year),max(df$year),by=5)) +
   labs(x= "Fishing Year", y = "Annual Mean Weight (Kg)", title="Area 5ABCD")
 ```
-
 
