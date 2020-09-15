@@ -1,12 +1,6 @@
 \clearpage
 
-`r if(knitr:::is_latex_output()) '\\Appendices'`
-
-`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
-
-\vspace{50pt}
-
-# Data {#app:data-appendix}
+# Appendix A. Data \label{app:data-appendix}
 
 ## Commercial catch
 
