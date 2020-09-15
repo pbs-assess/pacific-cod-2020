@@ -25,8 +25,8 @@ decision.table <- function(model,
     col.names <- c(latex.mlc(c("$2021$", "$\\mathrm{Catch (mt)}$")),
                    latex.mlc(c("$P(B_{2022} <$", "$B_{2021})$")),
                    latex.mlc(c("$P(F_{2021} >$", "$F_{2020})$")),
-                   latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{LRP})$")),
-                   latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{USR})$")),
+                   latex.mlc(c("$P(B_{2022} <$", "$\\mathrm{LRP})$")),
+                   latex.mlc(c("$P(B_{2022} <$", "$\\mathrm{USR})$")),
                    latex.mlc(c("$P(F_{2021} >$", "$\\mathrm{LRR})$")))
   }
   if(french==TRUE){
