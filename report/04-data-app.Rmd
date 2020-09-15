@@ -164,11 +164,7 @@ National Marine Fisheries Service (NMFS) Triennial survey operated off the lower
 See Appendix A of @forrest2018 for complete details.
 
 ```{r tri-fig9, fig.cap="Biomass estimates for three series of Pacific Cod in the INPFC Vancouver region (total region, Canadian waters only, US waters only) with 95\\% error bars estimated from 1000 bootstraps."}
-insert_paul_figure <- function(n) {
-  knitr::include_graphics(here::here("report", "paul-figs", paste0("paul", n, ".png")), dpi = NA)
-}
-
-insert_paul_figure(9)
+knitr::include_graphics(here::here("report/paul-figs/fig9.png"))
 ```
 
 
@@ -223,14 +219,14 @@ readr::write_csv(cpue_pred_modern, here::here("data/generated/cpue-predictions-m
 readr::write_csv(cpue_pred_hist, here::here("data/generated/cpue-predictions-historical.csv"))
 ```
 
-```{r cpue-index-ts-hist, fig.asp=1.15, fig.cap="Commercial trawl CPUE standardization models. Throughout, the black line and shaded region indicate a CPUE index with only a year predictor. The coloured line and shaded ribbons indicate indices that have been standardized by one or more predictors. The first three rows illustrate standardization models that include a single predictor listed on the right. The second last row illustrates a standardization model that includes all the predictors in one model. The last row illustrates a standardization model that includes all the predictors plus locality-by-year (space-time) random effects. Locality and locality-vessel interactions are fit as random effects and all other variables are fit as fixed effects."}
+```{r cpue-index-ts-hist, fig.asp=1.15, fig.cap="Commercial trawl CPUE standardization models. Throughout, the black line and shaded region indicate a CPUE index with only a year predictor. The coloured line and shaded ribbons indicate indices that have been standardized by one or more predictors. The first three rows illustrate standardization models that include a single predictor listed on the right. The second last row illustrates a standardization model that includes all the predictors in one model. The last row illustrates a standardization model that includes all the predictors plus locality-by-year (space-time) random effects. Locality and locality-year interactions are fit as random effects and all other variables are fit as fixed effects."}
 make_cpue_ts_dat(cpue_pred_hist) %>% make_cpue_ts_plot() +
   ggtitle("1956-1995 CPUE") +
   scale_colour_brewer(palette = "Dark2") +
   scale_fill_brewer(palette = "Dark2")
 ```
 
-(ref:caption-cpue-index-ts-modern) Same as Figure \@ref(fig:cpue-index-ts-hist) but for the 1996 to 2017 data. Locality, vessel, and locality-vessel interactions are fit as random effects and all other variables are fit as fixed effects.
+(ref:caption-cpue-index-ts-modern) Same as Figure \@ref(fig:cpue-index-ts-hist) but for the 1996 to 2017 data. Locality, vessel, and locality-year interactions are fit as random effects and all other variables are fit as fixed effects.
 
 ```{r cpue-index-ts-modern, fig.asp=1.55, fig.cap="(ref:caption-cpue-index-ts-modern)", out.width="5.2in", fig.width=6.5}
 make_cpue_ts_dat(cpue_pred_modern) %>% make_cpue_ts_plot() +
