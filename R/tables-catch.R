@@ -22,8 +22,9 @@ catch.table <- function(dat,
 
   j[,-1] <- round(j[,-1], 0)
 
-  # Extrapolate the final year's catch, two different ways depending on area (See 2018 assessment doc, Section 2.2)
-  if(area == "5ABCD") {
+  # Extrapolate the final year's catch based on the average proportion taken by
+  # end of Q2 in the past three years (See 2018 assessment doc, Section 2.2)
+
     # Use last three years only, not including the last year in the data
     last_year <- dat %>%
       tail(1) %>%
@@ -42,19 +43,13 @@ catch.table <- function(dat,
       left_join(catch_last3yrs_all_quarters, by = "year") %>%
       mutate(proportion = total_catch_first2_quarters / total_catch)
     avg_prop <- mean(catch_last3yrs$proportion)
-    j$landings[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
+
+        j$landings[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
     j$total[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
     j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
     j$`released at sea`[nrow(j)] <- 0
     j$USA[nrow(j)] <- 0
-  }else if(area == "3CD") {
-    # Use the last year's values
-    j$landings[nrow(j)] <- j$`Total catch`[nrow(j) - 1]
-    j$total[nrow(j)] <- j$`Total catch`[nrow(j) - 1]
-    j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j) - 1]
-    j$`released at sea`[nrow(j)] <- 0
-    j$USA[nrow(j)] <- 0
-  }
+
 
   j[,c(2,3,4,5,6)] <- apply(j[,c(2,3,4,5,6)],
                             2,

@@ -59,6 +59,7 @@ index/resdoc.tex
 *.dat
 *.ctl
 
+csas-style
 report/resdoc.knit.md
 report/resdoc.utf8.md
 *.rda

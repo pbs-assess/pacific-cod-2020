@@ -165,8 +165,7 @@ gfplot::tidy_survey_index(dat$survey_index,
   plot_survey_index()
 ```
 
-```{r tri-fig9, fig.cap="Biomass estimates for Pacific Cod in the International North
-Pacific Fisheries Commission Vancouver region (Canadian waters only) with 95\\% error bars estimated from 1000 bootstraps."}
+```{r tri-fig9, fig.cap="Biomass estimates for Pacific Cod in the International North Pacific Fisheries Commission Vancouver region (Canadian waters only) with 95\\% error bars estimated from 1000 bootstraps."}
 knitr::include_graphics(here::here("report/paul-figs/fig9.png"))
 ```
 
