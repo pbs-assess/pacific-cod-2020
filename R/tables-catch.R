@@ -29,18 +29,18 @@ catch.table <- function(dat,
       tail(1) %>%
       pull(year)
     yrs <- (last_year - 3):(last_year - 1)
-    catch_last3yrs_first3quarters <- dat %>%
+    catch_last3yrs_first2quarters <- dat %>%
       filter(year %in% yrs) %>%
       filter(quarter %in% 1:2) %>%
       group_by(year) %>%
-      summarize(total_catch_first3_quarters = sum(total_catch))
+      summarize(total_catch_first2_quarters = sum(total_catch))
     catch_last3yrs_all_quarters <- j %>%
       filter(Year %in% yrs) %>%
       select(Year, `Total catch`) %>%
       rename(year = Year, total_catch = `Total catch`)
-    catch_last3yrs <- catch_last3yrs_first3quarters %>%
+    catch_last3yrs <- catch_last3yrs_first2quarters %>%
       left_join(catch_last3yrs_all_quarters, by = "year") %>%
-      mutate(proportion = total_catch_first3_quarters / total_catch)
+      mutate(proportion = total_catch_first2_quarters / total_catch)
     avg_prop <- mean(catch_last3yrs$proportion)
     j$landings[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
     j$total[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
