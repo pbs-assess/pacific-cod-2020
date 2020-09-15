@@ -31,7 +31,7 @@ catch.table <- function(dat,
     yrs <- (last_year - 3):(last_year - 1)
     catch_last3yrs_first3quarters <- dat %>%
       filter(year %in% yrs) %>%
-      filter(quarter %in% 1:3) %>%
+      filter(quarter %in% 1:2) %>%
       group_by(year) %>%
       summarize(total_catch_first3_quarters = sum(total_catch))
     catch_last3yrs_all_quarters <- j %>%
