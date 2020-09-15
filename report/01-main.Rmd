@@ -52,7 +52,9 @@ Estimates of at-sea releases for this period are likely to be under-estimates [@
 Data were extracted from DFO databases in the same way as described in @forrest2020.
 The fishing year for all data sources is defined as spanning April 1 to March 31 in the following year [@forrest2015; @forrest2020].
 Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
-Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020; see Appendix \@ref(app:data-appendix)).
+Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020).
+
+For each area, models were fit to the following data streams: commercial catch data; fishery-independent indices of abundance; commercial catch per unit effort (CPUE); and annual mean weight of fish in the commercial catch.
 
 ### Commercial catch
 
@@ -68,8 +70,8 @@ This proportion was used to extrapolate from the catch at September 30, 2020 to 
 
 #### Canadian bottom trawl surveys
 
-The assessment models were fit to several relative indices of abundance for Pacific Cod (Table \@ref(tab:surv-canadian-table) and Figure (fig:surv-canadian)).
 All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
+Values are provided in Table \@ref(tab:surv-canadian-table) and Figure (fig:surv-canadian).
 
 Abundance in Area 3CD (\@ref(fig:fig-map)) is indexed by the West Coast Vancouver Island Synoptic Survey.
 The survey was first conducted in 2004 and is conducted in alternating (even-numbered) years.
@@ -80,7 +82,7 @@ The survey was first conducted in 2003 and 2004, and then in odd years since 200
 Abundance in Area 5CD (\@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
 Since 2005, it has been indexed in odd-numbered years by the Hecate Strait Synoptic Survey.
 
-Details on spatial extent and depth strata of all surveys are also provided in Appendix A of @forrest2020.
+Details on spatial extent and depth strata of all surveys are provided in Appendix A of @forrest2020.
 
 #### NMFS Triennial Survey (in Canadian waters)
 
@@ -90,15 +92,15 @@ See Appendix A of @forrest2018 for complete details.
 
 ### Commercial CPUE
 
-The assessment models were fit to standardized commercial CPUE indices for the historical (1956:1995) and modern (1996:2019) periods (full standardization models in Figures  \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)).
-The indices were developed using a new Tweedie standardized generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
+Standardized commercial CPUE indices were developed for the historical (1956:1995) and modern (1996:2019) periods (Figures  \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)).
+The indices were developed using a Tweedie standardized generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
 The full standardization historical period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
 The full standardization modern period GLMMs included predictors for depth, latitude, locality, month, vessel and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
 
 ### Annual mean weight in commercial catch
 
-The assessment models were fit to annual mean weight data, where the mean weight in the commercial catch for each sequential fishing quarter was weighted by the commercial catch in that quarter [see Appendix C of @forrest2020 for details].
-Mean weight data were available from 1956 to 2019.
+Annual mean weight in the commercial catch was calculated using the methodology decribed in Appendix C of @forrest2020.
+Commercial biological samples were available for calculating mean weight from 1956 to 2019.
 In the absence of commercial biological samples for 2020, we assumed the same annual mean weight in 2020 as for 2019.
 
 ## Stock assessment model
