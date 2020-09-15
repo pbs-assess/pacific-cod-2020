@@ -6,7 +6,7 @@
 
 \vspace{50pt}
 
-# Data
+# Data {#app:data-appendix}
 
 ## Commercial catch
 
@@ -16,7 +16,7 @@ Fishing years are defined as beginning on April 1 for all years, and are referen
 
 At the time of the assessment, the 2020 fishing year was incomplete.
 In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
-This was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)).
+This proportion was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)).
 
 ## Fishery-independent indices of abundance {#app:data-summary}
 

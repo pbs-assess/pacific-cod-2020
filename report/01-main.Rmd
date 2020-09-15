@@ -49,13 +49,18 @@ Estimates of at-sea releases for this period are likely to be under-estimates [@
 
 ## Data
 
-Data were extracted from DFO databases in the same way as described in @forrest2020, with updates to *2020*. The models were fit to:
+Data were extracted from DFO databases in the same way as described in @forrest2020.
+The fishing year for all data sources is defined as spanning April 1 to March 31 in the following year [@forrest2015; @forrest2020].
+Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
+Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020; see Appendix \@ref(app:data-appendix)).
+
+The models were fit to:
 
 1. Commercial catch data (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd), Figures \@ref(fig:fig-catch-3cd) and \@ref(fig:fig-catch-5abcd)); 
 
 2. Survey indices of abundance. The 3CD model was fit to the WCVI Synoptic Survey (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:surv-canadian)) and the NMFS triennial survey (Figure \@ref(fig:tri-fig9), Vancouver Canadian series). The 5ABCD model was fit to the Hecate Strait Synoptic Survey, the Queen Charlotte Sound Synoptic Survey and the Hecate Strait Multispecies Assemblage Survey (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:surv-canadian)). Detailed methods are provided in Appendix A of @forrest2020.; 
 
-3. Historical (1956-1995) and modern (1996+) commercial CPUE indices (Figures \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)). Detailed methods are provided in Appendix B of @forrest2020.; and
+3. Historical (1956--1995) and modern (1996--2019) commercial CPUE indices (Figures \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)). Detailed methods are provided in Appendix B of @forrest2020.; and
 
 4. Mean weight of Pacific Cod in the commercial bottom trawl fishery (Figures \@ref(fig:meanweight-3cd) and \@ref(fig:meanweight-5abcd)). Detailed methods are provided in Appendix C of @forrest2020.
 
@@ -63,10 +68,10 @@ Details of the biological data used to derive information on growth and maturity
 
 ## Stock assessment model
 
-The current assessment model is a Bayesian delay-difference model [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
+The current stock assessment model is a Bayesian delay-difference model [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
 A full stock assessment history for both stocks is provided in @forrest2020.
 The current model is fully described in Appendix D of @forrest2020.
-All prior probability distributions for model parameters and fixed parameters in the current assessment are the same as those reported in @forrest2020.
+All fixed parameters and prior probability distributions for model parameters in the current assessment were the same as those reported in @forrest2020.
 
 For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
 Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
@@ -78,8 +83,11 @@ Other stock assessments that have used a model-averaging approach are Pacific Ha
 
 ## Model scenarios
 
-The same model scenarios as those agreed upon for the 2018 assessment (@dfo2019) were used here for model-averaging (updated with data to 2020) .
-Full details on the model configuration and assumptions for each scenario are provided in @forrest2020.
+Reference models were established for Areas 3CD and 5ABCD to show model response under what were considered the most plausible choices across a range of assumptions for each stock.
+The Reference models for Areas 3CD and 5ABCD shared similar characteristics in terms of data choices, prior probability distributions and fixed parameter settings.
+These models served as the basis from which sensitivity runs were made, altering alternative hypotheses one step at a time.
+The same model scenarios as those agreed upon for the 2018 assessment (@dfo2019) were used here for model-averaging (updated with catch data to 2020) .
+Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
 
 ### Area 3CD
 
@@ -135,42 +143,57 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 
 Model fits to the indices of abundance and mean weight data are shown in Figures  \@ref(fig:fig-base-index-fits-3cd) and \@ref(fig:fig-base-mean-weight-3cd), respectively.
 Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
+The model fit the two fishery-independent indices (Figure \@ref(fig:fig-base-index-fits-3cd) a and d), but did not closely fit the 2012--2016 data points in the West Coast Vancouver Island Synoptic Survey.
+This is likely because of large differences between low points (2012 and 2018) and high points (2014 and 2016) in the survey observations.
+Similarly, while the model closely followed the major patterns in the historical CPUE index (Figure \@ref(fig:fig-base-index-fits-3cd) b), it did not capture all the peaks in the modern series (Figure \@ref(fig:fig-base-index-fits-3cd) c).
+Fits such as this tend to occur when there is no other information (such as age composition data or contrasting mean weight data) to help resolve large fluctuations in observed indices.
 
-Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-3cd) .
-Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
-Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
-Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
+Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-3cd).
+Posterior relative biomass from the reference case model is shown in Figure \@ref(fig:fig-base-depl-3cd).
+Posterior estimated recruitment and recruitment anomalies from the reference case model are shown in Figure \@ref(fig:fig-base-recr-3cd).
+Posterior estimated fishing mortality from the reference case model are shown in Figure \@ref(fig:fig-base-f-3cd).
+Median estimated fishing mortality in **2020** was estimated to be very low, at 0.01 *y*^-1^ (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
 
-The model-averaged decision table for Area 3CD, based on a one year projection over a range of 2020 catch levels, suggests that under a 2020 catch of 500 tonnes (the 2018/19 TAC), there is a 9% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd)).
-However, assuming the 2020 catch is of a similar magnitude to the 2018 and 2019 catches (23 and 43 tonnes, respectively), the probability of the 2021 biomass being below the LRP is between 5% and 6% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
-The 2021 biomass is projected to be in the Cautious Zone (below the USR) with greater than 99% probability under all 2020 catch scenarios tested, including zero catch.
-
-Median estimated fishing mortality in 2019 was estimated to be 0.01 y^-1^ (Table \@ref(tab:tab-ref-points-table-avg-3cd)). 
+*TODO: update results once catch is updated*
 
 ### Area 5ABCD
 
 Model fits to the catch, indices and mean weight data are shown in Figures \@ref(fig:fig-base-catch-fit-5abcd), \@ref(fig:fig-base-index-fits-5abcd) and \@ref(fig:fig-base-mean-weight-5abcd), respectively.
 
-Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-5abcd) .
+Posterior estimated biomass from the reference case model is shown in Figure \@ref(fig:fig-base-biomass-5abcd).
+Posterior relative biomass from the reference case model is shown in Figure \@ref(fig:fig-base-depl-5abcd).
+Posterior estimated recruitment and recruitment anomalies from the reference case model are shown in Figure \@ref(fig:fig-base-recr-5abcd).
+Posterior estimated fishing mortality from the reference case model are shown in Figure \@ref(fig:fig-base-f-5abcd).
+
+## Model-averaged results and decision tables {#sec:catch-advice}
+
+### Area 3CD
+
+Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
+Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
+Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
+
+The model-averaged decision table for Area 3CD, based on a one year projection over a range of **2021** catch levels, suggests that under a **2021 catch of 500 tonnes (the 2019/20 TAC), there is a 9% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd))**.
+**However, assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (23 and 43 tonnes, respectively), the probability of the 2021 biomass being below the LRP is between 5% and 6% (Table \@ref(tab:summary-tab-decision-avg-3cd)).**
+
+The **2022 biomass is projected to be in the Cautious Zone (below the USR) with greater than 99% probability under all 2021** catch scenarios tested, including zero catch.
+
+### Area 5ABCD
+
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
 Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
 
-The model-averaged decision table for Area 5ABCD, based on a one year projection over a range of 2020 catch levels, suggests that under a 2020 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
-Assuming the 2020 catch is of a similar magnitude to the 2018 and 2019 catches (254 and 450 tonnes, respectively), the probability of the 2021 biomass being below the LRP is also less than 1% (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
-However, the 2021 biomass is projected to be in the Cautious Zone (below the USR) with greater than 99% probability under all 2020 catch scenarios tested, including zero catch.
+The model-averaged decision table for Area 5ABCD, based on a one year projection over a range of 2020 catch levels, suggests that under a **2021 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).**
+**Assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (254 and 450 tonnes, respectively), the probability of the 2022 biomass being below the LRP is also less than 1% (Table \@ref(tab:summary-tab-decision-avg-5abcd)).**
+**However, the 2023 biomass is projected to be in the Cautious Zone (below the USR) with greater than 99% probability under all 2021 catch scenarios tested, including zero catch.**
 
-Median estimated fishing mortality in 2019 was estimated to be 0.03 y^-1^ (Table \@ref(tab:tab-ref-points-table-avg-5abcd)). 
+Median estimated fishing mortality in *2020* was estimated to be 0.03 y^-1^ (Table \@ref(tab:tab-ref-points-table-avg-5abcd)). 
 
+# Conclusions and recommendations
 
-## Model-averaged decision tables {#sec:catch-advice}
+*TODO*
 
-### Area 3CD
-
-
-### Area 5ABCD
-
-
-# Conclusions
+* Re-assessment interval ...
 
 \clearpage
