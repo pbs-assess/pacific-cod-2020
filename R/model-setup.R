@@ -70,12 +70,12 @@ if(verbose){
 
 ## The last non-forecast year in the model. This is the year for which the
 ## mcmc outputs will be used in reference point calculations.
-end.yr <- 2019
+end.yr <- 2020
 if(verbose){
   cat0("End year for model: \n  ", end.yr)
 }
 ## Final year of data (This is what is the end year is in the model data files)
-last.data.yr <- 2019
+last.data.yr <- 2020
 if(verbose){
   cat0("Last year of model data: \n  ", last.data.yr)
 }

@@ -14,37 +14,37 @@ decision.table <- function(model,
                               ncol = 6,
                               nrow = length(tac)))
   if(format == "html"){
-    col.names <- c("2020 Catch (mt)",
-                   "P(B2021 < B2020)",
-                   "P(F2020 > F2019)",
-                   "P(B2021 < LRP)",
-                   "P(B2021 < USR)",
-                   "P(F2020 > LRR)")
+    col.names <- c("2021 Catch (mt)",
+                   "P(B2022 < B2021)",
+                   "P(F2021 > F2020)",
+                   "P(B2022 < LRP)",
+                   "P(B2022 < USR)",
+                   "P(F2021 > LRR)")
 
   }else{
-    col.names <- c(latex.mlc(c("$2020$", "$\\mathrm{Catch (mt)}$")),
-                   latex.mlc(c("$P(B_{2021} <$", "$B_{2020})$")),
-                   latex.mlc(c("$P(F_{2020} >$", "$F_{2019})$")),
+    col.names <- c(latex.mlc(c("$2021$", "$\\mathrm{Catch (mt)}$")),
+                   latex.mlc(c("$P(B_{2022} <$", "$B_{2021})$")),
+                   latex.mlc(c("$P(F_{2021} >$", "$F_{2020})$")),
                    latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{LRP})$")),
                    latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{USR})$")),
-                   latex.mlc(c("$P(F_{2020} >$", "$\\mathrm{LRR})$")))
+                   latex.mlc(c("$P(F_{2021} >$", "$\\mathrm{LRR})$")))
   }
   if(french==TRUE){
     if(format == "html"){
-      col.names <- c("2020 Prise (mt)",
-                     "P(B2021 < B2020)",
-                     "P(F2020 > F2019)",
-                     "P(B2021 < PRL)",
-                     "P(B2021 < RSS)",
-                     "P(F2020 > TEL)")
+      col.names <- c("2021 Prise (mt)",
+                     "P(B2022 < B2021)",
+                     "P(F2021 > F2020)",
+                     "P(B2022 < PRL)",
+                     "P(B2022 < RSS)",
+                     "P(F2021 > TEL)")
 
     }else{
-      col.names <- c(latex.mlc(c("$2020$", "$\\mathrm{Prise (mt)}$")),
-                     latex.mlc(c("$P(B_{2021}<$", "$B_{2020})$")),
-                     latex.mlc(c("$P(F_{2020} >$", "$F_{2019})$")),
-                     latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{PRL})$")),
-                     latex.mlc(c("$P(B_{2021} <$", "$\\mathrm{RSS})$")),
-                     latex.mlc(c("$P(F_{2020} >$", "$\\mathrm{TEL})$")))
+      col.names <- c(latex.mlc(c("$2021$", "$\\mathrm{Prise (mt)}$")),
+                     latex.mlc(c("$P(B_{2022}<$", "$B_{2021})$")),
+                     latex.mlc(c("$P(F_{2021} >$", "$F_{2020})$")),
+                     latex.mlc(c("$P(B_{2022} <$", "$\\mathrm{PRL})$")),
+                     latex.mlc(c("$P(B_{2022} <$", "$\\mathrm{RSS})$")),
+                     latex.mlc(c("$P(F_{2021} >$", "$\\mathrm{TEL})$")))
     }
   }
 
@@ -56,11 +56,11 @@ decision.table <- function(model,
     d <- as.data.frame(model$mcmccalcs$proj.dat)
     d <- d[d$TAC == tac[t],]
     dat[t, 1] <- f(tac[t], 0)
-    dat[t, 2] <- f(mean(d$B2021B2020 < 1), 2)
-    dat[t, 3] <- f(mean(d$F2020F2019 > 1), 2)
-    dat[t, 4] <- f(mean(d$B2021Bmin < 1), 2)
-    dat[t, 5] <- f(mean(d$B2021BAvgS < 1), 2)
-    dat[t, 6] <- f(mean(d$F2020FAvgS > 1), 2)
+    dat[t, 2] <- f(mean(d$B2022B2021 < 1), 2)
+    dat[t, 3] <- f(mean(d$F2021F2020 > 1), 2)
+    dat[t, 4] <- f(mean(d$B2022Bmin < 1), 2)
+    dat[t, 5] <- f(mean(d$B2022BAvgS < 1), 2)
+    dat[t, 6] <- f(mean(d$F2021FAvgS > 1), 2)
   }
 
   if(make.lt.gt){
@@ -93,8 +93,8 @@ suggested.ref.points <- function(french=FALSE, definition_text="definition", cap
     referencepoint = c("$B_{\t{Min}}$",
                        "$B_{\t{Avg}}$",
                        "$F_{\t{Avg}}$",
-                       "$B_{\t{2020}}$",
-                       "$F_{\t{2019}}$"),
+                       "$B_{\t{2022}}$",
+                       "$F_{\t{2021}}$"),
     Definition = definition_text,
     Role = c(en2fr("LRP", translate=french, allow_missing=TRUE),
              en2fr("USR", translate=french, allow_missing=TRUE),
