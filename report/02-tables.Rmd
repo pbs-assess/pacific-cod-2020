@@ -20,7 +20,6 @@ catch.table(catch.3,
 
 \clearpage
 
-
 ```{r tab-catch-5abcd}
 catch.table(catch.5,
             catch.5.discards,
@@ -53,9 +52,25 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 \clearpage
 
-## Model-averaged decision tables
+## Model-averaged reference points and decision tables
 
 ### Area 3CD
+
+```{r tab-ref-points-table-avg-3cd, results='asis'}
+make.ref.points.table(c(base.model.3cd,
+                        sens.models.13.sub),
+                      omit_msy = TRUE,
+                      add.hist.ref = TRUE,
+                      lrp = c(1986, 1986),
+                      usr = c(1956, 2004),
+                      digits = 2,
+                      caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+                                       "97.5\\textsuperscript{th} percentile) of reference points for ",
+                                       "model-averaged Area 3CD. ",
+                                       "Biomass is in tonnes."))
+```
+
+\clearpage
 
 ```{r summary-tab-decision-avg-3cd, results='asis'}
  decision.table(avg.model.3cd,
@@ -67,6 +82,22 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 \clearpage
 
 ### Area 5ABCD
+
+```{r tab-ref-points-table-avg-5abcd, results='asis'}
+make.ref.points.table(c(base.model.5abcd,
+                        sens.models.6.sub),
+                      omit_msy = TRUE,
+                      add.hist.ref = TRUE,
+                      lrp = c(2000, 2000),
+                      usr = c(1956, 2004),
+                      digits = 2,
+                      caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+                                       "97.5\\textsuperscript{th} percentile) of reference points for ",
+                                       "model-averaged Area 5ABCD. ",
+                                       "Biomass is in tonnes."))
+```
+
+\clearpage
 
 ```{r summary-tab-decision-avg-5abcd, results='asis'}
  decision.table(avg.model.5abcd,
