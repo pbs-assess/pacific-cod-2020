@@ -254,10 +254,12 @@ including zero catch.
 
 #### Area 5ABCD
 
+Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
+At the beginning of the 2021 fishing year, 
+
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
 For illustration, recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
-
 Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
 
 As for Area 3CD, the estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, and the smallest biomass from Sc 5a.
@@ -283,7 +285,6 @@ less than 1% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
 However, the 2022 biomass is projected to be in the Cautious Zone
 (below the USR) with greater than 98% probability under all 2021 catch scenarios tested,
 including zero catch.
-
 
 
 ## Conclusions
