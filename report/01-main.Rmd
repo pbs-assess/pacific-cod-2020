@@ -207,18 +207,48 @@ As in previous assessments, the model tended to underestimate annual mean weight
 
 ### Indicators of stock status and 2021 harvest advice
 
+Performance measures were calculated over a sequence of alternative 2021 projected catch levels and are based on posterior samples for a one-year projection to the end of 2022.
+Uncertainty enters the projections through parameter uncertainty propagated from the modeled time series, and recruitment anomalies for the projection year.
+The following performance measures were evaluated:
+
+1. $P(B_{2022} < B_{2020})$
+1. $P(F_{2021} > F_{2020})$
+1. $P(B_{2022} < LRP)$
+1. $P(B_{2022} < USR)$
+1. $P(F_{2020} > LRR)$
+
+Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set). 
+For each performance measure, under each alternative 2021 catch level, vectors of 1,000 burned-in posterior samples from each of the seven models were combined into a single vector of 7,000 samples. Probabilities of performance measures were then calculated from the combined samples.
+
 #### Area 3CD
 
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
-The estimated biomass range from the seven models is very
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
-Recent average posterior biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
-
+For illustration, recent average posterior biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
 Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
 
-The model-averaged decision table for Area 5ABCD, based on a one year projection over a range of 2020 catch levels, suggests that under a **2021 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).**
-**Assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (254 and 450 tonnes, respectively), the probability of the 2022 biomass being below the LRP is also less than 1% (Table \@ref(tab:summary-tab-decision-avg-5abcd)).**
-**However, the 2023 biomass is projected to be in the Cautious Zone (below the USR) with greater than 99% probability under all 2021 catch scenarios tested, including zero catch.**
+The estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, which adjusted the standard deviation of the prior probability distribution for catchability in the WCVI survey.
+The smallest biomass was predicted from from Sc 5a, the model that assumed age at recruitment to the fishery was 3 *y*.
+Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP, with a very slight increase projected for the beginning of 2021.
+Combined average posterior fishing mortality indicates that current fishing mortality is very low and well below the LRR.
+
+The model-averaged decision table probabilities are presented in Table \@ref(tab:tab-decision-avg-3cd). In summary:
+
+-	$P(B_{2022} < B_{2021})$ ranged from 55% to 82% over the range of 2021 catch levels.
+
+- $P(F_{2021} > F_{2020})$ ranged from < 1% to > 99%. The 2020 catch was extrapolated to be approximately 24 t, hence the probability increase between 20 t and 30 t.
+
+- $P(B_{2022} < LRP)$ ranged from <3% to 10%.
+
+- $P(B_{2022} < USR)$ ranged from 97% to 98%.
+
+- $P(F_{2020} > LRR)$  ranged from <1% to 98%.
+
+Under a 2021 catch of 500 tonnes (the 2019/20 TAC), there is a 5% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd)).
+However, assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (23 t and 43 t, respectively), the probability of the 2021 biomass being below the LRP is 3% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
+The 2022 biomass is projected to be in the Cautious Zone
+(below the USR) with greater than 97% probability under all 2021 catch scenarios tested,
+including zero catch.
 
 
 
@@ -226,14 +256,33 @@ The model-averaged decision table for Area 5ABCD, based on a one year projection
 
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
-Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
+For illustration, recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
 
 Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
 
+As for Area 3CD, the estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, and the smallest biomass from Sc 5a.
+Combined average posterior results from all models indicate that the stock in 2020 was just the LRP, within the Cautious Zone.
+Combined average posterior fishing mortality indicates that current fishing mortality is low and well below the LRR.
 
-The model-averaged decision table for Area 3CD, based on a one year projection over a range of **2021** catch levels, suggests that under a **2021 catch of 500 tonnes (the 2019/20 TAC), there is a 9% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd))**.
-**However, assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (23 and 43 tonnes, respectively), the probability of the 2021 biomass being below the LRP is between 5% and 6% (Table \@ref(tab:summary-tab-decision-avg-3cd)).**
+The model-averaged decision table probabilities are presented in Table \@ref(tab:tab-decision-avg-3cd). In summary:
 
+-	$P(B_{2022} < B_{2021})$ ranged from 21% to 91% over the range of 2021 catch levels.
+
+- $P(F_{2021} > F_{2020})$ ranged from < 1% to > 99%. The 2020 catch was extrapolated to be approximately 356 t, hence the probability increase between 300 t and 400 t.
+
+- $P(B_{2022} < LRP)$ was less than 1% over the range of catch levels.
+
+- $P(B_{2022} < USR)$ ranged from 98% to 99%.
+
+- $P(F_{2020} > LRR)$  ranged from <1% to 84%.
+
+Under a 2021 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
+Assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 catches (254 and
+450 tonnes, respectively), the probability of the 2022 biomass being below the LRP is also
+less than 1% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
+However, the 2022 biomass is projected to be in the Cautious Zone
+(below the USR) with greater than 98% probability under all 2021 catch scenarios tested,
+including zero catch.
 
 
 
