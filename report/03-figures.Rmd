@@ -171,10 +171,10 @@ make_cpue_ts_dat(cpue_pred_modern) %>% make_cpue_ts_plot() +
   scale_fill_brewer(palette = "Dark2")
 ```
 
-```{r cpue-bubble-plots-modern-3CD, fig.asp=1.4, fig.width=9, fig.cap="(ref:caption-cpue-bubble-plots-modern-3CD)"}
+```{r cpue-bubble-plots-modern-3CD, fig.asp=1.4, fig.width=9, fig.cap="Distribution of predictors in CPUE standardization models for 1996--2019 3CD dataset (showing only results since 2011 for clarity). Area of outermost circles represents the number of fishing event-locality combinations for that predictor value and year combination. Area and shading of innermost circles represents the number of fishing event-locality combinations for that predictor value and year combination that caught Pacific Cod."}
 dfleet_modern %>% make_bubble_dat() %>%
   filter(area == "3CD", year > 2010) %>%
-  make_facet_bubble_plot() +
+  make_facet_bubble_plot_recent() +
   ggtitle("1996+ 3CD")
 ```
 

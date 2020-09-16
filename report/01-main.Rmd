@@ -97,6 +97,10 @@ The indices were developed using a Tweedie standardized generalized linear mixed
 The full standardization historical period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
 The full standardization modern period GLMMs included predictors for depth, latitude, locality, month, vessel and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
 
+*TODO: look at bubble plots. Keep them in?*
+
+Bubble plots of location, latitude, depth, vessel and month are shown in Figure \@ref(fig:cpue-bubble-plots-modern-3CD).
+
 ### Annual mean weight in commercial catch
 
 Annual mean weight in the commercial catch was calculated using the methodology decribed in Appendix C of @forrest2020.

@@ -34,6 +34,22 @@ make_facet_bubble_plot <- function(dat, group = "fishing events") {
       legend.direction = "horizontal")
 }
 
+make_facet_bubble_plot_recent <- function(dat, group = "fishing events") {
+  ggplot(dat, aes_string("as.factor(year)", y = "value")) +
+    geom_point(aes_string(size = "n_pos", fill = "n"), alpha = 0.4, pch = 21) +
+    geom_point(aes_string(size = "n"), alpha = 0.4, pch = 21) +
+    facet_wrap(~variable, scales = "free", ncol = 2) +
+    ggplot2::scale_x_discrete(breaks = seq(2010, 2020, 1)) +
+    xlab("") + ylab("") +
+    labs(size = paste0("Number of\n", group)) +
+    labs(fill = paste0("Number of\n", group)) +
+    ggplot2::scale_size_continuous(range = c(0, 7)) +
+    ggplot2::scale_fill_viridis_c(trans = "log", breaks = c(1, 10, 100, 500)) +
+    theme_pbs() +
+    theme(legend.position = c(0.95, 0.05), legend.justification = c(1, 0),
+          legend.direction = "horizontal")
+}
+
 make_cpue_ts_dat <- function(dat) {
   pp <- dat %>%
     group_by(formula_version, model, area) %>%
