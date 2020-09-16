@@ -2,8 +2,6 @@
 
 # Tables {#sec:tables}
 
-## Data
-
 ```{r tab-catch-3cd}
 catch.table(catch.3,
             catch.3.discards,
@@ -52,9 +50,6 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 \clearpage
 
-## Model-averaged reference points and decision tables
-
-### Area 3CD
 
 ```{r tab-ref-points-table-avg-3cd, results='asis'}
 make.ref.points.table(c(base.model.3cd,
@@ -70,18 +65,6 @@ make.ref.points.table(c(base.model.3cd,
                                        "Biomass is in tonnes."))
 ```
 
-\clearpage
-
-```{r summary-tab-decision-avg-3cd, results='asis'}
- decision.table(avg.model.3cd,
-                caption = paste0("Decision table with model averaging for Area 3CD. Models averaged are: ",
-                                 and.string(c(base.model.3cd.name, sens.models.name.13.sub)),
-                                 ".", french=french)) #
-```
-
-\clearpage
-
-### Area 5ABCD
 
 ```{r tab-ref-points-table-avg-5abcd, results='asis'}
 make.ref.points.table(c(base.model.5abcd,
@@ -96,6 +79,16 @@ make.ref.points.table(c(base.model.5abcd,
                                        "model-averaged Area 5ABCD. ",
                                        "Biomass is in tonnes."))
 ```
+
+\clearpage
+
+```{r summary-tab-decision-avg-3cd, results='asis'}
+ decision.table(avg.model.3cd,
+                caption = paste0("Decision table with model averaging for Area 3CD. Models averaged are: ",
+                                 and.string(c(base.model.3cd.name, sens.models.name.13.sub)),
+                                 ".", french=french)) #
+```
+
 
 \clearpage
 

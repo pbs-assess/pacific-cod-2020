@@ -205,7 +205,36 @@ The model followed the general trends of the three fishery-independent indices, 
 
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
 
-### Indicators of stock status and 2021 harvest advice
+## Indicators of stock status 
+
+### Area 3CD
+
+Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-3cd).
+At the beginning of the 2021 fishing year, **XXX**
+
+Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
+Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
+Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
+
+The estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, which adjusted the standard deviation of the prior probability distribution for catchability in the WCVI survey.
+The smallest biomass was predicted from from Sc 5a, the model that assumed age at recruitment to the fishery was 3 *y*.
+Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP, with a very slight increase projected for the beginning of 2021.
+Combined average posterior fishing mortality indicates that current fishing mortality is very low and well below the LRR.
+
+### Area 5ABCD
+
+Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
+At the beginning of the 2021 fishing year, **XXX**
+
+Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
+Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
+Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
+
+As for Area 3CD, the estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, and the smallest biomass from Sc 5a.
+Combined average posterior results from all models indicate that the stock in 2020 was just the LRP, within the Cautious Zone.
+Combined average posterior fishing mortality indicates that current fishing mortality is low and well below the LRR.
+
+## 2021 harvest advice
 
 Performance measures were calculated over a sequence of alternative 2021 projected catch levels and are based on posterior samples for a one-year projection to the end of 2022.
 Uncertainty enters the projections through parameter uncertainty propagated from the modeled time series, and recruitment anomalies for the projection year.
@@ -220,17 +249,9 @@ The following performance measures were evaluated:
 Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set). 
 For each performance measure, under each alternative 2021 catch level, vectors of 1,000 burned-in posterior samples from each of the seven models were combined into a single vector of 7,000 samples. Probabilities of performance measures were then calculated from the combined samples.
 
-#### Area 3CD
+### Area 3CD
 
-Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
-Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
 For illustration, recent average posterior biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
-Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
-
-The estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, which adjusted the standard deviation of the prior probability distribution for catchability in the WCVI survey.
-The smallest biomass was predicted from from Sc 5a, the model that assumed age at recruitment to the fishery was 3 *y*.
-Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP, with a very slight increase projected for the beginning of 2021.
-Combined average posterior fishing mortality indicates that current fishing mortality is very low and well below the LRR.
 
 The model-averaged decision table probabilities are presented in Table \@ref(tab:tab-decision-avg-3cd). In summary:
 
@@ -252,19 +273,9 @@ including zero catch.
 
 
 
-#### Area 5ABCD
+### Area 5ABCD
 
-Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
-At the beginning of the 2021 fishing year, 
-
-Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
-Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
 For illustration, recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
-Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
-
-As for Area 3CD, the estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, and the smallest biomass from Sc 5a.
-Combined average posterior results from all models indicate that the stock in 2020 was just the LRP, within the Cautious Zone.
-Combined average posterior fishing mortality indicates that current fishing mortality is low and well below the LRR.
 
 The model-averaged decision table probabilities are presented in Table \@ref(tab:tab-decision-avg-3cd). In summary:
 
@@ -287,16 +298,10 @@ However, the 2022 biomass is projected to be in the Cautious Zone
 including zero catch.
 
 
-## Conclusions
-
-### Sources of uncertainty
-
-### Area 3CD
+# Conclusions
 
 
-
-### Area 5ABCD
-
+## Sources of uncertainty
 
 *TODO*
 
