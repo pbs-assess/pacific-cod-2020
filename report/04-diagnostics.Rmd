@@ -7,7 +7,7 @@
 ### Reference model
 
 
-```{r tab-param-est-table-3cd, results='asis'}
+```{r tab-param-est-table-3cd-diag, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$")
 make.parameters.est.table(base.model.3cd,
   caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
@@ -25,7 +25,7 @@ make.traces.plot(base.model.3cd)
 make.autocor.plot(base.model.3cd)
 ```
 
-```{r fig-base-index-fits-3cd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 3CD reference model from: (a) the West Coast Vancouver Island Synoptic Survey, (b) the Commercial CPUE pre-1996, (c) the Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion)."}
+```{r fig-base-index-fits-3cd-diag, fig.cap="MPD fits to observed indices of abundance (points) for the Area 3CD reference model from: (a) the West Coast Vancouver Island Synoptic Survey, (b) the Commercial CPUE pre-1996, (c) the Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion)."}
 plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5),
           i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5)
             + ylab("Commercial CPUE (kg/hour)"),
@@ -38,14 +38,14 @@ plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5),
           label_x = c(0.15, 0.13, 0.13, 0.2))
 ```
 
-```{r fig-base-mean-weight-3cd, fig.cap="MPD fit to the mean weight data for Area 3CD reference model."}
+```{r fig-base-mean-weight-3cd-diag, fig.cap="MPD fit to the mean weight data for Area 3CD reference model."}
 plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020),
           mw.compare.plot(base.model.3cd[[1]]),
           nrow = 1,
           ncol = 2)
 ```
 
-```{r fig-base-catch-fit-3cd, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
+```{r fig-base-catch-fit-3cd-diag, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 catch.fit.plot(base.model.3cd, every = 5, last.yr = 2020)
 ```
 
@@ -134,7 +134,7 @@ plot_grid(mw.plot(desc.models.3cd[3][[1]], cv = 0.2, every = 10, last.yr = 2020)
 ```
 
 
-### Sc 3a Set the parameters of the prior probability distribution for \ln(M) to ~N(0.4,0.1)
+### Sc 3a Set the parameters of the prior probability distribution for ln(M) to ~N(0.4,0.1)
 
 ```{r tab-param-table-sens3a-3cd, results='asis'}
 make.parameters.est.table(desc.models.3cd[[4]],
@@ -307,7 +307,7 @@ plot_grid(mw.plot(desc.models.3cd[7][[1]], cv = 0.2, every = 10, last.yr = 2020)
 
 ### Reference model
 
-```{r tab-param-est-table-5abcd, results='asis'}
+```{r tab-param-est-table-5abcd-diag, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$")
 make.parameters.est.table(base.model.5abcd,
   caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
@@ -336,7 +336,7 @@ make.traces.plot(base.model.5abcd)
 make.autocor.plot(base.model.5abcd)
 ```
 
-```{r fig-base-index-fits-5abcd, fig.cap="MPD fits to observed indices of abundance (points) for the Area 5ABCD reference model from: (a) the Hecate Strait Assemblage survey, (b) the Queen Charlotte Sound Synoptic Survey, (c) the Hecate Strait Synoptic Survey, (d) the Commercial CPUE pre-1996, and (e) the Commercial CPUE post-1995. For clarity, only MPD results are shown"}
+```{r fig-base-index-fits-5abcd-diag, fig.cap="MPD fits to observed indices of abundance (points) for the Area 5ABCD reference model from: (a) the Hecate Strait Assemblage survey, (b) the Queen Charlotte Sound Synoptic Survey, (c) the Hecate Strait Synoptic Survey, (d) the Commercial CPUE pre-1996, and (e) the Commercial CPUE post-1995. For clarity, only MPD results are shown"}
 plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5),
           i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5),
           i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5),
@@ -350,14 +350,14 @@ plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5),
           label_x = 0.2)
 ```
 
-```{r fig-base-mean-weight-5abcd, fig.cap="MPD fit to the mean weight data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
+```{r fig-base-mean-weight-5abcd-diag, fig.cap="MPD fit to the mean weight data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020),
           mw.compare.plot(base.model.5abcd[[1]]),
           nrow = 1,
           ncol = 2)
 ```
 
-```{r fig-base-catch-fit-5abcd, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
+```{r fig-base-catch-fit-5abcd-diag, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 catch.fit.plot(base.model.5abcd, every = 5, last.yr = 2020)
 ```
 
@@ -446,7 +446,7 @@ plot_grid(mw.plot(desc.models.5abcd[3][[1]], cv = 0.2, every = 10, last.yr = 202
 ```
 
 
-### Sc 3a Set the parameters of the prior probability distribution for \ln(M) to ~N(0.4,0.1)
+### Sc 3a Set the parameters of the prior probability distribution for ln(M) to ~N(0.4,0.1)
 
 
 ```{r tab-param-table-sens3a-5abcd, results='asis'}
