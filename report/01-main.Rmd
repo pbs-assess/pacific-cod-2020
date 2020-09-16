@@ -82,6 +82,10 @@ The survey was first conducted in 2003 and 2004, and then in odd years since 200
 Abundance in Area 5CD (\@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
 Since 2005, it has been indexed in odd-numbered years by the Hecate Strait Synoptic Survey.
 
+*TODO: look at survey location plots. Keep them in?*
+
+Individual survey tows for the WCVI synoptic bottom trawl survey are shown in Figure \@ref(fig:survey-maps-syn-wcvi).
+
 Details on spatial extent and depth strata of all surveys are provided in Appendix A of @forrest2020.
 
 #### NMFS Triennial Survey (in Canadian waters)

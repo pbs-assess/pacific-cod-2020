@@ -114,7 +114,7 @@ gfplot::tidy_survey_index(dat$survey_index,
 ```
 
 
-```{r survey-maps-syn-wcvi, fig.asp=1, fig.cap="Individual survey tows for the West Coast Vancouver Island (SYN WCVI) synoptic groundfish bottom trawl survey survey. Light gray crosses indicate survey sets that did not catch Pacific Cod. Circles have their area and color proportional to the density of Pacific Cod for that survey set. Eastings and Northings are for UTM zone 9."}
+```{r survey-maps-syn-wcvi, fig.asp=1, fig.cap="Individual survey tows for the West Coast Vancouver Island (SYN WCVI) synoptic groundfish bottom trawl survey. Light gray crosses indicate survey sets that did not catch Pacific Cod. Circles have their area and color proportional to the density of Pacific Cod for that survey set. Eastings and Northings are for UTM zone 9."}
 plot_multiyear_survey_sets(dat$survey_sets, "SYN WCVI")
 ```
 
