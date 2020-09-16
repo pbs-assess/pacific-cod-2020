@@ -14,7 +14,7 @@ Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (T
 The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
 However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
-This Science Response report responds to this request and provides updated stock status advice for Pacific Cod in Areas 3CD and 5ABCD in 2020, and updates catch advice for 2021.
+This Science Response Report results from the Science Response Process *XX XX, XX* on the Status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
 
 *TODO: currently data only up to 2019. Update to 2020, will have to pro-rate catch.*
 
@@ -22,13 +22,12 @@ This Science Response report responds to this request and provides updated stock
 
 Pacific Cod (or Grey Cod) is a relatively short-lived (~10-13 *y*), fast-growing member of the family Gadidae.
 It is distributed throughout the north Pacific Ocean, and throughout the waters of BC, typically in depth ranges up to 200 m. 
-
 Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B); West Coast Vancouver Island (3CD); Queen Charlotte Sound (5AB); and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
 
 The choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment in 2018 [@dfo2019], and therefore in the current advice, was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
 There is also no evidence for genetic distinction between these two stocks [@forrest2015].
 
-# Description of the fishery
+## Description of the fishery
 
 Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017].
 They are also caught in small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
@@ -49,7 +48,7 @@ Estimates of at-sea releases for this period are likely to be under-estimates [@
 
 ## Data
 
-Data were extracted from DFO databases in the same way as described in @forrest2020.
+Data were extracted from DFO databases using methods described in @forrest2020.
 The fishing year for all data sources is defined as spanning April 1 to March 31 in the following year [@forrest2015; @forrest2020].
 Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
 Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020).
@@ -130,27 +129,27 @@ Other stock assessments that have used a model-averaging approach are Pacific Ha
 
 The DFO Fishery Decision-making Framework Incorporating the Precautionary Approach (PA) policy [@dfo2009] requires stock status to be characterized using three reference points:
 
-1. A Reference Removal Rate;
-2. A Limit Reference Point (LRP);
-3. An Upper Stock Reference point (USR).
+1. An Upper Stock Reference point $\textrm{USR}$;
+2. A Limit Reference Point $\textrm{LRP}$;
+3. A Limit Removal Rate $\textrm{LRR}$.
 
 As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
 
-1. $\textrm{USR}$ (Upper Stock Reference) is the historical mean of the biomass estimates from 1956--2004.
+1. The $\textrm{USR}$ is the historical mean of the biomass estimates from 1956--2004.
 
-2. $\textrm{LRP}$ (Limit Reference Point) is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
+2. The $\textrm{LRP}$ is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
 
-3. $\textrm{LRR}$ (Limit Removal Rate) is the average fishing mortality rate from 1956--2004.
+3. The $\textrm{LRR}$ is the average fishing mortality rate from 1956--2004.
 
-See @forrest2020 for details on the choice to use historical reference points for Pacific Cod.
-See also @forrest2018 for simulation-testing of historical reference points for the 5CD stock of Pacific Cod.
+See @forrest2020 for the history of the choice to use historical reference points for Pacific Cod.
+See also @forrest2018 for results of simulation-testing of historical reference points for the 5CD stock of Pacific Cod.
 
 ## Model scenarios
 
 Reference case models were established for Areas 3CD and 5ABCD to show model response under what were considered the most plausible choices across a range of assumptions for each stock.
 The Reference models for Areas 3CD and 5ABCD shared similar characteristics in terms of data choices, prior probability distributions and fixed parameter settings [see @forrest2020].
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one step at a time.
-The same model scenarios as those agreed upon for the 2018 assessment (@dfo2019) were used here for model-averaging (updated with catch data to 2020) .
+The same model scenarios as those agreed upon for the 2018 assessment (@dfo2019) were used here for model-averaging (updated with catch data to 2020).
 Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
 
 ### Area 3CD
@@ -177,13 +176,11 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$
 7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$
 
-## Assessment results {#sec:summary-results}
+## Reference model fits to data
 
-### Reference model fits to data
+### Area 3CD
 
-#### Area 3CD
-
-Reference case model fits to the data were typical of all sensitivity cases.
+Reference case model fits to the data were generally typical of all sensitivity cases.
 The model diagnostics were consistent with convergence and posterior sample autocorrelation was minor for most parameters.
 Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
 
@@ -207,7 +204,7 @@ Median estimated fishing mortality in **2020** was estimated to be very low, at 
 
 *TODO: update results once catch is updated. Add comment on convergence*
 
-#### Area 5ABCD
+### Area 5ABCD
 
 As for Area 3CD, reference case model fits to the data were typical of all sensitivity cases, model diagnostics were consistent with convergence, and posterior sample autocorrelation was minor for most parameters.
 
@@ -244,7 +241,7 @@ Median estimated fishing mortality in *2020* was estimated to be 0.03 y^-1^ (Tab
 ## Sources of uncertainty
 
 
-## Conclusions and advice
+## Conclusions
 
 ### Area 3CD
 
@@ -262,3 +259,21 @@ The model-averaged decision table for Area 3CD, based on a one year projection o
 * Re-assessment interval ... as soon as next survey is done
 
 \clearpage
+
+# Contributors
+
+```{r, echo=FALSE, include=FALSE}
+contributors <- tibble::tribble(
+  ~Name,          ~Affiliation,
+  "Robyn Forrest",   "DFO Science, Pacific Region",
+  "Chris Grandin",   "DFO Science, Pacific Region",
+  "Sean Anderson",   "DFO Science, Pacific Region"
+)
+```
+
+```{r, results='asis'}
+csasdown::csas_table(contributors)
+```
+
+<!-- Decrease the table index by one to account for the contributors table: -->
+\addtocounter{table}{-1}
