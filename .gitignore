@@ -51,7 +51,7 @@ retrospectives*/
 retrospectives/
 data/results/
 data/Results/
-report/resdoc.Rmd
+report/sr.Rmd
 cpue-comp-*
 index/resdoc.tex
 /models
@@ -70,7 +70,7 @@ data/generated/cpue-predictions-historical.csv
 data/generated/cpue-predictions-modern.csv
 swans.R
 index
-report-french/resdoc.Rmd
+report-french/sr.Rmd
 report/knitr-cache-tex
 report/knitr-figs
 data/
