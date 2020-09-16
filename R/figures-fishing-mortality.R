@@ -3,8 +3,7 @@ scaleFUN <- function(x) sprintf("%.2f", x)
 f.plot <- function(models,
                    models.names,
                    add.hist.ref = FALSE,
-                   lrp = NA,
-                   usr = NA,
+                   lrr = NA,
                    french=FALSE){
   ## lrp usr are year ranges (2-element vectors) to take the mean of
   ## the F value for the reference points
@@ -52,18 +51,15 @@ f.plot <- function(models,
     ylab(en2fr("Fishing mortality",translate=french, allow_missing = TRUE))
 
   if(add.hist.ref){
-    if(is.na(lrp) || is.na(usr)){
-      cat0("Supply year ranges for both lrp and usr when add.hist.ref is TRUE")
+    if(is.na(lrr)){
+      cat0("Supply year ranges for lrr when add.hist.ref is TRUE")
     }else{
       cal <- f %>%
-        filter(Year >= lrp[1] & Year <= lrp[2])
-      lrp.val <- mean(cal$`Fishing mortality`)
+        filter(Year >= lrr[1] & Year <= lrr[2])
+      lrr.val <- mean(cal$`Fishing mortality`)
 
-      cau <- f %>%
-        filter(Year >= usr[1] & Year <= usr[2])
-      usr.val <- mean(cau$`Fishing mortality`)
-      j <- data.frame("Intercept" = c(lrp.val, usr.val),
-                      "Color" = c("red", "green"))
+      j <- data.frame("Intercept" = c(lrr.val),
+                      "Color" = c("black"))
       p <- p +
         geom_hline(data = j,
                    aes(yintercept = Intercept),

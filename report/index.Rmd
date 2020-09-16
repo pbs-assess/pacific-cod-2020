@@ -5,7 +5,7 @@ year: 2020
 month: September
 report_number: 999
 approver: |
-  Approver Name\
+  Carmel Lowe\
   Regional Director
 approval_year: 2020
 approval_month: September

@@ -1,6 +1,6 @@
 \clearpage
 
-# References {-}
+# Sources of information {-}
 <!--
 This manually sets the header for this unnumbered chapter.
 -->
