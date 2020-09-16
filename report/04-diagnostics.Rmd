@@ -6,7 +6,6 @@
 
 ### Reference model
 
-
 ```{r tab-param-est-table-3cd-diag, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$")
 make.parameters.est.table(base.model.3cd,
@@ -48,6 +47,8 @@ plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020),
 ```{r fig-base-catch-fit-3cd-diag, fig.cap="MPD fit to the catch data for Area 5ABCD reference model. For clarity, only MPD results are shown"}
 catch.fit.plot(base.model.3cd, every = 5, last.yr = 2020)
 ```
+
+\clearpage
 
 ### Sc 2d Set the mean of the prior probability distribution for synoptic surveys ln(q) = ln(1.0)
 
@@ -91,6 +92,7 @@ plot_grid(mw.plot(desc.models.3cd[2][[1]], cv = 0.2, every = 10, last.yr = 2020)
           ncol = 2)
 ```
 
+\clearpage
 
 ### Sc 2e Increase the standard deviation (SD) for synoptic survey ln(q) to 0.6
 
@@ -133,6 +135,8 @@ plot_grid(mw.plot(desc.models.3cd[3][[1]], cv = 0.2, every = 10, last.yr = 2020)
           ncol = 2)
 ```
 
+\clearpage
+
 
 ### Sc 3a Set the parameters of the prior probability distribution for ln(M) to ~N(0.4,0.1)
 
@@ -174,6 +178,7 @@ plot_grid(mw.plot(desc.models.3cd[4][[1]], cv = 0.2, every = 10, last.yr = 2020)
           ncol = 2)
 ```
 
+\clearpage
 
 ### Sc 5a Set knife-edged age at recruitment = 3 years
 
@@ -215,6 +220,8 @@ plot_grid(mw.plot(desc.models.3cd[5][[1]], cv = 0.2, every = 10, last.yr = 2020)
           nrow = 1,
           ncol = 2)
 ```
+
+\clearpage
 
 
 ### Sc 6b Reduce the overall observation error term sigma_O = 0.15
@@ -258,6 +265,8 @@ plot_grid(mw.plot(desc.models.3cd[6][[1]], cv = 0.2, every = 10, last.yr = 2020)
           ncol = 2)
 ```
 
+
+\clearpage
 
 ### Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight sigma_W = 0.15
 
@@ -361,6 +370,9 @@ plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020),
 catch.fit.plot(base.model.5abcd, every = 5, last.yr = 2020)
 ```
 
+
+\clearpage
+
 ### Sc 2d Set the mean of the prior probability distribution for synoptic surveys ln(q) = ln(1.0)
 
 ```{r tab-param-table-sens2d-5abcd, results='asis'}
@@ -402,6 +414,8 @@ plot_grid(mw.plot(desc.models.5abcd[2][[1]], cv = 0.2, every = 10, last.yr = 202
           ncol = 2)
 ```
 
+
+\clearpage
 
 ### Sc 2e Increase the standard deviation (SD) for synoptic survey ln(q) to 0.6
 
@@ -445,6 +459,8 @@ plot_grid(mw.plot(desc.models.5abcd[3][[1]], cv = 0.2, every = 10, last.yr = 202
           ncol = 2)
 ```
 
+\clearpage
+
 
 ### Sc 3a Set the parameters of the prior probability distribution for ln(M) to ~N(0.4,0.1)
 
@@ -486,6 +502,8 @@ plot_grid(mw.plot(desc.models.5abcd[4][[1]], cv = 0.2, every = 10, last.yr = 202
           nrow = 1,
           ncol = 2)
 ```
+
+\clearpage
 
 
 ### Sc 5a Set knife-edged age at recruitment = 3 years
@@ -529,6 +547,8 @@ plot_grid(mw.plot(desc.models.5abcd[5][[1]], cv = 0.2, every = 10, last.yr = 202
           nrow = 1,
           ncol = 2)
 ```
+
+\clearpage
 
 
 ### Sc 6b Reduce the overall observation error term sigma_O = 0.15
@@ -575,6 +595,8 @@ plot_grid(mw.plot(desc.models.5abcd[6][[1]], cv = 0.2, every = 10, last.yr = 202
           ncol = 2)
 ```
 
+
+\clearpage
 
 ### Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight sigma_W = 0.15
 

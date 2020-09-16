@@ -171,6 +171,14 @@ make_cpue_ts_dat(cpue_pred_modern) %>% make_cpue_ts_plot() +
   scale_fill_brewer(palette = "Dark2")
 ```
 
+```{r cpue-bubble-plots-modern-3CD, fig.asp=1.4, fig.width=9, fig.cap="(ref:caption-cpue-bubble-plots-modern-3CD)"}
+dfleet_modern %>% make_bubble_dat() %>%
+  filter(area == "3CD", year > 2010) %>%
+  make_facet_bubble_plot() +
+  ggtitle("1996+ 3CD")
+```
+
+
 ```{r}
 mw5ABCD <- read_csv(here::here("data/results/AnnualMeanWeight_5ABCD.csv"))
 mw3CD <- read_csv(here::here("data/results/AnnualMeanWeight_3CD.csv"))
