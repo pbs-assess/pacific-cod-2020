@@ -181,8 +181,9 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 Reference case model fits to the data were generally typical of all sensitivity cases.
 The model diagnostics were consistent with convergence and posterior sample autocorrelation was minor for most parameters.
-Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
+Model convergence was informed by the statistics $\hat{R}$, the potential scale reduction statistic (should = 1) and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014].
 
+Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
 Model fits to the four indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-3cd).
 The model fit the two fishery-independent indices quite closely (Figure \@ref(fig:fig-base-index-fits-3cd) a and d), but did not closely fit the 2012--2016 data point in the West Coast Vancouver Island Synoptic Survey.
 This is likely because of large differences between low points (2012 and 2018) and high points (2014 and 2016) in the survey observations.
@@ -289,8 +290,6 @@ However, assuming the 2021 catch is of a similar magnitude to the 2018 and 2019 
 The 2022 biomass is projected to be in the Cautious Zone
 (below the USR) with greater than 97% probability under all 2021 catch scenarios tested,
 including zero catch.
-
-
 
 ### Area 5ABCD
 
