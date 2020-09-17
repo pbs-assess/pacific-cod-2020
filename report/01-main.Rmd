@@ -218,7 +218,7 @@ Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-t
 
 ### Area 3CD
 
-Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-3cd).
+Posterior estimates of reference points and stock status conditioned on the 2020 catch levels from the model-averaged set are provided in Table \@ref(tab:tab-ref-points-table-avg-3cd).
 At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 14,145 t.
 The median estimated LRP and USR are estimated to be 8,604 t and 27,570 t, respectively.
 Median fishing mortality at the end of the 2020 fishing year is projected to be less than 1%.
@@ -226,7 +226,7 @@ The median estimated LRR is estimated to be *XXX*.
 Median biomass in 2021 relative to the LRP and USR are estimated to be *XXX* and *XXX*, respectively.
 Median fishing mortality relative to the LRR is estimated to be *XXX*.
 
-Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
+Posterior estimated biomass from the model-averaged set is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
 Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
 
@@ -237,7 +237,7 @@ Combined average posterior fishing mortality indicates that current fishing mort
 
 ### Area 5ABCD
 
-Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
+Posterior estimates of reference points and stock status conditioned on the 2020 catch levels from the model-averaged set are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
 At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 20,069 t.
 The median estimated LRP and USR are estimated to be 9,566 t and 32,766 t, respectively.
 Median fishing mortality at the end of the 2020 fishing year is projected to be 2%.
@@ -245,7 +245,7 @@ The median estimated LRR is estimated to be *XXX*.
 Median biomass in 2021 relative to the LRP and USR are estimated to be *XXX* and *XXX*, respectively.
 Median fishing mortality relative to the LRR is estimated to be *XXX*.
 
-Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
+Posterior estimated biomass from the model-averaged set is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
 Combined average posterior fishing mortality from the seven averaged models is shown in Figure \@ref(fig:fig-model-average-f-3cd).
 
@@ -294,7 +294,7 @@ including zero catch.
 
 ### Area 5ABCD
 
-For illustration, recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
+Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
 
 The model-averaged decision table probabilities are presented in Table \@ref(tab:tab-decision-avg-3cd). In summary:
 
