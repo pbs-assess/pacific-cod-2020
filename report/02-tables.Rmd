@@ -70,6 +70,8 @@ make.parameters.est.table(base.model.5abcd,
   omit_pars = pars_est_omit)
 ```
 
+\clearpage
+
 ```{r tab-ref-points-table-avg-3cd, results='asis'}
 make.ref.points.table(c(base.model.3cd,
                         sens.models.13.sub),
