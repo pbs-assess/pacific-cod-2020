@@ -223,7 +223,7 @@ plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, f
 
 <!-- Spatial data patterns in Area 3CD go here-->
 
-```{r, eval=FALSE}
+```{r spatiotemporal-modelling, eval=FALSE}
 library(sdmTMB)
 library(dplyr)
 library(ggplot2)
@@ -247,9 +247,8 @@ expand_prediction_grid <- function(grid, years) {
   nd[["year"]] <- rep(years, each = nrow(grid))
   nd
 }
-# d <- readRDS("../../gfs/report/data-cache/pacific-cod.rds")$survey_sets
-# d <- dplyr::filter(d, survey_abbrev == "SYN WCVI")
-
+# d <- readRDS("../../gfs/report/data-cache/pacific-cod.rds")$survey_sets %>% 
+#   dplyr::filter(survey_abbrev == "SYN WCVI")
 if (!file.exists("data/pcod-wcvi-survey-sets.rds")) {
   d <- gfdata::get_survey_sets(species = "222", ssid = 1)
   saveRDS(d, "data/pcod-wcvi-survey-sets.rds")
@@ -350,6 +349,50 @@ ggsave("figs/wcvi-pcod-geostatistical-eps-st-spline.png", width = 8, height = 8)
 plot_map(dplyr::filter(pred_gam, year == 2016), "omega_s", FALSE) + scale_fill_gradient2(high = muted("red"), low = muted("blue")) +
   facet_null()
 ggsave("figs/wcvi-pcod-geostatistical-omega-s-spline.png", width = 5, height = 5)
+```
+
+```{r depth-time, eval=FALSE}
+nrow(dutm)
+dutm <- dplyr::filter(dutm, !is.na(depth_m))
+nrow(dutm)
+dutm$depth_scaled <- scale(log(dutm$depth_m))
+dutm$depth_scaled2 <- dutm$depth_scaled^2
+pcod_spde <- make_spde(dutm$X, dutm$Y, n_knots = 250)
+mtv <- sdmTMB(density ~ 0 + as.factor(year),
+  time_varying = ~ 0 + depth_scaled + depth_scaled2,
+  data = dutm, time = "year", spde = pcod_spde,
+  family = tweedie(link = "log"), silent = FALSE)
+max(mtv$gradient)
+s <- as.list(mtv$sd_report, "Estimate")
+
+nd <- data.frame(depth_scaled = seq(min(dutm$depth_scaled, na.rm = TRUE),
+    max(dutm$depth_scaled, na.rm = TRUE), length.out = 100))
+nd$depth_scaled2 <- nd$depth_scaled^2
+get_tv_pred <- function(dat, year) {
+  dat$year <- year
+  p <- predict(mtv, newdata = dat, se_fit = TRUE, re_form = NA)
+  p
+}
+future::plan(future::multisession)
+out <- furrr::future_map(sort(unique(dutm$year)), 
+  ~ get_tv_pred(dat = nd, year = .x))
+future::plan(future::sequential)
+out_df <- bind_rows(out)
+.x <- log(dutm$depth_m)
+out_df$depth <- exp(out_df$depth_scaled * sd(.x) + mean(.x))
+ggplot(out_df, aes(depth, exp(est))) + 
+  geom_ribbon(aes(
+    ymin = exp(est - 2 * est_se), 
+    ymax = exp(est + 2 * est_se), group = year), 
+    fill = "grey60",  alpha  =0.15, colour = NA) +
+  geom_line(aes(colour = as.factor(year)), lwd = .8) +
+  # scale_colour_viridis_d() + 
+  # scale_fill_viridis_d() +
+  scale_colour_brewer(palette = "Dark2") + 
+  scale_fill_brewer(palette = "Dark2") +
+  gfplot::theme_pbs() +
+  labs(colour = "Year", y = "Density", x = "Depth (m)") +
+  coord_cartesian(expand = FALSE, xlim = c(min(out_df$depth), 450))
 ```
 
 
