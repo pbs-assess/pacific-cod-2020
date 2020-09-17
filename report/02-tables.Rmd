@@ -54,7 +54,7 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 make.parameters.est.table(base.model.3cd,
   caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
     "97.5\\textsuperscript{th} percentile) and MPD ",
-    "estimates of key parameters from the reference Case, Area 3CD. $R_0$ is in thousands of fish. $B_0$ is in tonnes.  ",
+    "estimates of key parameters from the Reference Case, Area 3CD. $R_0$ is in thousands of fish. $B_0$ is in tonnes.  ",
     q.3cd.desc),
   omit_pars = pars_est_omit)
 ```
