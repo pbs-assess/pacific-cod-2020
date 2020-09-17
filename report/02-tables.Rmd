@@ -50,10 +50,8 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 \clearpage
 
-
 ```{r tab-ref-points-table-avg-3cd, results='asis'}
-make.ref.points.table(c(base.model.3cd,
-                        sens.models.13.sub),
+make.ref.points.table(avg.model.3cd,
                       omit_msy = TRUE,
                       add.hist.ref = TRUE,
                       lrp = c(1986, 1986),
@@ -67,8 +65,7 @@ make.ref.points.table(c(base.model.3cd,
 
 
 ```{r tab-ref-points-table-avg-5abcd, results='asis'}
-make.ref.points.table(c(base.model.5abcd,
-                        sens.models.6.sub),
+make.ref.points.table(avg.model.5abcd,
                       omit_msy = TRUE,
                       add.hist.ref = TRUE,
                       lrp = c(2000, 2000),
