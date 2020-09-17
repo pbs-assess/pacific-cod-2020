@@ -16,8 +16,6 @@ However, given the low 2018 index of abundance in Area 3CD, coupled with the lac
 
 This Science Response Report results from the Science Response Process *XX XX, XX* on the Status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
 
-*TODO: currently data only up to 2019. Update to 2020, will have to pro-rate catch.*
-
 # Background
 
 Pacific Cod (or Grey Cod) is a relatively short-lived (~10-13 *y*), fast-growing member of the family Gadidae.
@@ -79,10 +77,6 @@ The survey was first conducted in 2003 and 2004, and then in odd years since 200
 Abundance in Area 5CD (\@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
 Since 2005, it has been indexed in odd-numbered years by the Hecate Strait Synoptic Survey.
 
-*TODO: look at survey location plots. Keep them in?*
-
-Individual survey tows for the WCVI synoptic bottom trawl survey are shown in Figure \@ref(fig:survey-maps-syn-wcvi).
-
 Details on spatial extent and depth strata of all surveys are provided in Appendix A of @forrest2020.
 
 ### NMFS Triennial Survey (in Canadian waters)
@@ -98,15 +92,22 @@ The indices were developed using a Tweedie standardized generalized linear mixed
 The full standardization historical period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
 The full standardization modern period GLMMs included predictors for depth, latitude, locality, month, vessel and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
 
-*TODO: look at bubble plots. Keep them in?*
-
-Bubble plots of location, latitude, depth, vessel and month are shown in Figure \@ref(fig:cpue-bubble-plots-modern-3CD).
-
 ### Annual mean weight in commercial catch
 
 Annual mean weight in the commercial catch was calculated using the methodology decribed in Appendix C of @forrest2020.
 Commercial biological samples were available for calculating mean weight from 1956 to 2019.
 In the absence of commercial biological samples for 2020, we assumed the same annual mean weight in 2020 as for 2019.
+
+### Spatial data patterns in Area 3CD
+
+*TODO: decide whether to keep this section. Possibly, replace the survey locations with sdmTMB results (or show both). Include descriptive text*
+
+Spatial patterns in the WCVI synoptic survey and the commercial CPUE may help to inform the reasons for the reduction in indices in 2018 and 2019. **[...]**. *Assume we can conclude if there are no obvious patterns in the survey or fishery that this would indicate a reduction in biomass.* 
+
+Individual survey tows for the WCVI synoptic bottom trawl survey are shown in Figure \@ref(fig:survey-maps-syn-wcvi).
+
+Bubble plots of location, latitude, depth, vessel and month are shown in Figure \@ref(fig:cpue-bubble-plots-modern-3CD).
+
 
 ## Stock assessment model
 
@@ -205,12 +206,17 @@ The model followed the general trends of the three fishery-independent indices, 
 
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
 
-## Indicators of stock status 
+## Indicators of current stock status 
 
 ### Area 3CD
 
 Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-3cd).
-At the beginning of the 2021 fishing year, **XXX**
+At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 14,145 t.
+The median estimated LRP and USR are estimated to be 8,604 t and 27,570 t, respectively.
+Median fishing mortality at the end of the 2020 fishing year is projected to be less than 1%.
+The median estimated LRR is estimated to be *XXX*.
+Median biomass in 2021 relative to the LRP and USR are estimated to be *XXX* and *XXX*, respectively.
+Median fishing mortality relative to the LRR is estimated to be *XXX*.
 
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-3cd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-3cd).
@@ -224,7 +230,12 @@ Combined average posterior fishing mortality indicates that current fishing mort
 ### Area 5ABCD
 
 Current estimates of reference points and stock status conditioned on the 2020 catch levels are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
-At the beginning of the 2021 fishing year, **XXX**
+At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 20,069 t.
+The median estimated LRP and USR are estimated to be 9,566 t and 32,766 t, respectively.
+Median fishing mortality at the end of the 2020 fishing year is projected to be 2%.
+The median estimated LRR is estimated to be *XXX*.
+Median biomass in 2021 relative to the LRP and USR are estimated to be *XXX* and *XXX*, respectively.
+Median fishing mortality relative to the LRR is estimated to be *XXX*.
 
 Posterior estimated biomass from the seven models used for model-averaging is shown in Figure \@ref(fig:fig-model-average-biomass-comp-5abcd).
 Combined average biomass for all seven models is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd).
@@ -247,7 +258,7 @@ The following performance measures were evaluated:
 1. $P(F_{2020} > LRR)$
 
 Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set). 
-For each performance measure, under each alternative 2021 catch level, vectors of 1,000 burned-in posterior samples from each of the seven models were combined into a single vector of 7,000 samples. Probabilities of performance measures were then calculated from the combined samples.
+For each performance measure, under each alternative 2021 catch level, vectors of 1,000 burned-in posterior samples from each of the seven models were combined into a single vector of 7,000 samples. Probabilities of performance measures were then calculated from the combined samples [see @forrest2020].
 
 ### Area 3CD
 
