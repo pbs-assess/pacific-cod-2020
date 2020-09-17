@@ -352,18 +352,22 @@ ggsave("figs/wcvi-pcod-geostatistical-omega-s-spline.png", width = 5, height = 5
 ```
 
 ```{r depth-time, eval=FALSE}
-nrow(dutm)
+# d <- readRDS("../../gfs/report/data-cache/pacific-cod.rds")$survey_sets %>%
+#   dplyr::filter(survey_abbrev == "SYN QCS")
+# d <- mutate(d, Y = latitude, X = longitude)
+dutm <- as_tibble(convert2utm(d))
+dutm$density <- dutm$density_kgpm2 * 1000
 dutm <- dplyr::filter(dutm, !is.na(depth_m))
-nrow(dutm)
 dutm$depth_scaled <- scale(log(dutm$depth_m))
 dutm$depth_scaled2 <- dutm$depth_scaled^2
 pcod_spde <- make_spde(dutm$X, dutm$Y, n_knots = 250)
+plot_spde(pcod_spde)
 mtv <- sdmTMB(density ~ 0 + as.factor(year),
   time_varying = ~ 0 + depth_scaled + depth_scaled2,
   data = dutm, time = "year", spde = pcod_spde,
   family = tweedie(link = "log"), silent = FALSE)
-max(mtv$gradient)
-s <- as.list(mtv$sd_report, "Estimate")
+print(mtv)
+stopifnot(max(mtv$gradient) < 0.001)
 
 nd <- data.frame(depth_scaled = seq(min(dutm$depth_scaled, na.rm = TRUE),
     max(dutm$depth_scaled, na.rm = TRUE), length.out = 100))
