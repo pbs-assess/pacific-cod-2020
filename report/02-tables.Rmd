@@ -50,17 +50,6 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 \clearpage
 
-```{r tab-param-est-table-5abcd, results='asis'}
-pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$")
-make.parameters.est.table(base.model.5abcd,
-  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
-    "97.5\\textsuperscript{th} percentile) and MPD ",
-    "estimates of key parameters from the Reference Case, Area 5ABCD. $R_0$ is in thousands of fish. $B_0$ is in tonnes. ",
-    q.5abcd.desc),
-  omit_pars = pars_est_omit)
-```
-
-
 ```{r tab-param-est-table-3cd, results='asis'}
 make.parameters.est.table(base.model.3cd,
   caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
@@ -70,6 +59,15 @@ make.parameters.est.table(base.model.3cd,
   omit_pars = pars_est_omit)
 ```
 
+```{r tab-param-est-table-5abcd, results='asis'}
+pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$")
+make.parameters.est.table(base.model.5abcd,
+  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+    "97.5\\textsuperscript{th} percentile) and MPD ",
+    "estimates of key parameters from the Reference Case, Area 5ABCD. $R_0$ is in thousands of fish. $B_0$ is in tonnes. ",
+    q.5abcd.desc),
+  omit_pars = pars_est_omit)
+```
 
 ```{r tab-ref-points-table-avg-3cd, results='asis'}
 make.ref.points.table(avg.model.3cd,
