@@ -175,7 +175,7 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$
 7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$
 
-## Reference model fits to data
+## Reference model results
 
 ### Area 3CD
 
@@ -197,6 +197,10 @@ This is most likely due to most of the length measurements in this part of the t
 Smaller, released fish are therefore likely underrepresented in the annual mean weight data prior to the introduction of at-sea observers in 1996.
 A scenario with a smaller value of $\sigma_W$, which controls the fit to the mean weight in the likelihood function is included in the model-averaging set in each area (Sc 7b).
 
+Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-3cd).
+
+*TODO: Discuss any differences between these parameter ests and 2018.*
+
 ### Area 5ABCD
 
 As for Area 3CD, reference case model fits to the data were typical of all sensitivity cases, model diagnostics were consistent with convergence, and posterior sample autocorrelation was minor for most parameters.
@@ -205,6 +209,10 @@ The MPD model fits to the five indices of abundance are shown in Figure \@ref(fi
 The model followed the general trends of the three fishery-independent indices, but could not fit some of the larger peaks (for example 2004 and 2005 peaks in the Queen Charlotte Sound Synoptic Survey, and the 2009 and 2013 peaks in the Hecate Strait Synoptic Survey, Figure \@ref(fig:fig-base-index-fits-5abcd)b and c). Similarly, the model followed the major patterns in the two CPUE indices but did not capture all the peaks (Figure \@ref(fig:fig-base-index-fits-5abcd)d and e).
 
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
+
+Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-5abcd).
+
+*TODO: Discuss any differences between these parameter ests and 2018.*
 
 ## Indicators of current stock status 
 
