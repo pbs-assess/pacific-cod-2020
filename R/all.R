@@ -3,7 +3,7 @@
 #  other R source code files.
 #
 # To debug in an R session, run these 3 commands first:
-# source(file.path(here::here(), "R/all.r"));load.models.into.parent.env();source(file.path(here::here(), "R/custom-knitr-variables.r"))
+# source(here::here("R/all.r"));load.models.into.parent.env();source(here::here("R/custom-knitr-variables.r"))
 
 library(lubridate)
 library(dplyr)
