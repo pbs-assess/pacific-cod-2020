@@ -14,7 +14,7 @@ Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (T
 The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
 However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
-This Science Response Report results from the Science Response Process *XX XX, XX* on the Status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
+This Science Response Report results from the Science Response Process of October 2020 on the status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
 
 # Background
 
@@ -116,9 +116,6 @@ A full stock assessment history for both stocks is provided in @forrest2020.
 The current model is fully described in Appendix D of @forrest2020.
 All fixed parameters and prior probability distributions for model parameters in the current assessment were the same as those reported in @forrest2020.
 
-For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
-Posterior samples were drawn every 1,000 iterations from a chain of length 2 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
-
 @forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
 Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
@@ -126,11 +123,13 @@ Other stock assessments that have used a model-averaging approach are Pacific Ha
 
 ## Reference points
 
-The DFO Fishery Decision-making Framework Incorporating the Precautionary Approach (PA) policy [@dfo2009] requires stock status to be characterized using three reference points:
+The DFO Fishery Decision-making Framework Incorporating the Precautionary Approach (PA) Policy [@dfo2009] requires stock status to be characterized using three reference points:
 
 1. An Upper Stock Reference point $\textrm{USR}$;
 2. A Limit Reference Point $\textrm{LRP}$;
 3. A Limit Removal Rate $\textrm{LRR}$.
+
+The USR and LRP define the threshold of three biomass-based stock status zones defined under the PA Policy [@dfo2009]: Critical Zone (below the $\textrm{LRP}$); Cautious Zone (above the $\textrm{LRP}$ and below the $\textrm{USR}$); and Healthy Zone (above the $\textrm{USR}$).
 
 As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
 
@@ -177,11 +176,14 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 ## Reference model results
 
-### Area 3CD
+For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
+Posterior samples were drawn every 5,000 iterations from a chain of length 10 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
 Reference case model fits to the data were generally typical of all sensitivity cases.
 The model diagnostics were consistent with convergence and posterior sample autocorrelation was minor for most parameters.
-Model convergence was informed by visual inspection of trace and autocorrelation plots (not shown), and the statistics $\hat{R}$, the potential scale reduction statistic and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014; see also descriptions in @forrest2020].
+Model convergence was informed by visual inspection of trace and autocorrelation plots (not shown), and the statistics $\hat{R}$, the potential scale reduction statistic, which should be equal to 1.0, and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014; see also descriptions in @forrest2020].
+
+### Area 3CD
 
 Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
 Model fits to the four indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-3cd).
@@ -318,11 +320,16 @@ However, the 2022 biomass is projected to be in the Cautious Zone
 (below the USR) with greater than 98% probability under all 2021 catch scenarios tested,
 including zero catch.
 
+## Sources of uncertainty
+
+
 
 # Conclusions
 
+This document updates the current stock status of Pacific Cod stocks in Area 3CD and 5ABCD at the end of the 2020 fishing year, and provides catch advice in the form of decision tables.
+The current stock status for the Area 3CD stock is above the LRP
 
-## Sources of uncertainty
+
 
 *TODO*
 
