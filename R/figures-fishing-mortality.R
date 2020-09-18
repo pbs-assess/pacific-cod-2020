@@ -54,19 +54,36 @@ f.plot <- function(models,
     if(is.na(lrr)){
       cat0("Supply year ranges for lrr when add.hist.ref is TRUE")
     }else{
-      cal <- f %>%
-        filter(Year >= lrr[1] & Year <= lrr[2])
-      lrr.val <- mean(cal$`Fishing mortality`)
+       yrs <- f$Year
 
-      j <- data.frame("Intercept" = c(lrr.val),
-                      "Color" = c("black"))
-      p <- p +
-        geom_hline(data = j,
-                   aes(yintercept = Intercept),
+       cal <- f %>%
+       filter(Year >= lrr[1] & Year <= lrr[2])
+
+       lrr.val <- mean(cal$`Fishing mortality`)
+
+       cal <- f %>%
+         filter(Year >= lrr[1] & Year <= lrr[2]) %>%
+         mutate(lowercv = mean(lowercv),
+                `Fishing mortality` = mean(`Fishing mortality`),
+                uppercv = mean(uppercv))
+
+       cal <- cal[1,]
+       cal <- cal[rep(1, each = length(yrs)),]
+       cal$Year <- yrs
+       cal$Color <- 1
+       p <- p + geom_ribbon(data = cal,
+                            alpha = 0.2,
+                          fill = cal$Color)
+
+       j <- data.frame("Intercept" = c(lrr.val),
+                       "Color" = c("black"))
+       p <- p +
+         geom_hline(data = j,
+                    aes(yintercept = Intercept),
                    color = j$Color,
-                   linetype = "dashed",
-                   size = 1,
-                   show.guide = TRUE)
+                    linetype = "dashed",
+                    size = 1,
+                    show.guide = TRUE)
     }
   }
 

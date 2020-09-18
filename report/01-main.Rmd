@@ -181,7 +181,7 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 Reference case model fits to the data were generally typical of all sensitivity cases.
 The model diagnostics were consistent with convergence and posterior sample autocorrelation was minor for most parameters.
-Model convergence was informed by the statistics $\hat{R}$, the potential scale reduction statistic (should = 1) and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014].
+Model convergence was informed by visual inspection of trace and autocorrelation plots (not shown), and the statistics $\hat{R}$, the potential scale reduction statistic and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014; see also descriptions in @forrest2020].
 
 Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
 Model fits to the four indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-3cd).
@@ -190,7 +190,7 @@ This is likely because of large differences between low points (2012 and 2018) a
 Similarly, while the model closely followed the major patterns in the historical CPUE index (Figure \@ref(fig:fig-base-index-fits-3cd)b), it did not capture all the peaks in the modern series (Figure \@ref(fig:fig-base-index-fits-3cd)c).
 Fits such as this tend to occur when there is no other information (such as age composition data or contrasting mean weight data) to help resolve large fluctuations in observed indices.
 
-@forrest2015 and @forrest2018 considered goodness of fit to the indices of abundance to be a primary driver of uncertainty in their assessments, as estimates of productivity parameters were sensitive to how well the model fit observed peaks in the indices.
+@forrest2015 and @forrest2020 considered goodness of fit to the indices of abundance to be a primary driver of uncertainty in their assessments, as estimates of productivity parameters were sensitive to how well the model fit observed peaks in the indices.
 They presented a number of sensitivity analyses to treatment of the observation error parameter $\sigma_O$, one of which is included in the model-averaging set in each area (Sc 6b).
 
 As in the 2018  assessment [@forrest2020], the model tended to underestimate annual mean weight, especially in the early part of the time series (Figure \@ref(fig:fig-base-mean-weight-3cd)).
@@ -199,8 +199,8 @@ Smaller, released fish are therefore likely underrepresented in the annual mean 
 A scenario with a smaller value of $\sigma_W$, which controls the fit to the mean weight in the likelihood function is included in the model-averaging set in each area (Sc 7b).
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-3cd).
-
-*TODO: Discuss any differences between these parameter ests and 2018.*
+Notably, the estimated value of natural mortality, $M$, was 0.449 *y*^-1^ in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ in 2018.
+This suggests that the model is explaining the decreased biomass by estimating higher natural mortality.
 
 ### Area 5ABCD
 
@@ -212,8 +212,7 @@ The model followed the general trends of the three fishery-independent indices, 
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-5abcd).
-
-*TODO: Discuss any differences between these parameter ests and 2018.*
+The median posterior estimate of $M$ was slightly lower in the current assessment (0.308 *y*^-1^), compared to the 2018 assessment [0.312 *y*^-1^; @forrest2020].
 
 ## Indicators of current stock status 
 
@@ -234,7 +233,9 @@ Combined average posterior fishing mortality from the seven averaged models is s
 The estimated biomass range from the seven models was very broad, with the largest biomass predicted from Sc 2e, which adjusted the standard deviation of the prior probability distribution for catchability in the WCVI survey.
 The smallest biomass was predicted from from Sc 5a, the model that assumed age at recruitment to the fishery was 3 *y*.
 Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP, with a very slight increase projected for the beginning of 2021.
-Combined average posterior fishing mortality indicates that current fishing mortality is very low and well below the LRR.
+This is a notable decrease in estimated biomass compared to the 2018 assessment [@dfo2019; their Figure 3b].
+The estimated fishing mortality range from the seven models was broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the broad range of biomass estimates.
+
 
 ### Area 5ABCD
 
