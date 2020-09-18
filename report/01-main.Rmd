@@ -323,7 +323,16 @@ including zero catch.
 
 ## Sources of uncertainty
 
-*AK*
+Uncertainty due to estimated parameters and the weights assigned to various data components was explicitly addressed using a Bayesian approach.
+For provision of advice, results from seven alternative model configurations were used to generate decision tables.
+However, this approach only captures uncertainty associated with the set of model configurations included within the assessment and may underestimate greater structural uncertainties.
+Additional uncertainties in this assessment stem from:
+
+1. The lack of reliable age composition data for this species, which would provide additional information about recruitment strength and gear selectivity;
+1. Relatively short time series of fishery-independent abundance indices, which show no clear trend;
+1. Possible bias in the length frequency data prior to 1996, due to possible under-representation of lengths of fish that were caught but discarded at sea;
+1. A poor understanding of Pacific Cod stock structure in Pacific waters. For example, connectivity between stocks of Pacific Cod in BC and Alaska is not well understood. Pacific Cod stocks in the Gulf of Alaska have undergone decline since 2017, likely due to warming north Pacific waters [@barbeaux2020], and it is unknown whether there is any relationship between drivers of abundance of these stocks and stocks in BC; and
+1. A poor understanding of the relationship between commercial CPUE data and abundance, and how this relationship has been affected over the course of management changes in the fishery. 
 
 # Conclusions
 
@@ -332,14 +341,9 @@ Currently, both stocks are assessed to be in the Cautious Zone, as was the case 
 However, the Area 3CD stock is estimated to have declined in abundance and is estimated to be closer to the LRP than in the previous assessment.
 
 A critical concern with this assessment is the lack of a WCVI synoptic survey update in 2020.
-We recommend surveying Area 3CD as soon as it is feasible to do so, then updating this advice.
-Further analysis of recent survey data including spatial and depth distribution of the stock and analysis of biological data, such as condition of the fish (length-weight data) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance since 2018.
-
-
-
-*TODO*
-
-* Re-assessment interval ... as soon as next survey is done
+We recommend surveying this area as soon as it is feasible to do so, then updating this advice.
+Further analysis of recent survey data including spatial and depth distribution of the stock, and analysis of biological data, such as condition of the fish over time (length-weight relationship) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance since 2018.
+Other key research recommendations, which would improve understanding of stock and fishery dynamics for both stocks are provided in @forrest2020.
 
 \clearpage
 
