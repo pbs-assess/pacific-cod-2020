@@ -384,19 +384,19 @@ future::plan(future::sequential)
 out_df <- bind_rows(out)
 .x <- log(dutm$depth_m)
 out_df$depth <- exp(out_df$depth_scaled * sd(.x) + mean(.x))
-ggplot(out_df, aes(depth, exp(est))) + 
+ggplot(out_df, aes(depth, (est))) + 
   geom_ribbon(aes(
-    ymin = exp(est - 2 * est_se), 
-    ymax = exp(est + 2 * est_se), group = year), 
+    ymin = (est - 2 * est_se), 
+    ymax = (est + 2 * est_se), group = year), 
     fill = "grey60",  alpha  =0.15, colour = NA) +
   geom_line(aes(colour = as.factor(year)), lwd = .8) +
-  # scale_colour_viridis_d() + 
-  # scale_fill_viridis_d() +
-  scale_colour_brewer(palette = "Dark2") + 
-  scale_fill_brewer(palette = "Dark2") +
+  scale_colour_viridis_d() +
+  scale_fill_viridis_d() +
+  # scale_colour_brewer(palette = "Dark2") + 
+  # scale_fill_brewer(palette = "Dark2") +
   gfplot::theme_pbs() +
   labs(colour = "Year", y = "Density", x = "Depth (m)") +
-  coord_cartesian(expand = FALSE, xlim = c(min(out_df$depth), 450))
+  coord_cartesian(expand = FALSE, xlim = c(min(out_df$depth), 450), ylim = c(-16, -2))
 ```
 
 
