@@ -1,26 +1,26 @@
 
 # Context
 
-The last assessment for Pacific Cod in British Columbia (BC) was done in 2018, providing catch advice for 2019 [@forrest2020; @dfo2019].
+The last assessment for Pacific Cod (*Gadus macrocephalus*) in British Columbia (BC) was done in 2018, providing catch advice for 2019 [@forrest2020; @dfo2019].
 Separate assessments were done for stocks in Area 3CD (West Coast Vancouver Island: WCVI) and Area 5ABCD (Queen Charlotte Sound (QCS) and Hecate Strait (HS) combined) (Figure \@ref(fig:fig-map)).
 Both the 3CD and 5ABCD stocks were assessed to be in the Cautious Zone [@dfo2009].
 
 Fishery-independent synoptic bottom trawl surveys are conducted biennially in BC, usually occurring in even-numbered years for WCVI, and odd-numbered years in QCS and HS.
-However, due to the COVID-19 pandemic, the scheduled 2020 WCVI survey did not occur.
+However, due to the coronavirus disease 2019 (COVID-19) pandemic, the scheduled 2020 WCVI survey did not occur.
 The 2018 survey index for WCVI was very low, at approximately 25% of the magnitude of the 2014 and 2016 observations (Table \@ref(tab:surv-canadian-table); Figure \@ref(fig:fig-summary-indices-3cd)).
 The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-summary-indices-3cd)).
 Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
-The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
+The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point was available).
 However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
-This Science Response Report results from the Science Response Process of October 2020 on the status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
+This Science Response reports results from the Science Response Process of October 2020 on the status of Pacific Cod for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
 
 # Background
 
-Pacific Cod (or Grey Cod) is a relatively short-lived (~10-13 *y*), fast-growing member of the family Gadidae.
+Pacific Cod (or Grey Cod) is a relatively short-lived (~10--13 *y*), fast-growing member of the family Gadidae.
 It is distributed throughout the north Pacific Ocean, and throughout the waters of BC, typically in depth ranges up to 200 m. 
-Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B); West Coast Vancouver Island (3CD); Queen Charlotte Sound (5AB); and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
+Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B), West Coast Vancouver Island (3CD), Queen Charlotte Sound (5AB), and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
 
 The choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment in 2018 [@dfo2019], and therefore in the current advice, was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
 There is also no evidence for genetic distinction between these two stocks [@forrest2015].
@@ -36,8 +36,7 @@ Commercial catches also come from QCS (Area 5AB) and WCVI (Area 3CD).
 Near negligible catch is taken from the west coast of Haida Gwaii, Area 5E ( < 0.5% of total average annual catch since 1985).
 
 The BC integrated fishery is subject to 100% at-sea and dockside monitoring.
-Since 1996, all bottom trawl vessels have carried observers, who record the catch of each species and estimate quantities of released (discarded) fish.
-An exception was 
+Since 1996, all bottom trawl vessels have carried observers who record the catch of each species and estimate quantities of released (discarded) fish.
 Therefore, since 1996, estimates of catch and at-sea releases can be considered accurate.
 For the period 1956--1995 estimates of catch and releases were obtained from fishing logbooks.
 Estimates of at-sea releases for this period are likely to be under-estimates [@forrest2020]
@@ -60,13 +59,14 @@ Catch data prior to 1981 include catch by US vessels [@forrest2015; @forrest2020
 Fishing years are defined as beginning on April 1 for all years, and are referenced by starting year, e.g., fishing year 1957 runs from April 1, 1957 to March 31, 1958 [see @forrest2020].
 
 At the time of the assessment, the 2020 fishing year was incomplete.
-In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
+In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three-year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
 This proportion was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)).
+<!-- TODO SA: consider whether this makes sense given COVID, or at least comment on -->
 
 ### Canadian bottom trawl surveys
 
 All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
-Values are provided in Table \@ref(tab:surv-canadian-table) and Figure (fig:surv-canadian).
+Values are provided in Table \@ref(tab:surv-canadian-table) and Figure \@ref(fig:surv-canadian).
 
 Abundance in Area 3CD (\@ref(fig:fig-map)) is indexed by the West Coast Vancouver Island Synoptic Survey.
 The survey was first conducted in 2004 and is conducted in alternating (even-numbered) years.
@@ -87,10 +87,10 @@ See Appendix A of @forrest2018 for complete details.
 
 ### Commercial CPUE
 
-Standardized commercial CPUE indices were developed for the historical (1956:1995) and modern (1996:2019) periods (Figures  \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)).
+Standardized commercial CPUE indices were developed for the historical (1956--1995) and modern (1996--2019) periods (Figures  \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)).
 The indices were developed using a Tweedie standardized generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
-The full standardization historical period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
-The full standardization modern period GLMMs included predictors for depth, latitude, locality, month, vessel and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
+The historical-period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
+The modern-period GLMMs included predictors for depth, latitude, locality, month, vessel, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
 
 ### Annual mean weight in commercial catch
 
