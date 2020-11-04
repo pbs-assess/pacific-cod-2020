@@ -87,7 +87,7 @@ Details on spatial extent and depth strata of all surveys are provided in Append
 
 An additional relative abundance index for Area 3CD was developed using data from the
 National Marine Fisheries Service (NMFS) Triennial survey, which operated off the lower half of West Coast Vancouver Island between 1980 and 2001 (Figure \@ref(fig:tri-fig9)).
-See Appendix A of @forrest2018 for complete details.
+See Appendix A of @forrest2020 for details.
 
 ### Commercial CPUE
 
@@ -100,8 +100,9 @@ The modern-period GLMMs included predictors for depth, latitude, locality, month
 
 Annual mean weight in the commercial catch was calculated using the methodology decribed in Appendix C of @forrest2020.
 Commercial biological samples were available for calculating mean weight from 1956 to 2019.
-In the absence of commercial biological samples for 2020, we assumed the same annual mean weight in 2020 as for 2019.
+In the absence of available commercial biological samples for 2020, we assumed the same annual mean weight in 2020 as for 2019.
 
+<!--
 ### Spatial data patterns in Area 3CD
 
 *TODO: decide whether to keep this section. Possibly, replace the survey locations with sdmTMB results (or show both). Include descriptive text*
@@ -111,6 +112,7 @@ Spatial patterns in the WCVI synoptic survey and the commercial CPUE may help to
 Individual survey tows for the WCVI synoptic bottom trawl survey are shown in Figure \@ref(fig:survey-maps-syn-wcvi).
 
 Bubble plots of location, latitude, depth, vessel and month are shown in Figure \@ref(fig:cpue-bubble-plots-modern-3CD).
+-->
 
 
 ## Stock assessment model

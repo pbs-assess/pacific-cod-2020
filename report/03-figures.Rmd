@@ -223,7 +223,8 @@ plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, f
           ncol = 2)
 ```
 
-<!-- Spatial data patterns in Area 3CD go here-->
+<!-- 
+ Spatial data patterns in Area 3CD go here -- RF decide to delete
 
 ```{r spatiotemporal-modelling, eval=FALSE}
 library(sdmTMB)
@@ -413,7 +414,7 @@ dfleet_modern %>% make_bubble_dat() %>%
   ggtitle("1996+ 3CD")
 ```
 
-<!-- End spatial data patterns in Area 3CD -->
+-->
 
 ```{r fig-model-average-biomass-comp-3cd, fig.cap="Posterior estimates of biomass for the model-averaged set for Area 3CD. Thick solid lines show the posterior median and the shaded regions represent the 95\\% credible interval. Green dashed line shows the median USR; red dashed line shows the median LRP."}
 b.plot(desc.models.3cd,
