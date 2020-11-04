@@ -125,6 +125,7 @@ All fixed parameters and prior probability distributions for model parameters in
 @forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
 Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
+Details are provided in Section \@ref(sec:scenarios).
 Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
 
 ## Reference points
@@ -148,7 +149,7 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 See @forrest2020 for the history of the choice to use historical reference points for Pacific Cod.
 See also @forrest2018 for results of simulation-testing of historical reference points for the 5CD stock of Pacific Cod.
 
-## Model scenarios
+## Model scenarios {#sec:scenarios}
 
 Reference case models were established for Areas 3CD and 5ABCD to show model response under what were considered the most plausible choices across a range of assumptions for each stock.
 The Reference models for Areas 3CD and 5ABCD shared similar characteristics in terms of data choices, prior probability distributions and fixed parameter settings [see @forrest2020].

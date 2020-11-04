@@ -115,7 +115,7 @@ dat$stand %>%
     labs(fill = "Version", colour = "Version", y = "") +
     geom_ribbon(alpha = 0.5) +
     geom_line(aes(colour = formula_version)) +
-    facet_grid(formula_version~area) +
+    facet_grid(area~formula_version) +
     ylab("CPUE (kg/hour) divided\nby geometric mean") +
     guides(fill = FALSE, colour = FALSE) + xlab("")
 }
