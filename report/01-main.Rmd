@@ -61,9 +61,11 @@ Fishing years are defined as beginning on April 1 for all years, and are referen
 
 At the time of the assessment, the 2020 fishing year was incomplete.
 In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three-year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
-This proportion was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)). In Area 3CD, the average proportion was 67.4%. In area 5ABCD, the average proportion was 87.8%.
-<!-- TODO SA: consider whether this makes sense given COVID, or at least comment on -->
-<!-- RF: For 3CD, the proportions taken by Sep 30 in 2017, 2018 and 2019 were different from each other (86%, 46% and 71%), probably because of the anomalously low catches in 2018 and 2019, so I don't know if we are dealing with typical fishing anyway. I think we just need to watch it -->
+This proportion was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)). In Area 3CD, the average proportion was 67.4% (average of 85.6%. 46.2% and 70.5% for the 2017, 2018, and 2019 fishing years, respectively).
+In area 5ABCD, the average proportion was 87.8% (average of 88.6%. 82.7% and 92.1% for the 2017, 2018, and 2019 fishing years, respectively).
+In Area 3CD, the average proportion of catch taken by September 30 has been inconsistent in recent years and therefore the 2020 extrapolation should be considered uncertain.
+However, the magnitude of the catch in the past three years has been low, and the 2020 catch is expected to have a minor impact on 2021 catch advice.
+In addition, catch patterns in both areas may be atypical due to the COVID-19 pandemic.
 
 ### Canadian bottom trawl surveys
 
