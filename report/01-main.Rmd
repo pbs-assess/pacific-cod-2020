@@ -12,7 +12,7 @@ The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-su
 Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
 The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
-However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in **2020** and recommend harvest advice for **2021** to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
 This Science Response Report results from the Science Response Process of October 2020 on the status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
 
@@ -22,7 +22,7 @@ Pacific Cod (or Grey Cod) is a relatively short-lived (~10-13 *y*), fast-growing
 It is distributed throughout the north Pacific Ocean, and throughout the waters of BC, typically in depth ranges up to 200 m. 
 Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B); West Coast Vancouver Island (3CD); Queen Charlotte Sound (5AB); and Hecate Strait (5CD). This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
 
-The choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment in 2018 [@dfo2019], and therefore in the current advice, was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
+The 2018 choice to provide science advice for combined areas 5AB and 5CD in a single stock assessment [@dfo2019] was due mainly to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
 There is also no evidence for genetic distinction between these two stocks [@forrest2015].
 
 ## Description of the fishery
