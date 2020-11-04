@@ -340,13 +340,13 @@ Additional uncertainties in this assessment stem from:
 
 1. The lack of reliable age composition data for this species, which would provide additional information about recruitment strength and gear selectivity;
 1. Relatively short time series of fishery-independent abundance indices, which show no clear trend;
-1. Possible bias in the length frequency data prior to 1996, due to possible under-representation of lengths of fish that were caught but discarded at sea;
+1. Possible bias in the length frequency data prior to 1996, due to possible under-representation of lengths of fish that were caught but released at sea;
 1. A poor understanding of Pacific Cod stock structure in Pacific waters. For example, connectivity between stocks of Pacific Cod in BC and Alaska is not well understood. Pacific Cod stocks in the Gulf of Alaska have undergone decline since 2017, likely due to warming north Pacific waters [@barbeaux2020], and it is unknown whether there is any relationship between drivers of abundance of these stocks and stocks in BC; and
 1. A poor understanding of the relationship between commercial CPUE data and abundance, and how this relationship has been affected over the course of management changes in the fishery. 
 
 # Conclusions
 
-This document updates the current stock status of Pacific Cod stocks in Area 3CD and 5ABCD at the end of the 2020 fishing year, and provides catch advice in the form of decision tables.
+This document updates the current stock status of Pacific Cod stocks in Area 3CD and 5ABCD at the end of the 2020 fishing year, and provides 2021 catch advice in the form of decision tables.
 Currently, both stocks are assessed to be in the Cautious Zone, as was the case in the 2018 assessment [@dfo2019].
 However, the Area 3CD stock is estimated to have declined in abundance and is estimated to be closer to the LRP than in the previous assessment.
 
