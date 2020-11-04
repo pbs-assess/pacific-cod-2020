@@ -88,17 +88,20 @@ make_cpue_ts_plot <- function(dat) {
    if(dat$stand$year[1] <1996){
    #historical
       dat$stand$formula_version <- factor(dat$stand$formula_version,
-            levels=c("Profondeur","Lieu","Mois","Normalisation\ncomplet\nmois interactions","Normalisation\ncomplet"))
-   }else {
+            levels=c("Profondeur","Lieu","Mois","Normalisation\ncomplet\nmois interactions","Normalisation\ncomplet")) %>%
+      filter(formula_version == "Normalisation\ncomplet")
+
+  }else {
    #modern
    dat$stand$formula_version <- factor(dat$stand$formula_version,
-     levels=c("Profondeur","Latitude","Lieu","Mois","Navire","Normalisation\ncomplet\nmois interactions","Normalisation\ncomplet"))
-
+     levels=c("Profondeur","Latitude","Lieu","Mois","Navire","Normalisation\ncomplet\nmois interactions","Normalisation\ncomplet")) %>%
+     filter(formula_version == "Normalisation\ncomplet")
    }
-
+#english
   } else {
     dat$stand <- dat$stand %>%
-    filter(formula_version != "Unstandardized")
+    #filter(formula_version != "Unstandardized")
+    filter(formula_version == "Full standardization")
   }
 
 dat$stand %>%
@@ -116,6 +119,8 @@ dat$stand %>%
     ylab("CPUE (kg/hour) divided\nby geometric mean") +
     guides(fill = FALSE, colour = FALSE) + xlab("")
 }
+
+
 
 make_cpue_ts_dat_noint <- function(dat) {
   pp <- dat %>%
