@@ -42,7 +42,8 @@ catch.table <- function(dat,
     catch_last3yrs <- catch_last3yrs_first2quarters %>%
       left_join(catch_last3yrs_all_quarters, by = "year") %>%
       mutate(proportion = total_catch_first2_quarters / total_catch)
-    avg_prop <- mean(catch_last3yrs$proportion)
+    catch_prop <<- catch_last3yrs$proportion #put in global space
+    avg_prop <<- mean(catch_last3yrs$proportion) #put in global space
 
         j$landings[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
     j$total[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
