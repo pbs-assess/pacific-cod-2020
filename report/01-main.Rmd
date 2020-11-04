@@ -65,7 +65,7 @@ This proportion was used to extrapolate from the catch at September 30, 2020 to 
 In area 5ABCD, the average proportion was 87.8% (average of 88.6%. 82.7% and 92.1% for the 2017, 2018, and 2019 fishing years, respectively).
 In Area 3CD, the average proportion of catch taken by September 30 has been inconsistent in recent years and therefore the 2020 extrapolation should be considered uncertain.
 However, the magnitude of the catch in the past three years has been low, and the 2020 catch is expected to have a minor impact on 2021 catch advice.
-In addition, catch patterns in both areas may be atypical due to the COVID-19 pandemic.
+In addition, 2020 catch patterns in both areas may be atypical due to the COVID-19 pandemic.
 
 ### Canadian bottom trawl surveys
 
@@ -292,7 +292,7 @@ The model-averaged decision table probabilities are presented in Table \@ref(tab
 
 -	$P(B_{2022} < B_{2021})$ ranged from 56% to 82% over the range of 2021 catch levels.
 
-- $P(F_{2021} > F_{2020})$ ranged from < 1% to > 99%.
+- $P(F_{2021} > F_{2020})$ ranged from <1% to > 99%.
 The 2020 catch was extrapolated to be approximately 59 t, hence the probability increase between 50 t and 60 t.
 
 - $P(B_{2022} < LRP)$ ranged from <2% to 10%.
@@ -316,7 +316,7 @@ In summary:
 
 -	$P(B_{2022} < B_{2021})$ ranged from 22% to 90% over the range of 2021 catch levels.
 
-- $P(F_{2021} > F_{2020})$ ranged from < 1% to > 99%. The 2020 catch was extrapolated to be approximately 425 t, hence the probability increase between 400 t and 500 t.
+- $P(F_{2021} > F_{2020})$ ranged from <1% to > 99%. The 2020 catch was extrapolated to be approximately 425 t, hence the probability increase between 400 t and 500 t.
 
 - $P(B_{2022} < LRP)$ ranged from less than 1% to 1% over the range of catch levels.
 

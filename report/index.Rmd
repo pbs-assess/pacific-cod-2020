@@ -8,8 +8,8 @@ approver: |
   Carmel Lowe\
   Regional Director
 approval_year: 2020
-approval_month: November
-approval_day: 00
+approval_month: XXX
+approval_day: XX
 branch: Science Branch
 region: Pacific Region
 header: "Draft --- Do not cite or circulate" # or "" to omit
