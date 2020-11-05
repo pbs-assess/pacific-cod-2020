@@ -83,11 +83,11 @@ if(verbose){
 ## -----------------------------------------------------------------------------
 ## Base model names and directories
 ## -----------------------------------------------------------------------------
-base.model.3cd.name <- "1a) Reference model 3CD"
+base.model.3cd.name <- ifelse(french, "Sc 1a. Ref", "1a) Reference model 3CD")
 base.model.3cd.dir.name <- file.path(model.dir,
                                      "1_1a_3CD_BASE_2020")
 
-base.model.5abcd.name <- "1a) Reference model 5ABCD"
+base.model.5abcd.name <- ifelse(french, "Sc 1a. Ref", "1a) Reference model 5ABCD")
 base.model.5abcd.dir.name <- file.path(model.dir,
                                        "0_1a_5ABCD_BASE_2020")
 
@@ -115,12 +115,13 @@ desc.models.5abcd.dir.name <- c(base.model.5abcd.dir.name,
                                 file.path(model.dir,
                                           "0_7b_5ABCD_sigW_015"))
 desc.models.5abcd.name <- c(base.model.5abcd.name,
-                            "2d) HSSS ln(q) prior mean = ln(1.0 * 0.35), QCSSS = ln(1.0 * 0.65)",
-                            "2e) HSSS and QCSS ln(q) prior SD = 0.6",
-                            "3a) M prior mean = 0.4, SD = 0.1",
-                            "5a) kage = 3y and update FW parameters",
-                            "6b) Fix sigma O = 0.15",
-                            "7b) Fix sigma W = 0.15")
+                            ifelse(french, "Sc 2d.", "2d) HSSS ln(q) prior mean = ln(1.0 * 0.35), QCSSS = ln(1.0 * 0.65)"),
+                            ifelse(french, "Sc 2e.", "2e) HSSS and QCSS ln(q) prior SD = 0.6"),
+                            ifelse(french, "Sc 3a.", "3a) M prior mean = 0.4, SD = 0.1"),
+                            ifelse(french, "Sc 5a.", "5a) kage = 3y and update FW parameters"),
+                            ifelse(french, "Sc 6b.", "6b) Fix sigma O = 0.15"),
+                            ifelse(french, "Sc 7b.", "7b) Fix sigma W = 0.15"))
+
 
 ## MOST OF THESE SENSITIVITY MODELS ARE NOT USED -- DELETE FOR NOW
 ## -----------------------------------------------------------------------------
@@ -337,12 +338,12 @@ desc.models.3cd.dir.name <- c(base.model.3cd.dir.name,
                                         "1_7b_3CD_sigW015"))
 
 desc.models.3cd.name <- c(base.model.3cd.name,
-                          "2d) WCVISS ln(q) prior mean = ln(1.0)",
-                          "2e) WCVISS ln(q) prior SD = 0.6",
-                          "3a) M prior mean = 0.4, SD = 0.1",
-                          "5a) kage = 3y and update FW parameters",
-                          "6b) Fix sigma O = 0.15",
-                          "7b) Fix sigma W = 0.15")
+                          ifelse(french, "Sc 2d.", "2d) WCVISS ln(q) prior mean = ln(1.0)"),
+                          ifelse(french, "Sc 2e.", "2e) WCVISS ln(q) prior SD = 0.6"),
+                          ifelse(french, "Sc 3a.", "3a) M prior mean = 0.4, SD = 0.1"),
+                          ifelse(french, "Sc 5a.", "5a) kage = 3y and update FW parameters"),
+                          ifelse(french, "Sc 6b.", "6b) Fix sigma O = 0.15"),
+                          ifelse(french, "Sc 7b.", "7b) Fix sigma W = 0.15"))
 
 ## -----------------------------------------------------------------------------
 ## Sensitivity models group 00 (3CD)
