@@ -6,14 +6,14 @@
 catch.table(catch.3,
             catch.3.discards,
             area = "3CD",
-cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 3CD ",
-              "par le Canada et les États-Unis,",
+ cap = paste0("Reported catch (mt) of Pacific Cod in Area 3CD ",
+              "by Canada and the USA, ",
               min(catch.3$year), "--", max(catch.3$year),
-              ". Les rejets déclarés pour la période ", min(catch.3$year),
-              "--1995 ne sont ",
-              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
-              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
-              "observations en mer et sont considérées comme plus représentatives des rejets réels."),   french=french)
+              ". The reported discards for the period ", min(catch.3$year),
+              "--1995 are ",
+              "unrepresentative of true discarding because the estimates were taken ",
+              "from logbooks. Discard estimates since 1996 are based on at-sea ",
+              "observations and are considered to be more representative of true discarding."), french=french)
 ```
 
 \clearpage
@@ -22,31 +22,29 @@ cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 3CD ",
 catch.table(catch.5,
             catch.5.discards,
             area = "5ABCD",
-cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 5ABCD ",
-              "par le Canada et les États-Unis,",
+ cap = paste0("Reported catch (mt) of Pacific Cod in Area 5ABCD ",
+              "by Canada and the USA, ",
               min(catch.5$year), "--", max(catch.5$year),
-              ". Les rejets déclarés pour la période ", min(catch.5$year),
-              "--1995 ne sont ",
-              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
-              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
-              "observations en mer et sont considérées comme plus représentatives des rejets réels."),
-              french=french)
+              ". The reported discards for the period ", min(catch.5$year),
+              "--1995 are ",
+              "unrepresentative of true discarding because the estimates were taken ",
+              "from logbooks. Discard estimates since 1996 are based on at-sea ",
+              "observations and are considered to be more representative of true discarding."),      french=french)
+
 ```
 
 \clearpage
 
 ```{r surv-canadian-table, results='asis'}
 dplyr::filter(dat$survey_index, survey_abbrev %in%
-  c("SYN QCS", "SYN WCVI", "SYN HS", "SYN WCHG", "OTHER HS MSA")) %>%
+  c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
   dplyr::select(survey_abbrev, year, biomass, re, lowerci, upperci, num_sets, num_pos_sets) %>%
   dplyr::mutate(lowerci = round(lowerci/1000, 1), upperci = round(upperci/1000, 1),
     biomass = round(biomass/1000, 1), re = round(re, 2)) %>%
   dplyr::rename(`Survey abbrev.` = survey_abbrev, Year = year, Biomass = biomass,
     CV = re, `Lower CI` = lowerci, `Upper CI` = upperci, Sets = num_sets, `Positive sets` = num_pos_sets) %>%
   dplyr::arrange(`Survey abbrev.`, Year) %>%
-  dplyr::rename('Relevé' = `Survey abbrev.`, 'Anneé' = Year, Biomasse = Biomass,
-    `IC inf.` = `Lower CI`, `IC sup.` =`Upper CI`, Traits = Sets, `Traits  positifs` = `Positive sets` ) %>% 
-  knitr::kable(caption = "Données des relevés au chalut sur la morue du Pacifique au Canada. La biomasse relative et les intervalles de confiance (IC) inférieurs et supérieurs correspondants sont indiqués en tonnes métriques (sans tenir compte de la capturabilité du relevé). Les traits positifs désignent le nombre de traits de chalut qui ont capturé des morues du Pacifique.", booktabs = TRUE, linesep = "", 
+  knitr::kable(caption = "Pacific Cod survey data for Canadian trawl surveys in metric tons (without accounting for survey catchability). Positive sets refers to the number of trawl sets that caught Pacific Cod. OTHER HS MSA = Hecate Strait Multispecies Assemblage survey; SYN HS = Hecate Strait synoptic bottom trawl survey; SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey.", booktabs = TRUE, linesep = "", 
     format = "pandoc")
 ```
 
@@ -65,9 +63,9 @@ make.parameters.est.table(base.model.3cd,
 ```{r tab-param-est-table-5abcd, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$")
 make.parameters.est.table(base.model.5abcd,
-  caption = paste0("Valeur a posteriori (centile 2.5\\textsuperscript{th}, médiane et ",
-    "centile 97.5 \\textsuperscript{th}) et estimations de la DPM ",
-    "estimations des paramètres clés du scénario de référence, zone 5ABCD. $R_0$ est en milliers de poissons. $B_0$ est en tonnes.",
+  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+    "97.5\\textsuperscript{th} percentile) and MPD ",
+    "estimates of key parameters from the Reference Case, Area 5ABCD. $R_0$ is in thousands of fish. $B_0$ is in tonnes. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
     q.5abcd.desc),
   omit_pars = pars_est_omit)
 ```
@@ -79,31 +77,34 @@ make.ref.points.table(c(base.model.3cd,
                         sens.models.13.sub),
                       lrp = 1986,
                       usr = 1956:2004,
+                      lrr = 1956:2004,
                       digits = 2,
-                      caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th}, médiane et ",
-                                       "centile 97,5 \\textsuperscript{th}) des points de référence pour ",
-                                       "la moyenne des modèles pour la zone 3CD. ",
-                                       "La biomasse est en tonnes."))
+                      caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+                                       "97.5\\textsuperscript{th} percentile) of reference points for ",
+                                       "model-averaged Area 3CD. ",
+                                       "Biomass is in tonnes."))
 ```
+
 
 ```{r tab-ref-points-table-avg-5abcd, results='asis'}
 make.ref.points.table(c(base.model.5abcd,
                         sens.models.6.sub),
-                      lrp = 2000,
-                      usr = 1956:2004,
+                      lrr_range = 1956:2004,
+                      lrp_range = 2000,
+                      usr_range = 1956:2004,
                       digits = 2,
-                      caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th}, médiane et ",
-                                       "centile 97,5 \\textsuperscript{th}) des points de référence pour ",
-                                       "la moyenne des modèles pour la zone 5ABCD. ",
-                                       "La biomasse est en tonnes."))
+                      caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+                                       "97.5\\textsuperscript{th} percentile) of reference points for ",
+                                       "model-averaged Area 5ABCD. ",
+                                       "Biomass is in tonnes."))
 ```
 
 \clearpage
 
 ```{r summary-tab-decision-avg-3cd, results='asis'}
  decision.table(avg.model.3cd,
-                caption = paste0("Tableau de décision avec moyenne des modèles pour la zone 3CD. Les modèles pris en compte dans la moyenne sont les suivants : ",
-                                and.string(c(base.model.3cd.name, sens.models.name.13.sub)),
+                caption = paste0("Decision table with model averaging for Area 3CD. Models averaged are: ",
+                                 and.string(c(base.model.3cd.name, sens.models.name.13.sub)),
                                  ".", french=french)) #
 ```
 
@@ -112,8 +113,8 @@ make.ref.points.table(c(base.model.5abcd,
 
 ```{r summary-tab-decision-avg-5abcd, results='asis'}
  decision.table(avg.model.5abcd,
-                caption = paste0("Tableau de décision avec moyenne des modèles pour la zone 5ABCD. Les modèles pris en compte dans la moyenne sont les suivants : ",
-                                and.string(c(base.model.5abcd.name, sens.models.name.6.sub)),
+                caption = paste0("Decision table with model averaging for Area 5ABCD. Models averaged are: ",
+                                 and.string(c(base.model.5abcd.name, sens.models.name.6.sub)),
                                  ".", french=french)) #
 ```
 
