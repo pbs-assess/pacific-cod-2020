@@ -73,4 +73,6 @@ index
 report-french/sr.Rmd
 report/knitr-cache-tex
 report/knitr-figs
+report-french/knitr-cache-tex
+report-french/knitr-figs
 data/
