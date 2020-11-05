@@ -11,6 +11,7 @@ rootd <- here::here()
 rootd.data <- file.path(rootd, "data")
 resultsd <- file.path(rootd.data, "results")
 source(file.path(rootd.data, "get-data.R"))
+dir.create(resultsd, showWarnings = FALSE)
 
 if(FALSE){
   gfplot::cache_pbs_data(species = "pacific pod",
