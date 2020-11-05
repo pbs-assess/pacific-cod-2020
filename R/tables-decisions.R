@@ -70,6 +70,13 @@ decision.table <- function(model,
                      function(x) gsub('1.00', '>0.99', x))
   }
 
+  if (french) {
+    for (i in seq_len(ncol(dat))) {
+      dat[,i] <- gsub(",", " ", dat[,i])
+      dat[,i] <- gsub("\\.", ",", dat[,i])
+    }
+  }
+
   if(make.table){
     kable(dat,
           caption = caption,
@@ -77,9 +84,9 @@ decision.table <- function(model,
           longtable = TRUE,
           linesep = "",
           escape = FALSE,
-          format = format,
+          format = "latex",
           col.names = col.names) %>%
-      kable_styling(latex_options = c("hold_position", "repeat_header")) %>%
+      kable_styling(latex_options = c("hold_position", "repeat_header"), font_size = 8.5) %>%
       kableExtra::column_spec(1, width = "2.7cm") %>%
       kableExtra::column_spec(2:6, width = "2.0cm")
   }else{
