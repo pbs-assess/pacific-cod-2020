@@ -4,7 +4,7 @@
 \RequirePackage{booktabs}  % Nicer table formatting
 \RequirePackage{textcomp}  % Prevents two warnings in gensymb
 \RequirePackage{gensymb}  % Symbols for math and text
-\RequirePackage[running]{lineno}  % Number lines (editing)
+\RequirePackage{lineno}  % Number lines (editing)
 \RequirePackage{longtable}  % Long tables (multi-page)
 \RequirePackage{amsmath}  % Math facilities
 \RequirePackage{microtype}  % Better type handling
@@ -217,7 +217,6 @@
 \addto\captionsenglish{\renewcommand{\appendixname}{ANNEXE}}
 
 \renewcommand\appendixtocname{ANNEXES}
-\renewcommand\appendixpagename{ANNEXES}
 
 % Arguments for frames around figures (fbox)
 \setlength{\fboxsep}{0pt}  % Distance between frame and content
@@ -429,8 +428,3 @@ On doit citer la publication comme suit:
 \setcounter{footnote}{0}  % And start at 1
 
 }% End of frontmatter
-
-\newenvironment{CSLReferences}%
-{\setlength{\parindent}{0pt}%
-\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
-{\par}
