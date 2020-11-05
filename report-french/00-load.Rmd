@@ -39,3 +39,8 @@ source(file.path(rootd.R, "custom-knitr-variables.R")) # Making catch data objec
 if(!knitr:::is_latex_output())
   options(knitr.table.format = "pandoc")
 ```
+
+```{r french-decimal, cache=FALSE}
+options(OutDec = ",")
+```
+
