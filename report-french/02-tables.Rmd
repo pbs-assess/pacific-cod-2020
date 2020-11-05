@@ -59,7 +59,7 @@ make.parameters.est.table(base.model.3cd,
     "97.5\\textsuperscript{th} percentile) and MPD ",
     "estimates of key parameters from the Reference Case, Area 3CD. $R_0$ is in thousands of fish. $B_0$ is in tonnes. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
     q.3cd.desc),
-  omit_pars = pars_est_omit)
+  omit_pars = pars_est_omit, french=french)
 ```
 
 ```{r tab-param-est-table-5abcd, results='asis'}
@@ -69,7 +69,7 @@ make.parameters.est.table(base.model.5abcd,
     "centile 97.5 \\textsuperscript{th}) et estimations de la DPM ",
     "estimations des paramètres clés du scénario de référence, zone 5ABCD. $R_0$ est en milliers de poissons. $B_0$ est en tonnes.",
     q.5abcd.desc),
-  omit_pars = pars_est_omit)
+  omit_pars = pars_est_omit, french=french)
 ```
 
 \clearpage
@@ -83,7 +83,7 @@ make.ref.points.table(c(base.model.3cd,
                       caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th}, médiane et ",
                                        "centile 97,5 \\textsuperscript{th}) des points de référence pour ",
                                        "la moyenne des modèles pour la zone 3CD. ",
-                                       "La biomasse est en tonnes."))
+                                       "La biomasse est en tonnes."), french=french)
 ```
 
 ```{r tab-ref-points-table-avg-5abcd, results='asis'}
@@ -95,7 +95,7 @@ make.ref.points.table(c(base.model.5abcd,
                       caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th}, médiane et ",
                                        "centile 97,5 \\textsuperscript{th}) des points de référence pour ",
                                        "la moyenne des modèles pour la zone 5ABCD. ",
-                                       "La biomasse est en tonnes."))
+                                       "La biomasse est en tonnes."), french=french)
 ```
 
 \clearpage
