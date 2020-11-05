@@ -1,0 +1,34 @@
+---
+title: "DRAFT Status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020. DO NOT CITE OR CIRCULATE."
+title_short: "DRAFT Pacific Cod status in 2020"
+year: 2020
+month: November
+report_number: 999
+approver: |
+  Carmel Lowe\
+  Regional Director
+approval_year: 2020
+approval_month: XXX
+approval_day: XX
+branch: Science Branch
+region: Pacific Region
+header: "Draft --- Do not cite or circulate" # or "" to omit
+output:
+ csasdown::sr_pdf:
+  # csasdown::sr_word:
+   french: true
+   prepub: false
+type:
+  sr
+# ------------
+# End of options to set
+knit: bookdown::render_book
+link-citations: true
+bibliography: bib/refs.bib
+csl: csl/csas.csl # or csl/csas-french.csl for French
+lot: true
+lof: true
+header-includes:
+- \setcounter{section}{1}
+---
+
