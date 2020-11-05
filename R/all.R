@@ -89,3 +89,5 @@ scale_fill_continuous <- scale_fill_viridis_c
 sensitivity_colors <- c("#000000", RColorBrewer::brewer.pal(8L, "Dark2"))
 scale_colour_discrete <- function(...) scale_colour_manual(..., values = sensitivity_colors)
 scale_fill_discrete <- function(...) scale_fill_manual(... , values = sensitivity_colors)
+
+options(dplyr.summarise.inform = FALSE)
