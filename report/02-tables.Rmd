@@ -6,14 +6,14 @@
 catch.table(catch.3,
             catch.3.discards,
             area = "3CD",
- cap = paste0("Reported catch (mt) of Pacific Cod in Area 3CD ",
-              "by Canada and the USA, ",
+cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 3CD ",
+              "par le Canada et les États-Unis,",
               min(catch.3$year), "--", max(catch.3$year),
-              ". The reported discards for the period ", min(catch.3$year),
-              "--1995 are ",
-              "unrepresentative of true discarding because the estimates were taken ",
-              "from logbooks. Discard estimates since 1996 are based on at-sea ",
-              "observations and are considered to be more representative of true discarding."), french=french)
+              ". Les rejets déclarés pour la période ", min(catch.3$year),
+              "--1995 ne sont ",
+              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
+              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
+              "observations en mer et sont considérées comme plus représentatives des rejets réels."),   french=french)
 ```
 
 \clearpage
@@ -22,29 +22,31 @@ catch.table(catch.3,
 catch.table(catch.5,
             catch.5.discards,
             area = "5ABCD",
- cap = paste0("Reported catch (mt) of Pacific Cod in Area 5ABCD ",
-              "by Canada and the USA, ",
+cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 5ABCD ",
+              "par le Canada et les États-Unis,",
               min(catch.5$year), "--", max(catch.5$year),
-              ". The reported discards for the period ", min(catch.5$year),
-              "--1995 are ",
-              "unrepresentative of true discarding because the estimates were taken ",
-              "from logbooks. Discard estimates since 1996 are based on at-sea ",
-              "observations and are considered to be more representative of true discarding."),      french=french)
-
+              ". Les rejets déclarés pour la période ", min(catch.5$year),
+              "--1995 ne sont ",
+              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
+              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
+              "observations en mer et sont considérées comme plus représentatives des rejets réels."),
+              french=french)
 ```
 
 \clearpage
 
 ```{r surv-canadian-table, results='asis'}
 dplyr::filter(dat$survey_index, survey_abbrev %in%
-  c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
+  c("SYN QCS", "SYN WCVI", "SYN HS", "SYN WCHG", "OTHER HS MSA")) %>%
   dplyr::select(survey_abbrev, year, biomass, re, lowerci, upperci, num_sets, num_pos_sets) %>%
   dplyr::mutate(lowerci = round(lowerci/1000, 1), upperci = round(upperci/1000, 1),
     biomass = round(biomass/1000, 1), re = round(re, 2)) %>%
   dplyr::rename(`Survey abbrev.` = survey_abbrev, Year = year, Biomass = biomass,
     CV = re, `Lower CI` = lowerci, `Upper CI` = upperci, Sets = num_sets, `Positive sets` = num_pos_sets) %>%
   dplyr::arrange(`Survey abbrev.`, Year) %>%
-  knitr::kable(caption = "Pacific Cod survey data for Canadian trawl surveys in metric tons (without accounting for survey catchability). Positive sets refers to the number of trawl sets that caught Pacific Cod. OTHER HS MSA = Hecate Strait Multispecies Assemblage survey; SYN HS = Hecate Strait synoptic bottom trawl survey; SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey.", booktabs = TRUE, linesep = "", 
+  dplyr::rename('Relevé' = `Survey abbrev.`, 'Anneé' = Year, Biomasse = Biomass,
+    `IC inf.` = `Lower CI`, `IC sup.` =`Upper CI`, Traits = Sets, `Traits  positifs` = `Positive sets` ) %>% 
+  knitr::kable(caption = "Données des relevés au chalut sur la morue du Pacifique au Canada. La biomasse relative et les intervalles de confiance (IC) inférieurs et supérieurs correspondants sont indiqués en tonnes métriques (sans tenir compte de la capturabilité du relevé). Les traits positifs désignent le nombre de traits de chalut qui ont capturé des morues du Pacifique.", booktabs = TRUE, linesep = "", 
     format = "pandoc")
 ```
 

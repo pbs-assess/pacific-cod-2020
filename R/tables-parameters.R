@@ -245,15 +245,15 @@ if(french==TRUE){
                      latex.mlc(c("Prior (mean, SD)", "(single value = fixed)")))
 
   #Hardwire the last heading
-  if(french==TRUE) {
+  if (french) {
     colnames(tab)[4] <- latex.bold(latex.mlc(c("Priori (moyenne, ET)", "(une seule valeur = fixe)")))
+    tab[,ncol(tab)] <- gsub("\\.", ",", tab[,ncol(tab)])
   }
 
-  knitr::kable(tab,
-    caption = caption, format = format,
-    align = get.align(ncol(tab))[-1],
-    booktabs = TRUE, linesep = "", escape = FALSE, row.names = FALSE) %>%
-    kableExtra::kable_styling(latex_options = "hold_position")
+  csasdown::csas_table(tab,
+    caption = caption, format = "latex", font_size = 8,
+    align = get.align(ncol(tab))[-1])
+
 }
 
 make.parameters.est.table <- function(model,
@@ -343,19 +343,22 @@ make.parameters.est.table <- function(model,
   rownames(tab) <- row.n
 
   tab <- t(tab)
-  tab[row.names(tab) == "ro", ] <-       f(as.numeric(tab[row.names(tab) == "ro", ]), 0)
-  tab[row.names(tab) == "h", ] <-        f(as.numeric(tab[row.names(tab) == "h", ]), digits)
-  tab[row.names(tab) == "m", ] <-        f(as.numeric(tab[row.names(tab) == "m", ]), digits)
-  tab[row.names(tab) == "rbar", ] <-     f(as.numeric(tab[row.names(tab) == "rbar", ]), 0)
-  tab[row.names(tab) == "rinit", ] <-    f(as.numeric(tab[row.names(tab) == "rinit", ]), 0)
-  tab[row.names(tab) == "vartheta", ] <- f(as.numeric(tab[row.names(tab) == "vartheta", ]), digits)
-  tab[row.names(tab) == "sbo", ] <-      f(as.numeric(tab[row.names(tab) == "sbo", ]), 0)
-  tab[row.names(tab) == "q1", ] <-       f(as.numeric(tab[row.names(tab) == "q1", ]), digits)
-  tab[row.names(tab) == "q2", ] <-       f(as.numeric(tab[row.names(tab) == "q2", ]), digits)
-  tab[row.names(tab) == "q3", ] <-       f(as.numeric(tab[row.names(tab) == "q3", ]), digits)
-  tab[row.names(tab) == "q4", ] <-       f(as.numeric(tab[row.names(tab) == "q4", ]), digits)
-  tab[row.names(tab) == "q5", ] <-       f(as.numeric(tab[row.names(tab) == "q5", ]), digits)
-  tab[row.names(tab) == "q5", ] <-       f(as.numeric(tab[row.names(tab) == "q5", ]), digits)
+
+  if (french) options(OutDec = ".")
+
+  tab[row.names(tab) == "ro", ] <-       f(as.numeric(tab[row.names(tab) == "ro", ]), 0, french = french)
+  tab[row.names(tab) == "h", ] <-        f(as.numeric(tab[row.names(tab) == "h", ]), digits, french = french)
+  tab[row.names(tab) == "m", ] <-        f(as.numeric(tab[row.names(tab) == "m", ]), digits, french = french)
+  tab[row.names(tab) == "rbar", ] <-     f(as.numeric(tab[row.names(tab) == "rbar", ]), 0, french = french)
+  tab[row.names(tab) == "rinit", ] <-    f(as.numeric(tab[row.names(tab) == "rinit", ]), 0, french = french)
+  tab[row.names(tab) == "vartheta", ] <- f(as.numeric(tab[row.names(tab) == "vartheta", ]), digits, french = french)
+  tab[row.names(tab) == "sbo", ] <-      f(as.numeric(tab[row.names(tab) == "sbo", ]), 0, french = french)
+  tab[row.names(tab) == "q1", ] <-       f(as.numeric(tab[row.names(tab) == "q1", ]), digits, french = french)
+  tab[row.names(tab) == "q2", ] <-       f(as.numeric(tab[row.names(tab) == "q2", ]), digits, french = french)
+  tab[row.names(tab) == "q3", ] <-       f(as.numeric(tab[row.names(tab) == "q3", ]), digits, french = french)
+  tab[row.names(tab) == "q4", ] <-       f(as.numeric(tab[row.names(tab) == "q4", ]), digits, french = french)
+  tab[row.names(tab) == "q5", ] <-       f(as.numeric(tab[row.names(tab) == "q5", ]), digits, french = french)
+  if (french) options(OutDec = ",")
 
   ## The next set of names only pertains to the ARF assessment, the q's
   ##  and sel's are modified to line up with each other.
@@ -384,8 +387,18 @@ make.parameters.est.table <- function(model,
   tab <- left_join(tab, mon, by = "par")
   tab$par <- NULL
   tab$Rhat[tab$Rhat == " NaN"] <- "--"
+
+  tab$Rhat <- as.character(tab$Rhat)
+  tab$n_eff <- as.character(tab$n_eff)
+  if (french) tab$n_eff <- gsub(",", " ", tab$n_eff)
+  if (french) tab$Rhat <- gsub("\\.", ",", tab$Rhat)
+
   names(tab) <- gsub("n_eff", "$n_\\\\mathrm{eff}$", names(tab))
   names(tab) <- gsub("Rhat", "$\\\\hat{R}$", names(tab))
+  if(french) {
+    names(tab) <- gsub("%", " %", names(tab))
+    names(tab) <- gsub(".5", ",5", names(tab))
+  }
 
   if (!is.null(omit_pars)) {
     # tab <- dplyr::filter(tab, !`\\textbf{Parameter}` %in% omit_pars)
@@ -403,122 +416,155 @@ make.parameters.est.table <- function(model,
 }
 
 make.ref.points.table <- function(models,
+                                  add.hist.ref = TRUE,
                                   digits = 3,
                                   caption = "default",
-                                  lrr_range = NA,
-                                  lrp_range = NA,
-                                  usr_range = NA,
+                                  omit_msy = FALSE,
+                                  lrp = NA,
+                                  usr = NA,
                                   lower = 0.025,
                                   upper = 0.975,
                                   format = "pandoc",
-                                  french = FALSE){
+                                  french=FALSE)
+  {
 
+  if (french) options(OutDec = ".")
   probs <- c(lower, 0.5, upper)
 
-  # Bind all models posteriors together and apply quantiles on them all together
-  tab <- map_df(models, ~{.x$mcmccalcs$r.dat})
-  refpt_names <- names(tab)
-  tab <- tab %>%
-    map_df(~{quantile(.x, prob = probs)}) %>%
-    cbind(refpt_names) %>%
-    select(refpt_names, everything())
-  # Remove MSY-base reference points
-  tab <- tab %>% filter(!grepl("msy", refpt_names))
-  # Remove 1956-based reference points
-  tab <- tab %>% filter(!grepl("1956", refpt_names))
-  # Remove B/B0 row to add back later. See https://github.com/robynforrest/pacific-cod-2020/issues/2
-  tmp_row_bcurr_bo <- tab[3,]
-  tab <- tab[-3,]
+  model <- models[[1]]
+  if(length(models) == 1){
+    if(class(models) == model.lst.class){
+      model <- models[[1]]
+      if(class(model) != model.class){
+        stop("The structure of the model list is incorrect.")
+      }
+    }
+    tab <- model$mcmccalcs$r.quants
+    tab[,-1] <- f(tab[,-1], digits, french = french)
 
-  if(!is.na(lrp_range[1])){
-    sbt <- map_df(models, ~{.x$mcmccalcs$sbt.dat})
-    lrp_names <- names(sbt)
-    lrp <- sbt %>%
-      select_at(.vars = vars(as.character(lrp_range))) %>%
-      map_df(~{quantile(.x, probs = probs)}) %>%
-      apply(2, mean)
-    tab <- rbind(tab, c("lrp", lrp))
-    tmp_row_bcurr_lrp <- c(paste0(tab$refpt_names[2], "/lrp"), as.numeric(tab[2, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
-  }
-  if(!is.na(usr_range[1])){
-    sbt <- map_df(models, ~{.x$mcmccalcs$sbt.dat})
-    usr_names <- names(sbt)
-    usr <- sbt %>%
-      select_at(.vars = vars(as.character(usr_range))) %>%
-      map_df(~{quantile(.x, probs = probs)}) %>%
-      apply(2, mean)
-    tab <- rbind(tab, c("usr", usr))
-    tmp_row_bcurr_usr <- c(paste0(tab$refpt_names[2], "/usr"), as.numeric(tab[2, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
-  }
-  if(!is.na(lrr_range[1])){
-    ft <- map_df(models, ~{.x$mcmccalcs$f.mort.dat[[1]]})
-    names(ft) <- names(ft) %>%
-      stringr::str_replace("ft1_gear1_", "")
-    lrr_names <- names(ft)
-    lrr <- ft %>%
-      select_at(.vars = vars(as.character(lrr_range))) %>%
-      map_df(~{quantile(.x, probs = probs)}) %>%
-      apply(2, mean)
-    tab <- rbind(tab, c("lrr", lrr))
-    tmp_row_fcurr_lrr <- c(paste0(tab$refpt_names[3], "/lrr"), as.numeric(tab[3, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
-  }
-  tab <- rbind(tab, tmp_row_bcurr_bo)
-  if(!is.na(lrp_range[1])){
-    tab <- rbind(tab, tmp_row_bcurr_lrp)
-  }
-  if(!is.na(usr_range[1])){
-    tab <- rbind(tab, tmp_row_bcurr_usr)
-  }
-  if(!is.na(lrr_range[1])){
-    tab <- rbind(tab, tmp_row_fcurr_lrr)
+    if (omit_msy) tab <- dplyr::filter(tab, !grepl("MSY", `\\textbf{Reference Point}`)) #RF moved the filtering to here
+
+    if(french) {
+      names(tab) <- gsub("\\\\%", " \\\\%", names(tab))
+      names(tab) <- gsub("\\.", ",", names(tab))
+      names(tab)[1] <- paste0("\\textbf{", en2fr("Reference Point"), "}")
+    }
+    col.names <- colnames(tab)
+  }else{
+    tab <- lapply(models,
+                  function(x){
+                    x$mcmccalcs$r.dat
+                  })
+    tab <- bind_rows(tab)
+    tab <- t(apply(tab, 2, quantile, prob = probs))
+    tab <- f(tab, digits)
+    k <- names(tab[,1])
+    yr.sbt.init <- sub("b", "", k[6])
+    yr.sbt.end <- sub("b", "", k[7])
+    yr.f.end <- sub("f", "", k[10])
+    desc.col <- c(latex.subscr.ital("B", "0"),
+                  latex.subscr.ital("B", "MSY"),
+                  "MSY",
+                  latex.subscr.ital("F", "MSY"),
+                  latex.subscr.ital("U", "MSY"),
+                  latex.subscr.ital("B", yr.sbt.init),
+                  latex.subscr.ital("B", yr.sbt.end),
+                  paste0(latex.subscr.ital("B", yr.sbt.end),
+                         "/",
+                         latex.subscr.ital("B", 0)),
+                  paste0(latex.subscr.ital("B", yr.sbt.end),
+                         "/",
+                         latex.subscr.ital("B", yr.sbt.init)),
+                  latex.subscr.ital("F", yr.f.end),
+                  paste0("0.4",
+                         latex.subscr.ital("B", "MSY")),
+                  paste0("0.8",
+                         latex.subscr.ital("B", "MSY")))
+    tab <- cbind.data.frame(desc.col, tab)
+    if(french) {
+      names(tab) <- gsub("%", " %", names(tab))
+      names(tab) <- gsub(".5", ",5", names(tab))
+    }
+    col.names <- colnames(tab)
+    col.names <- latex.bold(latex.perc(col.names))
+    if (omit_msy) tab <- dplyr::filter(tab, !grepl("MSY",  desc.col)) #RF moved the filtering to here
+    col.names[1] <- latex.bold(en2fr("Reference point", translate = french, allow_missing = TRUE))
+    colnames(tab) <- col.names
   }
 
-  tab[,-1] <- map_df(tab[,-1], ~{f(as.numeric(.x), digits)})
-  ref_names <- tab$refpt_names
-  yr_b_end <- stringr::str_replace(ref_names[2], "b", "")
-  yr_f_end <- stringr::str_replace(ref_names[3], "f", "")
+  if(add.hist.ref){
+    if(is.na(lrp) || is.na(usr)){
+      cat0("Supply year ranges for both lrp and usr when add.hist.ref is TRUE")
+    }else{
+      ## bt <- model$mcmccalcs$sbt.quants
+      bt <- lapply(models,
+                   function(x){
+                     x$mcmccalcs$sbt.dat
+                   })
+      bt <- bind_rows(bt)
+      yrs <- colnames(bt)
+      bt <- t(apply(bt, 2, quantile, prob = probs))
+      bt <- cbind(yrs, bt)
 
-  latex_names <- c(latex.subscr.ital("B", "0"),
-                   latex.subscr.ital("B", yr_b_end),
-                   latex.subscr.ital("F", yr_f_end))
-  if(!is.na(lrp_range[1])){
-    latex_names <- c(latex_names, paste0("LRP (", lrp_range ,")"))
-  }
-  usr_range_text <- paste0(min(usr_range), "--", max(usr_range))
-  if(!is.na(usr_range[1])){
-    latex_names <- c(latex_names, paste0("USR (", usr_range_text ,")"))
-  }
-  lrr_range_text <- paste0(min(lrr_range), "--", max(lrr_range))
-  if(!is.na(lrr_range[1])){
-    latex_names <- c(latex_names, paste0("LRR (", lrr_range_text ,")"))
-  }
-  latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
-                                       "/",
-                                       latex.subscr.ital("B", "0")))
-  if(!is.na(lrp_range[1])){
-    latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
-                                         "/LRP"))
-  }
-  if(!is.na(usr_range[1])){
-    latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
-                                         "/USR"))
-  }
-  if(!is.na(lrr_range[1])){
-    latex_names <- c(latex_names, paste0(latex.subscr.ital("F", yr_f_end),
-                                         "/LRR"))
-  }
-  tab$refpt_names <- latex_names
-  tab <- tab %>%
-    rename(`Reference point` = refpt_names)
-  # Escape percent signs in column names for latex
-  names(tab) <- stringr::str_replace(names(tab), "%", "\\\\%")
+      bt <- bt %>%
+        as.tibble() %>%
+        mutate(Year = yrs)
 
-  csasdown::csas_table(tab,
-                       format = "latex",
-                       align = get.align(ncol(tab))[-1],
-                       caption = caption,
-                       row.names = FALSE)
+      cal <- bt %>%
+        filter(Year >= lrp[1] & Year <= lrp[2])
+      lrp.5 <- mean(as.numeric(cal$`2.5%`))
+      lrp.50 <- mean(as.numeric(cal$`50%`))
+      lrp.95 <- mean(as.numeric(cal$`97.5%`))
 
+      cau <- bt %>%
+        filter(Year >= usr[1] & Year <= usr[2])
+
+      usr.5 <- mean(as.numeric(cau$`2.5%`))
+      usr.50 <- mean(as.numeric(cau$`50%`))
+      usr.95 <- mean(as.numeric(cau$`97.5%`))
+      lrp.desc <- paste0(en2fr("LRP",translate=french,allow_missing=TRUE), " (",
+                         ifelse(lrp[1] == lrp[2],
+                                lrp[1],
+                                paste0(lrp[1], "--", lrp[2])),
+                         ")")
+      usr.desc <- paste0(en2fr("USR",translate=french,allow_missing=TRUE), " (",
+                         ifelse(usr[1] == usr[2],
+                                usr[1],
+                                paste0(usr[1], "--", usr[2])),
+                         ")")
+      col.names <- colnames(tab)
+
+      tab <- data.frame(lapply(tab, as.character), stringsAsFactors = FALSE)
+      if (french) options(OutDec = ",")
+
+
+      tab <- rbind(tab,
+                   c(lrp.desc,
+                     f(lrp.5, french=french),
+                     f(lrp.50, french=french),
+                     f(lrp.95, french=french)))
+
+      tab <- rbind(tab,
+                   c(usr.desc,
+                     f(usr.5, french=french),
+                     f(usr.50, french=french),
+                     f(usr.95, french=french)))
+      colnames(tab) <- col.names
+    }
+  }
+
+  if (french) {
+    for (i in seq_len(ncol(tab))) {
+      tab[,i] <- gsub(",", " ", tab[,i])
+      tab[,i] <- gsub("\\.", ",", tab[,i])
+    }
+  }
+
+  knitr::kable(tab,
+    caption = caption, format = format,
+    align = get.align(ncol(tab))[-1],
+    booktabs = TRUE, linesep = "", row.names = FALSE, escape = FALSE) %>%
+    kableExtra::kable_styling(latex_options = "hold_position")
 }
 
 make.value.table <- function(model,
@@ -549,11 +595,18 @@ make.value.table <- function(model,
     stop("Type ", type, " not implemented.")
   }
 
-  tab <- f(t(out.dat), digits)
+  tab <- f(t(out.dat), digits, french = french)
   tab <- cbind(rownames(tab), tab)
+
   colnames(tab)[1] <- "Year"
+  if(french){
+    colnames(tab)[2] <- "2,5 %"
+    colnames(tab)[3] <- "50 %"
+    colnames(tab)[4] <- "97,5 %"
+  }
   colnames(tab) <- en2fr(colnames(tab), translate = french, allow_missing = TRUE)
   colnames(tab) <- latex.bold(latex.perc(colnames(tab)))
+
 
   knitr::kable(tab,
     caption = caption,
@@ -562,8 +615,6 @@ make.value.table <- function(model,
     booktabs = TRUE, linesep = "", escape = FALSE, row.names = FALSE) %>%
     kableExtra::kable_styling(latex_options = c("hold_position", "repeat_header"))
 }
-
-
 
 
 model.param.desc.table <- function(cap = "",
