@@ -22,28 +22,6 @@ catch.table <- function(dat,
 
   j[,-1] <- round(j[,-1], 0)
 
-  # Extrapolate the final year's catch. Inflate the final year catch (Q1 and 2 only), based
-  # on the average proportion taken by end of Q2 in the past three years.
-  # two different ways depending on area (See 2018 assessment doc, Section 2.2)
-
-    if(area == "5ABCD") {
-    # First need to remove Q3 data from 2018 catch so that numbers match iscam file
-      # At the time we only had data up to the end of Q2 (Sep 30)
-      # This is a one-time hack because we are retroactively adding
-      # the extrapolation to the table
-      j18 <- dat %>%
-        dplyr::filter(year==2018, quarter<3) %>%
-        summarize(Year = year[1],
-           USA = sum(usa_catch),
-          `landings` = sum(landed_canada),
-          `released at sea` = sum(discarded_canada),
-          `total` = sum(landed_canada + discarded_canada),
-          `Total catch` = `total` + `USA`)
-      j18 <- j18[,c("Year", "landings", "released at sea", "total", "USA", "Total catch")]
-      j18[,-1] <- round(j18[,-1], 0)
-      #Replace last row of catch table
-      j[nrow(j),]  <- j18
-
     # Now do the extrapolation based on the average proportion taken in the first 2 quarters
     # Use last three years only, not including the last year in the data
     last_year <- dat %>%
@@ -62,33 +40,16 @@ catch.table <- function(dat,
     catch_last3yrs <- catch_last3yrs_first2quarters %>%
       left_join(catch_last3yrs_all_quarters, by = "year") %>%
       mutate(proportion = total_catch_first2_quarters / total_catch)
-    avg_prop <- mean(catch_last3yrs$proportion)
 
-    # Sadly, we need to hardwire the number this time, so the number here matches the iscam files
-    # There must have been more catch added to Q2
-    # after we made the iscam data files. The date on the pcod-cache/pacific-cod.rds file
-    # is Oct 25 2018 so we would have pulled it again.
-    # BUT this is the way to do it going forward!
+    catch_prop <<- catch_last3yrs$proportion #put in global space
+    avg_prop <<- mean(catch_last3yrs$proportion) #put in global space
 
-    # j$landings[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
-    # j$total[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
-    # j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
-    # j$`released at sea`[nrow(j)] <- 0
-    # j$USA[nrow(j)] <- 0
+    j$landings[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
+    j$total[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
+    j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
 
-    j$landings[nrow(j)] <- 230
-    j$total[nrow(j)] <- 230
-    j$`Total catch`[nrow(j)] <- 230
     j$`released at sea`[nrow(j)] <- 0
     j$USA[nrow(j)] <- 0
-  }else if(area == "3CD") {
-    # Use the last year's values
-    j$landings[nrow(j)] <- j$`Total catch`[nrow(j) - 1]
-    j$total[nrow(j)] <- j$`Total catch`[nrow(j) - 1]
-    j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j) - 1]
-    j$`released at sea`[nrow(j)] <- 0
-    j$USA[nrow(j)] <- 0
-  }
 
   j[,c(2,3,4,5,6)] <- apply(j[,c(2,3,4,5,6)],
                             2,
