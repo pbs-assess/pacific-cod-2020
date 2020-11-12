@@ -48,8 +48,11 @@ catch.table <- function(dat,
     j$total[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
     j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
 
-    j$`released at sea`[nrow(j)] <- 0
-    j$USA[nrow(j)] <- 0
+    # now add back discards
+    j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j)] + j$`released at sea`[nrow(j)]
+
+    #j$`released at sea`[nrow(j)] <- 0
+    #j$USA[nrow(j)] <- 0
 
   j[,c(2,3,4,5,6)] <- apply(j[,c(2,3,4,5,6)],
                             2,
