@@ -114,7 +114,7 @@ All fixed parameters and prior probability distributions for model parameters in
 @forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
 Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
-Details are provided in Section \@ref(sec:model-scenarios).
+Details are provided in the model scenarios section.
 Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
 
 ## Reference points
@@ -138,7 +138,7 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 See @forrest2020 for the history of the choice to use historical reference points for Pacific Cod.
 See also @forrest2018 for simulation-testing of historical reference points for the 5CD stock of Pacific Cod.
 
-## Model scenarios {#sec:model-scenarios}
+## Model scenarios
 
 Reference case models were established for Areas 3CD and 5ABCD to represent what were considered the most plausible choices across a range of assumptions for each stock.
 The Reference models for Areas 3CD and 5ABCD shared similar characteristics to each other in terms of data choices, prior probability distributions and fixed parameter settings [see @forrest2020].
@@ -269,7 +269,7 @@ The following performance measures were evaluated:
 1. $P(B_{2022} < USR)$
 1. $P(F_{2021} > LRR)$
 
-Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set), see Section \@ref(model-scenarios). 
+Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set), see the model scenarios section. 
 For each performance measure, under each alternative 2021 catch level, vectors of 1,000 burned-in posterior samples from each of the seven models were combined into a single vector of 7,000 samples.
 Probabilities of performance measures were then calculated from the combined samples [see @forrest2020].
 
