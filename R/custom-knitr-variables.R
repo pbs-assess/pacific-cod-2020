@@ -74,10 +74,12 @@ catch.2018.5abcd <- readRDS(here::here("data/2018-catch-tables/tab-catch-5abcd.r
 
 pre.1996.discards.3cd <- catch.2018.3cd %>%
                     dplyr::filter(Year<1996) %>%
+                    dplyr::filter(Year>1955) %>%
                     dplyr::select("Year","released at sea")
 
 pre.1996.discards.5abcd <- catch.2018.5abcd %>%
                     dplyr::filter(Year<1996) %>%
+                    dplyr::filter(Year>1955) %>%
                     dplyr::select("Year","released at sea")
 
 q.5abcd.desc <- paste0("$q_1$ = Hecate Strait Assemblage survey, ",
