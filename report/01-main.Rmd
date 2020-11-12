@@ -59,6 +59,8 @@ Commercial catch data were extracted from three different databases held by DFO:
 Catch data prior to 1981 include catch by US vessels [@forrest2015; @forrest2020].
 Fishing years are defined as beginning on April 1 for all years, and are referenced by starting year, e.g., fishing year 1957 runs from April 1, 1957 to March 31, 1958 [see @forrest2020].
 
+*TODO: add note on discards. See text for Sc 8 of @forrest2020*
+
 At the time of the assessment, the 2020 fishing year was incomplete.
 In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three-year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
 This proportion was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)). In Area 3CD, the average proportion was 67.4% (average of 85.6%. 46.2% and 70.5% for the 2017, 2018, and 2019 fishing years, respectively).
@@ -72,13 +74,13 @@ In addition, 2020 catch patterns in both areas may be atypical due to the COVID-
 All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
 Values are provided in Table \@ref(tab:surv-canadian-table) and Figure \@ref(fig:surv-canadian).
 
-Abundance in Area 3CD (\@ref(fig:fig-map)) is indexed by the West Coast Vancouver Island Synoptic Survey.
+Abundance in Area 3CD (Figure \@ref(fig:fig-map)) is indexed by the West Coast Vancouver Island Synoptic Survey.
 The survey was first conducted in 2004 and is conducted in alternating (even-numbered) years.
 Due to the COVID-19 pandemic there was no survey in 2020.
 
-Abundance in Area 5AB (\@ref(fig:fig-map)) is indexed by the Queen Charlotte Sound Synoptic Survey.
+Abundance in Area 5AB (Figure \@ref(fig:fig-map)) is indexed by the Queen Charlotte Sound Synoptic Survey.
 The survey was first conducted in 2003 and 2004, and then in odd years since 2005.
-Abundance in Area 5CD (\@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
+Abundance in Area 5CD (Figure \@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
 Since 2005, it has been indexed in odd-numbered years by the Hecate Strait Synoptic Survey.
 
 Details on spatial extent and depth strata of all surveys are provided in Appendix A of @forrest2020.
@@ -102,19 +104,6 @@ Annual mean weight in the commercial catch was calculated using the methodology 
 Commercial biological samples were available for calculating mean weight from 1956 to 2019.
 In the absence of available commercial biological samples for 2020, we assumed the same annual mean weight in 2020 as for 2019.
 
-<!--
-### Spatial data patterns in Area 3CD
-
-*TODO: decide whether to keep this section. Possibly, replace the survey locations with sdmTMB results (or show both). Include descriptive text*
-
-Spatial patterns in the WCVI synoptic survey and the commercial CPUE may help to inform the reasons for the reduction in indices in 2018 and 2019. **[...]**. *Assume we can conclude if there are no obvious patterns in the survey or fishery that this would indicate a reduction in biomass.* 
-
-Individual survey tows for the WCVI synoptic bottom trawl survey are shown in Figure \@ref(fig:survey-maps-syn-wcvi).
-
-Bubble plots of location, latitude, depth, vessel and month are shown in Figure \@ref(fig:cpue-bubble-plots-modern-3CD).
--->
-
-
 ## Stock assessment model
 
 The current stock assessment model is a Bayesian delay-difference model [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
@@ -125,7 +114,7 @@ All fixed parameters and prior probability distributions for model parameters in
 @forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
 Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
-Details are provided in Section \@ref(sec:scenarios).
+Details are provided in Section \@ref(sec:model-scenarios).
 Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
 
 ## Reference points
@@ -149,7 +138,7 @@ As in the 2018 assessment [@dfo2019], historical reference points were used to a
 See @forrest2020 for the history of the choice to use historical reference points for Pacific Cod.
 See also @forrest2018 for simulation-testing of historical reference points for the 5CD stock of Pacific Cod.
 
-## Model scenarios {#sec:scenarios}
+## Model scenarios {#sec:model-scenarios}
 
 Reference case models were established for Areas 3CD and 5ABCD to represent what were considered the most plausible choices across a range of assumptions for each stock.
 The Reference models for Areas 3CD and 5ABCD shared similar characteristics to each other in terms of data choices, prior probability distributions and fixed parameter settings [see @forrest2020].
@@ -280,7 +269,7 @@ The following performance measures were evaluated:
 1. $P(B_{2022} < USR)$
 1. $P(F_{2021} > LRR)$
 
-Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set), see Section \@ref(sec:scenarios). 
+Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set), see Section \@ref(model-scenarios). 
 For each performance measure, under each alternative 2021 catch level, vectors of 1,000 burned-in posterior samples from each of the seven models were combined into a single vector of 7,000 samples.
 Probabilities of performance measures were then calculated from the combined samples [see @forrest2020].
 
@@ -342,7 +331,9 @@ Additional uncertainties in this assessment stem from:
 1. Relatively short time series of fishery-independent abundance indices, which show no clear trend;
 1. Possible bias in the length frequency data prior to 1996, due to possible under-representation of lengths of fish that were caught but released at sea;
 1. A poor understanding of Pacific Cod stock structure in Pacific waters. For example, connectivity between stocks of Pacific Cod in BC and Alaska is not well understood. Pacific Cod stocks in the Gulf of Alaska have undergone decline since 2017, likely due to warming north Pacific waters [@barbeaux2020], and it is unknown whether there is any relationship between drivers of abundance of these stocks and stocks in BC; and
-1. A poor understanding of the relationship between commercial CPUE data and abundance, and how this relationship has been affected over the course of management changes in the fishery. 
+1. A poor understanding of the relationship between commercial CPUE data and abundance, and how this relationship has been affected over the course of management changes in the fishery.
+
+*TODO: add uncertainty in pre-1996 discards*
 
 # Conclusions
 

@@ -66,6 +66,20 @@ catch.5e <- total.catch.yr.qtr(dat$catch,
                                 include.usa = FALSE)
 catch.5e.discards <- total.catch.discards(dat$catch, areas="5[E]+")
 
+# Nov 12 2020.
+# Read in 2018 catch table from 2018 res doc to get pre-1996 discards
+# seems pre-1996 discards are not being read in by gfdata::cache_pbs_data()
+catch.2018.3cd <- readRDS(here::here("data/2018-catch-tables/tab-catch-3cd.rds"))
+catch.2018.5abcd <- readRDS(here::here("data/2018-catch-tables/tab-catch-5abcd.rds"))
+
+pre.1996.discards.3cd <- catch.2018.3cd %>%
+                    dplyr::filter(Year<1996) %>%
+                    dplyr::select("Year","released at sea")
+
+pre.1996.discards.5abcd <- catch.2018.5abcd %>%
+  dplyr::filter(Year<1996) %>%
+  dplyr::select("Year","released at sea")
+
 q.5abcd.desc <- paste0("$q_1$ = Hecate Strait Assemblage survey, ",
                        "$q_2$ = Queen Charlotte Sound Synoptic Survey, ",
                        "$q_3$ = Hecate Strait Synoptic Survey, ",
