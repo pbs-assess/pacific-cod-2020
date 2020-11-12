@@ -5,6 +5,7 @@
 ```{r tab-catch-3cd}
 catch.table(catch.3,
             catch.3.discards,
+            pre.1996.discards.3cd,
             area = "3CD",
  cap = paste0("Reported catch (mt) of Pacific Cod in Area 3CD ",
               "by Canada and the USA, ",
@@ -21,6 +22,7 @@ catch.table(catch.3,
 ```{r tab-catch-5abcd}
 catch.table(catch.5,
             catch.5.discards,
+            pre1996disc = pre.1996.discards.5abcd,
             area = "5ABCD",
  cap = paste0("Reported catch (mt) of Pacific Cod in Area 5ABCD ",
               "by Canada and the USA, ",
