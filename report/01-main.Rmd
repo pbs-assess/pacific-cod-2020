@@ -204,7 +204,7 @@ Smaller, released fish are therefore likely underrepresented in the annual mean 
 A scenario with a smaller value of $\sigma_W$, which controls the fit to the mean weight in the likelihood function, is included in the model-averaging set in each area (Sc 7b).
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-3cd).
-Notably, the median estimated value of natural mortality, $M$, was 0.451 *y*^-1^ (0.413--0.492 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ (0.388--0.462 *y*^-1^) in 2018 [@forrest2020].
+Notably, the median estimated value of natural mortality, $M$, was 0.449 *y*^-1^ (0.412--0.489 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ (0.388--0.462 *y*^-1^) in 2018 [@forrest2020].
 Values in parentheses here and elsewhere refer to lower and upper bounds of the 95% credible interval. 
 This result suggests that the model is explaining the decreased biomass by estimating higher natural mortality, although there was considerable overlap between the current and 2018 credible intervals.
 
@@ -220,7 +220,7 @@ Similarly, the model followed the major patterns in the two CPUE indices but did
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-5abcd).
-The median posterior estimate of $M$ was slightly lower in the current assessment, at 0.308 *y*^-1 (0.278--0.338 *y*^-1^), compared to 0.312 *y*^-1^ (0.280--0.347 *y*^-1^) in the 2018 assessment [@forrest2020].
+The median posterior estimate of $M$ was slightly lower in the current assessment, at 0.308 *y*^-1 (0.279--0.343 *y*^-1^), compared to 0.312 *y*^-1^ (0.280--0.347 *y*^-1^) in the 2018 assessment [@forrest2020].
 
 ## Indicators of current stock status 
 
