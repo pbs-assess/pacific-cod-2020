@@ -457,21 +457,37 @@ make.ref.points.table <- function(models,
                   })
     tab <- bind_rows(tab)
     tab <- t(apply(tab, 2, quantile, prob = probs))
-    tab <- f(tab, digits)
     k <- names(tab[,1])
     yr.sbt.init <- sub("b", "", k[6])
     yr.sbt.end <- sub("b", "", k[7])
     yr.f.end <- sub("f", "", k[10])
-    desc.col <- c(latex.subscr.ital("B", "0"),
-                  latex.subscr.ital("B", "MSY"),
+
+    if(omit_msy){
+      msy_rows <- grepl("msy", rownames(tab))
+      tab <- tab[!msy_rows,]
+    }
+
+    # Remove and round things
+    colnames_tab <- colnames(tab)
+    tab <- tab %>%
+      as_tibble(rownames = "ref_point") %>%
+      t()
+    colnames(tab) <- tab[1,]
+    tab <- tab[-1,]
+    tab <- tab %>% as_tibble() %>% mutate_all(~{as.numeric(.)}) %>%
+      select(-c("bo", paste0("b", yr.sbt.end, "/bo"))) %>%
+      mutate_at(.vars = vars(c(paste0("b", yr.sbt.init), paste0("b", yr.sbt.end))), ~{f(., 0)}) %>%
+      mutate_at(.vars = vars(-c(paste0("f", yr.f.end), paste0("b", yr.sbt.init), paste0("b", yr.sbt.end))), ~{f(., 2)}) %>%
+      mutate_at(.vars = vars(paste0("f", yr.f.end)), ~{f(., 3)}) %>%
+      t()
+    colnames(tab) <- colnames_tab
+
+    desc.col <- c(latex.subscr.ital("B", "MSY"),
                   "MSY",
                   latex.subscr.ital("F", "MSY"),
                   latex.subscr.ital("U", "MSY"),
                   latex.subscr.ital("B", yr.sbt.init),
                   latex.subscr.ital("B", yr.sbt.end),
-                  paste0(latex.subscr.ital("B", yr.sbt.end),
-                         "/",
-                         latex.subscr.ital("B", 0)),
                   paste0(latex.subscr.ital("B", yr.sbt.end),
                          "/",
                          latex.subscr.ital("B", yr.sbt.init)),
@@ -480,6 +496,10 @@ make.ref.points.table <- function(models,
                          latex.subscr.ital("B", "MSY")),
                   paste0("0.8",
                          latex.subscr.ital("B", "MSY")))
+
+    if(omit_msy){
+      desc.col <- desc.col[!grepl("MSY", desc.col)]
+    }
     tab <- cbind.data.frame(desc.col, tab)
     if(french) {
       names(tab) <- gsub("%", " %", names(tab))
@@ -487,7 +507,6 @@ make.ref.points.table <- function(models,
     }
     col.names <- colnames(tab)
     col.names <- latex.bold(latex.perc(col.names))
-    if (omit_msy) tab <- dplyr::filter(tab, !grepl("MSY",  desc.col)) #RF moved the filtering to here
     col.names[1] <- latex.bold(en2fr("Reference point", translate = french, allow_missing = TRUE))
     colnames(tab) <- col.names
   }
@@ -507,7 +526,7 @@ make.ref.points.table <- function(models,
       bt <- cbind(yrs, bt)
 
       bt <- bt %>%
-        as.tibble() %>%
+        as_tibble() %>%
         mutate(Year = yrs)
 
       cal <- bt %>%
@@ -540,9 +559,9 @@ make.ref.points.table <- function(models,
 
       tab <- rbind(tab,
                    c(lrp.desc,
-                     f(lrp.5, french=french),
-                     f(lrp.50, french=french),
-                     f(lrp.95, french=french)))
+                     f(lrp.5, 0, french=french),
+                     f(lrp.50, 0, french=french),
+                     f(lrp.95, 0, french=french)))
 
       tab <- rbind(tab,
                    c(usr.desc,
