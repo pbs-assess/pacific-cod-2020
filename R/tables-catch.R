@@ -90,6 +90,9 @@ catch.table <- function(dat,
     }
   }
 
+  #export table for model dat files
+  readr::write_csv(j,here::here("data", paste0("catch_table_",area,".csv")))
+
   #cut off first three years
   kable(j[4:nrow(j),],
         caption = cap,
