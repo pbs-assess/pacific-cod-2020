@@ -55,7 +55,7 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 ```{r tab-param-table-3cd, results='asis'}
 make.parameters.table(base.model.3cd,
   caption = paste0("Estimated and fixed parameters and prior probability distributions used ",
-    "in the Reference Case, Area 3CD."),
+    "in the Reference Case, Area 3CD. The survey catchability parameter for WCVI ($q_1$) was estimated with the prior probability distribution $\\textrm{Normal}(ln(0.228),0.3)$. The other survey catchability parameters were estimated without priors."),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
   omit_selectivity_pars = TRUE)
@@ -65,7 +65,7 @@ make.parameters.table(base.model.3cd,
 ```{r tab-param-table-5abcd, results='asis'}
 make.parameters.table(base.model.5abcd,
   caption = paste0("Estimated and fixed parameters and prior probability distributions used ",
-    "in the Reference Case, Area 5ABCD."),
+    "in the Reference Case, Area 5ABCD. The survey catchability parameters for QCS and HS ($q_2$ and $q_3$) were estimated with the prior probability distributions $\\textrm{Normal}(ln(0.408),0.3)$ and $\\textrm{Normal}(ln(0.0654,),0.3)$, respectively. The other survey catchability parameters were estimated without priors."),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
   omit_selectivity_pars = TRUE)
