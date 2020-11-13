@@ -179,6 +179,9 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 ## Reference model results
 
+Here we present results from the two reference cases, to demonstrate model performance and to provide comparison with the 2018 stock assessment.
+Advice, presented in the next section, is based on results averaged across all seven models in each area.
+
 For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
 Posterior samples were drawn every 5,000 iterations from a chain of length 10 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
@@ -331,7 +334,7 @@ Additional uncertainties in this assessment stem from:
 
 1. The lack of reliable age composition data for this species, which would provide additional information about recruitment strength and gear selectivity;
 1. Relatively short time series of fishery-independent abundance indices, which show no clear trend;
-1. The impact of uncertainty in the magnitude of pre-1996 discarding and foreign catches;
+1. The impact of uncertainty in the magnitude of pre-1996 discarding and foreign catches. Underestimation of historicals could lead to an underestimation of stock productivity;
 1. Bias in the length frequency data prior to 1996, due to likely under-representation of lengths of fish that were caught but released at sea;
 1. A poor understanding of Pacific Cod stock structure in Pacific waters. For example, connectivity between stocks of Pacific Cod in BC and Alaska is not well understood. Pacific Cod stocks in the Gulf of Alaska have undergone decline since 2017, likely due to warming north Pacific waters [@barbeaux2020], and it is unknown whether there is any relationship between drivers of abundance of these stocks and stocks in BC; and
 1. A poor understanding of the relationship between commercial CPUE data and abundance, and how this relationship has been affected over the course of management changes in the fishery.
@@ -343,7 +346,7 @@ Currently, both stocks are assessed to be in the Cautious Zone, as was the case 
 However, the Area 3CD stock is estimated to have declined in abundance and is estimated to be closer to the LRP than in the previous assessment.
 
 A critical concern with this assessment is the lack of a WCVI synoptic survey update in 2020.
-We recommend surveying this area as soon as it is feasible to do so, then updating this advice.
+We recommend surveying this area as soon as it is feasible to do so, then updating this advice when the data are available.
 Further analysis of recent survey data including spatial and depth distribution of the stock, and analysis of biological data, such as condition of the fish over time (length-weight relationship) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance since 2018.
 Other key research recommendations, which would improve understanding of stock and fishery dynamics for both stocks are provided in @forrest2020.
 
