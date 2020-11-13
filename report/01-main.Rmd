@@ -179,7 +179,7 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 
 ## Reference model results
 
-Here we present results from the two reference cases, to demonstrate model performance and to provide comparison with the 2018 stock assessment.
+Here we present results from the two reference case models, to demonstrate model performance and to provide comparison with the 2018 stock assessment.
 Advice, presented in the next section, is based on results averaged across all seven models in each area.
 
 For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 

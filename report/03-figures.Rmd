@@ -155,8 +155,6 @@ readr::write_csv(cpue_pred_modern, here::here("data/generated/cpue-predictions-m
 readr::write_csv(cpue_pred_hist, here::here("data/generated/cpue-predictions-historical.csv"))
 ```
 
-<!-- TODO: SA: do we need this historical one? It should be identical to the one in the last research document. Or if we need to save space, just show the full standardization? -->
-
 ```{r cpue-index-ts-hist, fig.asp=1.15, fig.cap="Commercial trawl CPUE standardization models. The black line and shaded region indicate a CPUE index with only a year predictor. The coloured line and shaded ribbons shows a standardization model that includes all the predictors plus locality-by-year (space-time) random effects. Locality and locality-year interactions are fit as random effects and all other variables are fit as fixed effects."}
 make_cpue_ts_dat(cpue_pred_hist) %>% make_cpue_ts_plot() +
   ggtitle("1956-1995 CPUE") +
@@ -180,7 +178,7 @@ mw3CD <- read_csv(here::here("data/results/AnnualMeanWeight_3CD.csv"))
 ```
 
 
-```{r fig-base-index-fits-3cd, fig.cap="MPD fits to observed indices of abundance (points) for Area 3CD from: (a) the WCVI Synoptic Survey, (b) Commercial CPUE pre-1996, (c) Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion). For clarity, only MPD results are shown."}
+```{r fig-base-index-fits-3cd, fig.cap="Reference model MPD fits to observed indices of abundance (points) for Area 3CD from: (a) the WCVI Synoptic Survey, (b) Commercial CPUE pre-1996, (c) Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion). For clarity, only MPD results are shown."}
 plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french),
           i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)
             + ylab("Commercial CPUE (kg/hour)"),
@@ -194,14 +192,14 @@ plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=frenc
 ```
 
 
-```{r fig-base-mean-weight-3cd, fig.cap="MPD fit to the mean weight data for Area 3CD. For clarity, only MPD results are shown."}
+```{r fig-base-mean-weight-3cd, fig.cap="Reference model MPD fit to the mean weight data for Area 3CD. For clarity, only MPD results are shown."}
 plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
           mw.compare.plot(base.model.3cd[[1]], french=french),
           nrow = 1,
           ncol = 2)
 ```
 
-```{r fig-base-index-fits-5abcd, fig.cap="MPD fits to observed indices of abundance (points) for Area 5ABCD from: (a) the HS Assemblage survey, (b) the QCS Synoptic Survey, (c) the HS Synoptic Survey, (d) Commercial CPUE pre-1996, and (e) Commercial CPUE post-1995. For clarity, only MPD results are shown."}
+```{r fig-base-index-fits-5abcd, fig.cap="Reference model MPD fits to observed indices of abundance (points) for Area 5ABCD from: (a) the HS Assemblage survey, (b) the QCS Synoptic Survey, (c) the HS Synoptic Survey, (d) Commercial CPUE pre-1996, and (e) Commercial CPUE post-1995. For clarity, only MPD results are shown."}
 plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french),
           i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french),
           i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french),
@@ -216,7 +214,7 @@ plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=f
 ```
 
 
-```{r fig-base-mean-weight-5abcd, fig.cap="MPD fit to the mean weight data for Area 5ABCD. For clarity, only MPD results are shown"}
+```{r fig-base-mean-weight-5abcd, fig.cap="Reference model MPD fit to the mean weight data for Area 5ABCD. For clarity, only MPD results are shown"}
 plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
           mw.compare.plot(base.model.5abcd[[1]], french=french),
           nrow = 1,
