@@ -59,7 +59,12 @@ Commercial catch data were extracted from three different databases held by DFO:
 Catch data prior to 1981 include catch by US vessels [@forrest2015; @forrest2020].
 Fishing years are defined as beginning on April 1 for all years, and are referenced by starting year, e.g., fishing year 1957 runs from April 1, 1957 to March 31, 1958 [see @forrest2020].
 
-*TODO: add note on discards. See text for Sc 8 of @forrest2020*
+Prior to the introduction of at-sea observer coverage in 1996, estimates of at-sea releases (discards) for the period 1956--1995 were obtained from fishing logbooks in the absence of at-sea observers.
+These estimates are therefore considered an underestimate of the actual releases (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd)), and are a major source of uncertainty in this assessment.
+Estimates in years following the introduction of 100% at-sea observer coverage in 1996 can be considered to be  accurate.
+Since 1996, the proportions of estimated discards have been considerably higher than in years before at-sea observers (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd)). Pacific Cod can be legally discarded by trawlers in BC.
+However, on-board observers first estimate the quantity being discarded.
+Therefore, in addition to greater accuracy in reporting of discards since 1996, incentives to avoid discarding have also been greater.
 
 At the time of the assessment, the 2020 fishing year was incomplete.
 In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three-year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).

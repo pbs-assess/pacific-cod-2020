@@ -29,7 +29,7 @@ catch.table <- function(dat,
 
   j <- j[,c("Year", "landings", "released at sea", "total", "USA", "Total catch")]
 
-  j[,-1] <- round(j[,-1], 0)
+  #j[,-1] <- round(j[,-1], 0) #they get rounded below anyway
 
     # Now do the extrapolation based on the average proportion taken in the first 2 quarters
     # Use last three years only, not including the last year in the data
@@ -57,15 +57,19 @@ catch.table <- function(dat,
     j$total[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
     j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
 
-    # do not add back 2020 discards as they are already accounted for in the extrapolation
-    j$`released at sea`[nrow(j)] <- "-"
+    #export unrounded table for model dat files
+    #readr::write_csv(j,here::here("data", paste0("catch_table_",area,".csv")))
 
+    #this also rounds the values
  j[,c(2,3,4,5,6)] <- apply(j[,c(2,3,4,5,6)],
                             2,
                             function(x){
                               tmp <- as.numeric(x)
                               f(tmp)
                             })
+
+    # do not add back 2020 discards as they are already accounted for in the extrapolation
+    j$`released at sea`[nrow(j)] <- "-"
 
   colnames(j) <- c(en2fr(colnames(j)[1], translate = french, allow_missing = TRUE),
                   en2fr(colnames(j)[2], translate = french, allow_missing = TRUE, case="lower"),
@@ -79,9 +83,7 @@ catch.table <- function(dat,
     colnames(j)[k] <- latex.mlc(c("Canada", colnames(j)[k]))
   }
 
-
   colnames(j) <- latex.bold(colnames(j))
-
 
   if (french) {
     for (i in seq_len(ncol(j))) {
@@ -89,9 +91,6 @@ catch.table <- function(dat,
       j[,i] <- gsub("\\.", ",", j[,i,drop=TRUE])
     }
   }
-
-  #export table for model dat files
-  readr::write_csv(j,here::here("data", paste0("catch_table_",area,".csv")))
 
   #cut off first three years
   kable(j[4:nrow(j),],

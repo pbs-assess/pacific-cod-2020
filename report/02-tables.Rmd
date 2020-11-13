@@ -14,7 +14,7 @@ catch.table(catch.3,
               "--1995 are ",
               "likely unrepresentative of true discarding because the estimates were taken ",
               "from logbooks in the absence of observers. Discard estimates since 1996 are based on at-sea ",
-              "observations and are considered to be more representative of true discarding. The 2020 total catch estimate is extrapolated from the total catch (landings plus discards) taken up to September 30, 2020 (see text). Therefore 2020 discards are not shown separately."), french=french)
+              "observations and are considered to be more representative of true discarding. The 2020 total catch estimate is extrapolated from the total catch (landings plus discards) taken up to September 30, 2020 (see text). Therefore 2020 discards are not shown separately. Numbers are rounded for presentation."), french=french)
 ```
 
 \clearpage
@@ -31,7 +31,7 @@ catch.table(catch.5,
               "--1995 are ",
               "likely unrepresentative of true discarding because the estimates were taken ",
               "from logbooks in the absence of observers. Discard estimates since 1996 are based on at-sea ",
-              "observations and are considered to be more representative of true discarding. The 2020 total catch estimate is extrapolated from the total catch (landings plus discards) taken up to September 30, 2020 (see text). Therefore 2020 discards are not shown separately."),      french=french)
+              "observations and are considered to be more representative of true discarding. The 2020 total catch estimate is extrapolated from the total catch (landings plus discards) taken up to September 30, 2020 (see text). Therefore 2020 discards are not shown separately. Numbers are rounded for presentation."),      french=french)
 
 ```
 
