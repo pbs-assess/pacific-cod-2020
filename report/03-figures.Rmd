@@ -233,13 +233,12 @@ b.plot(avg.model.3cd,
 ```
 
 ```{r fig-model-average-f-3cd, fig.cap="Combined posterior fishing mortality for the model-averaged set for Area 3CD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval. Black dashed line shows the median LRR and the shaded region represents the 95\\% credible interval."}
-f.plot(desc.models.3cd,
-       desc.models.3cd.name,
+f.plot(avg.model.3cd,
+       base.model.3cd.name,
        add.hist.ref = TRUE,
         lrr = c(1956, 2004), 
        french=french)
 
-#REPLACE WITH AVERAGED PLOT
 ```
 
 ```{r fig-model-average-biomass-5abcd, fig.cap="Combined posterior biomass for the averaged models, Area 5ABCD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval.  Green dashed line shows the median USR; red dashed line shows the median LRP."}
@@ -253,8 +252,8 @@ b.plot(avg.model.5abcd,
 
 
 ```{r fig-model-average-f-5abcd, fig.cap="Combined posterior fishing mortality for the model-averaged set for Area 5ABCD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval. Black dashed line shows the median LRR and the shaded region represents the 95\\% credible interval. "}
-f.plot(desc.models.5abcd,
-       desc.models.5abcd.name,
+f.plot(avg.model.5abcd,
+       base.model.5abcd.name,
        add.hist.ref = TRUE,
        lrr = c(1956, 2004), 
        french=french)
