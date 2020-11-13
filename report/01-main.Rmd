@@ -147,7 +147,7 @@ See also @forrest2018 for simulation-testing of historical reference points for 
 
 Reference case models were established for Areas 3CD and 5ABCD to represent what were considered the most plausible choices across a range of assumptions for each stock.
 The Reference models for Areas 3CD and 5ABCD shared similar characteristics to each other in terms of data choices, prior probability distributions and fixed parameter settings.
-Key characteristics of the models are provided in Tables \@ref(tab-param-table-3cd) and \@ref(tab-param-table-5abcd).
+Key characteristics of the models are provided in Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd).
 For further details, see @forrest2020.
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one step at a time.
 The same model scenarios as those agreed upon at the Regional Peer Review for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020, and index data to 2019 where available).
@@ -204,9 +204,10 @@ Smaller, released fish are therefore likely underrepresented in the annual mean 
 A scenario with a smaller value of $\sigma_W$, which controls the fit to the mean weight in the likelihood function, is included in the model-averaging set in each area (Sc 7b).
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-3cd).
-Notably, the median estimated value of natural mortality, $M$, was 0.451 *y*^-1^ (0.413--0.492 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ (0.388--0.462 *y*^-1^) in 2018 [@forrest2020]. 
-This suggests that the model is explaining the decreased biomass by estimating higher natural mortality, although there was considerable overlap between the current and 2018 posterior distributions.
-Values in parentheses here and elsewhere refer to lower and upper bounds of the 95% credible interval.
+Notably, the median estimated value of natural mortality, $M$, was 0.451 *y*^-1^ (0.413--0.492 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ (0.388--0.462 *y*^-1^) in 2018 [@forrest2020].
+Values in parentheses here and elsewhere refer to lower and upper bounds of the 95% credible interval. 
+This result suggests that the model is explaining the decreased biomass by estimating higher natural mortality, although there was considerable overlap between the current and 2018 credible intervals.
+
 
 ### Area 5ABCD
 
