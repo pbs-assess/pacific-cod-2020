@@ -1,6 +1,6 @@
 catch.table <- function(dat,
                         dat.disc = NULL, # no longer used
-                        pre1996disc,
+                        pre.1996.disc,
                         area = "NA",
                         cap = "",
                         french = FALSE){
@@ -12,10 +12,18 @@ catch.table <- function(dat,
     summarize(Year = year[1],
       USA = sum(usa_catch),
       `landings` = sum(landed_canada),
-      `released at sea` = sum(discarded_canada),
-      `total` = sum(landed_canada + discarded_canada),
-      `Total catch` = `total` + `USA`) %>%
+      `released at sea` = sum(discarded_canada)) %>%
     select(-year)
+
+  # Hardwire the pre-1996 discards (pasted from 2018 res doc)
+  row1995 <- 1995-1953+1
+  pre1996disc <- as.numeric(pre.1996.disc$`released at sea`)
+  j$`released at sea`[1:row1995] <- pre1996disc
+
+  #Calculate total and total catch inlcuding pre-1996 discards
+   j <- j %>%
+    mutate(`total` = landings + `released at sea`,
+           `Total catch` = `total` + `USA`)
 
   j <- j[!is.na(j$`Total catch`),]
 
@@ -50,13 +58,7 @@ catch.table <- function(dat,
     j$`Total catch`[nrow(j)] <- j$`Total catch`[nrow(j)] / avg_prop
 
     # do not add back 2020 discards as they are already accounted for in the extrapolation
-    #j$`released at sea`[nrow(j)] <- "-"
-
-    # now hardwire the pre-1996 discards (pasted from 2018 res doc)
-    row1995 <- 1995-1956+1
-    pre1996disc <- as.numeric(pre1996disc$`released at sea`)
-    j$`released at sea`[1-row1995] <- pre1996disc
-
+    j$`released at sea`[nrow(j)] <- "-"
 
  j[,c(2,3,4,5,6)] <- apply(j[,c(2,3,4,5,6)],
                             2,
