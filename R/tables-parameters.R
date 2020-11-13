@@ -416,176 +416,137 @@ make.parameters.est.table <- function(model,
 }
 
 make.ref.points.table <- function(models,
-                                  add.hist.ref = TRUE,
                                   digits = 3,
                                   caption = "default",
-                                  omit_msy = FALSE,
-                                  lrp = NA,
-                                  usr = NA,
+                                  lrr_range = NA,
+                                  lrp_range = NA,
+                                  usr_range = NA,
                                   lower = 0.025,
                                   upper = 0.975,
                                   format = "pandoc",
-                                  french=FALSE)
-  {
+                                  french = FALSE){
 
-  if (french) options(OutDec = ".")
   probs <- c(lower, 0.5, upper)
 
-  model <- models[[1]]
-  if(length(models) == 1){
-    if(class(models) == model.lst.class){
-      model <- models[[1]]
-      if(class(model) != model.class){
-        stop("The structure of the model list is incorrect.")
-      }
-    }
-    tab <- model$mcmccalcs$r.quants
-    tab[,-1] <- f(tab[,-1], digits, french = french)
+  # Bind all models posteriors together and apply quantiles on them all together
+  tab <- map_df(models, ~{.x$mcmccalcs$r.dat})
+  refpt_names <- names(tab)
+  tab <- tab %>%
+    map_df(~{quantile(.x, prob = probs)}) %>%
+    cbind(refpt_names) %>%
+    select(refpt_names, everything())
+  # Remove MSY-base reference points
+  tab <- tab %>% filter(!grepl("msy", refpt_names))
+  # Remove 1956-based reference points
+  tab <- tab %>% filter(!grepl("1956", refpt_names))
+  # Remove B/B0 row to add back later. See https://github.com/robynforrest/pacific-cod-2020/issues/2
+  tmp_row_bcurr_bo <- tab[3,]
+  tab <- tab[-3,]
 
-    if (omit_msy) tab <- dplyr::filter(tab, !grepl("MSY", `\\textbf{Reference Point}`)) #RF moved the filtering to here
+  if(!is.na(lrp_range[1])){
+    sbt <- map_df(models, ~{.x$mcmccalcs$sbt.dat})
+    lrp_names <- names(sbt)
+    lrp <- sbt %>%
+      select_at(.vars = vars(as.character(lrp_range))) %>%
+      map_df(~{quantile(.x, probs = probs)}) %>%
+      apply(2, mean)
+    tab <- rbind(tab, c("lrp", lrp))
+    tmp_row_bcurr_lrp <- c(paste0(tab$refpt_names[2], "/lrp"), as.numeric(tab[2, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
+  }
+  if(!is.na(usr_range[1])){
+    sbt <- map_df(models, ~{.x$mcmccalcs$sbt.dat})
+    usr_names <- names(sbt)
+    usr <- sbt %>%
+      select_at(.vars = vars(as.character(usr_range))) %>%
+      map_df(~{quantile(.x, probs = probs)}) %>%
+      apply(2, mean)
+    tab <- rbind(tab, c("usr", usr))
+    tmp_row_bcurr_usr <- c(paste0(tab$refpt_names[2], "/usr"), as.numeric(tab[2, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
+  }
+  if(!is.na(lrr_range[1])){
+    ft <- map_df(models, ~{.x$mcmccalcs$f.mort.dat[[1]]})
+    names(ft) <- names(ft) %>%
+      stringr::str_replace("ft1_gear1_", "")
+    lrr_names <- names(ft)
+    lrr <- ft %>%
+      select_at(.vars = vars(as.character(lrr_range))) %>%
+      map_df(~{quantile(.x, probs = probs)}) %>%
+      apply(2, mean)
+    tab <- rbind(tab, c("lrr", lrr))
+    tmp_row_fcurr_lrr <- c(paste0(tab$refpt_names[3], "/lrr"), as.numeric(tab[3, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
+  }
+  tab <- rbind(tab, tmp_row_bcurr_bo)
+  if(!is.na(lrp_range[1])){
+    tab <- rbind(tab, tmp_row_bcurr_lrp)
+  }
+  if(!is.na(usr_range[1])){
+    tab <- rbind(tab, tmp_row_bcurr_usr)
+  }
+  if(!is.na(lrr_range[1])){
+    tab <- rbind(tab, tmp_row_fcurr_lrr)
+  }
 
-    if(french) {
-      names(tab) <- gsub("\\\\%", " \\\\%", names(tab))
-      names(tab) <- gsub("\\.", ",", names(tab))
-      names(tab)[1] <- paste0("\\textbf{", en2fr("Reference Point"), "}")
-    }
-    col.names <- colnames(tab)
+  ref_names <- tab$refpt_names
+  yr_b_end <- stringr::str_replace(ref_names[2], "b", "")
+  yr_f_end <- stringr::str_replace(ref_names[3], "f", "")
+  latex_names <- c(latex.subscr.ital("B", "0"),
+                   latex.subscr.ital("B", yr_b_end),
+                   latex.subscr.ital("F", yr_f_end))
+  # -----
+  # Remove B0 and B20201/B0 (https://github.com/robynforrest/pacific-cod-2020/issues/8)
+  tab <- tab %>% filter(refpt_names != "bo" & refpt_names != "b2021/bo")
+  latex_names <- c(latex.subscr.ital("B", yr_b_end),
+                   latex.subscr.ital("F", yr_f_end))
+  tab[c(1, 3, 4), -1] <- map_dfc(tab[c(1, 3, 4), -1], ~{round(as.numeric(.x), 0)})
+  tab[c(2, 8), -1] <- map_dfc(tab[c(2, 8), -1], ~{round(as.numeric(.x), 3)})
+  tab[c(5, 6, 7), -1] <- map_dfc(tab[c(5, 6, 7), -1], ~{round(as.numeric(.x), 3)})
+  # -----
+
+  if(!is.na(lrp_range[1])){
+    latex_names <- c(latex_names, paste0("LRP (", lrp_range ,")"))
+  }
+  usr_range_text <- paste0(min(usr_range), "--", max(usr_range))
+  if(!is.na(usr_range[1])){
+    latex_names <- c(latex_names, paste0("USR (", usr_range_text ,")"))
+  }
+  if(min(lrr_range) == max(lrr_range)){
+    lrr_range_text <- lrr_range
   }else{
-    tab <- lapply(models,
-                  function(x){
-                    x$mcmccalcs$r.dat
-                  })
-    tab <- bind_rows(tab)
-    tab <- t(apply(tab, 2, quantile, prob = probs))
-    k <- names(tab[,1])
-    yr.sbt.init <- sub("b", "", k[6])
-    yr.sbt.end <- sub("b", "", k[7])
-    yr.f.end <- sub("f", "", k[10])
-
-    if(omit_msy){
-      msy_rows <- grepl("msy", rownames(tab))
-      tab <- tab[!msy_rows,]
-    }
-
-    # Remove and round things
-    colnames_tab <- colnames(tab)
-    tab <- tab %>%
-      as_tibble(rownames = "ref_point") %>%
-      t()
-    colnames(tab) <- tab[1,]
-    tab <- tab[-1,]
-    tab <- tab %>% as_tibble() %>% mutate_all(~{as.numeric(.)}) %>%
-      select(-c("bo", paste0("b", yr.sbt.end, "/bo"))) %>%
-      mutate_at(.vars = vars(c(paste0("b", yr.sbt.init), paste0("b", yr.sbt.end))), ~{f(., 0)}) %>%
-      mutate_at(.vars = vars(-c(paste0("f", yr.f.end), paste0("b", yr.sbt.init), paste0("b", yr.sbt.end))), ~{f(., 2)}) %>%
-      mutate_at(.vars = vars(paste0("f", yr.f.end)), ~{f(., 3)}) %>%
-      t()
-    colnames(tab) <- colnames_tab
-
-    desc.col <- c(latex.subscr.ital("B", "MSY"),
-                  "MSY",
-                  latex.subscr.ital("F", "MSY"),
-                  latex.subscr.ital("U", "MSY"),
-                  latex.subscr.ital("B", yr.sbt.init),
-                  latex.subscr.ital("B", yr.sbt.end),
-                  paste0(latex.subscr.ital("B", yr.sbt.end),
-                         "/",
-                         latex.subscr.ital("B", yr.sbt.init)),
-                  latex.subscr.ital("F", yr.f.end),
-                  paste0("0.4",
-                         latex.subscr.ital("B", "MSY")),
-                  paste0("0.8",
-                         latex.subscr.ital("B", "MSY")))
-
-    if(omit_msy){
-      desc.col <- desc.col[!grepl("MSY", desc.col)]
-    }
-    tab <- cbind.data.frame(desc.col, tab)
-    if(french) {
-      names(tab) <- gsub("%", " %", names(tab))
-      names(tab) <- gsub(".5", ",5", names(tab))
-    }
-    col.names <- colnames(tab)
-    col.names <- latex.bold(latex.perc(col.names))
-    col.names[1] <- latex.bold(en2fr("Reference point", translate = french, allow_missing = TRUE))
-    colnames(tab) <- col.names
+    lrr_range_text <- paste0(min(lrr_range), "--", max(lrr_range))
   }
-
-  if(add.hist.ref){
-    if(is.na(lrp) || is.na(usr)){
-      cat0("Supply year ranges for both lrp and usr when add.hist.ref is TRUE")
-    }else{
-      ## bt <- model$mcmccalcs$sbt.quants
-      bt <- lapply(models,
-                   function(x){
-                     x$mcmccalcs$sbt.dat
-                   })
-      bt <- bind_rows(bt)
-      yrs <- colnames(bt)
-      bt <- t(apply(bt, 2, quantile, prob = probs))
-      bt <- cbind(yrs, bt)
-
-      bt <- bt %>%
-        as_tibble() %>%
-        mutate(Year = yrs)
-
-      cal <- bt %>%
-        filter(Year >= lrp[1] & Year <= lrp[2])
-      lrp.5 <- mean(as.numeric(cal$`2.5%`))
-      lrp.50 <- mean(as.numeric(cal$`50%`))
-      lrp.95 <- mean(as.numeric(cal$`97.5%`))
-
-      cau <- bt %>%
-        filter(Year >= usr[1] & Year <= usr[2])
-
-      usr.5 <- mean(as.numeric(cau$`2.5%`))
-      usr.50 <- mean(as.numeric(cau$`50%`))
-      usr.95 <- mean(as.numeric(cau$`97.5%`))
-      lrp.desc <- paste0(en2fr("LRP",translate=french,allow_missing=TRUE), " (",
-                         ifelse(lrp[1] == lrp[2],
-                                lrp[1],
-                                paste0(lrp[1], "--", lrp[2])),
-                         ")")
-      usr.desc <- paste0(en2fr("USR",translate=french,allow_missing=TRUE), " (",
-                         ifelse(usr[1] == usr[2],
-                                usr[1],
-                                paste0(usr[1], "--", usr[2])),
-                         ")")
-      col.names <- colnames(tab)
-
-      tab <- data.frame(lapply(tab, as.character), stringsAsFactors = FALSE)
-      if (french) options(OutDec = ",")
-
-
-      tab <- rbind(tab,
-                   c(lrp.desc,
-                     f(lrp.5, 0, french=french),
-                     f(lrp.50, 0, french=french),
-                     f(lrp.95, 0, french=french)))
-
-      tab <- rbind(tab,
-                   c(usr.desc,
-                     f(usr.5, french=french),
-                     f(usr.50, french=french),
-                     f(usr.95, french=french)))
-      colnames(tab) <- col.names
-    }
+  if(!is.na(lrr_range[1])){
+    latex_names <- c(latex_names, paste0("LRR (", lrr_range_text ,")"))
   }
-
-  if (french) {
-    for (i in seq_len(ncol(tab))) {
-      tab[,i] <- gsub(",", " ", tab[,i])
-      tab[,i] <- gsub("\\.", ",", tab[,i])
-    }
+  # -----
+  # Remove B0 and B20201/B0 (https://github.com/robynforrest/pacific-cod-2020/issues/8)
+  #latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
+  #                                     "/",
+  #                                     latex.subscr.ital("B", "0")))
+  # -----
+  if(!is.na(lrp_range[1])){
+    latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
+                                         "/LRP"))
   }
+  if(!is.na(usr_range[1])){
+    latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
+                                         "/USR"))
+  }
+  if(!is.na(lrr_range[1])){
+    latex_names <- c(latex_names, paste0(latex.subscr.ital("F", yr_f_end),
+                                         "/LRR"))
+  }
+  tab$refpt_names <- latex_names
+  tab <- tab %>%
+    rename(`Reference point` = refpt_names)
+  # Escape percent signs in column names for latex
+  names(tab) <- stringr::str_replace(names(tab), "%", "\\\\%")
+  csasdown::csas_table(tab,
+                       format = "latex",
+                       align = get.align(ncol(tab))[-1],
+                       caption = caption,
+                       row.names = FALSE)
 
-  knitr::kable(tab,
-    caption = caption, format = format,
-    align = get.align(ncol(tab))[-1],
-    booktabs = TRUE, linesep = "", row.names = FALSE, escape = FALSE) %>%
-    kableExtra::kable_styling(latex_options = "hold_position")
 }
-
 make.value.table <- function(model,
   type,
   digits = 3,

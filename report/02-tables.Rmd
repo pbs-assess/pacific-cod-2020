@@ -98,26 +98,28 @@ make.parameters.est.table(base.model.5abcd,
 ```{r tab-ref-points-table-avg-3cd, results='asis'}
 make.ref.points.table(c(base.model.3cd,
                         sens.models.13.sub),
-                      lrp = 1986,
-                      usr = 1956:2004,
-                      digits = 2,
-                      caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
-                                       "97.5\\textsuperscript{th} percentile) of reference points for ",
-                                       "model-averaged Area 3CD. ",
-                                       "Biomass is in tonnes."))
+                        lrr_range = 1956:2004,
+                        lrp_range = 1986,
+                        usr_range = 1956:2004,
+                        digits = 2,
+                        caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+                                         "97.5\\textsuperscript{th} percentile) of reference points for ",
+                                         "model-averaged Area 3CD. ",
+                                         "Biomass is in tonnes."))
 ```
 
 
 ```{r tab-ref-points-table-avg-5abcd, results='asis'}
 make.ref.points.table(c(base.model.5abcd,
                         sens.models.6.sub),
-                      lrp = 2000,
-                      usr = 1956:2004,
-                      digits = 2,
-                      caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
-                                       "97.5\\textsuperscript{th} percentile) of reference points for ",
-                                       "model-averaged Area 5ABCD. ",
-                                       "Biomass is in tonnes."))
+                        lrr_range = 1956:2004,
+                        lrp_range = 2000,
+                        usr_range = 1956:2004,
+                        digits = 2,
+                        caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
+                                         "97.5\\textsuperscript{th} percentile) of reference points for ",
+                                         "model-averaged Area 5ABCD. ",
+                                         "Biomass is in tonnes."))
 ```
 
 \clearpage
