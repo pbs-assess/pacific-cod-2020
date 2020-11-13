@@ -150,7 +150,7 @@ The Reference models for Areas 3CD and 5ABCD shared similar characteristics to e
 Key characteristics of the models are provided in Tables \@ref(tab-param-table-3cd) and \@ref(tab-param-table-5abcd).
 For further details, see @forrest2020.
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one step at a time.
-The same model scenarios as those agreed upon for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020, and index data to 2019 where available).
+The same model scenarios as those agreed upon at the Regional Peer Review for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020, and index data to 2019 where available).
 Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
 
 ### Area 3CD
@@ -204,8 +204,9 @@ Smaller, released fish are therefore likely underrepresented in the annual mean 
 A scenario with a smaller value of $\sigma_W$, which controls the fit to the mean weight in the likelihood function, is included in the model-averaging set in each area (Sc 7b).
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-3cd).
-Notably, the estimated value of natural mortality, $M$, was 0.451 *y*^-1^ in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ in 2018.
-This suggests that the model is explaining the decreased biomass by estimating higher natural mortality.
+Notably, the median estimated value of natural mortality, $M$, was 0.451 *y*^-1^ (0.413--0.492 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ (0.388--0.462 *y*^-1^) in 2018 [@forrest2020]. 
+This suggests that the model is explaining the decreased biomass by estimating higher natural mortality, although there was considerable overlap between the current and 2018 posterior distributions.
+Values in parentheses here and elsewhere refer to lower and upper bounds of the 95% credible interval.
 
 ### Area 5ABCD
 
@@ -218,7 +219,7 @@ Similarly, the model followed the major patterns in the two CPUE indices but did
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-5abcd).
-The median posterior estimate of $M$ was slightly lower in the current assessment (0.308 *y*^-1^), compared to the 2018 assessment [0.312 *y*^-1^; @forrest2020].
+The median posterior estimate of $M$ was slightly lower in the current assessment, at 0.308 *y*^-1 (0.278--0.338 *y*^-1^), compared to 0.312 *y*^-1^ (0.280--0.347 *y*^-1^) in the 2018 assessment [@forrest2020].
 
 ## Indicators of current stock status 
 
