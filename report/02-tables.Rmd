@@ -71,7 +71,6 @@ make.parameters.table(base.model.5abcd,
   omit_selectivity_pars = TRUE)
 ```
 
-
 \clearpage
 
 ```{r tab-param-est-table-3cd, results='asis'}
