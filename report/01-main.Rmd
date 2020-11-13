@@ -146,7 +146,9 @@ See also @forrest2018 for simulation-testing of historical reference points for 
 ## Model scenarios
 
 Reference case models were established for Areas 3CD and 5ABCD to represent what were considered the most plausible choices across a range of assumptions for each stock.
-The Reference models for Areas 3CD and 5ABCD shared similar characteristics to each other in terms of data choices, prior probability distributions and fixed parameter settings [see @forrest2020].
+The Reference models for Areas 3CD and 5ABCD shared similar characteristics to each other in terms of data choices, prior probability distributions and fixed parameter settings.
+Key characteristics of the models are provided in Tables \@ref(tab-param-table-3cd) and \@ref(tab-param-table-5abcd).
+For further details, see @forrest2020.
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one step at a time.
 The same model scenarios as those agreed upon for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020, and index data to 2019 where available).
 Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
