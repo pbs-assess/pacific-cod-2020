@@ -1,7 +1,7 @@
 
 # Context
 
-The last assessment for Pacific Cod (*Gadus macrocephalus*) in British Columbia (BC) was done in 2018, providing catch advice for 2019 [@forrest2020; @dfo2019].
+The last assessment for Pacific Cod (*Gadus macrocephalus*) in British Columbia (BC) was done in 2018 [@forrest2020; @dfo2019].
 Separate assessments were done for stocks in Area 3CD (West Coast Vancouver Island: WCVI) and Area 5ABCD (Queen Charlotte Sound (QCS) and Hecate Strait (HS) combined) (Figure \@ref(fig:fig-map)).
 Both the 3CD and 5ABCD stocks were assessed to be in the Cautious Zone [@dfo2009].
 
@@ -12,9 +12,9 @@ The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-su
 Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
 The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
-However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacific Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
-This Science Response reports results from the Science Response Process of October 2020 on the status of Pacific Cod for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
+This Science Response reports results from the Science Response Process of November 2020 on the status of Pacific Cod for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
 
 # Background
 
@@ -39,7 +39,7 @@ Near negligible catch is taken from the west coast of Haida Gwaii, Area 5E (< 0.
 The BC integrated fishery is subject to 100% at-sea and dockside monitoring.
 Since 1996, all bottom trawl vessels have carried observers who record the catch of each species and estimate quantities of released (discarded) fish.
 Therefore, since 1996, estimates of catch and at-sea releases can be considered accurate.
-For the period 1956--1995 estimates of catch and releases were obtained from fishing logbooks.
+For the period 1956--1995 estimates of catch and at-sea releases (discards) were obtained from fishing logbooks.
 Estimates of at-sea releases for this period are likely to be under-estimates [@forrest2020]
 
 # Analysis and response
@@ -51,7 +51,7 @@ The fishing year for all data sources is defined as spanning April 1 to March 31
 Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
 Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020).
 
-For each area, models were fit to the following data streams: commercial catch data; fishery-independent indices of abundance; commercial catch per unit effort (CPUE); and annual mean weight of fish in the commercial catch.
+For each area, models were fit to the following data: commercial catch; fishery-independent indices of abundance; commercial catch per unit effort (CPUE); and annual mean weight of fish in the commercial catch.
 
 ### Commercial catch
 
@@ -60,14 +60,15 @@ Catch data prior to 1981 include catch by US vessels [@forrest2015; @forrest2020
 Fishing years are defined as beginning on April 1 for all years, and are referenced by starting year, e.g., fishing year 1957 runs from April 1, 1957 to March 31, 1958 [see @forrest2020].
 
 Prior to the introduction of at-sea observer coverage in 1996, estimates of at-sea releases (discards) for the period 1956--1995 were obtained from fishing logbooks in the absence of at-sea observers.
-These estimates are therefore considered an underestimate of the actual releases (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd)), and are a major source of uncertainty in this assessment.
+Since 1996, the proportions of estimated discards have been considerably higher than in years before at-sea observers (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)), suggesting that pre-1996 values are underestimates. 
+Pre-1996 discards are, therefore, a major source of uncertainty in this assessment.
 Estimates in years following the introduction of 100% at-sea observer coverage in 1996 can be considered to be  accurate.
-Since 1996, the proportions of estimated discards have been considerably higher than in years before at-sea observers (Tables \@ref(tab:tab-catch-5abcd) and \@ref(tab:tab-catch-3cd)). Pacific Cod can be legally discarded by trawlers in BC.
+Pacific Cod can be legally discarded by trawlers in BC.
 However, on-board observers first estimate the quantity being discarded.
 Therefore, in addition to greater accuracy in reporting of discards since 1996, incentives to avoid discarding have also been greater.
 
 At the time of the assessment, the 2020 fishing year was incomplete.
-In order to provide projections for the 2021 fishing season, the 2020 catch was extrapolated in each area, using the three-year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
+In order to provide projections for the 2021 fishing season, the 2020 catch (landings + discards) was extrapolated in each area, using the three-year average proportion of catch taken by September 30 (representing the end of the second quarter of the 2020 fishing year).
 This proportion was used to extrapolate from the catch at September 30, 2020 to a total estimated catch for the 2020 fishing year (Tables \@ref(tab:tab-catch-3cd) and \@ref(tab:tab-catch-5abcd)). In Area 3CD, the average proportion was 67.4% (average of 85.6%. 46.2% and 70.5% for the 2017, 2018, and 2019 fishing years, respectively).
 In area 5ABCD, the average proportion was 87.8% (average of 88.6%. 82.7% and 92.1% for the 2017, 2018, and 2019 fishing years, respectively).
 In Area 3CD, the average proportion of catch taken by September 30 has been inconsistent in recent years and therefore the 2020 extrapolation should be considered uncertain.
@@ -79,21 +80,21 @@ In addition, 2020 catch patterns in both areas may be atypical due to the COVID-
 All survey indices were calculated using a swept area analysis, documented in Appendix A of @forrest2020.
 Values are provided in Table \@ref(tab:surv-canadian-table) and Figure \@ref(fig:surv-canadian).
 
-Abundance in Area 3CD (Figure \@ref(fig:fig-map)) is indexed by the West Coast Vancouver Island Synoptic Survey.
+Abundance in Area 3CD (Figure \@ref(fig:fig-map)) is indexed by the WCVI Synoptic Survey.
 The survey was first conducted in 2004 and is conducted in alternating (even-numbered) years.
 Due to the COVID-19 pandemic there was no survey in 2020.
 
-Abundance in Area 5AB (Figure \@ref(fig:fig-map)) is indexed by the Queen Charlotte Sound Synoptic Survey.
+Abundance in Area 5AB (Figure \@ref(fig:fig-map)) is indexed by the QCS Synoptic Survey.
 The survey was first conducted in 2003 and 2004, and then in odd years since 2005.
-Abundance in Area 5CD (Figure \@ref(fig:fig-map)) was indexed by the Hecate Strait Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
-Since 2005, it has been indexed in odd-numbered years by the Hecate Strait Synoptic Survey.
+Abundance in Area 5CD (Figure \@ref(fig:fig-map)) was indexed by the HS Multispecies Assemblage Survey in 1984, 1987, 1989, 1991, 1993, 1995, 1996, 1998, 2000, 2002, and 2003.
+Since 2005, it has been indexed in odd-numbered years by the HS Synoptic Survey.
 
 Details on spatial extent and depth strata of all surveys are provided in Appendix A of @forrest2020.
 
 ### NMFS Triennial Survey (in Canadian waters)
 
 An additional relative abundance index for Area 3CD was developed using data from the
-National Marine Fisheries Service (NMFS) Triennial survey, which operated off the lower half of West Coast Vancouver Island between 1980 and 2001 (Figure \@ref(fig:tri-fig9)).
+National Marine Fisheries Service (NMFS) Triennial survey, which operated off the lower half of WCVI between 1980 and 2001 (Figure \@ref(fig:tri-fig9)).
 See Appendix A of @forrest2020 for details.
 
 ### Commercial CPUE
@@ -107,14 +108,14 @@ The modern-period GLMMs included predictors for depth, latitude, locality, month
 
 Annual mean weight in the commercial catch was calculated using the methodology decribed in Appendix C of @forrest2020.
 Commercial biological samples were available for calculating mean weight from 1956 to 2019.
-In the absence of available commercial biological samples for 2020, we assumed the same annual mean weight in 2020 as for 2019.
+In the absence of available commercial biological samples for 2020, the annual mean weight for 2020 was assumed the same as 2019.
 
 ## Stock assessment model
 
 The current stock assessment model is a Bayesian delay-difference model [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
 A full stock assessment history for both stocks is provided in @forrest2020.
 The current model is fully described in Appendix D of @forrest2020.
-All fixed parameters and prior probability distributions for model parameters in the current assessment were the same as those reported in @forrest2020.
+All fixed parameters and prior probability distributions for model parameters in the current assessment were the same as those reported in @forrest2020 (see also Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd), this document).
 
 @forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
@@ -157,43 +158,43 @@ Full details on the model configurations and assumptions for each scenario are p
 
 For Area 3CD, the scenarios (Sc) included in the model-averaging set were:
 
-1.	Sc 1a Reference model
-2.	Sc 2d Set the mean of the prior probability distribution for synoptic survey $\ln(q)$ = $\ln(1.0)$
-3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6.
+1.	Sc 1a Reference model;
+2.	Sc 2d Set the mean of the prior probability distribution for synoptic survey $\ln(q)$ = $\ln(1.0)$;
+3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6;
 4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M)$ to $\mathcal{N}\sim(0.4,0.1)$;
-5.	Sc 5a Set knife-edged age at recruitment = 3 years
-6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$
-7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$
+5.	Sc 5a Set knife-edged age at recruitment = 3 years;
+6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$; and
+7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$.
 
 ### Area 5ABCD
 
 For Area 5ABCD, the scenarios included in the model-averaging set were:
 
-1.	Sc 1a Reference model
-2.	Sc 2d Set the mean of the prior probability distribution for synoptic surveys $\ln(q)$ = $\ln(1.0)$ (pro-rated by depth-stratum areas of Area 5AB and 5CD)
-3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6.
+1.	Sc 1a Reference model;
+2.	Sc 2d Set the mean of the prior probability distribution for synoptic surveys $\ln(q)$ = $\ln(1.0)$ (pro-rated by depth-stratum areas of Area 5AB and 5CD);
+3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6;
 4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M)$ to $\mathcal{N}\sim(0.4,0.1)$;
-5.	Sc 5a Set knife-edged age at recruitment = 3 years
-6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$
-7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$
+5.	Sc 5a Set knife-edged age at recruitment = 3 years;
+6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$; and
+7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$.
 
 ## Reference model results
 
-Here we present results from the two reference case models, to demonstrate model performance and to provide comparison with the 2018 stock assessment.
+Results are presented from the two reference case models, to demonstrate model performance and to provide comparison with the 2018 stock assessment.
 Advice, presented in the next section, is based on results averaged across all seven models in each area.
 
 For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
 Posterior samples were drawn every 5,000 iterations from a chain of length 10 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
-Reference case model fits to the data were generally typical of all sensitivity cases.
-The model diagnostics were consistent with convergence and posterior sample autocorrelation was minor for most parameters.
 Model convergence was informed by visual inspection of trace and autocorrelation plots (not shown), and the statistics $\hat{R}$, the potential scale reduction statistic, which should be equal to 1.0, and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014; see  descriptions in @forrest2020].
 
 ### Area 3CD
 
+Reference case model fits to the data were generally typical of all sensitivity cases.
+The model diagnostics were consistent with convergence, and posterior sample autocorrelation was relatively minor for most parameters (Table \@ref(tab:tab-param-est-table-3cd)).
 Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
 Model fits to the four indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-3cd).
-The model followed the trends of the two fishery-independent indices (Figure \@ref(fig:fig-base-index-fits-3cd) a and d), but did not closely fit the 2012, 2014 and 2016 data points in WCVI Synoptic survey (Figure \@ref(fig:fig-base-index-fits-3cd)a).
+The reference model followed the trends of the two fishery-independent indices (Figure \@ref(fig:fig-base-index-fits-3cd) a and d), but did not closely fit the 2012, 2014 and 2016 data points in WCVI Synoptic survey (Figure \@ref(fig:fig-base-index-fits-3cd)a).
 This is likely because of large differences between low points (2012 and 2018) and high points (2014 and 2016) in the survey observations.
 Similarly, while the model closely followed the major patterns in the historical CPUE index (Figure \@ref(fig:fig-base-index-fits-3cd)b), it did not capture all the peaks in the modern series (Figure \@ref(fig:fig-base-index-fits-3cd)c).
 Fits such as this tend to occur when there is no other information (such as age composition data or contrasting mean weight data) to help resolve large fluctuations in observed indices.
@@ -209,13 +210,12 @@ A scenario with a smaller value of $\sigma_W$, which controls the fit to the mea
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-3cd).
 Notably, the median estimated value of natural mortality, $M$, was 0.449 *y*^-1^ (0.412--0.489 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ (0.388--0.462 *y*^-1^) in 2018 [@forrest2020].
 Values in parentheses here and elsewhere refer to lower and upper bounds of the 95% credible interval. 
-This result suggests that the model is explaining the decreased biomass by estimating higher natural mortality, although there was considerable overlap between the current and 2018 credible intervals.
-
+The larger 2020 estimates of $M$ suggest that the model is partially explaining the decreased biomass through greater natural mortality, although there was considerable overlap between the current and 2018 credible intervals.
 
 ### Area 5ABCD
 
 As for Area 3CD, reference case model fits to the data were typical of all sensitivity cases.
-The model diagnostics were consistent with convergence, and posterior sample autocorrelation was minor for most parameters.
+The model diagnostics were consistent with convergence, and posterior sample autocorrelation was relatively minor for most parameters (Table \@ref(tab:tab-param-est-table-5abcd)).
 
 The MPD model fits to the five indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-5abcd).
 The model followed the general trends of the three fishery-independent indices, but could not fit some of the larger peaks (for example 2004 and 2005 peaks in the Queen Charlotte Sound Synoptic Survey, and the 2009 and 2013 peaks in the Hecate Strait Synoptic Survey, Figure \@ref(fig:fig-base-index-fits-5abcd)b and c).
@@ -237,25 +237,25 @@ The median estimated LRR is estimated to be 0.065 *y*^-1^ (0.021--0.198 *y*^-1^)
 Median biomass in 2021 relative to the LRP and USR are estimated to be 1.639 (1.917--1.685) and 0.502 (0.547--0.560), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.086 (0.077--0.074).
 
-Combined average posterior biomass and fishing mortality from the seven averaged models is shown in Figures \@ref(fig:fig-model-average-biomass-3cd) and \@ref(fig:fig-model-average-f-3cd).
+Combined average posterior biomass and fishing mortality from the seven averaged models are shown in Figures \@ref(fig:fig-model-average-biomass-3cd) and \@ref(fig:fig-model-average-f-3cd).
 The estimated biomass range from the seven models was very broad.
 Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP (Figure \@ref(fig:fig-model-average-biomass-3cd)).
 This is a notable decrease in estimated stock status (median $B_{2021}/\textrm{LRP}$ = 1.639) compared to the 2018 assessment, where median $B_{2019}/\textrm{LRP}$ was 2.07 (2.48--2.16)) [@dfo2019].
 
-The estimated fishing mortality range from the seven models was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the broad range of biomass estimates.
+The estimated fishing mortality range from the seven models was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
 However, recent estimates of fishing mortality were well below the median LRR (Figure \@ref(fig:fig-model-average-f-3cd)).  
 
 ### Area 5ABCD
 
 Posterior estimates of reference points and stock status from the combined model-averaged set are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
-At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 19,634 t (11318--40603 t).
+At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 19,634 t (11,318--40,603 t).
 Median fishing mortality for the 2020 fishing year is projected to be 0.027 *y*^1^ (0.013--0.049 *y*^1^).
 The median estimated LRP and USR are estimated to be 9,814 t (5,662--20,881 t) and 33,448 t (20,095--60,089 t), respectively.
 The median estimated LRR is estimated to be 0.152 *y*^-1^ (0.082--0.293 *y*^1^).
 Median biomass in 2021 relative to the LRP and USR are estimated to be 2.001 (1.999--1.945) and 0.587 (0.536--0.676), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.177 *y*^-1^ (0.154--0.166).
 
-Combined average posterior biomass and fishing mortality from the seven averaged models is shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
+Combined average posterior biomass and fishing mortality from the seven averaged models are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
 
 As for Area 3CD, the estimated biomass range from the seven models was very broad.
 Combined average posterior results from all models indicate that the stock in 2020 was above the LRP, within the Cautious Zone.
@@ -264,7 +264,7 @@ Recent estimates of fishing mortality were well below the median LRR.
 
 ## 2021 harvest advice
 
-Performance measures were calculated over a sequence of alternative 2021 projected catch levels and are based on posterior samples for a one-year projection to the end of 2022.
+Performance measures were calculated over a sequence of alternative 2021 projected catch levels and are based on posterior samples for a one-year projection to the beginning of 2022.
 Uncertainty enters the projections through parameter uncertainty propagated from the modeled time series and recruitment anomalies for the projection year.
 The following performance measures were evaluated:
 
@@ -334,7 +334,7 @@ Additional uncertainties in this assessment stem from:
 
 1. The lack of reliable age composition data for this species, which would provide additional information about recruitment strength and gear selectivity;
 1. Relatively short time series of fishery-independent abundance indices, which show no clear trend;
-1. The impact of uncertainty in the magnitude of pre-1996 discarding and foreign catches. Underestimation of historicals could lead to an underestimation of stock productivity;
+1. Uncertainty in the magnitude of pre-1996 discarding and foreign catches. Underestimation of historical discards could lead to an underestimation of stock productivity;
 1. Bias in the length frequency data prior to 1996, due to likely under-representation of lengths of fish that were caught but released at sea;
 1. A poor understanding of Pacific Cod stock structure in Pacific waters. For example, connectivity between stocks of Pacific Cod in BC and Alaska is not well understood. Pacific Cod stocks in the Gulf of Alaska have undergone decline since 2017, likely due to warming north Pacific waters [@barbeaux2020], and it is unknown whether there is any relationship between drivers of abundance of these stocks and stocks in BC; and
 1. A poor understanding of the relationship between commercial CPUE data and abundance, and how this relationship has been affected over the course of management changes in the fishery.
@@ -346,7 +346,7 @@ Currently, both stocks are assessed to be in the Cautious Zone, as was the case 
 However, the Area 3CD stock is estimated to have declined in abundance and is estimated to be closer to the LRP than in the previous assessment.
 
 A critical concern with this assessment is the lack of a WCVI synoptic survey update in 2020.
-We recommend surveying this area as soon as it is feasible to do so, then updating this advice when the data are available.
+We recommend surveying this area as soon as it is feasible to do so, and updating this advice when the data are available.
 Further analysis of recent survey data including spatial and depth distribution of the stock, and analysis of biological data, such as condition of the fish over time (length-weight relationship) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance since 2018.
 Other key research recommendations, which would improve understanding of stock and fishery dynamics for both stocks are provided in @forrest2020.
 

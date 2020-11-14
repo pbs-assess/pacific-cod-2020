@@ -68,8 +68,10 @@ catch.table <- function(dat,
                               f(tmp)
                             })
 
-    # do not add back 2020 discards as they are already accounted for in the extrapolation
+    # do not show 2020 Canada landings and discards individually as
+    # they are already accounted for in the extrapolation
     j$`released at sea`[nrow(j)] <- "-"
+    j$`landings`[nrow(j)] <- "-"
 
   colnames(j) <- c(en2fr(colnames(j)[1], translate = french, allow_missing = TRUE),
                   en2fr(colnames(j)[2], translate = french, allow_missing = TRUE, case="lower"),
