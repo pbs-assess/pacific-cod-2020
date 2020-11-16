@@ -49,9 +49,9 @@ Estimates of at-sea releases for this period are likely to be under-estimates [@
 Data were extracted from DFO databases using methods described in @forrest2020.
 The fishing year for all data sources is defined as spanning April 1 to March 31 in the following year [@forrest2015; @forrest2020].
 Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
-Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020).
+Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years [the same approach as taken by @forrest2020].
 
-For each area, models were fit to the following data streams: commercial catch data; fishery-independent indices of abundance; commercial catch per unit effort (CPUE); and annual mean weight of fish in the commercial catch.
+For each area, models were fit to the following data streams: commercial catch data, fishery-independent indices of abundance, commercial catch per unit effort (CPUE), and annual mean weight of fish in the commercial catch.
 
 ### Commercial catch
 
