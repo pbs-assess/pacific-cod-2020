@@ -104,7 +104,7 @@ catch.table <- function(dat,
         align = c("l", "r", "r", "r", "r", "r")) %>%
     column_spec(c(2, 4, 5, 6), width = "2cm") %>%
     column_spec(3, width = "4cm") %>%
-    kable_styling(latex_options = c("hold_position", "repeat_header"))
+    kable_styling(latex_options = c("hold_position"))
 
 }
 

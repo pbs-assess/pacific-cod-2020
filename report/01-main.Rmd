@@ -326,7 +326,7 @@ The 2022 biomass is projected to be in the Cautious Zone
 ## Sources of uncertainty
 
 Uncertainty due to estimated parameters and the weights assigned to various data components was explicitly addressed using a Bayesian approach.
-For provision of advice, results from seven alternative model configurations were used to generate decision tables.
+For provision of advice, results from seven alternative model configurations were combined to generate decision tables.
 However, this approach only captures uncertainty associated with the set of model configurations included within the assessment and may underestimate greater structural uncertainties.
 Additional uncertainties in this assessment stem from:
 
@@ -339,7 +339,7 @@ Additional uncertainties in this assessment stem from:
 
 # Conclusions
 
-This document updates the current stock status of Pacific Cod stocks in Area 3CD and 5ABCD at the end of the 2020 fishing year, and provides 2021 catch advice in the form of decision tables.
+This document updates the stock status of Pacific Cod stocks in Area 3CD and 5ABCD at the end of the 2020 fishing year, and provides 2021 catch advice in the form of decision tables.
 Currently, both stocks are assessed to be in the Cautious Zone, as was the case in the 2018 assessment [@dfo2019].
 However, the Area 3CD stock is estimated to have declined in abundance and is estimated to be closer to the LRP than in the previous assessment.
 
