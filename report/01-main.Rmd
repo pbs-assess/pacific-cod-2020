@@ -157,7 +157,7 @@ For Area 3CD, the scenarios (Sc) included in the model-averaging set were:
 1.	Sc 1a Reference model;
 2.	Sc 2d Set the mean of the prior probability distribution for synoptic survey $\ln(q)$ = $\ln(1.0)$;
 3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6;
-4.	Sc 3a Set the parameters of the prior probability distribution for $M$ to $\mathcal{N}\sim(0.4,0.1)$;
+4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M) \sim \mathcal{N}(\ln(0.4),0.1)$;
 5.	Sc 5a Set knife-edged age at recruitment = 3 years;
 6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$; and
 7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$.
@@ -169,7 +169,7 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 1.	Sc 1a Reference model;
 2.	Sc 2d Set the mean of the prior probability distribution for synoptic surveys $\ln(q)$ = $\ln(1.0)$ (pro-rated by depth-stratum areas of Area 5AB and 5CD);
 3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6;
-4.	Sc 3a Set the parameters of the prior probability distribution for $M$ to $\mathcal{N}\sim(0.4,0.1)$;
+4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M) \sim \mathcal{N}(\ln(0.4),0.1)$;
 5.	Sc 5a Set knife-edged age at recruitment = 3 years;
 6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$; and
 7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$.
