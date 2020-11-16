@@ -123,19 +123,19 @@ Other stock assessments that have used a model-averaging approach are Pacific Ha
 
 The DFO Fishery Decision-making Framework Incorporating the Precautionary Approach (PA) Policy [@dfo2009] requires stock status to be characterized using three reference points:
 
-1. An Upper Stock Reference point $\textrm{USR}$;
-2. A Limit Reference Point $\textrm{LRP}$;
-3. A Limit Removal Rate $\textrm{LRR}$.
+1. An Upper Stock Reference point, USR;
+2. A Limit Reference Point, LRP;
+3. A Limit Removal Rate, LRR.
 
-The USR and LRP define the threshold of three biomass-based stock status zones defined under the PA Policy [@dfo2009]: Critical Zone (below the $\textrm{LRP}$); Cautious Zone (above the $\textrm{LRP}$ and below the $\textrm{USR}$); and Healthy Zone (above the $\textrm{USR}$).
+The USR and LRP define the threshold of three biomass-based stock status zones defined under the PA Policy [@dfo2009]: Critical Zone (below the LRP); Cautious Zone (above the LRP and below the USR); and Healthy Zone (above the USR).
 
 As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
 
-1. The $\textrm{USR}$ is the historical mean of the biomass estimates from 1956--2004.
+1. The USR is the historical mean of the biomass estimates from 1956--2004.
 
-2. The $\textrm{LRP}$ is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
+2. The LRP is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
 
-3. The $\textrm{LRR}$ is the average fishing mortality rate from 1956--2004.
+3. The LRR is the average fishing mortality rate from 1956--2004.
 
 See @forrest2020 for the history of the choice to use historical reference points for Pacific Cod.
 See also @forrest2018 for simulation-testing of historical reference points for the 5CD stock of Pacific Cod.
