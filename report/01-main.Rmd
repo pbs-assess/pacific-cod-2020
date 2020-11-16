@@ -96,7 +96,7 @@ See Appendix A of @forrest2020 for details.
 ### Commercial CPUE
 
 Standardized commercial CPUE indices were developed for the historical (1956--1995) and modern (1996--2019) periods (Figures  \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)).
-The indices were developed using a Tweedie standardized generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
+The indices were developed using a Tweedie generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
 The historical-period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
 The modern-period GLMMs included predictors for depth, latitude, locality, month, vessel, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
 
@@ -113,9 +113,9 @@ A full stock assessment history for both stocks is provided in @forrest2020.
 The current model is fully described in Appendix D of @forrest2020.
 All fixed parameters and prior probability distributions for model parameters in the current assessment were the same as those reported in @forrest2020 (see also Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd), this document).
 
-@forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
+@forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
-Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
+Major axes of uncertainty were catchability ($q$) in the indices of abundance, the magnitude of natural mortality ($M$), age at recruitment to the fishery, and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
 Details are provided in the model scenarios section.
 Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017], BC Walleye Pollock [@starr2018] and three assessments of BC *Sebastes* stocks [@dfo2019b; @dfo2020a; @dfo2020b]
 
@@ -147,7 +147,7 @@ The Reference models for Areas 3CD and 5ABCD shared similar characteristics to e
 Key characteristics of the models are provided in Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd).
 For further details, see @forrest2020.
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one step at a time.
-The same model scenarios as those agreed upon at the Regional Peer Review for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020, and index data to 2019 where available).
+The same model scenarios as those agreed upon at the Regional Peer Review for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020 and index data to 2019 where available).
 Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
 
 ### Area 3CD
