@@ -219,9 +219,13 @@ Similarly, the model followed the major patterns in the two CPUE indices but did
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-5abcd).
-The median posterior estimate of $M$ was slightly lower in the current assessment, at 0.308 *y*^-1 (0.279--0.343 *y*^-1^), compared to 0.312 *y*^-1^ (0.280--0.347 *y*^-1^) in the 2018 assessment [@forrest2020].
+The range of the posterior estimate of $M$ was was nearly identical in the current assessment, at 0.308 *y*^-1^ (0.279--0.343 *y*^-1^), compared to 0.312 *y*^-1^ (0.280--0.347 *y*^-1^) in the 2018 assessment [@forrest2020].
 
 ## Indicators of current stock status 
+
+Management advice for both stocks is based on the results of the combined models described above in the model scenarios section. 
+The Regional Peer Review (RPR) meeting held in October 2018 reviewed the Reference Case model and the suite of sensitivity runs described above, and concluded that no one model adequately represented the uncertainty associated with these stock assessments.
+Consequently, RPR participants agreed to adopt an approach that combined model runs to include a greater range of plausible uncertainties associated with these stocks.
 
 ### Area 3CD
 
