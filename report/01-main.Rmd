@@ -96,7 +96,7 @@ See Appendix A of @forrest2020 for details.
 ### Commercial CPUE
 
 Standardized commercial CPUE indices were developed for the historical (1956--1995) and modern (1996--2019) periods (Figures  \@ref(fig:cpue-index-ts-hist) and \@ref(fig:cpue-index-ts-modern)).
-The indices were developed using a Tweedie standardized generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
+The indices were developed using a Tweedie generalized linear mixed model (GLMM) described in detail in Appendix B of @forrest2020.
 The historical-period GLMMs included predictors for depth, locality, month, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-hist)).
 The modern-period GLMMs included predictors for depth, latitude, locality, month, vessel, and a locality-year interaction (Figure \@ref(fig:cpue-index-ts-modern)).
 
@@ -113,9 +113,9 @@ A full stock assessment history for both stocks is provided in @forrest2020.
 The current model is fully described in Appendix D of @forrest2020.
 All fixed parameters and prior probability distributions for model parameters in the current assessment were the same as those reported in @forrest2020 (see also Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd), this document).
 
-@forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several different sensitivity cases.
+@forrest2015 and @forrest2020 used a model-averaging approach to construct decision tables based on combined posterior samples from several sensitivity cases.
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
-Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
+Major axes of uncertainty were catchability ($q$) in the indices of abundance, the magnitude of natural mortality ($M$), age at recruitment to the fishery, and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
 Details are provided in the model scenarios section.
 Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017], BC Walleye Pollock [@starr2018] and three assessments of BC *Sebastes* stocks [@dfo2019b; @dfo2020a; @dfo2020b]
 
@@ -123,19 +123,19 @@ Other stock assessments that have used a model-averaging approach are Pacific Ha
 
 The DFO Fishery Decision-making Framework Incorporating the Precautionary Approach (PA) Policy [@dfo2009] requires stock status to be characterized using three reference points:
 
-1. An Upper Stock Reference point $\textrm{USR}$;
-2. A Limit Reference Point $\textrm{LRP}$;
-3. A Limit Removal Rate $\textrm{LRR}$.
+1. An Upper Stock Reference point, USR;
+2. A Limit Reference Point, LRP;
+3. A Limit Removal Rate, LRR.
 
-The USR and LRP define the threshold of three biomass-based stock status zones defined under the PA Policy [@dfo2009]: Critical Zone (below the $\textrm{LRP}$); Cautious Zone (above the $\textrm{LRP}$ and below the $\textrm{USR}$); and Healthy Zone (above the $\textrm{USR}$).
+The USR and LRP define the threshold of three biomass-based stock status zones defined under the PA Policy [@dfo2009]: Critical Zone (below the LRP); Cautious Zone (above the LRP and below the USR); and Healthy Zone (above the USR).
 
 As in the 2018 assessment [@dfo2019], historical reference points were used to assess stock status, where
 
-1. The $\textrm{USR}$ is the historical mean of the biomass estimates from 1956--2004.
+1. The USR is the historical mean of the biomass estimates from 1956--2004.
 
-2. The $\textrm{LRP}$ is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
+2. The LRP is the lowest estimated biomass agreed upon as an undesirable state to be avoided. For Area 5ABCD this is the estimated biomass in 2000. For Area 3CD it is the estimated biomass in 1986.
 
-3. The $\textrm{LRR}$ is the average fishing mortality rate from 1956--2004.
+3. The LRR is the average fishing mortality rate from 1956--2004.
 
 See @forrest2020 for the history of the choice to use historical reference points for Pacific Cod.
 See also @forrest2018 for simulation-testing of historical reference points for the 5CD stock of Pacific Cod.
@@ -147,7 +147,7 @@ The Reference models for Areas 3CD and 5ABCD shared similar characteristics to e
 Key characteristics of the models are provided in Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd).
 For further details, see @forrest2020.
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one step at a time.
-The same model scenarios as those agreed upon at the Regional Peer Review for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020, and index data to 2019 where available).
+The same model scenarios as those agreed upon at the Regional Peer Review for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020 and index data to 2019 where available).
 Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
 
 ### Area 3CD
@@ -157,7 +157,7 @@ For Area 3CD, the scenarios (Sc) included in the model-averaging set were:
 1.	Sc 1a Reference model;
 2.	Sc 2d Set the mean of the prior probability distribution for synoptic survey $\ln(q)$ = $\ln(1.0)$;
 3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6;
-4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M)$ to $\mathcal{N}\sim(0.4,0.1)$;
+4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M) \sim \mathcal{N}(\ln(0.4),0.1)$;
 5.	Sc 5a Set knife-edged age at recruitment = 3 years;
 6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$; and
 7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$.
@@ -169,7 +169,7 @@ For Area 5ABCD, the scenarios included in the model-averaging set were:
 1.	Sc 1a Reference model;
 2.	Sc 2d Set the mean of the prior probability distribution for synoptic surveys $\ln(q)$ = $\ln(1.0)$ (pro-rated by depth-stratum areas of Area 5AB and 5CD);
 3.	Sc 2e Increase the standard deviation (SD) for synoptic survey $\ln(q)$ to 0.6;
-4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M)$ to $\mathcal{N}\sim(0.4,0.1)$;
+4.	Sc 3a Set the parameters of the prior probability distribution for $\ln(M) \sim \mathcal{N}(\ln(0.4),0.1)$;
 5.	Sc 5a Set knife-edged age at recruitment = 3 years;
 6.	Sc 6b Reduce the overall observation error term $\sigma_O = 0.15$; and
 7.	Sc 7b Reduce the SD in the likelihood for the fit to average annual mean weight $\sigma_W = 0.15$.
@@ -182,7 +182,7 @@ Advice, presented in the next section, is based on results averaged across all s
 For both areas, the joint posterior distribution for each model was numerically approximated using the Markov Chain Monte Carlo (MCMC) routines built into AD Model Builder (Metropolis-Hastings algorithm) [@fournier2012]. 
 Posterior samples were drawn every 5,000 iterations from a chain of length 10 million, resulting in 2,000 posterior samples (the first 1,000 samples were dropped to allow for sufficient burn-in).
 
-Model convergence was informed by visual inspection of trace and autocorrelation plots (not shown), and the statistics $\hat{R}$, the potential scale reduction statistic, which should be equal to 1.0, and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014; see  descriptions in @forrest2020].
+Model convergence was informed by visual inspection of trace and autocorrelation plots (not shown), and the statistics $\hat{R}$, the potential scale reduction statistic, which should approach 1.0 as the chains are consistent with convergence, and $n_\mathrm{eff}$, which measures the effective number of MCMC independent samples after accounting for autocorrelation [@gelman1992; @gelman2014; see descriptions in @forrest2020].
 
 ### Area 3CD
 
