@@ -4,7 +4,7 @@
 \RequirePackage{booktabs}  % Nicer table formatting
 \RequirePackage{textcomp}  % Prevents two warnings in gensymb
 \RequirePackage{gensymb}  % Symbols for math and text
-\RequirePackage{lineno}  % Number lines (editing)
+\RequirePackage[running]{lineno}  % Number lines (editing)
 \RequirePackage{longtable}  % Long tables (multi-page)
 \RequirePackage{amsmath}  % Math facilities
 \RequirePackage{microtype}  % Better type handling
@@ -217,6 +217,9 @@
 \addto\captionsenglish{\renewcommand{\indexname}{INDEX}}
 \addto\captionsenglish{\renewcommand{\appendixname}{APPENDIX}}
 
+\renewcommand\appendixpagename{APPENDICES}
+\renewcommand\appendixtocname{APPENDICES}
+
 % Arguments for frames around figures (fbox)
 \setlength{\fboxsep}{0pt}  % Distance between frame and content
 \setlength{\fboxrule}{1pt}  % Thickness of the line
@@ -423,3 +426,9 @@ Correct citation for this publication:
 \setcounter{footnote}{0}  % And start at 1
 
 }% End of frontmatter
+
+\newenvironment{CSLReferences}%
+{\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+{\par}
+
