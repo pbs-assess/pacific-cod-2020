@@ -237,12 +237,12 @@ The median estimated LRR is estimated to be 0.065 *y*^-1^ (0.021--0.198 *y*^-1^)
 Median biomass in 2021 relative to the LRP and USR are estimated to be 1.639 (1.917--1.685) and 0.502 (0.547--0.560), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.086 (0.077--0.074).
 
-Combined average posterior biomass and fishing mortality from the seven averaged models are shown in Figures \@ref(fig:fig-model-average-biomass-3cd) and \@ref(fig:fig-model-average-f-3cd).
-The estimated biomass range from the seven models was very broad.
+The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-3cd) and \@ref(fig:fig-model-average-f-3cd).
+The estimated biomass range was very broad.
 Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP (Figure \@ref(fig:fig-model-average-biomass-3cd)).
 This is a notable decrease in estimated stock status (median $B_{2021}/\textrm{LRP}$ = 1.639) compared to the 2018 assessment, where median $B_{2019}/\textrm{LRP}$ was 2.07 (2.48--2.16)) [@dfo2019].
 
-The estimated fishing mortality range from the seven models was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
+The estimated fishing mortality range was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
 However, recent estimates of fishing mortality were well below the median LRR (Figure \@ref(fig:fig-model-average-f-3cd)).  
 
 ### Area 5ABCD
@@ -255,11 +255,11 @@ The median estimated LRR is estimated to be 0.152 *y*^-1^ (0.082--0.293 *y*^1^).
 Median biomass in 2021 relative to the LRP and USR are estimated to be 2.001 (1.999--1.945) and 0.587 (0.536--0.676), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.177 *y*^-1^ (0.154--0.166).
 
-Combined average posterior biomass and fishing mortality from the seven averaged models are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
+The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
 
-As for Area 3CD, the estimated biomass range from the seven models was very broad.
+As for Area 3CD, the estimated biomass range was very broad.
 Combined average posterior results from all models indicate that the stock in 2020 was above the LRP, within the Cautious Zone.
-The estimated fishing mortality range from the seven models was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
+The estimated fishing mortality range was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
 Recent estimates of fishing mortality were well below the median LRR.
 
 ## 2021 harvest advice
@@ -274,13 +274,11 @@ The following performance measures were evaluated:
 1. $P(B_{2022} < USR)$
 1. $P(F_{2021} > LRR)$
 
-Decision tables were constructed for each area using the unweighted combined posterior samples from a set of six sensitivity cases, plus the reference case (the "model-averaged" set), see the model scenarios section. 
-For each performance measure, under each alternative 2021 catch level, vectors of 1,000 burned-in posterior samples from each of the seven models were combined into a single vector of 7,000 samples.
-Probabilities of performance measures were then calculated from the combined samples [see @forrest2020].
+Decision tables were constructed for each area using the unweighted combined posterior samples [see @forrest2020].
 
 ### Area 3CD
 
-For illustration, recent average posterior biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
+For illustration, the combined average posterior biomass with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
 
 The model-averaged decision table probabilities are presented in Table \@ref(tab:tab-decision-avg-3cd). In summary:
 
@@ -303,7 +301,7 @@ including zero catch.
 
 ### Area 5ABCD
 
-Recent average biomass from the seven averaged models with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
+Recent combined average biomass with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
 
 The model-averaged decision table probabilities are presented in Table \@ref(tab:tab-decision-avg-3cd).
 In summary:
