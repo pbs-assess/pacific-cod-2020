@@ -12,25 +12,25 @@ The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-su
 Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
 The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
-However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacifc Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific Cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
 
 This Science Response reports results from the Science Response Process of October 2020 on the status of Pacific Cod for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
 
 # Background
 
 Pacific Cod (or Grey Cod) is a relatively short-lived (~10--13 *y*), fast-growing member of the family Gadidae.
-It is distributed throughout the north Pacific Ocean, and throughout the waters of BC, typically in depth ranges up to 200 m. 
+It is distributed throughout the North Pacific Ocean, and throughout the waters of BC, typically in depth ranges up to 200 m. 
 Four stocks of Pacific Cod are defined for management purposes on the BC coast: Strait of Georgia (4B), West Coast Vancouver Island (3CD), Queen Charlotte Sound (5AB), and Hecate Strait (5CD).
-This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD), and West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
+This study focuses on the stocks in Queen Charlotte Sound combined with Hecate Strait (5ABCD) and West Coast Vancouver Island (3CD) (Figure \@ref(fig:fig-map)).
 
-This assessment update provides science advice for combined areas 5AB and 5CD in a single stock assessment. The choice to combine the areas was made during the 2018 assessment [@dfo2019], mainly due to poor model diagnostics and the lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
+This assessment update provides science advice for combined areas 5AB and 5CD in a single stock assessment. The choice to combine the areas was made during the 2018 assessment [@dfo2019], mainly due to poor model diagnostics and lack of historical fishery-independent indices of abundance for the Area 5AB model in the 2013 assessment [@forrest2015].
 There is also no evidence for genetic distinction between these two stocks [@forrest2015].
 
 ## Description of the fishery
 
 Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017].
-They are also caught in small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
-The depth range of capture in 5ABCD ranges from around 60--200 m, with data showing a shift to deeper depths since 1996 [@forrest2020].
+They are caught in small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
+The depth of capture in 5ABCD ranges from around 60--200 m, with data showing a shift to deeper depths since 1996 [@forrest2020].
 
 Currently, the majority of the BC Pacific Cod catch is taken from HS (Area 5CD).
 Commercial catches also come from QCS (Area 5AB) and WCVI (Area 3CD). 
@@ -39,8 +39,8 @@ Near negligible catch is taken from the west coast of Haida Gwaii, Area 5E (< 0.
 The BC integrated fishery is subject to 100% at-sea and dockside monitoring.
 Since 1996, all bottom trawl vessels have carried observers who record the catch of each species and estimate quantities of released (discarded) fish.
 Therefore, since 1996, estimates of catch and at-sea releases can be considered accurate.
-For the period 1956--1995 estimates of catch and releases were obtained from fishing logbooks.
-Estimates of at-sea releases for this period are likely to be under-estimates [@forrest2020]
+For the period 1956--1995, estimates of catch and releases were obtained from fishing logbooks.
+Estimates of at-sea releases for this period are likely to be under-estimates [@forrest2020].
 
 # Analysis and response
 
