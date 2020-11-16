@@ -32,22 +32,18 @@ Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fish
 They are also caught in small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
 The depth range of capture in 5ABCD ranges from around 60--200 m, with data showing a shift to deeper depths since 1996 [@forrest2020].
 
-Currently, the majority of the BC Pacific Cod catch is taken from HS (Area 5CD).
-Commercial catches also come from QCS (Area 5AB) and WCVI (Area 3CD). 
+Currently, the majority of the BC Pacific Cod catch is taken Area 5CD.
+Commercial catches also come from Area 5AB and Area 3CD. 
 Near negligible catch is taken from the west coast of Haida Gwaii, Area 5E (< 0.5% of total average annual catch since 1985).
 
 The BC integrated fishery is subject to 100% at-sea and dockside monitoring.
 Since 1996, all bottom trawl vessels have carried observers who record the catch of each species and estimate quantities of released (discarded) fish.
-Therefore, since 1996, estimates of catch and at-sea releases can be considered accurate.
-For the period 1956--1995 estimates of catch and at-sea releases (discards) were obtained from fishing logbooks.
-Estimates of at-sea releases for this period are likely to be under-estimates [@forrest2020]
 
 # Analysis and response
 
 ## Data
 
 Data were extracted from DFO databases using methods described in @forrest2020.
-The fishing year for all data sources is defined as spanning April 1 to March 31 in the following year [@forrest2015; @forrest2020].
 Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
 Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years (the same approach as taken by @forrest2020).
 
@@ -121,7 +117,7 @@ All fixed parameters and prior probability distributions for model parameters in
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
 Major axes of uncertainty were: catchability ($q$) in the indices of abundance; the magnitude of natural mortality ($M$); age at recruitment to the fishery; and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
 Details are provided in the model scenarios section.
-Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017] and BC Walleye Pollock [@starr2018]).
+Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017], BC Walleye Pollock [@starr2018] and three assessments of BC *Sebastes* stocks [@dfo2019b; @dfo2020a; @dfo2020b]
 
 ## Reference points
 
