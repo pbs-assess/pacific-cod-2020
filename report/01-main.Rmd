@@ -213,7 +213,7 @@ The larger 2020 estimates of $M$ suggest that the model is partially explaining 
 As for Area 3CD, reference case model fits to the data were typical of all sensitivity cases.
 The model diagnostics were consistent with convergence, and posterior sample autocorrelation was relatively minor for most parameters (Table \@ref(tab:tab-param-est-table-5abcd)).
 
-The MPD model fits to the five indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-5abcd).
+The MPD (mode of the posterior distribution) model fits to the five indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-5abcd).
 The model followed the general trends of the three fishery-independent indices, but could not fit some of the larger peaks (for example 2004 and 2005 peaks in the Queen Charlotte Sound Synoptic Survey, and the 2009 and 2013 peaks in the Hecate Strait Synoptic Survey, Figure \@ref(fig:fig-base-index-fits-5abcd)b and c).
 Similarly, the model followed the major patterns in the two CPUE indices but did not capture all the peaks (Figure \@ref(fig:fig-base-index-fits-5abcd)d and e).
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
