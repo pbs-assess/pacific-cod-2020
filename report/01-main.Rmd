@@ -232,16 +232,15 @@ Consequently, RPR participants agreed to adopt an approach that combined model r
 Posterior estimates of reference points and stock status from the combined model-averaged set are provided in Table \@ref(tab:tab-ref-points-table-avg-3cd).
 At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 14,099 t (6,008--47,920 t).
 Median fishing mortality for the 2020 fishing year is projected to be 0.006 *y*^-1^ (0.002--0.015 *y*^-1^).
-The median estimated LRP and USR are estimated to be 8,603 t (3,134--28,435 t) and 28,077 t (10,990--85,585 t), respectively.
-The median estimated LRR is estimated to be 0.065 *y*^-1^ (0.021--0.198 *y*^-1^).
-Median biomass in 2021 relative to the LRP ranged from **XX to XX**.
-Median biomass in 2021 relative to the USR ranged from **XX to XX**.
-Median fishing mortality in 2020 relative to the LRR ranged from **XX to XX** (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
+The median estimated LRP and USR are estimated to be 8,603 t (3,134--28,435 t) and 28,436 t (12,254--84,756 t), respectively.
+The median estimated LRR is estimated to be 0.065 *y*^-1^ (0.021--0.187 *y*^-1^).
+Median biomass in 2021 relative to the LRP and USR are estimated to be 1.64 (1.01--3.59) and 0.507 (0.313--0.962), respectively.
+Median fishing mortality relative to the LRR is estimated to be 0.083 (0.038--0.137) (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
 
 The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-3cd) and \@ref(fig:fig-model-average-f-3cd).
 The estimated biomass range was very broad.
 Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP (Figure \@ref(fig:fig-model-average-biomass-3cd)).
-This is a notable decrease in estimated stock status (median $B_{2021}/\textrm{LRP}$ = 1.639) compared to the 2018 assessment, where median $B_{2019}/\textrm{LRP}$ was 2.07 (2.48--2.16)) [@dfo2019].
+This is a notable decrease in estimated stock status (median $B_{2021}/\textrm{LRP}$ = 1.64) compared to the 2018 assessment, where median $B_{2019}/\textrm{LRP}$ was 2.07 (2.48--2.16)) [@dfo2019].
 
 The estimated fishing mortality range was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
 However, recent estimates of fishing mortality were well below the median LRR (Figure \@ref(fig:fig-model-average-f-3cd)).  
@@ -251,10 +250,10 @@ However, recent estimates of fishing mortality were well below the median LRR (F
 Posterior estimates of reference points and stock status from the combined model-averaged set are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
 At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 19,634 t (11,318--40,603 t).
 Median fishing mortality for the 2020 fishing year is projected to be 0.027 *y*^1^ (0.013--0.049 *y*^1^).
-The median estimated LRP and USR are estimated to be 9,814 t (5,662--20,881 t) and 33,448 t (20,095--60,089 t), respectively.
-The median estimated LRR is estimated to be 0.152 *y*^-1^ (0.082--0.293 *y*^1^).
-Median biomass in 2021 relative to the LRP and USR are estimated to be 1.640 (1.005--3.59) and 0.507 (0.313--0.962), respectively.
-Median fishing mortality relative to the LRR is estimated to be 0.083 (0.038--0.137) (Table \@ref(tab:tab-ref-points-table-avg-5abcd)).
+The median estimated LRP and USR are estimated to be 9,814 t (5,662--20,881 t) and 33,409 t (21,630--59,004 t), respectively.
+The median estimated LRR is estimated to be 0.15 *y*^-1^ (0.09--0.28 *y*^1^).
+Median biomass in 2021 relative to the LRP and USR are estimated to be 1.96 (1.40--3.11) and 0.39 (0.59--0.89), respectively.
+Median fishing mortality relative to the LRR is estimated to be 0.17 (0.11--0.27) (Table \@ref(tab:tab-ref-points-table-avg-5abcd)).
 
 The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
 
