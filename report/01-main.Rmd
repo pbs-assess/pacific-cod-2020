@@ -45,7 +45,7 @@ Since 1996, all bottom trawl vessels have carried observers who record the catch
 
 Data were extracted from DFO databases using methods described in @forrest2020.
 Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
-Catch data were updated to 2020, with data extrapolated from October 1, 2020 to March 31, 2021, based on the mean proportion of annual catch caught by September 30 in the three preceding years [the same approach as taken by @forrest2020].
+Catch data were updated to 2020, with data extrapolated from October 1, 2020 to the end of the fishing year (see below).
 
 For each area, models were fit to the following data: commercial catch, fishery-independent indices of abundance, commercial catch per unit effort (CPUE), and annual mean weight of fish in the commercial catch.
 
@@ -60,7 +60,7 @@ Since 1996, the proportions of estimated discards have been considerably higher 
 Pre-1996 discards are, therefore, a major source of uncertainty in this assessment.
 Estimates in years following the introduction of 100% at-sea observer coverage in 1996 can be considered to be  accurate.
 Pacific Cod can be legally discarded by trawlers in BC.
-However, on-board observers first estimate the quantity being discarded.
+However, on-board observers first estimate the quantity being discarded, which is counted against the quota.
 Therefore, in addition to greater accuracy in reporting of discards since 1996, incentives to avoid discarding have also been greater.
 
 At the time of the assessment, the 2020 fishing year was incomplete.
@@ -147,7 +147,8 @@ The Reference models for Areas 3CD and 5ABCD shared similar characteristics to e
 Key characteristics of the models are provided in Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd).
 For further details, see @forrest2020.
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one step at a time.
-The same model scenarios as those agreed upon at the Regional Peer Review for the 2018 assessment [@dfo2019] were used here for model-averaging (updated with catch data to 2020 and index data to 2019 where available).
+A set of model scenarios was agreed upon at the Regional Peer Review (RPR) for model averaging in the 2018 assessment [@dfo2019].
+The same set were used here (updated with catch data to 2020 and index data to 2019 where available).
 Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
 
 ### Area 3CD
@@ -190,7 +191,7 @@ Reference case model fits to the data were generally typical of all sensitivity 
 The model diagnostics were consistent with convergence, and posterior sample autocorrelation was relatively minor for most parameters (Table \@ref(tab:tab-param-est-table-3cd)).
 Model fits to the catch were near perfect by design (standard deviation in log likelihood was set to 0.05) and are not shown.
 Model fits to the four indices of abundance are shown in Figure \@ref(fig:fig-base-index-fits-3cd).
-The reference model followed the trends of the two fishery-independent indices (Figure \@ref(fig:fig-base-index-fits-3cd) a and d), but did not closely fit the 2012, 2014 and 2016 data points in WCVI Synoptic survey (Figure \@ref(fig:fig-base-index-fits-3cd)a).
+The reference model followed the trends of the two fishery-independent indices (Figure \@ref(fig:fig-base-index-fits-3cd)a and d), but did not closely fit the 2012, 2014 and 2016 data points in WCVI Synoptic survey (Figure \@ref(fig:fig-base-index-fits-3cd)a).
 This is likely because of large differences between low points (2012 and 2018) and high points (2014 and 2016) in the survey observations.
 Similarly, while the model closely followed the major patterns in the historical CPUE index (Figure \@ref(fig:fig-base-index-fits-3cd)b), it did not capture all the peaks in the modern series (Figure \@ref(fig:fig-base-index-fits-3cd)c).
 Fits such as this tend to occur when there is no other information (such as age composition data or contrasting mean weight data) to help resolve large fluctuations in observed indices.
@@ -204,7 +205,7 @@ Smaller, released fish are therefore likely underrepresented in the annual mean 
 A scenario with a smaller value of $\sigma_W$, which controls the fit to the mean weight in the likelihood function, is included in the model-averaging set in each area (Sc 7b).
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-3cd).
-Notably, the median estimated value of natural mortality, $M$, was 0.449 *y*^-1^ (0.412--0.489 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.424 *y*^-1^ (0.388--0.462 *y*^-1^) in 2018 [@forrest2020].
+Notably, the median estimated value of natural mortality, $M$, was 0.45 *y*^-1^ (0.41--0.49 *y*^-1^) in the current assessment (Table \@ref(tab:tab-param-est-table-3cd)), compared to 0.42 *y*^-1^ (0.39--0.46 *y*^-1^) in 2018 [@forrest2020].
 Values in parentheses here and elsewhere refer to lower and upper bounds of the 95% credible interval. 
 The larger 2020 estimates of $M$ suggest that the model is partially explaining the decreased biomass through greater natural mortality, although there was considerable overlap between the current and 2018 credible intervals.
 
@@ -219,7 +220,7 @@ Similarly, the model followed the major patterns in the two CPUE indices but did
 As in previous assessments, the model tended to underestimate annual mean weight, especially between 1970 and 2000 (Figure \@ref(fig:fig-base-mean-weight-5abcd)), likely for similar reasons described for Area 3CD.
 
 Reference model parameter estimates are shown in Table \@ref(tab:tab-param-est-table-5abcd).
-The range of the posterior estimate of $M$ was was nearly identical in the current assessment, at 0.308 *y*^-1^ (0.279--0.343 *y*^-1^), compared to 0.312 *y*^-1^ (0.280--0.347 *y*^-1^) in the 2018 assessment [@forrest2020].
+The range of the posterior estimate of $M$ was was nearly identical in the current assessment, at 0.31 *y*^-1^ (0.28--0.34 *y*^-1^), compared to 0.31 *y*^-1^ (0.28--0.35 *y*^-1^) in the 2018 assessment [@forrest2020].
 
 ## Indicators of current stock status 
 
@@ -234,7 +235,7 @@ At the beginning of the 2021 fishing year, under the assumed 2020 catch level, m
 Median fishing mortality for the 2020 fishing year is projected to be 0.006 *y*^-1^ (0.002--0.015 *y*^-1^).
 The median estimated LRP and USR are estimated to be 8,603 t (3,134--28,435 t) and 28,436 t (12,254--84,756 t), respectively.
 The median estimated LRR is estimated to be 0.065 *y*^-1^ (0.021--0.187 *y*^-1^).
-Median biomass in 2021 relative to the LRP and USR are estimated to be 1.64 (1.01--3.59) and 0.507 (0.313--0.962), respectively.
+Median biomass in 2021 relative to the LRP and USR is estimated to be 1.64 (1.01--3.59) and 0.507 (0.313--0.962), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.083 (0.038--0.137) (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
 
 The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-3cd) and \@ref(fig:fig-model-average-f-3cd).
@@ -252,7 +253,7 @@ At the beginning of the 2021 fishing year, under the assumed 2020 catch level, m
 Median fishing mortality for the 2020 fishing year is projected to be 0.027 *y*^1^ (0.013--0.049 *y*^1^).
 The median estimated LRP and USR are estimated to be 9,814 t (5,662--20,881 t) and 33,409 t (21,630--59,004 t), respectively.
 The median estimated LRR is estimated to be 0.15 *y*^-1^ (0.09--0.28 *y*^1^).
-Median biomass in 2021 relative to the LRP and USR are estimated to be 1.96 (1.40--3.11) and 0.39 (0.59--0.89), respectively.
+Median biomass in 2021 relative to the LRP and USR is estimated to be 1.96 (1.40--3.11) and 0.39 (0.59--0.89), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.17 (0.11--0.27) (Table \@ref(tab:tab-ref-points-table-avg-5abcd)).
 
 The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
@@ -265,7 +266,7 @@ Recent estimates of fishing mortality were well below the median LRR.
 ## 2021 harvest advice
 
 Performance measures were calculated over a sequence of alternative 2021 projected catch levels and are based on posterior samples for a one-year projection to the beginning of 2022.
-Uncertainty enters the projections through parameter uncertainty propagated from the modeled time series and recruitment anomalies for the projection year.
+Uncertainty enters the projections through parameter uncertainty propagated through the modeled time series and recruitment anomalies for the projection year.
 The following performance measures were evaluated:
 
 1. $P(B_{2022} < B_{2021})$
@@ -303,7 +304,7 @@ The probability of the stock exceeding the LRR is less than 1% for all levels of
 This probability is based on the maximum LRR (i.e., average estimated fishing mortality rate from 1956--2004).
 DFO's precautionary approach policy [@dfo2009] describes the removal reference (i.e., the LRR) as the maximum acceptable removal rate for the stock.
 The policy illustrates a harvest control rule with a linear decline in the LRR for stocks in the Cautious Zone.
-Such a harvest control rule has not been formally agreed upon for Pacific Cod and, therefore, the probabilities in Table \@ref(tab:summary-tab-decision-avg-3cd) and in previous Pacific Cod assessments [@dfo2015; @dfo2019], do not reflect any adjustment to the LRR when the stock is in the Cautious Zone.
+Such a harvest control rule has not been formally agreed upon for Pacific Cod and, therefore, the probabilities in Table \@ref(tab:summary-tab-decision-avg-3cd) and in previous Pacific Cod assessments [@dfo2015; @dfo2019] do not reflect any adjustment to the LRR when the stock is in the Cautious Zone.
 If such a harvest control rule were applied, as illustrated in @dfo2009, then probabilities of exceeding the LRR would be higher.
 It is recommended that a harvest control rule, which describes any adjustments to the LRR for stocks below the USR, should be agreed upon before the next assessment update.
 
@@ -355,7 +356,7 @@ Currently, both stocks are assessed to be in the Cautious Zone, as was the case 
 However, the Area 3CD stock is estimated to have declined in abundance and is estimated to be closer to the LRP than in the previous assessment.
 
 A critical concern with this assessment is the lack of a WCVI synoptic survey update in 2020.
-We recommend surveying this area as soon as it is feasible to do so, and updating this advice when the data are available.
+It is recommended to survey this area as soon as it is feasible to do so, and updating this advice when the data are available.
 Further analysis of recent survey data including spatial and depth distribution of the stock, and analysis of biological data, such as condition of the fish over time (length-weight relationship) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance since 2018.
 Other key research recommendations, which would improve understanding of stock and fishery dynamics for both stocks are provided in @forrest2020.
 A fully described harvest control rule should be agreed upon before the next assessment update.
