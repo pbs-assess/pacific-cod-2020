@@ -447,33 +447,40 @@ make.ref.points.table <- function(models,
     sbt <- map_df(models, ~{.x$mcmccalcs$sbt.dat})
     lrp_names <- names(sbt)
     lrp <- sbt %>%
-      select_at(.vars = vars(as.character(lrp_range))) %>%
-      map_df(~{quantile(.x, probs = probs)}) %>%
-      apply(2, mean)
+      select_at(.vars = vars(as.character(lrp_range)))
+    if (length(lrp_range) > 1) stop("Expecting lrp_range to be of length 1.", call. = FALSE)
+    lrp <- sbt[[as.character(lrp_range)]]
+    lrp_quant <- quantile(lrp, probs = probs)
+    lrp_ratio <- quantile(sbt[[ncol(sbt)]] / lrp, probs = probs)
+
     tab <- rbind(tab, c("lrp", lrp))
-    tmp_row_bcurr_lrp <- c(paste0(tab$refpt_names[2], "/lrp"), as.numeric(tab[2, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
+
+    tmp_row_bcurr_lrp <- c(paste0(tab$refpt_names[2], "/lrp"), lrp_ratio)
   }
   if(!is.na(usr_range[1])){
     sbt <- map_df(models, ~{.x$mcmccalcs$sbt.dat})
     usr_names <- names(sbt)
-    usr <- sbt %>%
-      select_at(.vars = vars(as.character(usr_range))) %>%
-      map_df(~{quantile(.x, probs = probs)}) %>%
-      apply(2, mean)
+    usr_df <- select_at(sbt, .vars = vars(as.character(usr_range)))
+    usr_vals <- apply(usr_df, 1, mean)
+    usr <- quantile(usr_vals, probs = probs)
+    usr_ratio <- quantile(sbt[[ncol(sbt)]] / usr_vals, probs = probs)
+
     tab <- rbind(tab, c("usr", usr))
-    tmp_row_bcurr_usr <- c(paste0(tab$refpt_names[2], "/usr"), as.numeric(tab[2, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
+
+    tmp_row_bcurr_usr <- c(paste0(tab$refpt_names[2], "/usr"), usr_ratio)
   }
   if(!is.na(lrr_range[1])){
     ft <- map_df(models, ~{.x$mcmccalcs$f.mort.dat[[1]]})
     names(ft) <- names(ft) %>%
       stringr::str_replace("ft1_gear1_", "")
     lrr_names <- names(ft)
-    lrr <- ft %>%
-      select_at(.vars = vars(as.character(lrr_range))) %>%
-      map_df(~{quantile(.x, probs = probs)}) %>%
-      apply(2, mean)
+    lrr_df <- select_at(ft, .vars = vars(as.character(lrr_range)))
+    lrr_vals <- apply(lrr_df, 1, mean)
+    lrr <- quantile(lrr_vals, probs = probs)
+    lrr_ratio <- quantile(ft[[ncol(ft)]] / lrr_vals, probs = probs)
+
     tab <- rbind(tab, c("lrr", lrr))
-    tmp_row_fcurr_lrr <- c(paste0(tab$refpt_names[3], "/lrr"), as.numeric(tab[3, 2:4]) / as.numeric(tab[nrow(tab), 2:4]))
+    tmp_row_fcurr_lrr <- c(paste0(tab$refpt_names[3], "/lrr"), lrr_ratio)
   }
   tab <- rbind(tab, tmp_row_bcurr_bo)
   if(!is.na(lrp_range[1])){
