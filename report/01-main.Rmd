@@ -276,7 +276,7 @@ The following performance measures were evaluated:
 1. $P(B_{2022} < USR)$
 1. $P(F_{2021} > LRR)$
 
-Decision tables were constructed for each area using the unweighted combined posterior samples [see @forrest2020].
+Decision tables were constructed for each area using the equally weighted combined posterior samples [see @forrest2020].
 
 ### Area 3CD
 
@@ -293,13 +293,21 @@ The 2020 catch was extrapolated to be approximately 59 t, hence the probability 
 
 - $P(B_{2022} < USR)$ ranged from 97% to 98%.
 
-- $P(F_{2020} > LRR)$  ranged from < 1% to 98%.
+- $P(F_{2021} > LRR)$  ranged from < 1% to 98%.
 
 Under a 2021 catch of 500 tonnes (the 2019/20 TAC), there is a 4% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd)).
 However, assuming the 2021 catch is of a similar magnitude to the 2020 catch (approximately 59 t), the probability of the 2021 biomass being below the LRP is 2% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
 The 2022 biomass is projected to be in the Cautious Zone
 (below the USR) with 97--98% probability under all 2021 catch scenarios tested,
 including zero catch.
+
+The probability of the stock exceeding the LRR is less than 1% for all levels of catch up to 400 t.
+We note that this probability is based on the maximum LRR (i.e., average estimated fishing mortality rate from 1956--2004).
+DFO's precautionary approach policy [@dfo2009] describes the removal reference (i.e., the LRR) as the maximum acceptable removal rate for the stock.
+The policy illustrates a harvest control rule with a linear decline in the LRR for stocks in the Cautious Zone.
+Such a harvest control rule has not been formally agreed upon for Pacific Cod and, therefore, the probabilities in Table \@ref(tab:summary-tab-decision-avg-3cd) and in previous Pacific Cod assessments [@dfo2015; @dfo2019], do not reflect any adjustment to the LRR when the stock is in the Cautious Zone.
+If such a harvest control rule were applied, as illustrated in @dfo2009, then probabilities of exceeding the LRR would be higher.
+It is recommended that a harvest control rule, which describes any adjustments to the LRR for stocks below the USR, should be agreed upon before the next assessment update.
 
 ### Area 5ABCD
 
@@ -325,6 +333,9 @@ less than 1% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
 The 2022 biomass is projected to be in the Cautious Zone
 (below the USR) with greater than 98%--99% probability under all 2021 catch scenarios tested, including zero catch.
 
+The probability of the stock exceeding the LRR is less than 1% for all levels of catch up to 1400 t.
+As for Area 3CD, if the LRR were adjusted downward because the stock is in the Cautious Zone [@dfo2009], the probabilities of exceeding the LRR would be higher.
+
 ## Sources of uncertainty
 
 Uncertainty due to estimated parameters and the weights assigned to various data components was explicitly addressed using a Bayesian approach.
@@ -349,6 +360,7 @@ A critical concern with this assessment is the lack of a WCVI synoptic survey up
 We recommend surveying this area as soon as it is feasible to do so, and updating this advice when the data are available.
 Further analysis of recent survey data including spatial and depth distribution of the stock, and analysis of biological data, such as condition of the fish over time (length-weight relationship) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance since 2018.
 Other key research recommendations, which would improve understanding of stock and fishery dynamics for both stocks are provided in @forrest2020.
+A fully-described harvest control rule should be agreed upon before the next assessment update.
 
 \clearpage
 
