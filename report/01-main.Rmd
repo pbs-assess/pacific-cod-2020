@@ -302,7 +302,7 @@ The 2022 biomass is projected to be in the Cautious Zone
 including zero catch.
 
 The probability of the stock exceeding the LRR is less than 1% for all levels of catch up to 400 t.
-We note that this probability is based on the maximum LRR (i.e., average estimated fishing mortality rate from 1956--2004).
+This probability is based on the maximum LRR (i.e., average estimated fishing mortality rate from 1956--2004).
 DFO's precautionary approach policy [@dfo2009] describes the removal reference (i.e., the LRR) as the maximum acceptable removal rate for the stock.
 The policy illustrates a harvest control rule with a linear decline in the LRR for stocks in the Cautious Zone.
 Such a harvest control rule has not been formally agreed upon for Pacific Cod and, therefore, the probabilities in Table \@ref(tab:summary-tab-decision-avg-3cd) and in previous Pacific Cod assessments [@dfo2015; @dfo2019], do not reflect any adjustment to the LRR when the stock is in the Cautious Zone.
