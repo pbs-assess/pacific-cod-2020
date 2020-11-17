@@ -235,6 +235,7 @@ At the beginning of the 2021 fishing year, under the assumed 2020 catch level, m
 Median fishing mortality for the 2020 fishing year is projected to be 0.006 *y*^-1^ (0.002--0.015 *y*^-1^).
 The median estimated LRP and USR are estimated to be 8,603 t (3,134--28,435 t) and 28,436 t (12,254--84,756 t), respectively.
 The median estimated LRR is estimated to be 0.065 *y*^-1^ (0.021--0.187 *y*^-1^).
+
 Median biomass in 2021 relative to the LRP and USR is estimated to be 1.64 (1.01--3.59) and 0.507 (0.313--0.962), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.083 (0.038--0.137) (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
 
@@ -253,7 +254,7 @@ At the beginning of the 2021 fishing year, under the assumed 2020 catch level, m
 Median fishing mortality for the 2020 fishing year is projected to be 0.027 *y*^1^ (0.013--0.049 *y*^1^).
 The median estimated LRP and USR are estimated to be 9,814 t (5,662--20,881 t) and 33,409 t (21,630--59,004 t), respectively.
 The median estimated LRR is estimated to be 0.15 *y*^-1^ (0.09--0.28 *y*^1^).
-Median biomass in 2021 relative to the LRP and USR is estimated to be 1.96 (1.40--3.11) and 0.39 (0.59--0.89), respectively.
+Median biomass in 2021 relative to the LRP and USR is estimated to be 1.96 (1.40--3.11) and 0.59 (0.39--0.89), respectively.
 Median fishing mortality relative to the LRR is estimated to be 0.17 (0.11--0.27) (Table \@ref(tab:tab-ref-points-table-avg-5abcd)).
 
 The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
@@ -330,7 +331,7 @@ Under a 2021 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probab
 Assuming the 2021 catch is of a similar magnitude to the 2020 catch (approximately 425 t), the probability of the 2022 biomass being below the LRP is also
 less than 1% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
 The 2022 biomass is projected to be in the Cautious Zone
-(below the USR) with greater than 98%--99% probability under all 2021 catch scenarios tested, including zero catch.
+(below the USR) with 98%--99% probability under all 2021 catch scenarios tested, including zero catch.
 
 The probability of the stock exceeding the LRR is less than 1% for all levels of catch up to 1400 t.
 As for Area 3CD, if the LRR were adjusted downward because the stock is in the Cautious Zone [@dfo2009], the probabilities of exceeding the LRR would be higher.
