@@ -253,9 +253,8 @@ At the beginning of the 2021 fishing year, under the assumed 2020 catch level, m
 Median fishing mortality for the 2020 fishing year is projected to be 0.027 *y*^1^ (0.013--0.049 *y*^1^).
 The median estimated LRP and USR are estimated to be 9,814 t (5,662--20,881 t) and 33,448 t (20,095--60,089 t), respectively.
 The median estimated LRR is estimated to be 0.152 *y*^-1^ (0.082--0.293 *y*^1^).
-Median biomass in 2021 relative to the LRP ranged from **XX to XX**.
-Median biomass in 2021 relative to the USR ranged from **XX to XX**.
-Median fishing mortality in 2020 relative to the LRR ranged from **XX to XX** (Table \@ref(tab:tab-ref-points-table-avg-5abcd)).
+Median biomass in 2021 relative to the LRP and USR are estimated to be 1.640 (1.005--3.59) and 0.507 (0.313--0.962), respectively.
+Median fishing mortality relative to the LRR is estimated to be 0.083 (0.038--0.137) (Table \@ref(tab:tab-ref-points-table-avg-5abcd)).
 
 The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
 

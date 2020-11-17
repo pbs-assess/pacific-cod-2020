@@ -453,7 +453,7 @@ make.ref.points.table <- function(models,
     lrp_quant <- quantile(lrp, probs = probs)
     lrp_ratio <- quantile(sbt[[ncol(sbt)]] / lrp, probs = probs)
 
-    tab <- rbind(tab, c("lrp", lrp))
+    tab <- rbind(tab, c("lrp", lrp_quant))
 
     tmp_row_bcurr_lrp <- c(paste0(tab$refpt_names[2], "/lrp"), lrp_ratio)
   }
