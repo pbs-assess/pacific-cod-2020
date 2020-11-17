@@ -360,7 +360,7 @@ A critical concern with this assessment is the lack of a WCVI synoptic survey up
 We recommend surveying this area as soon as it is feasible to do so, and updating this advice when the data are available.
 Further analysis of recent survey data including spatial and depth distribution of the stock, and analysis of biological data, such as condition of the fish over time (length-weight relationship) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance since 2018.
 Other key research recommendations, which would improve understanding of stock and fishery dynamics for both stocks are provided in @forrest2020.
-A fully-described harvest control rule should be agreed upon before the next assessment update.
+A fully described harvest control rule should be agreed upon before the next assessment update.
 
 \clearpage
 
