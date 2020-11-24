@@ -108,7 +108,7 @@ All fixed parameters and prior probability distributions for model parameters in
 This was to address some of the key irresolvable uncertainties associated with the stock assessment.
 Major axes of uncertainty were catchability ($q$) in the indices of abundance, the magnitude of natural mortality ($M$), age at recruitment to the fishery, and the magnitude of observation errors in the surveys and mean weight [@forrest2020].
 Details are provided in the model scenarios section.
-Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017], BC Walleye Pollock [@starr2018] and three assessments of BC *Sebastes* stocks [@dfo2019b; @dfo2020a; @dfo2020b]
+Other stock assessments that have used a model-averaging approach are Pacific Hake [@stewart2011], Pacific Halibut [@stewart2016], BC Shortspine Thornyhead [@starr2017], BC Walleye Pollock [@starr2018] and three assessments of BC *Sebastes* stocks [@dfo2019b; @dfo2020a; @dfo2020b].
 
 ## Reference points
 
