@@ -1,14 +1,14 @@
 
 # Context
 
-The last assessment for Pacific Cod (*Gadus macrocephalus*) in British Columbia (BC) was done in 2018 [@forrest2020; @dfo2019].
-Separate assessments were done for stocks in Area 3CD (West Coast Vancouver Island, WCVI) and Area 5ABCD (Queen Charlotte Sound (QCS) and Hecate Strait (HS) combined) (Figure \@ref(fig:fig-map)).
+The last assessment for Pacific Cod (*Gadus macrocephalus*) in British Columbia (BC) was completed in 2018 [@forrest2020; @dfo2019].
+Separate assessments were undertaken for stocks in Area 3CD (West Coast Vancouver Island, WCVI) and Area 5ABCD (consisting of Queen Charlotte Sound (QCS) and Hecate Strait (HS) combined) (Figure \@ref(fig:fig-map)).
 Both the 3CD and 5ABCD stocks were assessed to be in the Cautious Zone [@dfo2009].
 
 Fishery-independent synoptic bottom trawl surveys are conducted biennially in BC, usually occurring in even-numbered years for WCVI, and odd-numbered years in QCS and HS.
 However, due to the coronavirus disease 2019 (COVID-19) pandemic, the scheduled 2020 WCVI survey did not occur.
 The 2018 survey index for WCVI was very low, at approximately 26--27% of the magnitude of the 2014 and 2016 observations (Figure \@ref(fig:fig-summary-indices-3cd)).
-The commercial CPUE index has also decreased since 2016 (Figure \@ref(fig:fig-summary-indices-3cd)).
+The commercial catch  per unit effort (CPUE) index has also decreased since 2016 (Figure \@ref(fig:fig-summary-indices-3cd)).
 Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
 
 The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
@@ -30,7 +30,7 @@ There is also no evidence for genetic distinction between these two stocks [@for
 Pacific Cod in BC are caught almost entirely in the groundfish bottom trawl fishery, which is part of BC's integrated groundfish fishery [@dfo2017].
 They are caught in small quantities in the groundfish longline fishery (around 0.5% of the total annual catch on average), which is also part of the integrated fishery.
 The depth range of capture in 5ABCD ranges from around 60--200 m, with data showing a shift to deeper depths since 1996 [@forrest2020].
-Currently, the majority of the BC Pacific Cod catch is taken Area 5CD.
+Currently, the majority of the BC Pacific Cod catch is taken in Area 5CD.
 Commercial catches also come from Area 5AB and Area 3CD. 
 Near negligible catch is taken from the west coast of Haida Gwaii, Area 5E (< 0.5% of total average annual catch since 1985).
 The BC integrated fishery is subject to 100% at-sea and dockside monitoring.
@@ -41,7 +41,7 @@ Since 1996, all bottom trawl vessels have carried observers who record the catch
 ## Data
 
 Data were extracted from DFO databases using methods described in @forrest2020.
-Biological data from fishery-indendent and commercial fishery sources were available up until 2019.
+Biological data from fishery-independent and commercial fishery sources were available up until 2019.
 Catch data were updated to 2020, with data extrapolated from October 1, 2020 to the end of the fishing year (see below).
 For each area, models were fit to the following data: commercial catch, fishery-independent indices of abundance, commercial catch per unit effort (CPUE), and annual mean weight of fish in the commercial catch.
 
@@ -99,7 +99,7 @@ In the absence of available commercial biological samples for 2020, the annual m
 
 ## Stock assessment model
 
-The current stock assessment model is a Bayesian delay-difference model [@deriso1980], fit to survey indices, commercial catch-per-unit-effort (CPUE), commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
+The current stock assessment model is a Bayesian delay-difference model [@deriso1980], fit to survey indices, commercial CPUE, commercial catch data and commercial annual mean weights [@forrest2015; @forrest2020].
 A full stock assessment history for both stocks is provided in @forrest2020.
 The current model is fully described in Appendix D of @forrest2020.
 All fixed parameters and prior probability distributions for model parameters in the current assessment were the same as those reported in @forrest2020 (see also Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd), this document).
@@ -138,7 +138,7 @@ The Reference models for Areas 3CD and 5ABCD shared similar characteristics to e
 Key characteristics of the models are provided in Tables \@ref(tab:tab-param-table-3cd) and \@ref(tab:tab-param-table-5abcd).
 For further details, see @forrest2020.
 These models served as the basis from which sensitivity scenarios were developed, altering alternative model assumptions one at a time.
-A set of model scenarios for each stock was agreed upon at the Regional Peer Review (RPR) for model averaging in the 2018 assessment [@dfo2019].
+A set of model scenarios for each stock was agreed upon at the Canadian Science Advisory Secretariat (CSAS) Regional Peer Review (RPR) meeting for model averaging in the 2018 assessment [@dfo2019].
 The same sets were used here (updated with catch data to 2020 and index data to 2019 where available).
 Full details on the model configurations and assumptions for each scenario are provided in @forrest2020.
 
