@@ -2,7 +2,7 @@
 
 # Figures
 
-```{r fig-map, fig.cap="Carte des zones de gestion 5AB (bassin de la Reine-Charlotte), 5CD (détroit d’Hécate) et 3CD (côte ouest de l’île de Vancouver).", out.width="4in"}
+```{r fig-map, fig.cap="Map of the management areas 5AB (Queen Charlotte Sound), 5CD (Hecate Strait), and 3CD (West Coast Vancouver Island).", out.width="4in"}
 knitr::include_graphics(here::here("report-french/figure/Pcod_3CD5ABCDE_Pic.png"))
 
 ```
@@ -18,9 +18,7 @@ params$area_name <- c("5ABCD", "3CD")
 params$skip_single_variable_models <- FALSE
 
 params$era <- "modern"
-options(OutDec = ".") # avoids "invalid format '%04d'; use format %f, %e, %g or %a for numeric objects"
 source(here::here("R/cpue.R"))
-options(OutDec = ",")
 dfleet_modern <- dfleet
 gg_cpue_modern <- gg_cpue
 cpue_pred_modern <- predictions
@@ -70,27 +68,53 @@ g2 <- cpue_pred_modern %>%
 ```{r fig-summary-indices-3cd, fig.cap="Top: Relative index of abundance from the West Coast Vancouver Island Synoptic Survey, centred by its geometric mean. Bottom: Commercial CPUE, centred by its geometric mean", echo=FALSE}
 
 cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
-  draw_label("Indice de la biomasse (t)", x=  -0.1, y=0.5, vjust= 1.5, angle=90)+
-  draw_label("Année", x=  0.5, y=0, vjust= 0, angle=0)
+  draw_label(en2fr("Index",translate=french), x=  -0.1, y=0.5, vjust= 1.5, angle=90)+
+  draw_label(en2fr("Year",translate=french), x=  0.5, y=0, vjust= 0, angle=0)
 
 ```
 
-```{r fig-catch-3cd, fig.cap="Prises pour la zone 3CD. Les prises canadiennes comprennent les remises à l’eau."}
+```{r fig-iphc-index-3cd}
+#this is not very useful but keep the code so we know how to get iphc data in future
+
+# # Need to check which areas are included. May need to filter data first to be only 3CD,
+# # then plot either series C or D (which are coastwide)
+# iphc.3CD <- iphc.dat %>% 
+#   filter(lat <50.7) #the border of 3D is actually 50.5 but not enough obs if that is used 
+# 
+# # iphc.3CD$ser_longest is series C (does not filter for > 50.6 degrees)
+# glist <- gfiphc::calc_iphc_full_res(iphc.3CD) 
+# 
+# g <- glist$ser_longest %>% 
+#   select(year, I_tBootMean, I_tBootCV) %>%
+#   mutate("GeometricMean"= I_tBootMean/exp(mean(log(I_tBootMean)))) %>%
+#   mutate("LowerG" = exp(log(GeometricMean))-2*I_tBootCV, "UpperG"=exp(log(GeometricMean))+2*I_tBootCV) %>% 
+#   ggplot(aes(year, GeometricMean)) + 
+#   geom_pointrange(aes(ymin=LowerG, ymax=UpperG))+
+#   theme_pbs() +
+#   ylab("IPHC FISS (centred by its geometric mean)")+
+#   xlab("Year") 
+# g 
+#   
+
+```
+
+
+```{r fig-catch-3cd, fig.cap="Catch for Area 3CD. Canadian catch includes at-sea releases."}
 make.catches.plot(catch.3, french=french)
 ```
 
-```{r fig-catch-5abcd, fig.cap="Prises pour la zone 5ABCD. Les prises canadiennes comprennent les remises à l’eau."}
+```{r fig-catch-5abcd, fig.cap="Catch for Area 5ABCD. Canadian catch includes at-sea releases."}
 make.catches.plot(catch.5, french=french)
 ```
 
-```{r surv-canadian, fig.cap="Données des relevés au chalut sur la morue du Pacifique au Canada. La figure illustre la biomasse relative et les intervalles de confiance inférieurs et supérieurs correspondants. Les traits positifs désignent le nombre de traits de chalut qui ont capturé des morues du Pacifique."}
+```{r surv-canadian, fig.cap="Pacific Cod survey data for Canadian trawl surveys. Shown is relative biomass and associated lower and upper confidence intervals. Positive sets refers to the number of trawl sets that caught Pacific Cod. SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey; SYN HS = Hecate Strait synoptic bottom trawl survey; OTHER HS MSA = Hecate Strait Multispecies Assemblage survey."}
 gfplot::tidy_survey_index(dat$survey_index,
   survey = c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
-  plot_survey_index(french=french) + ylab("La biomasse relative")
+  plot_survey_index(french=french)
 ```
 
-```{r tri-fig9, fig.cap="Estimations de la biomasse pour trois séries sur la morue du Pacifique dans la région de Vancouver de la CIPPN (total de la région, eaux canadiennes seulement, eaux américaines seulement) avec des barres d’erreur de 95\\% estimées à partir de 1 000 autoamorçages."}
-knitr::include_graphics(here::here("report-french/paul-figs/fig9-fr.png"))
+```{r tri-fig9, fig.cap="Biomass estimates for Pacific Cod in the International North Pacific Fisheries Commission Vancouver region (Canadian waters only) with 95\\% error bars estimated from 1000 bootstraps."}
+knitr::include_graphics(here::here("report/paul-figs/fig9.png"))
 ```
 
 ```{r cpue-funcs}
@@ -118,9 +142,7 @@ m_historic <- readRDS(here::here("data/generated/cpue-models-pcod-historic.rds")
 
 ```{r cpue-run-modern, message=FALSE, warning=FALSE, results='hide'}
 params$era <- "modern"
-options(OutDec = ".") # avoids "invalid format '%04d'; use format %f, %e, %g or %a for numeric objects"
 source(here::here("R/cpue.R"))
-options(OutDec = ",")
 dfleet_modern <- dfleet
 gg_cpue_modern <- gg_cpue
 cpue_pred_modern <- predictions
@@ -133,19 +155,18 @@ readr::write_csv(cpue_pred_modern, here::here("data/generated/cpue-predictions-m
 readr::write_csv(cpue_pred_hist, here::here("data/generated/cpue-predictions-historical.csv"))
 ```
 
-
-```{r cpue-index-ts-hist, fig.asp=1.15, fig.cap="Modèles de normalisation de la CPUE pour le chalut commercial. Sur tous les graphiques, la ligne noire et la région ombrée en noir indiquent un indice de la CPUE avec seulement un prédicteur d’année. La ligne colorée et les rubans ombrés en couleur illustre un modèle de normalisation qui comprend tous les prédicteurs plus les effets aléatoires lieu-par-année (espace-temps). Les interactions lieu et lieu-année sont ajustées comme des effets aléatoires et toutes les autres variables comme des effets fixes."}
+```{r cpue-index-ts-hist, fig.asp=1.15, fig.cap="Commercial trawl CPUE standardization models for Area 3CD (top) and 5ABCD (bottom). The black line and shaded region indicate a CPUE index with only a year predictor. The coloured line and shaded ribbons shows a standardization model that includes all the predictors plus locality-by-year (space-time) random effects. Locality and locality-year interactions are fit as random effects and all other variables are fit as fixed effects."}
 make_cpue_ts_dat(cpue_pred_hist) %>% make_cpue_ts_plot() +
-  ggtitle("1956-1995 CPUE") + ylab("CPUE divisée par la moyenne géométrique") +
+  ggtitle("1956-1995 CPUE") +
   scale_colour_brewer(palette = "Dark2") +
   scale_fill_brewer(palette = "Dark2")
 ```
 
-(ref:caption-cpue-index-ts-modern) Même chose que pour la figure \@ref(fig:cpue-index-ts-hist), mais pour les données de 1996 à 2017. Les interactions lieu, navire et lieu-année sont ajustées comme des effets aléatoires et toutes les autres variables comme des effets fixes.
+(ref:caption-cpue-index-ts-modern) Same as Figure \@ref(fig:cpue-index-ts-hist) but for the 1996 to 2019 data for Area 3CD (top) and 5ABCD (bottom). Locality, vessel, and locality-year interactions are fit as random effects and all other variables are fit as fixed effects.
 
 ```{r cpue-index-ts-modern, fig.asp=1.55, fig.cap="(ref:caption-cpue-index-ts-modern)", out.width="5.2in", fig.width=6.5}
 make_cpue_ts_dat(cpue_pred_modern) %>% make_cpue_ts_plot() +
-  ggtitle("1996+ CPUE") + ylab("CPUE divisée par la moyenne géométrique")+
+  ggtitle("1996+ CPUE") +
   scale_colour_brewer(palette = "Dark2") +
   scale_fill_brewer(palette = "Dark2")
 ```
@@ -157,12 +178,12 @@ mw3CD <- read_csv(here::here("data/results/AnnualMeanWeight_3CD.csv"))
 ```
 
 
-```{r fig-base-index-fits-3cd, fig.cap="Ajustements de la DPM aux indices observés de l’abondance (points) pour le modèle de référence de la zone 3CD, d’après : a) le relevé synoptique sur la côte ouest de l’île de Vancouver, b) les CPUE commerciales avant 1996, c) les CPUE commerciales après 1995 et d) le relevé triennal du NMFS (partie canadienne). Dans un souci de clarté, seuls les résultats de la DPM sont illustrés."}
+```{r fig-base-index-fits-3cd, fig.cap="Reference model MPD fits to observed indices of abundance (points) for Area 3CD from: (a) the WCVI Synoptic Survey, (b) Commercial CPUE pre-1996, (c) Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion). For clarity, only MPD results are shown."}
 plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french),
           i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)
-            + ylab("CPUE commerciales (kg/heure)"),
+            + ylab("Commercial CPUE (kg/hour)"),
           i.plot(base.model.3cd, base.model.3cd.name, 3, every = 5, french=french)
-            + ylab("CPUE commerciales (kg/heure)"),
+            + ylab("Commercial CPUE (kg/hour)"),
           i.plot(base.model.3cd, base.model.3cd.name, 4, every = 5, french=french),
           nrow = 2,
           ncol = 2,
@@ -171,21 +192,21 @@ plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=frenc
 ```
 
 
-```{r fig-base-mean-weight-3cd, fig.cap="Ajustement de la DPM aux données sur le poids moyen pour le modèle de référence de la zone 3CD. Dans un souci de clarté, seuls les résultats de la DPM sont illustrés."}
+```{r fig-base-mean-weight-3cd, fig.cap="Reference model MPD fit to the mean weight data for Area 3CD. For clarity, only MPD results are shown."}
 plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
           mw.compare.plot(base.model.3cd[[1]], french=french),
           nrow = 1,
           ncol = 2)
 ```
 
-```{r fig-base-index-fits-5abcd, fig.cap="Ajustements de la DPM aux indices observés de l’abondance (points) pour le modèle de référence de la zone 5ABCD, d’après : a) le relevé de la communauté d’espèces dans le détroit d’Hécate, b) le relevé synoptique dans le bassin de la Reine-Charlotte, c) le relevé synoptique dans le détroit d’Hécate, d) les CPUE commerciales avant 1996 et e) les CPUE commerciales après 1995."}
+```{r fig-base-index-fits-5abcd, fig.cap="Reference model MPD fits to observed indices of abundance (points) for Area 5ABCD from: (a) the HS Assemblage survey, (b) the QCS Synoptic Survey, (c) the HS Synoptic Survey, (d) Commercial CPUE pre-1996, and (e) Commercial CPUE post-1995. For clarity, only MPD results are shown."}
 plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french),
           i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french),
           i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french),
           i.plot(base.model.5abcd, base.model.5abcd.name, 4, every = 10, french=french)
-            + ylab("CPUE commerciales (kg/heure)"),
+            + ylab("Commercial CPUE (kg/hour)"),
           i.plot(base.model.5abcd, base.model.5abcd.name, 5, every = 5, french=french)
-            + ylab("CPUE commerciales (kg/heure)"),
+            + ylab("Commercial CPUE (kg/hour)"),
           nrow = 2,
           ncol = 3,
           labels = c("(a)", "(b)", "(c)", "(d)", "(e)"),
@@ -193,23 +214,14 @@ plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=f
 ```
 
 
-```{r fig-base-mean-weight-5abcd, fig.cap="Ajustement de la DPM aux données sur le poids moyen pour le modèle de référence de la zone 5ABCD."}
+```{r fig-base-mean-weight-5abcd, fig.cap="Reference model MPD fit to the mean weight data for Area 5ABCD. For clarity, only MPD results are shown"}
 plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, french=french),
           mw.compare.plot(base.model.5abcd[[1]], french=french),
           nrow = 1,
           ncol = 2)
 ```
 
-```{r fig-model-average-biomass-comp-3cd, fig.cap="Estimations a priori de la biomasse pour la moyenne des modèles fixée pour la zone 3CD. La ligne pointillée verte représente la valeur médiane du point de référence supérieur du stock (RSS). La ligne pointillée rouge représente la valeur médiane du point de référence limite (PRL)."}
-b.plot(desc.models.3cd,
-       desc.models.3cd.name,
-       depl = FALSE,
-       add.hist.ref = TRUE,
-       lrp = c(1986, 1986),
-       usr = c(1956, 2004), french=french)
-```
-
-```{r fig-model-average-biomass-3cd, fig.cap="Biomasse a posteriori combinée pour la moyenne des modèles fixée pour la zone 3CD. La ligne pointillée verte représente la valeur médiane du point de référence supérieur du stock (RSS). La ligne pointillée rouge représente la valeur médiane du point de référence limite (PRL)."}
+```{r fig-model-average-biomass-3cd, fig.cap="Combined posterior biomass for the model-averaged set for Area 3CD. Thick solid line shows the posterior median and the grey shaded region represents the 95\\% credible interval. Green dashed line shows the median USR; red dashed line shows the median LRP. Red and green shaded intervals represent the 95\\% credible interval of the LRP and USR, respectively."}
 b.plot(avg.model.3cd,
        base.model.3cd.name,
        depl = FALSE,
@@ -218,24 +230,16 @@ b.plot(avg.model.3cd,
        usr = c(1956, 2004), french=french)
 ```
 
-```{r fig-model-average-f-3cd, fig.cap="Combined posterior fishing mortality for the model-averaged set for Area 3CD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval. Black dashed line shows the median LRR and the shaded region represents the 95\\% credible interval."}
-f.plot(desc.models.3cd,
-       desc.models.3cd.name,
+```{r fig-model-average-f-3cd, fig.cap="Combined posterior fishing mortality for the model-averaged set for Area 3CD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval. Black dashed line shows the median LRR and the horizontal shaded region represents the 95\\% credible interval."}
+f.plot(avg.model.3cd,
+       base.model.3cd.name,
        add.hist.ref = TRUE,
         lrr = c(1956, 2004), 
        french=french)
+
 ```
 
-```{r fig-model-average-biomass-comp-5abcd, fig.cap="Posterior estimates of biomass for the model-averaged set for Area 5ABCD. Thick solid lines show the posterior median and the shaded regions represent the 95\\% credible interval. Green dashed line shows the median USR; red dashed line shows the median LRP."}
-b.plot(desc.models.5abcd,
-       desc.models.5abcd.name,
-       depl = FALSE,
-       add.hist.ref = TRUE,
-       lrp = c(2000, 2000),
-       usr = c(1956, 2004), french=french)
-```
-
-```{r fig-model-average-biomass-5abcd, fig.cap="Combined posterior biomass for the averaged models, Area 5ABCD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval.  Green dashed line shows the median USR; red dashed line shows the median LRP."}
+```{r fig-model-average-biomass-5abcd, fig.cap="Combined posterior biomass for the averaged models, Area 5ABCD. Thick solid line shows the posterior median and the grey shaded region represents the 95\\% credible interval. Green dashed line shows the median USR; red dashed line shows the median LRP. Red and green shaded intervals represent the 95\\% credible interval of the LRP and USR, respectively."}
 b.plot(avg.model.5abcd,
        base.model.5abcd.name,
        depl = FALSE,
@@ -245,15 +249,17 @@ b.plot(avg.model.5abcd,
 ```
 
 
-```{r fig-model-average-f-5abcd, fig.cap="Combined posterior fishing mortality for the model-averaged set for Area 5ABCD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval. Black dashed line shows the median LRR and the shaded region represents the 95\\% credible interval. "}
-f.plot(desc.models.5abcd,
-       desc.models.5abcd.name,
+```{r fig-model-average-f-5abcd, fig.cap="Combined posterior fishing mortality for the model-averaged set for Area 5ABCD. Thick solid line shows the posterior median and the shaded region represents the 95\\% credible interval. Black dashed line shows the median LRR and the horizontal shaded region represents the 95\\% credible interval. "}
+f.plot(avg.model.5abcd,
+       base.model.5abcd.name,
        add.hist.ref = TRUE,
        lrr = c(1956, 2004), 
        french=french)
+
+#REPLACE WITH AVERAGED PLOT
 ```
 
-```{r fig-model-average-biomass-3cd-proj, fig.cap="Combined posterior estimates of biomass for the model-averaged set for Area 3CD with projections (to the end of 2019). Green dashed line shows the median USR; red dashed line shows the median LRP. The coloured regions to the right of the vertical line represent projections based on various TACs. The line represents the posterior median and the shaded region represents the 95\\% credible interval.For clarity, years before 2010 are removed."}
+```{r fig-model-average-biomass-3cd-proj, fig.cap="Combined posterior estimates of biomass for the model-averaged set for Area 3CD with projections (to the beginning of 2022). Thick black line shows the posterior median and the grey shaded region represents the 95\\% credible interval. Green dashed line shows the median USR; red dashed line shows the median LRP. Red and green shaded intervals represent the 95\\% credible interval of the LRP and USR, respectively. The coloured regions to the right of the vertical dashed line represent projections based on various 2021 catch levels. For clarity, years before 2010 are removed."}
 b.plot(avg.model.3cd,
        base.model.3cd.name,
        depl = FALSE,
@@ -267,7 +273,9 @@ b.plot(avg.model.3cd,
        x.every = 2, french=french)
 ```
 
-```{r fig-model-average-biomass-5abcd-proj, fig.cap="Combined posterior estimates of biomass for the model-averaged set for Area 5ABCD with projections (to the end of 2019).  Green dashed line shows the median USR; red dashed line shows the median LRP. The coloured regions to the right of the vertical line represent projections based on various TACs. The line represents the posterior median and the shaded region represents the 95\\% credible interval. For clarity, years before 2010 are removed."}
+(ref:fig-model-average-biomass-5abcd-proj) Same as Figure \@ref(fig:fig-model-average-biomass-3cd-proj) but for Area 5ABCD.
+
+```{r fig-model-average-biomass-5abcd-proj, fig.cap="(ref:fig-model-average-biomass-5abcd-proj)"}
 b.plot(avg.model.5abcd,
        base.model.5abcd.name,
        depl = FALSE,
