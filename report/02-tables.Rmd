@@ -58,7 +58,7 @@ make.parameters.table(base.model.3cd,
     "in the Reference Case, Area 3CD. The survey catchability parameter for WCVI ($q_1$) was estimated with the prior probability distribution $\\textrm{Normal}(ln(0.228),0.3)$. The other survey catchability parameters were estimated without priors."),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
-  omit_selectivity_pars = TRUE)
+  omit_selectivity_pars = TRUE, french=french)
 ```
 
 
@@ -68,7 +68,7 @@ make.parameters.table(base.model.5abcd,
     "in the Reference Case, Area 5ABCD. The survey catchability parameters for QCS and HS ($q_2$ and $q_3$) were estimated with the prior probability distributions $\\textrm{Normal}(ln(0.408),0.3)$ and $\\textrm{Normal}(ln(0.0654,),0.3)$, respectively. The other survey catchability parameters were estimated without priors."),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
-  omit_selectivity_pars = TRUE)
+  omit_selectivity_pars = TRUE, french=french)
 ```
 
 \clearpage
@@ -80,7 +80,7 @@ make.parameters.est.table(base.model.3cd,
     "97.5\\textsuperscript{th} percentile) and MPD ",
     "estimates of key parameters from the Reference Case, Area 3CD. $R_0$ is in thousands of fish. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
     q.3cd.desc),
-  omit_pars = pars_est_omit)
+  omit_pars = pars_est_omit, french=french)
 ```
 
 ```{r tab-param-est-table-5abcd, results='asis'}
@@ -90,7 +90,7 @@ make.parameters.est.table(base.model.5abcd,
     "97.5\\textsuperscript{th} percentile) and MPD ",
     "estimates of key parameters from the Reference Case, Area 5ABCD. $R_0$ is in thousands of fish. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
     q.5abcd.desc),
-  omit_pars = pars_est_omit)
+  omit_pars = pars_est_omit, french=french)
 ```
 
 \clearpage
@@ -105,7 +105,7 @@ make.ref.points.table(c(base.model.3cd,
                         caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
                                          "97.5\\textsuperscript{th} percentile) of reference points for ",
                                          "model-averaged Area 3CD. ",
-                                         "Biomass is in tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."))
+                                         "Biomass is in tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
 ```
 
 
@@ -119,7 +119,7 @@ make.ref.points.table(c(base.model.5abcd,
                         caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
                                          "97.5\\textsuperscript{th} percentile) of reference points for ",
                                          "model-averaged Area 5ABCD. ",
-                                         "Biomass is in tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."))
+                                         "Biomass is in tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
 ```
 
 \clearpage
