@@ -68,8 +68,8 @@ g2 <- cpue_pred_modern %>%
 ```{r fig-summary-indices-3cd, fig.cap="Top: Relative index of abundance from the West Coast Vancouver Island Synoptic Survey, centred by its geometric mean. Bottom: Commercial CPUE, centred by its geometric mean", echo=FALSE}
 
 cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
-  draw_label("Relative index of abundance", x=  -0.1, y=0.5, vjust= 1.5, angle=90)+
-  draw_label("Year", x=  0.5, y=0, vjust= 0, angle=0)
+  draw_label(en2fr("Index",translate=french), x=  -0.1, y=0.5, vjust= 1.5, angle=90)+
+  draw_label(en2fr("Year",translate=french), x=  0.5, y=0, vjust= 0, angle=0)
 
 ```
 
