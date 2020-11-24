@@ -1,9 +1,9 @@
 ---
-title: "Status of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020"
+title: "Status Update of Pacific Cod (*Gadus macrocephalus*) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020"
 title_short: "DRAFT --- Do not cite or circulate" #"DRAFT Pacific Cod status in 2020"
-year: 2020
-month: November
-report_number: 999
+year: 2021
+month: October
+report_number: 2
 approver: |
   Carmel Lowe\
   Regional Director
