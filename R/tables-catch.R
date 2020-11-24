@@ -95,16 +95,24 @@ catch.table <- function(dat,
   }
 
   #cut off first three years
-  kable(j[4:nrow(j),],
-        caption = cap,
-        booktabs = TRUE,
-        longtable = TRUE,
-        linesep = "",
-        escape = FALSE, format = "latex",
-        align = c("l", "r", "r", "r", "r", "r")) %>%
+
+
+  csasdown::csas_table(j[4:nrow(j),], caption = cap, escape = FALSE,
+    align = c("l", "r", "r", "r", "r", "r")) %>%
     column_spec(c(2, 4, 5, 6), width = "2cm") %>%
     column_spec(3, width = "4cm") %>%
     kable_styling(latex_options = c("hold_position"))
+
+  # kable(j[4:nrow(j),],
+  #       caption = cap,
+  #       booktabs = TRUE,
+  #       longtable = TRUE,
+  #       linesep = "",
+  #       escape = FALSE, format = "latex",
+  #       align = c("l", "r", "r", "r", "r", "r")) %>%
+  #   column_spec(c(2, 4, 5, 6), width = "2cm") %>%
+  #   column_spec(3, width = "4cm") %>%
+  #   kable_styling(latex_options = c("hold_position"))
 
 }
 
@@ -136,12 +144,14 @@ tac.table <- function(tac,
 
   colnames(tac) <- latex.bold(colnames(tac))
 
-  kable(tac, caption = cap,
-        booktabs = TRUE,
-        longtable = TRUE,
-        linesep = "",
-        escape = FALSE, format = "latex",
-        align = c("l", "r", "r", "r", "r", "l")) %>%
-    kable_styling(latex_options = c("hold_position", "repeat_header"), font_size = 8.5)
+  csasdown::csas_table(tac, caption = cap, escape = FALSE, align = c("l", "r", "r", "r", "r", "l"),
+    font_size = 8.5, latex_options = c("hold_position"))
+  # kable(tac, caption = cap,
+  #       booktabs = TRUE,
+  #       longtable = TRUE,
+  #       linesep = "",
+  #       escape = FALSE, format = "latex",
+  #       align = c("l", "r", "r", "r", "r", "l")) %>%
+  #   kable_styling(latex_options = c("hold_position", "repeat_header"), font_size = 8.5)
 
 }
