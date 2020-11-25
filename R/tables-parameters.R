@@ -547,6 +547,7 @@ make.ref.points.table <- function(models,
     rename(`Reference point` = refpt_names)
   # Escape percent signs in column names for latex
   names(tab) <- stringr::str_replace(names(tab), "%", "\\\\%")
+
   csasdown::csas_table(tab,
                        format = "latex",
                        align = get.align(ncol(tab))[-1],
@@ -594,6 +595,12 @@ make.value.table <- function(model,
   colnames(tab) <- en2fr(colnames(tab), translate = french, allow_missing = TRUE)
   colnames(tab) <- latex.bold(latex.perc(colnames(tab)))
 
+  if (french) {
+    for (i in seq_len(ncol(tab))) {
+      tab[,i] <- gsub(",", " ", tab[,i])
+      tab[,i] <- gsub("\\.", ",", tab[,i])
+    }
+  }
 
   knitr::kable(tab,
     caption = caption,

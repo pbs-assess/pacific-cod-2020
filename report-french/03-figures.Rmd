@@ -18,7 +18,9 @@ params$area_name <- c("5ABCD", "3CD")
 params$skip_single_variable_models <- FALSE
 
 params$era <- "modern"
+options(OutDec = ".") # avoids "invalid format '%04d'; use format %f, %e, %g or %a for numeric objects"
 source(here::here("R/cpue.R"))
+options(OutDec = ",")
 dfleet_modern <- dfleet
 gg_cpue_modern <- gg_cpue
 cpue_pred_modern <- predictions
