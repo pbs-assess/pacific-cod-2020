@@ -546,6 +546,7 @@ make.ref.points.table <- function(models,
     latex_names <- c(latex_names, paste0(latex.subscr.ital("F", yr_f_end),
                                          "/LRR"))
   }
+
   tab$refpt_names <- latex_names
   tab <- tab %>%
     rename(`Reference point` = refpt_names)
@@ -561,11 +562,13 @@ make.ref.points.table <- function(models,
     }
   }
 
+  bigmark <- ifelse(french, " ", ",")
+
   csasdown::csas_table(tab,
                        format = "latex",
                        align = get.align(ncol(tab))[-1],
                        caption = caption,
-                       row.names = FALSE)
+                       row.names = FALSE, format.args = list(big.mark = " "))
 
 }
 
