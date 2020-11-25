@@ -2,7 +2,7 @@
 
 # Figures
 
-```{r fig-map, fig.cap="Map of the management areas 5AB (Queen Charlotte Sound), 5CD (Hecate Strait), and 3CD (West Coast Vancouver Island).", out.width="4in"}
+```{r fig-map, fig.cap="Carte des zones de gestion 5AB (bassin de la Reine-Charlotte), 5CD (détroit d’Hécate) et 3CD (côte ouest de l’île de Vancouver).", out.width="4in"}
 knitr::include_graphics(here::here("report-french/figure/Pcod_3CD5ABCDE_Pic.png"))
 
 ```
@@ -101,22 +101,22 @@ cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
 ```
 
 
-```{r fig-catch-3cd, fig.cap="Catch for Area 3CD. Canadian catch includes at-sea releases."}
+```{r fig-catch-3cd, fig.cap="Prises pour la zone 3CD. Les prises canadiennes comprennent les remises à l’eau."}
 make.catches.plot(catch.3, french=french)
 ```
 
-```{r fig-catch-5abcd, fig.cap="Catch for Area 5ABCD. Canadian catch includes at-sea releases."}
+```{r fig-catch-5abcd, fig.cap="Prises pour la zone 5ABCD. Les prises canadiennes comprennent les remises à l’eau."}
 make.catches.plot(catch.5, french=french)
 ```
 
-```{r surv-canadian, fig.cap="Pacific Cod survey data for Canadian trawl surveys. Shown is relative biomass and associated lower and upper confidence intervals. Positive sets refers to the number of trawl sets that caught Pacific Cod. SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey; SYN HS = Hecate Strait synoptic bottom trawl survey; OTHER HS MSA = Hecate Strait Multispecies Assemblage survey."}
+```{r surv-canadian, fig.cap="Données des relevés au chalut sur la morue du Pacifique au Canada. La figure illustre la biomasse relative et les intervalles de confiance inférieurs et supérieurs correspondants. Les traits positifs désignent le nombre de traits de chalut qui ont capturé des morues du Pacifique. SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey; SYN HS = Hecate Strait synoptic bottom trawl survey; OTHER HS MSA = Hecate Strait Multispecies Assemblage survey."}
 gfplot::tidy_survey_index(dat$survey_index,
   survey = c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
   plot_survey_index(french=french)
 ```
 
-```{r tri-fig9, fig.cap="Biomass estimates for Pacific Cod in the International North Pacific Fisheries Commission Vancouver region (Canadian waters only) with 95\\% error bars estimated from 1000 bootstraps."}
-knitr::include_graphics(here::here("report/paul-figs/fig9.png"))
+```{r tri-fig9, fig.cap="Estimations de la biomasse pour trois séries sur la morue du Pacifique dans la région de Vancouver de la CIPPN (total de la région, eaux canadiennes seulement, eaux américaines seulement) avec des barres d’erreur de 95\\% estimées à partir de 1 000 autoamorçages."}
+knitr::include_graphics(here::here("report-french/paul-figs/fig9-fr.png"))
 ```
 
 ```{r cpue-funcs}
@@ -163,7 +163,8 @@ readr::write_csv(cpue_pred_hist, here::here("data/generated/cpue-predictions-his
 make_cpue_ts_dat(cpue_pred_hist) %>% make_cpue_ts_plot() +
   ggtitle("1956-1995 CPUE") +
   scale_colour_brewer(palette = "Dark2") +
-  scale_fill_brewer(palette = "Dark2")
+  scale_fill_brewer(palette = "Dark2") +
+  ylab("CPUE divisée par la moyenne géométrique")
 ```
 
 (ref:caption-cpue-index-ts-modern) Same as Figure \@ref(fig:cpue-index-ts-hist) but for the 1996 to 2019 data for Area 3CD (top) and 5ABCD (bottom). Locality, vessel, and locality-year interactions are fit as random effects and all other variables are fit as fixed effects.
@@ -172,7 +173,8 @@ make_cpue_ts_dat(cpue_pred_hist) %>% make_cpue_ts_plot() +
 make_cpue_ts_dat(cpue_pred_modern) %>% make_cpue_ts_plot() +
   ggtitle("1996+ CPUE") +
   scale_colour_brewer(palette = "Dark2") +
-  scale_fill_brewer(palette = "Dark2")
+  scale_fill_brewer(palette = "Dark2")+ 
+  ylab("CPUE divisée par la moyenne géométrique")
 ```
 
 
