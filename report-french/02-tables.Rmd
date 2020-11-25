@@ -7,14 +7,14 @@ catch.table(catch.3,
             catch.3.discards,
             pre.1996.discards.3cd,
             area = "3CD",
- cap = paste0("Reported catch (mt) of Pacific Cod in Area 3CD ",
-              "by Canada and the USA, ",
+ cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 5ABCD ",
+              "par le Canada et les États-Unis, ",
               min(catch.3$year)+3, "--", max(catch.3$year),
-              ". The reported releases at sea (discards) for the period ", min(catch.3$year)+3,
-              "--1995 are ",
-              "likely unrepresentative of true discarding because the estimates were taken ",
-              "from logbooks in the absence of observers. Discard estimates since 1996 are based on at-sea ",
-              "observations and are considered to be more representative of true discarding. The 2020 total catch estimate is extrapolated from the combined landings plus discards taken up to September 30, 2020 (see text). Therefore 2020 nominal landings and discards are not shown individually. Numbers are rounded for presentation."), french=french)
+              ". Les rejets déclarés pour la période ", min(catch.3$year)+3,
+              "--1995 ne sont ",
+              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
+              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
+              "observations en mer et sont considérées comme plus représentatives des rejets réels. The 2020 total catch estimate is extrapolated from the combined landings plus discards taken up to September 30, 2020 (see text). Therefore 2020 nominal landings and discards are not shown individually. Numbers are rounded for presentation."), french=french)
 ```
 
 \clearpage
@@ -24,14 +24,14 @@ catch.table(catch.5,
             catch.5.discards,
             pre.1996.discards.5abcd,
             area = "5ABCD",
- cap = paste0("Reported catch (mt) of Pacific Cod in Area 5ABCD ",
-              "by Canada and the USA, ",
+ cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 5ABCD ",
+              "par le Canada et les États-Unis, ",
               min(catch.5$year)+3, "--", max(catch.5$year),
-              ". The reported releases at sea (discards) for the period ", min(catch.5$year)+3,
-              "--1995 are ",
-              "likely unrepresentative of true discarding because the estimates were taken ",
-              "from logbooks in the absence of observers. Discard estimates since 1996 are based on at-sea ",
-              "observations and are considered to be more representative of true discarding. The 2020 total catch estimate is extrapolated from the combined landings plus discards taken up to September 30, 2020 (see text). Therefore 2020 nominal landings and discards are not shown individually. Numbers are rounded for presentation."),      french=french)
+              ". Les rejets déclarés pour la période ", min(catch.5$year)+3,
+              "--1995 ne sont ",
+              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
+              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
+              "observations en mer et sont considérées comme plus représentatives des rejets réels.  The 2020 total catch estimate is extrapolated from the combined landings plus discards taken up to September 30, 2020 (see text). Therefore 2020 nominal landings and discards are not shown individually. Numbers are rounded for presentation."),      french=french)
 
 ```
 
@@ -56,8 +56,8 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 ```{r tab-param-table-3cd, results='asis'}
 make.parameters.table(base.model.3cd,
-  caption = paste0("Estimated and fixed parameters and prior probability distributions used ",
-    "in the Reference Case, Area 3CD. The survey catchability parameter for WCVI ($q_1$) was estimated with the prior probability distribution $\\textrm{Normal}(ln(0.228),0.3)$. The other survey catchability parameters were estimated without priors."),
+  caption = paste0("Paramètres estimés et fixes et distributions de probabilité a priori utilisés ",
+    "dans le scénario de référence, zone 3CD. The survey catchability parameter for WCVI ($q_1$) was estimated with the prior probability distribution $\\textrm{Normal}(ln(0.228),0.3)$. The other survey catchability parameters were estimated without priors."),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
   omit_selectivity_pars = TRUE, french=french)
@@ -66,8 +66,8 @@ make.parameters.table(base.model.3cd,
 
 ```{r tab-param-table-5abcd, results='asis'}
 make.parameters.table(base.model.5abcd,
-  caption = paste0("Estimated and fixed parameters and prior probability distributions used ",
-    "in the Reference Case, Area 5ABCD. The survey catchability parameters for QCS and HS ($q_2$ and $q_3$) were estimated with the prior probability distributions $\\textrm{Normal}(ln(0.408),0.3)$ and $\\textrm{Normal}(ln(0.0654,),0.3)$, respectively. The other survey catchability parameters were estimated without priors."),
+  caption = paste0("Paramètres estimés et fixes et distributions de probabilité a priori utilisés ",
+    "dans le scénario de référence, zone 5ABCD. The survey catchability parameters for QCS and HS ($q_2$ and $q_3$) were estimated with the prior probability distributions $\\textrm{Normal}(ln(0.408),0.3)$ and $\\textrm{Normal}(ln(0.0654,),0.3)$, respectively. The other survey catchability parameters were estimated without priors."),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
   omit_selectivity_pars = TRUE, french=french)
@@ -78,9 +78,9 @@ make.parameters.table(base.model.5abcd,
 ```{r tab-param-est-table-3cd, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$","$B_0$")
 make.parameters.est.table(base.model.3cd,
-  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
-    "97.5\\textsuperscript{th} percentile) and MPD ",
-    "estimates of key parameters from the Reference Case, Area 3CD. $R_0$ is in thousands of fish. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
+  caption = paste0("Valeur a posteriori (centile 2.5\\textsuperscript{th}, médiane et ",
+    "centile 97.5 \\textsuperscript{th}) et estimations de la DPM ",
+    "estimations des paramètres clés du scénario de référence, zone 3CD. $R_0$ est en milliers de poissons. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
     q.3cd.desc),
   omit_pars = pars_est_omit, french=french)
 ```
@@ -88,9 +88,9 @@ make.parameters.est.table(base.model.3cd,
 ```{r tab-param-est-table-5abcd, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$", "$B_0$")
 make.parameters.est.table(base.model.5abcd,
-  caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
-    "97.5\\textsuperscript{th} percentile) and MPD ",
-    "estimates of key parameters from the Reference Case, Area 5ABCD. $R_0$ is in thousands of fish. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
+  caption = paste0("Valeur a posteriori (centile 2.5\\textsuperscript{th}, médiane et ",
+    "centile 97.5 \\textsuperscript{th}) et estimations de la DPM ",
+    "estimations des paramètres clés du scénario de référence, zone 5ABCD. $R_0$ est en milliers de poissons. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
     q.5abcd.desc),
   omit_pars = pars_est_omit, french=french)
 ```
@@ -104,10 +104,9 @@ make.ref.points.table(c(base.model.3cd,
                         lrp_range = 1986,
                         usr_range = 1956:2004,
                         digits = 2,
-                        caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
-                                         "97.5\\textsuperscript{th} percentile) of reference points for ",
-                                         "model-averaged Area 3CD. ",
-                                         "Biomass is in tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
+                        caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th} , Median, and centile 97,5\\textsuperscript{th}  ",
+                                       ") des points de référence pour la zone 3CD. ",
+                                       "La biomasse est en tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
 ```
 
 
@@ -118,10 +117,9 @@ make.ref.points.table(c(base.model.5abcd,
                         lrp_range = 2000,
                         usr_range = 1956:2004,
                         digits = 2,
-                        caption = paste0("Posterior (2.5\\textsuperscript{th} percentile, Median, and ",
-                                         "97.5\\textsuperscript{th} percentile) of reference points for ",
-                                         "model-averaged Area 5ABCD. ",
-                                         "Biomass is in tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
+                        caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th} , Median, and centile 97,5\\textsuperscript{th}  ",
+                                       ") des points de référence pour la zone 5ABCD. ",
+                                       "La biomasse est en tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
 ```
 
 \clearpage
