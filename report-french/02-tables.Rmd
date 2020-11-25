@@ -46,7 +46,9 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
   dplyr::rename(`Survey abbrev.` = survey_abbrev, Year = year, Biomass = biomass,
     CV = re, `Lower CI` = lowerci, `Upper CI` = upperci, Sets = num_sets, `Positive sets` = num_pos_sets) %>%
   dplyr::arrange(`Survey abbrev.`, Year) %>%
-  knitr::kable(caption = "Pacific Cod survey data for Canadian trawl surveys in metric tons (without accounting for survey catchability). Positive sets refers to the number of trawl sets that caught Pacific Cod. OTHER HS MSA = Hecate Strait Multispecies Assemblage survey; SYN HS = Hecate Strait synoptic bottom trawl survey; SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey.", booktabs = TRUE, linesep = "", 
+  dplyr::rename('Relevé' = `Survey abbrev.`, 'Anneé' = Year, Biomasse = Biomass,
+    `IC inf.` = `Lower CI`, `IC sup.` =`Upper CI`, Traits = Sets, `Traits  positifs` = `Positive sets` ) %>% 
+  knitr::kable(caption = "Données des relevés au chalut sur la morue du Pacifique au Canada. La biomasse relative et les intervalles de confiance (IC) inférieurs et supérieurs correspondants sont indiqués en tonnes métriques (sans tenir compte de la capturabilité du relevé). Les traits positifs désignent le nombre de traits de chalut qui ont capturé des morues du Pacifique.", booktabs = TRUE, linesep = "", 
     format = "pandoc")
 ```
 
