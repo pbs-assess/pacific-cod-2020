@@ -568,6 +568,8 @@ make.ref.points.table <- function(models,
                        row.names = FALSE)
 
 }
+
+
 make.value.table <- function(model,
   type,
   digits = 3,

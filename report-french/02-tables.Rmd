@@ -49,7 +49,7 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
   dplyr::rename('Relevé' = `Survey abbrev.`, 'Anneé' = Year, Biomasse = Biomass,
     `IC inf.` = `Lower CI`, `IC sup.` =`Upper CI`, Traits = Sets, `Traits  positifs` = `Positive sets` ) %>% 
   knitr::kable(caption = "Données des relevés au chalut sur la morue du Pacifique au Canada. La biomasse relative et les intervalles de confiance (IC) inférieurs et supérieurs correspondants sont indiqués en tonnes métriques (sans tenir compte de la capturabilité du relevé). Les traits positifs désignent le nombre de traits de chalut qui ont capturé des morues du Pacifique.", booktabs = TRUE, linesep = "", 
-    format = "pandoc")
+    format = "pandoc", format.args = list(big.mark = " "))
 ```
 
 \clearpage
