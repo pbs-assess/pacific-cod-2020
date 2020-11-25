@@ -128,7 +128,7 @@ make.ref.points.table(c(base.model.5abcd,
 
 ```{r summary-tab-decision-avg-3cd, results='asis'}
  decision.table(avg.model.3cd,
-                caption = paste0("Decision table with model averaging for Area 3CD. Models averaged are: ",
+                caption = paste0("Tableau de décision avec moyenne des modèles pour la zone 3CD. Les modèles pris en compte dans la moyenne sont les suivants : ",
                                  and.string(c(base.model.3cd.name, sens.models.name.13.sub)),
                                  "."), french=french) #
 ```
@@ -138,7 +138,7 @@ make.ref.points.table(c(base.model.5abcd,
 
 ```{r summary-tab-decision-avg-5abcd, results='asis'}
  decision.table(avg.model.5abcd,
-                caption = paste0("Decision table with model averaging for Area 5ABCD. Models averaged are: ",
+                caption = paste0("Tableau de décision avec moyenne des modèles pour la zone 5ABCD. Les modèles pris en compte dans la moyenne sont les suivants : ",
                                  and.string(c(base.model.5abcd.name, sens.models.name.6.sub)),
                                  "."), french=french) #
 ```
