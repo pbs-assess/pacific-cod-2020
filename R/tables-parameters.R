@@ -239,8 +239,7 @@ if(french==TRUE){
 
 
   colnames(tab) <- c(latex.bold(en2fr("Parameter", translate = french, allow_missing = TRUE)),
-                     latex.mlc(en2fr(c("Number",
-                                 "estimated"), translate = french, allow_missing = TRUE)),
+                     latex.mlc(en2fr("Number estimated", translate = french, allow_missing = TRUE)),
                      latex.mlc(en2fr(c("Bounds", "[low, high]"), translate = french, allow_missing = TRUE)),
                      latex.mlc(c("Prior (mean, SD)", "(single value = fixed)")))
 
@@ -554,6 +553,8 @@ make.ref.points.table <- function(models,
   names(tab) <- stringr::str_replace(names(tab), "%", "\\\\%")
 
   if (french) {
+    if (french) options(OutDec = ",")
+
     for (i in seq_len(ncol(tab))) {
       tab[,i] <- gsub(",", " ", tab[,i])
       tab[,i] <- gsub("\\.", ",", tab[,i])
