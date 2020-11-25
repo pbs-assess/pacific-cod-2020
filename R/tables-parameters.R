@@ -425,7 +425,7 @@ make.ref.points.table <- function(models,
                                   upper = 0.975,
                                   format = "pandoc",
                                   french = FALSE){
-
+  if (french) options(OutDec = ".")
   probs <- c(lower, 0.5, upper)
 
   # Bind all models posteriors together and apply quantiles on them all together
@@ -509,6 +509,11 @@ make.ref.points.table <- function(models,
   tab[c(5, 6, 7), -1] <- map_dfc(tab[c(5, 6, 7), -1], ~{round(as.numeric(.x), 3)})
   # -----
 
+  if(french) {
+    names(tab) <- gsub("%", " %", names(tab))
+    names(tab) <- gsub(".5", ",5", names(tab))
+  }
+
   if(!is.na(lrp_range[1])){
     latex_names <- c(latex_names, paste0("LRP (", lrp_range ,")"))
   }
@@ -547,6 +552,13 @@ make.ref.points.table <- function(models,
     rename(`Reference point` = refpt_names)
   # Escape percent signs in column names for latex
   names(tab) <- stringr::str_replace(names(tab), "%", "\\\\%")
+
+  if (french) {
+    for (i in seq_len(ncol(tab))) {
+      tab[,i] <- gsub(",", " ", tab[,i])
+      tab[,i] <- gsub("\\.", ",", tab[,i])
+    }
+  }
 
   csasdown::csas_table(tab,
                        format = "latex",
