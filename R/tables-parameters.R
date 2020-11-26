@@ -562,13 +562,52 @@ make.ref.points.table <- function(models,
     }
   }
 
-  bigmark <- ifelse(french, " ", ",")
+  frenchify <- function(x) {
+    dec_pos <- stringr::str_locate(x, ",")[[1]]
+    str_len <- stringr::str_length(x)
+    if (!is.na(dec_pos)) {
+      ndec <- str_len - dec_pos
+    } else {
+      ndec <- 0
+    }
+    x <- gsub(",", ".", x)
+    if (ndec == 2) ndec <- 3
+    format(as.numeric(x), big.mark = " ", decimal.mark = ",", nsmall = ndec)
+  }
+
+  # no idea why, but some that should be 3 digits are 2, so use this for now:
+  hack_digits <- function(x) {
+    dec_pos <- stringr::str_locate(x, "\\.")[[1]]
+    str_len <- stringr::str_length(x)
+    if (!is.na(dec_pos)) {
+      ndec <- str_len - dec_pos
+    } else {
+      ndec <- 0
+    }
+    x <- gsub(",", ".", x)
+    if (ndec == 2) ndec <- 3
+    format(as.numeric(x), big.mark = "", decimal.mark = ".", nsmall = ndec)
+  }
+
+  if (french) {
+    for (i in 2:4) {
+      for (j in seq(1, nrow(tab))) {
+        tab[j,i] <- frenchify(tab[j,i])
+      }
+    }
+  } else {
+    for (i in 2:4) {
+      for (j in seq(1, nrow(tab))) {
+        tab[j,i] <- hack_digits(tab[j,i])
+      }
+    }
+  }
 
   csasdown::csas_table(tab,
                        format = "latex",
                        align = get.align(ncol(tab))[-1],
                        caption = caption,
-                       row.names = FALSE, format.args = list(big.mark = " "))
+                       row.names = FALSE)
 
 }
 
