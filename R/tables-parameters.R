@@ -192,7 +192,7 @@ if(french==TRUE){
   param.vals <- rbind(param.vals,
     c(num.inds,
       en2fr("None",translate=french,allow_missing=TRUE),
-      "See caption"))
+      "Voir la légende"))
 
   param.text <- c(param.text,
     paste(en2fr("Survey catchability", translate=french, allow_missing=TRUE), "($q_k$)"))
