@@ -1,20 +1,20 @@
 \clearpage
 
-# Tables {#sec:tables}
+# Tableaux {#sec:tables}
 
 ```{r tab-catch-3cd}
 catch.table(catch.3,
             catch.3.discards,
             pre.1996.discards.3cd,
             area = "3CD",
- cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 5ABCD ",
-              "par le Canada et les États-Unis, ",
+ cap = paste0("Prises déclarées (tm) de morues du Pacifique dans la zone 3CD ",
+              "réalisées par le Canada et les États-Unis, ",
               min(catch.3$year)+3, "--", max(catch.3$year),
-              ". Les rejets déclarés pour la période ", min(catch.3$year)+3,
+              ". Les prises remises à l’eau (rejets) pour la période ", min(catch.3$year)+3,
               "--1995 ne sont ",
-              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
-              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
-              "observations en mer et sont considérées comme plus représentatives des rejets réels. The 2020 total catch estimate is extrapolated from the combined landings plus discards taken up to September 30, 2020 (see text). Therefore 2020 nominal landings and discards are not shown individually. Numbers are rounded for presentation."), french=french)
+              "probablement pas représentatives des rejets réels parce que les estimations proviennent ",
+              "de journaux de bord, étant donné l’absence d’observateurs. Les estimations des rejets depuis 1996 sont fondées sur les ",
+              "observations en mer et sont considérées comme étant plus représentatives des rejets réels. L’estimation des prises totales pour 2020 a été extrapolée à partir des rejets et des débarquements combinés datant du 30 septembre 2020 (voir le corps du texte). Par conséquent, les données nominales sur les débarquements et les rejets ne sont pas présentées de façon individuelle. Les valeurs ont été arrondies aux fins de présentation."), french=french)
 ```
 
 \clearpage
@@ -24,14 +24,14 @@ catch.table(catch.5,
             catch.5.discards,
             pre.1996.discards.5abcd,
             area = "5ABCD",
- cap = paste0("Prises déclarées (tm) de morue du Pacifique dans la zone 5ABCD ",
-              "par le Canada et les États-Unis, ",
+ cap = paste0("Prises déclarées (tm) de morues du Pacifique dans la zone 5ABCD ",
+              "réalisées par le Canada et les États-Unis, ",
               min(catch.5$year)+3, "--", max(catch.5$year),
-              ". Les rejets déclarés pour la période ", min(catch.5$year)+3,
+              ". Les prises remises à l’eau (rejets) pour la période ", min(catch.5$year)+3,
               "--1995 ne sont ",
-              "pas représentatives des rejets réels parce que les estimations ont été tirées ",
-              "des journaux de bord. Les estimations des rejets depuis 1996 sont fondées sur les ",
-              "observations en mer et sont considérées comme plus représentatives des rejets réels.  The 2020 total catch estimate is extrapolated from the combined landings plus discards taken up to September 30, 2020 (see text). Therefore 2020 nominal landings and discards are not shown individually. Numbers are rounded for presentation."),      french=french)
+              "probablement pas représentatives des rejets réels parce que les estimations proviennent ",
+              "de journaux de bord, étant donné l’absence d’observateurs. Les estimations des rejets depuis 1996 sont fondées sur les ",
+              "observations en mer et sont considérées comme étant plus représentatives des rejets réels. L’estimation des prises totales pour 2020 a été extrapolée à partir des rejets et des débarquements combinés datant du 30 septembre 2020 (voir le corps du texte). Par conséquent, les données nominales sur les débarquements et les rejets ne sont pas présentées de façon individuelle. Les valeurs ont été arrondies aux fins de présentation."), french=french)
 
 ```
 
@@ -48,7 +48,7 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
   dplyr::arrange(`Survey abbrev.`, Year) %>%
   dplyr::rename('Relevé' = `Survey abbrev.`, 'Anneé' = Year, Biomasse = Biomass,
     `IC inf.` = `Lower CI`, `IC sup.` =`Upper CI`, Traits = Sets, `Traits  positifs` = `Positive sets` ) %>% 
-  knitr::kable(caption = "Données des relevés au chalut sur la morue du Pacifique au Canada. La biomasse relative et les intervalles de confiance (IC) inférieurs et supérieurs correspondants sont indiqués en tonnes métriques (sans tenir compte de la capturabilité du relevé). Les traits positifs désignent le nombre de traits de chalut qui ont capturé des morues du Pacifique.", booktabs = TRUE, linesep = "", 
+  knitr::kable(caption = "Données sur la morue du Pacifique, en tonnes métriques, tirées des relevés au chalut canadiens ( on ne tient pas compte de la capturabilité associée aux relevés). Les traits positifs représentent le nombre de traits de chalut dans lesquels des morues du Pacifique étaient présentes. Dans le tableau : OTHER HS MSA = autre relevé de l’assemblage de plusieurs espèces mené dans le détroit d’Hécate; SYN HS = relevé synoptique mené dans le détroit d’Hécate; SYN QCS = relevé synoptique mené dans le bassin de la Reine-Charlotte; SYN WCVI = relevé synoptique mené au large de la côte ouest de l’île de Vancouver.", booktabs = TRUE, linesep = "", 
     format = "pandoc", format.args = list(big.mark = " "))
 ```
 
@@ -56,8 +56,8 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 ```{r tab-param-table-3cd, results='asis'}
 make.parameters.table(base.model.3cd,
-  caption = paste0("Paramètres estimés et fixes et distributions de probabilité a priori utilisés ",
-    "dans le scénario de référence, zone 3CD. The survey catchability parameter for WCVI ($q_1$) was estimated with the prior probability distribution $\\textrm{Normal}(ln(0.228),0.3)$. The other survey catchability parameters were estimated without priors."),
+  caption = paste0("Paramètres estimés et fixes, et distributions de probabilité a priori utilisées ",
+    "dans le scénario de référence, pour la zone 5ABCD. Les paramètres de capturabilité pour les relevés menés dans le bassin de la Reine-Charlotte et le détroit d’Hécate ($q_2$ et $q_3$) ont été estimés au moyen de la distribution de la probabilité a posteriori $\\textrm{Normal}(ln(0.408),0.3)$ et $\\textrm{Normal}(ln(0.0654,),0.3)$, respectivement. Les paramètres de capturabilité des autres relevés ont été estimés sans distribution a priori."),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
   omit_selectivity_pars = TRUE, french=french)
@@ -78,20 +78,19 @@ make.parameters.table(base.model.5abcd,
 ```{r tab-param-est-table-3cd, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$","$B_0$")
 make.parameters.est.table(base.model.3cd,
-  caption = paste0("Valeur a posteriori (centile 2.5\\textsuperscript{th}, médiane et ",
-    "centile 97.5 \\textsuperscript{th}) et estimations de la DPM ",
-    "estimations des paramètres clés du scénario de référence, zone 3CD. $R_0$ est en milliers de poissons. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
-    q.3cd.desc),
+  caption = paste0("Valeurs a posteriori (2,5\\textsuperscript{e} centile, médiane et ",
+    "97,5 \\textsuperscript{e} centile) et estimations du mode de distribution a posteriori ",
+    "pour les paramètres clés du scénario de référence de la zone 3CD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). 
+ ",   q.3cd.desc),
   omit_pars = pars_est_omit, french=french)
 ```
 
 ```{r tab-param-est-table-5abcd, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$", "$B_0$")
 make.parameters.est.table(base.model.5abcd,
-  caption = paste0("Valeur a posteriori (centile 2.5\\textsuperscript{th}, médiane et ",
-    "centile 97.5 \\textsuperscript{th}) et estimations de la DPM ",
-    "estimations des paramètres clés du scénario de référence, zone 5ABCD. $R_0$ est en milliers de poissons. $\\hat{R}$ is the potential scale reduction statistic and $n_\\mathrm{eff}$ is the effective number of simulation draws (see text). ",
-    q.5abcd.desc),
+  caption = paste0("Valeurs a posteriori (2,5\\textsuperscript{e} centile, médiane et ",
+    "97,5 \\textsuperscript{e} centile) et estimations du mode de distribution a posteriori ",
+    "pour les paramètres clés du scénario de référence de la zone 5ABCD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). ", q.5abcd.desc),
   omit_pars = pars_est_omit, french=french)
 ```
 
