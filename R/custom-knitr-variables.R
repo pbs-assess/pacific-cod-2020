@@ -93,17 +93,6 @@ q.3cd.desc <- paste0("$q_1$ = West Coast Vancouver Island Synoptic Survey, ",
                      "$q_3$ = Commercial CPUE post-1995, and ",
                      "$q_4$ = NMFS Triennial Survey (Canadian portion).")
 
-q.5abcd.desc.fr <- paste0("$q_1$ = autre relevé de l’assemblage de plusieurs espèces mené dans le détroit d’Hécate, ",
-                       "$q_2$ = relevé synoptique mené dans le bassin de la Reine-Charlotte, ",
-                       "$q_3$ = relevé synoptique mené dans le détroit d’Hécate, ",
-                       "$q_4$ = CPUE commerciales pour les périodes historique (1956--1995), et ",
-                       "$q_5$ = CPUE commerciales pour les périodes moderne (1996--2019).")
-
-q.3cd.desc.fr <- paste0("$q_1$ = relevé synoptique mené au large de la côte ouest de l’île de Vancouver, ",
-                     "$q_2$ = CPUE commerciales pour les périodes historique (1956--1995), ",
-                     "$q_3$ = CPUE commerciales pour les périodes moderne (1996--2019), et ",
-                     "$q_4$ = Relevé triennal du NMFS (en eaux canadiennes).")
-
 b5 <- base.model.5abcd[[1]]
 start.yr5 <- b5$dat$syr
 end.yr5 <- b5$dat$nyr
