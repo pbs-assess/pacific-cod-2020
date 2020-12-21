@@ -1,20 +1,21 @@
 
-# Context
+# Contexte
 
-The last assessment for Pacific Cod (*Gadus macrocephalus*) in British Columbia (BC) was completed in 2018 [@forrest2020; @dfo2019].
-Separate assessments were undertaken for stocks in Area 3CD (West Coast Vancouver Island, WCVI) and Area 5ABCD (consisting of Queen Charlotte Sound (QCS) and Hecate Strait (HS) combined) (Figure \@ref(fig:fig-map)).
-Both the 3CD and 5ABCD stocks were assessed to be in the Cautious Zone [@dfo2009].
+La dernière évaluation sur la morue du Pacifique (*Gadus macrocephalus*) en Colombie-Britannique remonte à 2018 [@forrest2020; @dfo2019].
+Dans le cadre de celle-ci, on a évalué de façon séparée le stock de la zone 3CD (côte ouest de l’île de Vancouver) et celui de la zone 5ABCD (bassin de la Reine-Charlotte et détroit d’Hécate) (figure \@ref(fig:fig-map)).
+Selon l’évaluation, les stocks des zones 3CD et 5ABCD se trouvaient dans la zone de prudence [@dfo2009].
 
-Fishery-independent synoptic bottom trawl surveys are conducted biennially in BC, usually occurring in even-numbered years for WCVI, and odd-numbered years in QCS and HS.
-However, due to the coronavirus disease 2019 (COVID-19) pandemic, the scheduled 2020 WCVI survey did not occur.
-The 2018 survey index for WCVI was very low, at approximately 26--27% of the magnitude of the 2014 and 2016 observations (Figure \@ref(fig:fig-summary-indices-3cd)).
-The commercial catch  per unit effort (CPUE) index has also decreased since 2016 (Figure \@ref(fig:fig-summary-indices-3cd)).
-Catches in 2018 and 2019 in Area 3CD were also much lower than previous years (Table \@ref(tab:tab-catch-3cd), Figure \@ref(fig:fig-catch-3cd)).
+Des relevés synoptiques au chalut de fond indépendants de la pêche sont menés tous les deux ans en Colombie-Britannique. Habituellement, les relevés menés au large de la côte ouest de l’île de Vancouver ont lieu lors des années paires et ceux menés dans le bassin de la Reine-Charlotte et le détroit d’Hécate, lors des années impaires.
+Toutefois, en raison de la pandémie de COVID-19, le relevé qui devait être mené au large de la côte ouest de l’île de Vancouver en 2020 n’a pas eu lieu.
+L’indice de ce relevé pour 2018 était très faible, correspondant à environ 26--27 % de l’ampleur des observations de 2014 et de 2016 (figure \@ref(fig:fig-summary-indices-3cd)).
+L’indice des captures par unité d’effort (CPUE) issues de la pêche commerciale a aussi diminué depuis 2016 (figure \@ref(fig:fig-summary-indices-3cd)).
+Les prises effectuées en 2018 et en 2019 dans la zone 3CD étaient aussi beaucoup plus faibles que lors des dernières années (tableau \@ref(tab:tab-catch-3cd) et figure \@ref(fig:fig-catch-3cd)).
 
-The previous advice [@dfo2019] recommended assessment updates in each area be provided in years immediately following the biennial groundfish synoptic bottom trawl survey (i.e., when the most recent survey index point is available).
-However, given the low 2018 index of abundance in Area 3CD, coupled with the lack of updated survey information in 2020, Fisheries and Oceans Canada (DFO) Pacific Fisheries Management Branch has requested that DFO Pacifc Science Branch assess the status of both BC Pacific Cod stocks in 2020 and recommend harvest advice for 2021 to inform the development of the 2020/2021 Integrated Fisheries Management Plan.
+L’avis scientifique précédent [@dfo2019] recommandait qu’une mise à jour des évaluations menées dans les zones 3CD et 5ABCD soit réalisée lors des années suivant immédiatement les activités du relevé synoptique au chalut de fond ciblant le poisson de fond mené tous les deux ans (c.-à-d., lorsque l’indice de relevé le plus récent est disponible).
+Toutefois, en raison du faible indice d’abondance de 2018 dans la zone 3CD et du manque de données de relevé à jour pour 2020, au sein de la région du Pacifique de Pêches et Océans Canada (MPO), la Direction de la gestion des pêches a demandé à la Direction des sciences d’évaluer l’état des deux stocks de morues du Pacifique en 2020 et de formuler un avis sur les prises pour 2021 afin d’orienter l’élaboration du Plan de gestion intégrée des pêches de 2020-2021.
 
-This Science Response reports results from the Science Response Process of October 2020 on the status of Pacific Cod for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2020.
+La présente réponse des Sciences présente les résultats découlant du processus de réponse des Sciences d’octobre 2020 sur l’état des stocks de morues du Pacifique au large de la côte ouest de l’île de Vancouver (zone 3CD) ainsi que dans le détroit d’Hécate et le bassin de la Reine-Charlotte (zone 5ABCD) en 2020.
+
 
 # Background
 
