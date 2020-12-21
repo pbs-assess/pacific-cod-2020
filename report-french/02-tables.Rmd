@@ -56,8 +56,9 @@ dplyr::filter(dat$survey_index, survey_abbrev %in%
 
 ```{r tab-param-table-3cd, results='asis'}
 make.parameters.table(base.model.3cd,
-  caption = paste0("Paramètres estimés et fixes, et distributions de probabilité a priori utilisées ",
-    "dans le scénario de référence, pour la zone 5ABCD. Les paramètres de capturabilité pour les relevés menés dans le bassin de la Reine-Charlotte et le détroit d’Hécate ($q_2$ et $q_3$) ont été estimés au moyen de la distribution de la probabilité a posteriori $\\textrm{Normal}(ln(0.408),0.3)$ et $\\textrm{Normal}(ln(0.0654,),0.3)$, respectivement. Les paramètres de capturabilité des autres relevés ont été estimés sans distribution a priori."),
+  caption = paste0("Paramètres estimés et fixes, et distributions de probabilité a priori utilisés ",
+    "dans le scénario de référence, pour la zone 3CD. Le paramètre de capturabilité pour le relevé mené au large de la côte ouest de l’île de Vancouver ($q_1$) a été estimé au moyen de la distribution de la probabilité a posteriori  $\\textrm{Normal}(ln(0.228),0.3)$. Les paramètres de capturabilité des autres relevés ont été estimés sans distribution a priori.
+"),
   omit_pars = c("Log initial recruitment ($\\ln(\\overline{R}_{init})$)",
     "Log mean recruitment ($\\ln(\\overline{R})$)"),
   omit_selectivity_pars = TRUE, french=french)
