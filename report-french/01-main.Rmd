@@ -214,141 +214,137 @@ Comme dans les évaluations précédentes, le modèle avait tendance à sous-est
 Les estimations des paramètres associés au modèle de référence sont présentées dans le tableau \@ref(tab:tab-param-est-table-5abcd).
 La plage de l’estimation a posteriori de $M$ était presque identique pour la présente évaluation, soit 0,31 *a*^-1^ (0,28--0,34 *a*^-1^), et l’évaluation de 2018 [@forrest2020], soit 0,31 *a*^-1^ (0,28--0,35 *a*^-1^).
 
-## Indicators of current stock status 
+## Indicateurs de l’état actuel des stocks 
 
-Management advice for both stocks is based on the results of the combined models described above in the model scenarios section. 
-The RPR meeting held in October 2018 reviewed the Reference Case model and the suite of sensitivity runs described above, and concluded that no one model adequately represented the uncertainty associated with these stock assessments.
-Consequently, RPR participants agreed to adopt an approach that combined model runs to include a greater range of plausible uncertainties associated with these stocks.
+L’avis de gestion pour les deux stocks est fondé sur les résultats des modèles combinés décrits ci-dessus, dans la section sur les scénarios de modèles. 
+Dans le cadre de la réunion régionale d’examen par les pairs tenue en octobre 2018, on a examiné les modèles de référence et la série d’analyses de sensibilité décrite ci-dessus, et on a conclu qu’aucun modèle ne représentait adéquatement l’incertitude associée aux évaluations des stocks en question.
+Par conséquent, les participants ont convenu d’adopter une approche combinant les exécutions des modèles afin d’inclure une plus grande plage d’incertitudes plausibles associées à ces stocks.
 
-### Area 3CD
+### Zone 3CD
 
-Posterior estimates of reference points and stock status from the combined model-averaged set are provided in Table \@ref(tab:tab-ref-points-table-avg-3cd).
-At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 14,099 t (6,008--47,920 t).
-Median fishing mortality for the 2020 fishing year is projected to be 0.006 *y*^-1^ (0.002--0.015 *y*^-1^).
-The median estimated LRP and USR are estimated to be 8,603 t (3,134--28,435 t) and 28,436 t (12,254--84,756 t), respectively.
-The median estimated LRR is estimated to be 0.065 *y*^-1^ (0.021--0.187 *y*^-1^). 
-Median biomass in 2021 relative to the LRP and USR is estimated to be 1.64 (1.01--3.59) and 0.507 (0.313--0.962), respectively.
-Median fishing mortality relative to the LRR is estimated to be 0.083 (0.038--0.137) (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
+Les estimations a posteriori associées aux points de référence et à l’état du stock découlant de l’ensemble représentant la moyenne des modèles sont présentées dans le tableau \@ref(tab:tab-ref-points-table-avg-3cd).
+Au début de l’année de pêche 2021, selon le niveau de prises présumé pour 2020, les projections indiquent que la biomasse médiane sera de 14 099 t (6 008--47 920 t).
+La mortalité par pêche médiane projetée pour l’année de pêche 2020 est de 0,006 *a*^-1^ (0,002--0,015 *a*^-1^).
+Les estimations du PRL et du RSS médians sont de 8 603 t (3 134--28 435 t) et 28 436 t (12 254--84 756 t), respectivement.
+Le TEL médian est estimé à 0,065 *a*^-1^ (0,021--0,187 *a*^-1^). 
+La biomasse médiane pour 2021, par rapport au PRL et au RSS, est estimée à 1,64 (1,01--3,59) et à 0,507 (0,313--0,962), respectivement.
+La mortalité par pêche médiane par rapport au TEL est estimée à 0,083 (0,038--0,137) (Table \@ref(tab:tab-ref-points-table-avg-3cd)).
 
-The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-3cd) and \@ref(fig:fig-model-average-f-3cd).
-The estimated biomass range was very broad.
-Combined average posterior results from all models indicate that the stock in 2020 was just above the LRP (Figure \@ref(fig:fig-model-average-biomass-3cd)).
-This is a notable decrease in estimated stock status (median $B_{2021}/\textrm{LRP}$ = 1.64) compared to the 2018 assessment, where median $B_{2019}/\textrm{LRP}$ was 2.07 (2.48--2.16)) [@dfo2019].
-The estimated fishing mortality range was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
-However, recent estimates of fishing mortality were well below the median LRR (Figure \@ref(fig:fig-model-average-f-3cd)).  
+Les moyennes a posteriori de la biomasse et de la mortalité par pêche provenant de l’ensemble représentant la moyenne des modèles combinés sont présentées aux figures \@ref(fig:fig-model-average-biomass-3cd) et \@ref(fig:fig-model-average-f-3cd).
+La plage des estimations de la biomasse était très vaste.
+Les résultats a posteriori moyens provenant de tous les modèles combinés indiquent que la biomasse du stock pour 2020 était légèrement supérieure au PRL (figure \@ref(fig:fig-model-average-biomass-3cd)).
+Il s’agit d’une diminution notable de l’état du stock estimé (médiane de $B_{2021}/\textrm{LRP}$ = 1,64) par rapport à l’évaluation de 2018, pour laquelle la médiane de $B_{2019}/\textrm{LRP}$ était de 2,07 (2,48--2,16)) [@dfo2019].
+La plage des estimations de la mortalité par pêche était aussi vaste (figure \@ref(fig:fig-model-average-f-3cd)), reflétant la plage des estimations de la biomasse.
+Toutefois, les estimations récentes de la mortalité par pêche étaient bien en deçà du TEL médian (figure \@ref(fig:fig-model-average-f-3cd)). 
 
-### Area 5ABCD
+### Zone 5ABCD
 
-Posterior estimates of reference points and stock status from the combined model-averaged set are provided in Table \@ref(tab:tab-ref-points-table-avg-5abcd).
-At the beginning of the 2021 fishing year, under the assumed 2020 catch level, median biomass is projected to be 19,634 t (11,318--40,603 t).
-Median fishing mortality for the 2020 fishing year is projected to be 0.027 *y*^1^ (0.013--0.049 *y*^1^).
-The median estimated LRP and USR are estimated to be 9,814 t (5,662--20,881 t) and 33,409 t (21,630--59,004 t), respectively.
-The median estimated LRR is estimated to be 0.15 *y*^-1^ (0.09--0.28 *y*^1^).
-Median biomass in 2021 relative to the LRP and USR is estimated to be 1.96 (1.40--3.11) and 0.59 (0.39--0.89), respectively.
-Median fishing mortality relative to the LRR is estimated to be 0.17 (0.11--0.27) (Table \@ref(tab:tab-ref-points-table-avg-5abcd)).
+Les estimations a posteriori associées aux points de référence et à l’état du stock découlant de l’ensemble représentant la moyenne des modèles sont présentées dans le tableau \@ref(tab:tab-ref-points-table-avg-5abcd).
+Au début de l’année de pêche 2021, selon le niveau de prises présumé pour 2020, les projections indiquent que la biomasse médiane sera de 19 634 t (11 318--40 603 t).
+La mortalité par pêche médiane projetée pour l’année de pêche 2020 est de 0,027 *a*^-1^ (0,013--0,049 *a*^-1^).
+Les estimations du PRL et du RSS médians sont de 9 814 t (5 662--20 881 t) et 33 409 t (21 630--59 004 t), respectivement.
+Le TEL médian est estimé à 0,15 *a*^-1^ (0,09--0,28 *a*^-1^).
+La biomasse médiane pour 2021, par rapport au PRL et au RSS, est estimée à 1,96 (1,40--3,11) et à 0,59 (0,39--0,89), respectivement.
+La mortalité par pêche médiane par rapport au TEL est estimée à 0,17 (0,11--0,27) (tableau \@ref(tab:tab-ref-points-table-avg-5abcd)).
 
-The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
-As for Area 3CD, the estimated biomass range was very broad.
-Combined average posterior results from all models indicate that the stock in 2020 was above the LRP, within the Cautious Zone.
-The estimated fishing mortality range was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
-Recent estimates of fishing mortality were well below the median LRR.
+Les moyennes a posteriori de la biomasse et de la mortalité par pêche provenant de l’ensemble représentant la moyenne des modèles sont présentées aux figures\@ref(fig:fig-model-average-biomass-5abcd) et \@ref(fig:fig-model-average-f-5abcd).
+Comme pour la zone 3CD, la plage des estimations de la biomasse était très vaste.
+Les résultats a posteriori moyens provenant de tous les modèles combinés indiquent que la biomasse du stock pour 2020 était supérieure au PRL et se trouvait dans la zone de prudence.
+La plage des estimations de la mortalité par pêche était aussi vaste (figure \@ref(fig:fig-model-average-f-3cd)), reflétant la plage des estimations de la biomasse.
+Les estimations récentes de la mortalité par pêche étaient bien en deçà du TEL médian.
 
-## 2021 harvest advice
+## Avis sur les prises pour 2021
 
-Performance measures were calculated over a sequence of alternative 2021 projected catch levels and are based on posterior samples for a one-year projection to the beginning of 2022.
-Uncertainty enters the projections through parameter uncertainty propagated through the modeled time series and recruitment anomalies for the projection year.
-The following performance measures were evaluated:
+On a calculé les mesures de rendement pour une séquence de niveaux de prises projetés de rechange pour 2021, d’après les échantillons a posteriori pour une projection d’un an jusqu’au début de 2022.
+L’incertitude est ajoutée aux projections par l’entremise d’un paramètre d’incertitude propagé à la série chronologique modélisée et aux anomalies en matière de recrutement pour l’année projetée.
+On a évalué les mesures de rendement suivantes :
 
 1. $P(B_{2022} < B_{2021})$
 1. $P(F_{2021} > F_{2020})$
-1. $P(B_{2022} < LRP)$
-1. $P(B_{2022} < USR)$
-1. $P(F_{2021} > LRR)$
+1. $P(B_{2022} < PRL)$
+1. $P(B_{2022} < RSS)$
+1. $P(F_{2021} > TEL)$
 
-Decision tables were constructed for each area using the equally weighted combined posterior samples [see @forrest2020].
+On a créé des tableaux de décision pour chaque zone au moyen des échantillons a posteriori combinés qui ont été pondérés de façon égale [voir @forrest2020].
 
-### Area 3CD
+### Zone 3CD
 
-For illustration, recent combined average posterior biomass with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-3cd-proj).
+À titre d’illustration, les récentes valeurs combinées de la biomasse a posteriori moyenne associées à une projection d’un an, selon les quatre niveaux de prises de rechange, ont été représentées à la figure \@ref(fig:fig-model-average-biomass-3cd-proj).
 
-The model-averaged decision table probabilities are presented in Table \@ref(tab:summary-tab-decision-avg-3cd). In summary:
+Les probabilités relatives aux tableaux de décision pour l’ensemble représentant la moyenne des modèles figurent dans le tableau \@ref(tab:summary-tab-decision-avg-3cd). En résumé :
 
--	$P(B_{2022} < B_{2021})$ ranged from 55% to 83% over the range of 2021 catch levels.
+-	$P(B_{2022} < B_{2021})$ variait de 55 % à 83 % pour la plage des niveaux de prises de 2021.
 
-- $P(F_{2021} > F_{2020})$ ranged from < 1% to > 99%.
-The 2020 catch was extrapolated to be approximately 59 t, hence the probability increase between 50 t and 60 t.
+- $P(F_{2021} > F_{2020})$ variait de < 1 % à > 99 %.
+L’extrapolation des prises de 2020 était d’environ 59 t; la probabilité a donc augmenté entre 50 t et 60 t.
 
-- $P(B_{2022} < LRP)$ ranged from < 2% to 10%.
+- $P(B_{2022} < PRL)$ variait de < 2 % à 10 %.
 
-- $P(B_{2022} < USR)$ ranged from 97% to 98%.
+- $P(B_{2022} < RSS)$ variait de 97 % à 98 %.
 
-- $P(F_{2021} > LRR)$  ranged from < 1% to 98%.
+- $P(F_{2021} > TEL)$ variait de < 1 % à 98 %.
 
-Under a 2021 catch of 500 tonnes (the 2019/20 TAC), there is a 4% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-3cd)).
-However, assuming the 2021 catch is of a similar magnitude to the 2020 catch (approximately 59 t), the probability of the 2021 biomass being below the LRP is 2% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
-The 2022 biomass is projected to be in the Cautious Zone
-(below the USR) with 97--98% probability under all 2021 catch scenarios tested,
-including zero catch.
+Si les prises de 2021 étaient de 500 t (TAC de 2019-2020), la probabilité que la biomasse de 2021 soit inférieure au PRL serait de 4 % (tableau \@ref(tab:summary-tab-decision-avg-3cd)).
+Toutefois, si l’on présume que les prises de 2021 étaient de la même ampleur que celles de 2020 (environ 59 t), la probabilité que la biomasse de 2021 soit inférieure au PRL serait de 2 % (tableau \@ref(tab:summary-tab-decision-avg-3cd)).
+Selon les projections, la biomasse de 2022 serait située dans la zone de prudence (inférieure au RSS); la probabilité connexe serait de 97--98 % selon tous les scénarios testés pour les prises de 2021, y compris le scénario où il n’y aurait aucune prise.
 
-The probability of the fishing mortality exceeding the LRR is less than 1% for all levels of catch up to 400 t.
-This probability is based on the maximum LRR (i.e., average estimated fishing mortality rate from 1956--2004).
-DFO's precautionary approach policy [@dfo2009] describes the removal reference (i.e., the LRR) as the maximum acceptable removal rate for the stock.
-The policy illustrates a harvest control rule with a linear decline in the LRR for stocks in the Cautious Zone.
-Such a harvest control rule has not been formally agreed upon for Pacific Cod and, therefore, the probabilities in Table \@ref(tab:summary-tab-decision-avg-3cd) and in previous Pacific Cod advice [@dfo2015; @dfo2019] do not reflect any adjustment to the LRR when the stock is in the Cautious Zone.
-If such a harvest control rule were applied, as illustrated in @dfo2009, then probabilities of exceeding the LRR would be higher.
-It is recommended that a harvest control rule, which describes any adjustments to the LRR for stocks below the USR, should be agreed upon before the next assessment update.
+La probabilité que la mortalité par pêche dépasse le TEL est de moins de 1 % pour tous les niveaux de prises allant jusqu’à 400 t.
+Cette probabilité est fondée sur le TEL maximal (c.-à-d., l’estimation du taux de mortalité par pêche moyen pour la période de 1956--2004).
+L’approche de précaution du MPO [@dfo2009] décrit le point de référence en matière d’exploitation (c.-à-d., le TEL) comme étant le taux d’exploitation acceptable pour le stock.
+La politique illustre une règle de contrôle des prises associée à une diminution linéaire du TEL pour les stocks de la zone de prudence.
+On n’a pas officiellement convenu d’une telle règle de contrôle des prises pour la morue du Pacifique. Par conséquent, les probabilités présentées dans le tableau \@ref(tab:summary-tab-decision-avg-3cd) et dans les avis précédents concernant l’espèce [@dfo2015; @dfo2019] ne reflètent pas les ajustements apportés au TEL lorsque le stock se situe dans la zone de prudence.
+Si une telle règle de contrôle des prises était appliquée, comme l’illustre le document du @dfo2009, les probabilités associées au dépassement du TEL seraient plus élevées.
+On recommande de convenir d’une règle de contrôle des prises, qui décrit tout ajustement apporté au TEL lorsque la biomasse des stocks est inférieure au RSS, avant la prochaine mise à jour de l’évaluation des stocks.
 
-### Area 5ABCD
+### Zone 5ABCD
 
-Recent combined average biomass with a one year projection under four alternative catch levels is shown in Figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
+À titre d’illustration, les récentes valeurs combinées de la biomasse a posteriori moyenne associées à une projection d’un an, selon les quatre niveaux de prises de rechange, ont été représentées à la figure \@ref(fig:fig-model-average-biomass-5abcd-proj).
 
-The model-averaged decision table probabilities are presented in Table \@ref(tab:summary-tab-decision-avg-5abcd).
-In summary:
+Les probabilités relatives aux tableaux de décision pour l’ensemble représentant la moyenne des modèles figurent dans le tableau \@ref(tab:summary-tab-decision-avg-5abcd).
+En résumé :
 
--	$P(B_{2022} < B_{2021})$ ranged from 22% to 91% over the range of 2021 catch levels.
+-	$P(B_{2022} < B_{2021})$ variait de 22 % à 91 % pour la plage des niveaux de prises de 2021.
 
-- $P(F_{2021} > F_{2020})$ ranged from < 1% to > 99%.
-The 2020 catch was extrapolated to be approximately 425 t, hence the probability increase between 400 t and 500 t.
+- $P(F_{2021} > F_{2020})$ variait de < 1 % à > 99 %.
+L’extrapolation des prises de 2020 était d’environ 425 t; la probabilité a donc augmenté entre 400 t et 500 t.
 
-- $P(B_{2022} < LRP)$ ranged from < 1% to 1%.
+- $P(B_{2022} < PRL)$ variait de < 1 % à 1 %.
 
-- $P(B_{2022} < USR)$ ranged from 98% to 99%.
+- $P(B_{2022} < RSS)$  variait de 98 % à 99 %.
 
-- $P(F_{2020} > LRR)$  ranged from < 1% to 85%.
+- $P(F_{2020} > TEL)$   variant de < 1 % à 85 %.
 
-Under a 2021 catch of 950 tonnes (the 2018/19 TAC), there is less than 1% probability that biomass in 2021 will be below the LRP (Table \@ref(tab:summary-tab-decision-avg-5abcd)).
-Assuming the 2021 catch is of a similar magnitude to the 2020 catch (approximately 425 t), the probability of the 2022 biomass being below the LRP is also
-less than 1% (Table \@ref(tab:summary-tab-decision-avg-3cd)).
-The 2022 biomass is projected to be in the Cautious Zone
-(below the USR) with 98%--99% probability under all 2021 catch scenarios tested, including zero catch.
+Si les prises de 2021 étaient de 950 t (TAC de 2018-2019), la probabilité que la biomasse de 2021 soit inférieure au PRL serait de moins de 1 % (tableau \@ref(tab:summary-tab-decision-avg-5abcd)).
+Si on présume que les prises de 2021 étaient de la même ampleur que celles de 2020 (environ 425 t), la probabilité que la biomasse de 2022 soit inférieure au PRL serait aussi inférieure à 1 % (tableau \@ref(tab:summary-tab-decision-avg-3cd)).
+Selon les projections, la biomasse de 2022 serait située dans la zone de prudence (inférieure au RSS); la probabilité connexe serait de 98--99 % selon tous les scénarios testés pour les prises de 2021, y compris le scénario où il n’y aurait aucune prise.
 
-The probability of the stock exceeding the LRR is less than 1% for all levels of catch up to 1400 t.
-As for Area 3CD, if the LRR were adjusted downward because the stock is in the Cautious Zone [@dfo2009], the probabilities of exceeding the LRR would be higher.
+La probabilité que le stock dépasse le TEL est de moins de 1 % pour tous les niveaux de prises allant jusqu’à 1 400 t.
+Comme pour la zone 3CD, si les TEL étaient ajustés à la baisse parce que le stock était dans la zone de prudence [@dfo2009], les probabilités associées au dépassement du TEL seraient plus élevées.
 
-## Sources of uncertainty
+## Sources d’incertitude
 
-Uncertainty due to estimated parameters and the weights assigned to various data components was explicitly addressed using a Bayesian approach.
-For provision of advice, posterior results from seven alternative model configurations were combined to generate decision tables.
-However, this approach only captures uncertainty associated with the set of model configurations included within the assessment and may underestimate greater structural uncertainties.
-Additional uncertainties in this assessment stem from:
+On a expressément traité l’incertitude découlant des paramètres estimés et des poids associés à diverses composantes de données au moyen d’une approche bayésienne.
+Pour la formulation de l’avis, on a combiné les résultats a posteriori découlant des sept configurations de modèles de rechange afin de produire les tableaux de décision.
+Toutefois, cette approche représente seulement l’incertitude associée à l’ensemble de configurations de modèles incluses dans la présente évaluation; elle pourrait sous-estimer certaines incertitudes plus vastes sur le plan structurel.
+Les incertitudes supplémentaires liées à la présente évaluation découlent des éléments ci-dessous.
 
-1. The lack of reliable age composition data for this species, which would provide additional information about recruitment strength and gear selectivity;
-1. Relatively short time series of fishery-independent abundance indices, which show no clear trend;
-1. Uncertainty in the magnitude of pre-1996 discarding and foreign catches. Underestimation of historical discards could lead to an underestimation of stock productivity;
-1. Bias in the length frequency data prior to 1996, due to likely under-representation of lengths of fish that were caught but released at sea;
-1. A poor understanding of Pacific Cod stock structure in Pacific waters. For example, connectivity between stocks of Pacific Cod in BC and Alaska is not well understood. Pacific Cod stocks in the Gulf of Alaska have undergone decline since 2017, likely due to warming north Pacific waters [@barbeaux2020], and it is unknown whether there is any relationship between drivers of abundance of these stocks and stocks in BC; and
-1. A poor understanding of the relationship between commercial CPUE data and abundance, and how this relationship has been affected over the course of management changes in the fishery.
+1. Le manque de données fiables sur la composition selon l’âge pour l’espèce, qui fourniraient des renseignements supplémentaires sur l’ampleur du recrutement et la sélectivité des engins de pêche.
+1. La série chronologique relativement courte associée aux indices d’abondance issus de relevés indépendants de la pêche qui n’affiche aucune tendance évidente.
+1. L’incertitude associée à l’ampleur des rejets et des prises étrangères antérieures à 1996; la sous-estimation des rejets historiques, qui pourrait entraîner une sous-estimation de la productivité des stocks.
+1. Les biais liés aux données sur la fréquence selon la longueur antérieures à 1996 qui découlent probablement de la sous-représentation des longueurs des poissons ayant été capturés, mais remis à l’eau.
+1. Une mauvaise compréhension de la structure des stocks de morues du Pacifique dans les eaux du Pacifique. Par exemple, on ne comprend pas bien la connectivité entre les stocks de morues du Pacifique de la Colombie-Britannique et de l’Alaska. Les stocks de morues du Pacifique présents dans le golfe de l’Alaska sont en déclin depuis 2017, probablement en raison du réchauffement des eaux du Pacifique Nord [@barbeaux2020], et on ne sait pas s’il existe une relation entre les facteurs déterminant l’abondance de ces stocks et des stocks de la Colombie-Britannique.
+1. Une mauvaise compréhension de la relation entre les données des CPUE commerciales et l’abondance, et de la façon dont cette relation a été touchée par les changements en matière de gestion apportés à la pêche.
 
 # Conclusions
 
-This document updates the stock status of Pacific Cod stocks in Area 3CD and 5ABCD at the end of the 2020 fishing year, and provides 2021 catch advice in the form of decision tables.
-Currently, both stocks are assessed to be in the Cautious Zone, as was the case in the 2018 assessment [@dfo2019].
-However, the Area 3CD stock is estimated to have declined in abundance and is estimated to be closer to the LRP than in the previous assessment.
+Le présent document met à jour l’état des stocks de morues du Pacifique des zones 3CD et 5ABCD à la fin de l’année de pêche 2020 et fournit un avis sur les prises pour l’année 2021, sous la forme de tableaux de décision.
+À l’heure actuelle, l’évaluation indique que les deux stocks se trouvent dans la zone de prudence, comme c’était le cas lors de l’évaluation de 2018 [@dfo2019].
+Toutefois, on a estimé que l’abondance du stock de la zone 3CD a décliné et que la valeur de l’abondance s’est rapprochée du PRL par rapport à l’évaluation précédente.
 
-A critical concern with this assessment is the lack of a WCVI synoptic survey update in 2020.
-It is recommended that this area be surveyed as soon as it is feasible, and that this advice be updated when the data are available.
-Further analysis of recent survey data including spatial and depth distribution of the stock, and analysis of biological data, such as condition of the fish over time (length-weight relationship) and spatial distribution of length data could also provide insights into possible causes of the apparent rapid decline in abundance.
-Other key research recommendations, which would improve understanding of stock and fishery dynamics for both stocks are provided in @forrest2020.
-A fully described harvest control rule should be agreed upon before the next assessment update.
+Une préoccupation importante liée à la présente évaluation est l’absence d’une mise à jour des données du relevé synoptique mené sur la côte ouest de l’île de Vancouver pour 2020.
+On recommande qu’un relevé soit effectué dans cette zone dès que possible et que le présent avis soit mis à jour dès que des données seront disponibles.
+Une analyse plus approfondie des récentes données de relevés, y compris la répartition des stocks sur les plans de la profondeur et spatial, et une analyse des données biologiques, comme la condition des poissons au fil du temps (relation longueur-poids) et la distribution spatiale des données sur la longueur pourraient aussi fournir des renseignements sur les causes possibles du rapide déclin de l’abondance apparent.
+D’autres recommandations clés en matière de recherche, qui permettraient d’améliorer la compréhension de la dynamique du stock et des pêches pour les deux stocks, sont fournies dans le document de @forrest2020.
+On devrait convenir d’une règle de contrôle des prises décrite de façon détaillée avant la prochaine mise à jour de l’évaluation.
 
 \clearpage
