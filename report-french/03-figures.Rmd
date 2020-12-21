@@ -37,7 +37,7 @@ if(!file.exists(surv.file)){
 
 ```
 
-```{r fig-wcvi-index-3cd, fig.cap="West Coast Vancouver Island Synoptic Survey estimates, centred by geometric mean", echo=FALSE}
+```{r fig-wcvi-index-3cd, fig.cap="Indices de l’abondance relative issus du relevé synoptique mené sur la côte ouest de l’île de Vancouver, centrés selon la moyenne géométrique", echo=FALSE}
 
 g1 <- surv_index %>%  
   rename("Survey"= "Survey abbrev.", "Lower" = "Lower CI", "Upper"="Upper CI") %>%   dplyr::filter(Survey=="SYN WCVI") %>% 
@@ -52,7 +52,7 @@ g1 <- surv_index %>%
 
 ```
 
-```{r fig-cpue-index-3cd, fig.cap="Commercial CPUE estimates, centred by geometric mean", echo=FALSE}
+```{r fig-cpue-index-3cd, fig.cap="CPUE commerciales, centrées selon la moyenne géométrique.", echo=FALSE}
 
 g2 <- cpue_pred_modern %>%
   dplyr::filter(formula_version=="Full standardization", area=="3CD") %>%
@@ -109,7 +109,7 @@ make.catches.plot(catch.3, french=french)
 make.catches.plot(catch.5, french=french)
 ```
 
-```{r surv-canadian, fig.cap="Données sur la morue du Pacifique provenant des relevés au chalut canadiens. La figure illustre les indices de la biomasse relative et les limites inférieures et supérieures des intervalles de confiance connexes. Les traits positifs représentent le nombre de traits de chalut dans lesquels des morues du Pacifique étaient présentes. Dans la figure : SYN QCS = relevé synoptique au chalut de fond mené dans le bassin de la Reine-Charlotte; SYN WCVI = relevé synoptique au chalut de fond mené au large de la côte ouest de l’île de Vancouver; SYN HS = relevé synoptique au chalut de fond mené dans le détroit d’Hécate; OTHER HS MSA = autre relevé de l’assemblage de plusieurs espèces mené dans le détroit d’Hécate."}
+```{r surv-canadian, fig.cap="Données sur la morue du Pacifique provenant des relevés au chalut canadiens. La figure illustre les indices de la biomasse relative et les limites inférieures et supérieures des intervalles de confiance connexes. Les traits positifs représentent le nombre de traits de chalut dans lesquels des morues du Pacifique étaient présentes. Dans la figure : SYN QCS = relevé synoptique au chalut de fond mené dans le bassin de la Reine-Charlotte; SYN WCVI = relevé synoptique au chalut de fond mené au large de la côte ouest de l’île de Vancouver; SYN HS = relevé synoptique au chalut de fond mené dans le détroit d’Hécate; OTHER HS MSA = relevé de l’assemblage de plusieurs espèces mené dans le détroit d’Hécate."}
 gfplot::tidy_survey_index(dat$survey_index,
   survey = c("SYN QCS", "SYN WCVI", "SYN HS", "OTHER HS MSA")) %>%
   plot_survey_index(french=french)
