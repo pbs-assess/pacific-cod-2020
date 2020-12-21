@@ -13,8 +13,8 @@ approval_month: Novembre
 approval_day: 26
 work_done_year: 2020
 work_done_month: Octobre
-branch: Science Branch
-region: Pacific Region
+branch: Direction des sciences
+region: Région du Pacifique
 header: "" # or "" to omit
 output:
  csasdown::sr_pdf:
