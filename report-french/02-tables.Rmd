@@ -78,10 +78,10 @@ make.parameters.table(base.model.5abcd,
 ```{r tab-param-est-table-3cd, results='asis'}
 pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$","$B_0$")
 make.parameters.est.table(base.model.3cd,
-  caption = paste0("Valeurs a posteriori (2,5\\textsuperscript{e} centile, médiane et ",
+  caption = paste0("Valeurs a posteriori (2,5 \\textsuperscript{e} centile, médiane et ",
     "97,5 \\textsuperscript{e} centile) et estimations du mode de distribution a posteriori ",
     "pour les paramètres clés du scénario de référence de la zone 3CD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). 
- ",   q.3cd.desc),
+ ",   q.3cd.desc.fr),
   omit_pars = pars_est_omit, french=french)
 ```
 
@@ -90,7 +90,7 @@ pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$", 
 make.parameters.est.table(base.model.5abcd,
   caption = paste0("Valeurs a posteriori (2,5\\textsuperscript{e} centile, médiane et ",
     "97,5 \\textsuperscript{e} centile) et estimations du mode de distribution a posteriori ",
-    "pour les paramètres clés du scénario de référence de la zone 5ABCD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). ", q.5abcd.desc),
+    "pour les paramètres clés du scénario de référence de la zone 5ABCD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). ", q.5abcd.desc.fr),
   omit_pars = pars_est_omit, french=french)
 ```
 
@@ -103,9 +103,10 @@ make.ref.points.table(c(base.model.3cd,
                         lrp_range = 1986,
                         usr_range = 1956:2004,
                         digits = 2,
-                        caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th} , Median, and centile 97,5\\textsuperscript{th}  ",
-                                       ") des points de référence pour la zone 3CD. ",
-                                       "La biomasse est en tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
+                        caption = paste0("Valeurs a posteriori (2,5\\textsuperscript{e} centile, médiane et ", 
+                      "97,5 \\textsuperscript{e} centile", 
+                      ") des points de référence pour l’ensemble représentant la moyenne des modèles de la zone 3CD. ",
+                      "La biomasse est en tonnes. Toutes les valeurs sont arrondies. Les rapports ont été calculés à l’aide de l’ensemble des distributions a posteriori et ne peuvent pas être calculés directement à partir du tableau."), french=french)
 ```
 
 
@@ -116,16 +117,18 @@ make.ref.points.table(c(base.model.5abcd,
                         lrp_range = 2000,
                         usr_range = 1956:2004,
                         digits = 2,
-                        caption = paste0("Valeur a posteriori (centile 2,5\\textsuperscript{th} , Median, and centile 97,5\\textsuperscript{th}  ",
-                                       ") des points de référence pour la zone 5ABCD. ",
-                                       "La biomasse est en tonnes. All values are rounded. Ratios were calculated using full posterior distributions and cannot be calculated directly from the table."), french=french)
+                        caption = paste0("Valeurs a posteriori (2,5\\textsuperscript{e} centile, médiane et ", 
+                        "97,5 \\textsuperscript{e} centile ",
+                        ") des points de référence pour l’ensemble représentant la moyenne des modèles de la zone 5ABCD. ",
+                        "La biomasse est en tonnes. Toutes les valeurs ont été arrondies. Les rapports ont été calculés à l’aide de l’ensemble des distributions a posteriori et ne peuvent pas être calculés directement à partir du tableau.
+"), french=french)
 ```
 
 \clearpage
 
 ```{r summary-tab-decision-avg-3cd, results='asis'}
  decision.table(avg.model.3cd,
-                caption = paste0("Tableau de décision avec moyenne des modèles pour la zone 3CD."), french=french) #
+                caption = paste0("Tableau de décision réalisé avec la moyenne des modèles pour la zone 3CD."), french=french) #
 ```
 
 
@@ -133,7 +136,7 @@ make.ref.points.table(c(base.model.5abcd,
 
 ```{r summary-tab-decision-avg-5abcd, results='asis'}
  decision.table(avg.model.5abcd,
-                caption = paste0("Tableau de décision avec moyenne des modèles pour la zone 5ABCD."), french=french) #
+                caption = paste0("Tableau de décision réalisé avec la moyenne des modèles pour la zone 5ABCD."), french=french) #
 ```
 
 \clearpage
