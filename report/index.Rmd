@@ -20,7 +20,7 @@ output:
  csasdown::sr_pdf:
   # csasdown::sr_word:
    french: false
-   prepub: true
+   prepub: false
 type:
   sr
 # ------------
