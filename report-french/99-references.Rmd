@@ -5,9 +5,9 @@
 ```{r, echo=FALSE, include=FALSE}
 contributors <- tibble::tribble(
   ~Name,          ~Affiliation,
-  "Robyn Forrest",   "DFO Science, Pacific Region",
-  "Chris Grandin",   "DFO Science, Pacific Region",
-  "Sean Anderson",   "DFO Science, Pacific Region",
+  "Robyn Forrest",   "Secteur des sciences du MPO, région du Pacifique",
+  "Chris Grandin",   "Secteur des sciences du MPO, région du Pacifique",
+  "Sean Anderson",   "Secteur des sciences du MPO, région du Pacifique",
   "Paul Starr", "Canadian Groundfish Research and Conservation Society"
 )
 ```
