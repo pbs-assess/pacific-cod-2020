@@ -185,12 +185,14 @@ mw3CD <- read_csv(here::here("data/results/AnnualMeanWeight_3CD.csv"))
 
 
 ```{r fig-base-index-fits-3cd, fig.cap="Ajustements du mode de distribution a posteriori du modèle de référence aux indices d’abondance observés (points) pour la zone 3CD provenant : a) du relevé synoptique mené au large de la côte ouest de l’île de Vancouver; b) des CPUE commerciales antérieures à 1996; c) des CPUE commerciales postérieures à 1995; d) du relevé triennal du NMFS (portion canadienne). Par souci de clarté, seuls les résultats du mode de distribution a posteriori sont illustrés."}
-plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french),
+plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french)
+            + ylab("Indice du relevé (t)"),
           i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)
-            + ylab("CPUE commerciales (kg/heure)"),
+            + ylab("CPUE comm. (kg/h)"),
           i.plot(base.model.3cd, base.model.3cd.name, 3, every = 5, french=french)
-            + ylab("CPUE commerciales (kg/heure)"),
-          i.plot(base.model.3cd, base.model.3cd.name, 4, every = 5, french=french),
+            + ylab("CPUE comm. (kg/h)"),
+          i.plot(base.model.3cd, base.model.3cd.name, 4, every = 5, french=french)
+           + ylab("Indice du relevé (t)"),
           nrow = 2,
           ncol = 2,
           labels = c("(a)", "(b)", "(c)", "(d)"),
@@ -206,13 +208,16 @@ plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, fre
 ```
 
 ```{r fig-base-index-fits-5abcd, fig.cap="Ajustements du mode de distribution a posteriori du modèle de référence aux indices d’abondance observés (points) pour la zone 5ABCD provenant : a) du relevé d’assemblage mené dans le détroit d’Hécate; b) du relevé synoptique mené dans le bassin de la Reine-Charlotte; c) du relevé synoptique mené dans le détroit d’Hécate; d) des CPUE commerciales antérieures à 1996; e) des CPUE commerciales postérieures à 1995. Par souci de clarté, seuls les résultats du mode de distribution a posteriori sont illustrés."}
-plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french),
+plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french)
+          + ylab("Indice du relevé (t)"),
+          i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french)
+          + ylab("Indice du relevé (t)"),
+          i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french)
+          + ylab("Indice du relevé (t)"),
           i.plot(base.model.5abcd, base.model.5abcd.name, 4, every = 10, french=french)
-            + ylab("Commercial CPUE (kg/hour)"),
+            + ylab("CPUE comm. (kg/h)"),
           i.plot(base.model.5abcd, base.model.5abcd.name, 5, every = 5, french=french)
-            + ylab("Commercial CPUE (kg/hour)"),
+            + ylab("CPUE comm. (kg/h)"),
           nrow = 2,
           ncol = 3,
           labels = c("(a)", "(b)", "(c)", "(d)", "(e)"),
