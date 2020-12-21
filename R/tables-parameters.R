@@ -514,11 +514,11 @@ make.ref.points.table <- function(models,
   }
 
   if(!is.na(lrp_range[1])){
-    latex_names <- c(latex_names, paste0("LRP (", lrp_range ,")"))
+    latex_names <- c(latex_names, paste0(en2fr("LRP", translate=french), " (", lrp_range ,")"))
   }
   usr_range_text <- paste0(min(usr_range), "--", max(usr_range))
   if(!is.na(usr_range[1])){
-    latex_names <- c(latex_names, paste0("USR (", usr_range_text ,")"))
+    latex_names <- c(latex_names, paste0(en2fr("USR", translate=french)," (", usr_range_text ,")"))
   }
   if(min(lrr_range) == max(lrr_range)){
     lrr_range_text <- lrr_range
@@ -526,7 +526,7 @@ make.ref.points.table <- function(models,
     lrr_range_text <- paste0(min(lrr_range), "--", max(lrr_range))
   }
   if(!is.na(lrr_range[1])){
-    latex_names <- c(latex_names, paste0("LRR (", lrr_range_text ,")"))
+    latex_names <- c(latex_names, paste0(en2fr("LRR", translate=french)," (", lrr_range_text ,")"))
   }
   # -----
   # Remove B0 and B20201/B0 (https://github.com/robynforrest/pacific-cod-2020/issues/8)
@@ -536,15 +536,15 @@ make.ref.points.table <- function(models,
   # -----
   if(!is.na(lrp_range[1])){
     latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
-                                         "/LRP"))
+                                         paste0("/",en2fr("LRP",translate=french))))
   }
   if(!is.na(usr_range[1])){
     latex_names <- c(latex_names, paste0(latex.subscr.ital("B", yr_b_end),
-                                         "/USR"))
+                                         paste0("/",en2fr("USR",translate=french))))
   }
   if(!is.na(lrr_range[1])){
     latex_names <- c(latex_names, paste0(latex.subscr.ital("F", yr_f_end),
-                                         "/LRR"))
+                                         paste0("/",en2fr("LRR",translate=french))))
   }
 
   tab$refpt_names <- latex_names
