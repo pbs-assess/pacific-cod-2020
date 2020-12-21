@@ -249,7 +249,7 @@ Median fishing mortality relative to the LRR is estimated to be 0.17 (0.11--0.27
 The average posterior biomass and fishing mortality from the combined model-averaged set are shown in Figures \@ref(fig:fig-model-average-biomass-5abcd) and \@ref(fig:fig-model-average-f-5abcd).
 As for Area 3CD, the estimated biomass range was very broad.
 Combined average posterior results from all models indicate that the stock in 2020 was above the LRP, within the Cautious Zone.
-The estimated fishing mortality range was also broad (Figure \@ref(fig:fig-model-average-f-3cd)), reflecting the range of biomass estimates.
+The estimated fishing mortality range was also broad (Figure \@ref(fig:fig-model-average-f-5abcd)), reflecting the range of biomass estimates.
 Recent estimates of fishing mortality were well below the median LRR.
 
 ## 2021 harvest advice

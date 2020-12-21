@@ -249,7 +249,7 @@ La mortalité par pêche médiane par rapport au TEL est estimée à 0,17 (0,11-
 Les moyennes a posteriori de la biomasse et de la mortalité par pêche provenant de l’ensemble représentant la moyenne des modèles sont présentées aux figures\@ref(fig:fig-model-average-biomass-5abcd) et \@ref(fig:fig-model-average-f-5abcd).
 Comme pour la zone 3CD, la plage des estimations de la biomasse était très vaste.
 Les résultats a posteriori moyens provenant de tous les modèles combinés indiquent que la biomasse du stock pour 2020 était supérieure au PRL et se trouvait dans la zone de prudence.
-La plage des estimations de la mortalité par pêche était aussi vaste (figure \@ref(fig:fig-model-average-f-3cd)), reflétant la plage des estimations de la biomasse.
+La plage des estimations de la mortalité par pêche était aussi vaste (figure \@ref(fig:fig-model-average-f-5abcd)), reflétant la plage des estimations de la biomasse.
 Les estimations récentes de la mortalité par pêche étaient bien en deçà du TEL médian.
 
 ## Avis sur les prises pour 2021
