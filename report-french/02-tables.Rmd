@@ -81,7 +81,10 @@ make.parameters.est.table(base.model.3cd,
   caption = paste0("Valeurs a posteriori (2,5 \\textsuperscript{e} centile, médiane et ",
     "97,5 \\textsuperscript{e} centile) et estimations du mode de distribution a posteriori ",
     "pour les paramètres clés du scénario de référence de la zone 3CD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). 
- ",   q.3cd.desc.fr),
+ ",   "$q_1$ = relevé synoptique mené au large de la côte ouest de l’île de Vancouver, ",
+                     "$q_2$ = CPUE commerciales pour les périodes historique (1956--1995), ",
+                     "$q_3$ = CPUE commerciales pour les périodes moderne (1996--2019), et ",
+                     "$q_4$ = Relevé triennal du NMFS (en eaux canadiennes)."),
   omit_pars = pars_est_omit, french=french)
 ```
 
@@ -90,7 +93,12 @@ pars_est_omit <- c("$\\overline{R}_{init}$", "$\\overline{R}$", "$\\vartheta$", 
 make.parameters.est.table(base.model.5abcd,
   caption = paste0("Valeurs a posteriori (2,5\\textsuperscript{e} centile, médiane et ",
     "97,5 \\textsuperscript{e} centile) et estimations du mode de distribution a posteriori ",
-    "pour les paramètres clés du scénario de référence de la zone 5ABCD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). ", q.5abcd.desc.fr),
+    "pour les paramètres clés du scénario de référence de la zone 5ABCD. $R_0$ est en milliers de poissons. $\\hat{R}$ représente la statistique de réduction d’échelle potentielle et $n_\\mathrm{eff}$ correspond au nombre réel de tirages effectués lors de la simulation (voir le corps du texte). ",
+    "$q_1$ = autre relevé de l’assemblage de plusieurs espèces mené dans le détroit d’Hécate, ",
+                       "$q_2$ = relevé synoptique mené dans le bassin de la Reine-Charlotte, ",
+                       "$q_3$ = relevé synoptique mené dans le détroit d’Hécate, ",
+                       "$q_4$ = CPUE commerciales pour les périodes historique (1956--1995), et ",
+                       "$q_5$ = CPUE commerciales pour les périodes moderne (1996--2019)."),
   omit_pars = pars_est_omit, french=french)
 ```
 
