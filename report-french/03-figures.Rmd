@@ -227,7 +227,7 @@ plot_grid(mw.plot(base.model.5abcd[[1]], cv = 0.2, every = 10, last.yr = 2020, f
           ncol = 2)
 ```
 
-```{r fig-model-average-biomass-3cd, fig.cap="Biomasse a posteriori combinée pour l’ensemble représentant la moyenne des modèles de la zone 3CD. La ligne pleine noire représente la médiane a posteriori et la zone ombragée grise représente l’intervalle de crédibilité à 95\\%. La ligne pointillée verte illustre le RSS médian et la ligne pointillée rouge, le PRL médian. Les zones ombragées rouge et verte représentent les intervalles de crédibilité à 95\\% du PRL et du RSS, respectivement."}
+```{r fig-model-average-biomass-3cd, fig.cap="Biomasse a posteriori combinée pour l’ensemble représentant la moyenne des modèles de la zone 3CD. La ligne pleine noire représente la médiane a posteriori et la zone ombragée grise représente l’intervalle de crédibilité à 95 \\%. La ligne pointillée verte illustre le RSS médian et la ligne pointillée rouge, le PRL médian. Les zones ombragées rouge et verte représentent les intervalles de crédibilité à 95 \\% du PRL et du RSS, respectivement."}
 b.plot(avg.model.3cd,
        base.model.3cd.name,
        depl = FALSE,
