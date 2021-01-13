@@ -117,7 +117,7 @@ b.plot <- function(models,
   p <- p + theme(legend.position = c(1, 1),
           legend.justification = c(1, 1),
           legend.title = element_blank()) +
-    scale_y_continuous(labels = comma,
+    scale_y_continuous(labels = scales::number,
                        limits = ylim) +
     coord_cartesian(expand = FALSE) +
     xlim(c(min(bt$Year - 1), NA)) +
