@@ -42,8 +42,8 @@ f.plot <- function(models,
     theme(legend.position = c(1, 1),
           legend.justification = c(1, 1),
           legend.title = element_blank()) +
-    scale_y_continuous(labels = scaleFUN,
-                       limits = c(0, NA)) +
+    #scale_y_continuous(labels = scaleFUN,
+    #                   limits = c(0, NA)) +
     coord_cartesian(expand = FALSE) +
     xlim(c(min(f$Year - 1), NA)) +
     scale_x_continuous(breaks = seq(0, 3000, 5))+
