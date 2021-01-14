@@ -16,8 +16,6 @@ make.catches.plot <- function(dat,
          y = paste(en2fr("Catch",translate=french, allow_missing = TRUE),"(t)"),
          fill = "") +
     scale_fill_brewer(labels = c(en2fr("USA",translate=french, allow_missing = TRUE), en2fr("Canada",translate=french, allow_missing = TRUE)), palette = "Dark2") +
-    scale_y_continuous(labels = comma,
-                       limits = c(0, NA)) +
     scale_x_continuous(breaks = seq(0, last.yr, every)) +
     theme(legend.position = c(1, 1),
           legend.justification = c(1, 1),
@@ -135,7 +133,7 @@ make.catches.plot.vessel <- function(dat,
     labs(x = en2fr("Year",translate=french, allow_missing = TRUE),
          y = paste(en2fr("Catch",translate=french, allow_missing = TRUE),"(t)"),
          fill = "") +
-    scale_y_continuous(labels = comma,
+    scale_y_continuous(labels = scales::number(big.mark = ifelse(french, " ", ",")),
                        limits = c(0, 1.2*max(dat$value))) +
     scale_x_continuous(breaks = seq(0, last.yr, every)) +
     theme(legend.position = c(1, 1),

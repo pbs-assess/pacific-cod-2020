@@ -100,11 +100,15 @@ cowplot::plot_grid(g1,g2, ncol=1,labels = c("","")) +
 
 
 ```{r fig-catch-3cd, fig.cap="Catch for Area 3CD. Canadian catch includes at-sea releases."}
-make.catches.plot(catch.3, french=french)
+make.catches.plot(catch.3, french=french) +
+  scale_y_continuous(labels = comma,
+                       limits = c(0, NA))
 ```
 
 ```{r fig-catch-5abcd, fig.cap="Catch for Area 5ABCD. Canadian catch includes at-sea releases."}
-make.catches.plot(catch.5, french=french)
+make.catches.plot(catch.5, french=french)+
+  scale_y_continuous(labels = comma,
+                       limits = c(0, NA))
 ```
 
 ```{r surv-canadian, fig.cap="Pacific Cod survey data for Canadian trawl surveys. Shown is relative biomass and associated lower and upper confidence intervals. Positive sets refers to the number of trawl sets that caught Pacific Cod. SYN QCS = Queen Charlotte Sound synoptic bottom trawl survey; SYN WCVI = West Coast Vancouver Island synoptic bottom trawl survey; SYN HS = Hecate Strait synoptic bottom trawl survey; OTHER HS MSA = Hecate Strait Multispecies Assemblage survey."}
@@ -179,12 +183,16 @@ mw3CD <- read_csv(here::here("data/results/AnnualMeanWeight_3CD.csv"))
 
 
 ```{r fig-base-index-fits-3cd, fig.cap="Reference model MPD fits to observed indices of abundance (points) for Area 3CD from: (a) the WCVI Synoptic Survey, (b) Commercial CPUE pre-1996, (c) Commercial CPUE post-1995, and (d) the NMFS Triennial Survey (Canadian portion). For clarity, only MPD results are shown."}
-plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french),
-          i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)
+plot_grid(i.plot(base.model.3cd, base.model.3cd.name, 1, every = 5, french=french) 
+            + scale_y_continuous(labels = comma, limits = c(0, NA)),
+          i.plot(base.model.3cd, base.model.3cd.name, 2, every = 5, french=french)  
+            + scale_y_continuous(labels = comma, limits = c(0, NA))
             + ylab("Commercial CPUE (kg/h)"),
           i.plot(base.model.3cd, base.model.3cd.name, 3, every = 5, french=french)
+            + scale_y_continuous(labels = comma, limits = c(0, NA))
             + ylab("Commercial CPUE (kg/h)"),
-          i.plot(base.model.3cd, base.model.3cd.name, 4, every = 5, french=french),
+          i.plot(base.model.3cd, base.model.3cd.name, 4, every = 5, french=french)
+            + scale_y_continuous(labels = comma, limits = c(0, NA)),
           nrow = 2,
           ncol = 2,
           labels = c("(a)", "(b)", "(c)", "(d)"),
@@ -200,12 +208,17 @@ plot_grid(mw.plot(base.model.3cd[[1]], cv = 0.2, every = 10, last.yr = 2020, fre
 ```
 
 ```{r fig-base-index-fits-5abcd, fig.cap="Reference model MPD fits to observed indices of abundance (points) for Area 5ABCD from: (a) the HS Assemblage survey, (b) the QCS Synoptic Survey, (c) the HS Synoptic Survey, (d) Commercial CPUE pre-1996, and (e) Commercial CPUE post-1995. For clarity, only MPD results are shown."}
-plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french),
-          i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french),
+plot_grid(i.plot(base.model.5abcd, base.model.5abcd.name, 1, every = 5, french=french)
+            + scale_y_continuous(labels = comma, limits = c(0, NA)),
+          i.plot(base.model.5abcd, base.model.5abcd.name, 2, every = 5, french=french)
+            + scale_y_continuous(labels = comma, limits = c(0, NA)),
+          i.plot(base.model.5abcd, base.model.5abcd.name, 3, every = 5, french=french)
+            + scale_y_continuous(labels = comma, limits = c(0, NA)),
           i.plot(base.model.5abcd, base.model.5abcd.name, 4, every = 10, french=french)
+            + scale_y_continuous(labels = comma, limits = c(0, NA))
             + ylab("Commercial CPUE (kg/h)"),
           i.plot(base.model.5abcd, base.model.5abcd.name, 5, every = 5, french=french)
+            + scale_y_continuous(labels = comma, limits = c(0, NA))
             + ylab("Commercial CPUE (kg/h)"),
           nrow = 2,
           ncol = 3,

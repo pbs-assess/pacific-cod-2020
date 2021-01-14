@@ -58,8 +58,6 @@ i.plot <- function(models,
     theme(legend.position = leg.pos,
           legend.justification = leg.just,
           legend.title = element_blank()) +
-    scale_y_continuous(labels = comma,
-                       limits = c(0, NA)) +
     coord_cartesian(expand = FALSE) +
     labs(x = en2fr("Year",translate=french, allow_missing = TRUE),
          y = paste(en2fr("Survey biomass index",translate=french, allow_missing = TRUE),"(t)"),
