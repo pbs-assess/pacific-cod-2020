@@ -117,8 +117,8 @@ b.plot <- function(models,
   p <- p + theme(legend.position = c(1, 1),
           legend.justification = c(1, 1),
           legend.title = element_blank()) +
-    scale_y_continuous(labels = scales::number,
-                       limits = ylim) +
+   # scale_y_continuous(labels = scales::number,
+   #                    limits = ylim) +
     coord_cartesian(expand = FALSE) +
     xlim(c(min(bt$Year - 1), NA)) +
     scale_x_continuous(breaks = seq(0, 3000, x.every)) +
@@ -218,9 +218,15 @@ b.plot <- function(models,
   if (!is.null(year_range)) {
     p <- p + coord_cartesian(xlim = year_range)
   }
-
-  p <- p + scale_y_continuous(labels = comma,
+ #comma
+  if(french){
+    p <- p + scale_y_continuous(labels = scales::number,
                               limits = ylim)
+  } else{
+    p <- p + scale_y_continuous(labels = comma,
+                                limits = ylim)
+  }
+
 
   p
 }
