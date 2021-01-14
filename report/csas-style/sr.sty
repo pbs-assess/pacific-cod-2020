@@ -45,11 +45,12 @@
 \usepackage[running]
            {lineno}
 %% Page margins
-\usepackage[top=0.25in,
-            bottom=1.7in,
+\usepackage[top=1in,
+            bottom=0.45in,
             left=1in,
             right=1in,
-            includefoot]
+            includefoot,
+            footskip=20pt]
            {geometry}
 %% ------------------------------------------------------------------------------
 
@@ -92,7 +93,7 @@
 %% To have less whitespace after Table caption. 'above' tells it to put the
 %%  skip after caption, but you may still need to have the caption before the
 %%  table in .tex
-\captionsetup[table]{position=above, skip=5pt}
+\captionsetup[table]{position=above, skip=10pt}
 %% ------------------------------------------------------------------------------
 
 %% ------------------------------------------------------------------------------
@@ -153,25 +154,25 @@
 \newcommand{\nonumsection}{\@startsection
 {section}{1}{0mm}                 %% name, level, indent
 {-1.5ex \@plus -0.25ex \@minus -.1ex}
-{0.5ex \@plus.1ex}
+{1ex \@plus.1ex}
 {\centering\normalfont\Large\bfseries}}
 
 \renewcommand{\section}{\@startsection
 {section}{2}{0mm}
 {-1.5ex \@plus -0.25ex \@minus -.1ex}
-{0.5ex \@plus.1ex}
+{1ex \@plus.1ex}
 {\centering\normalfont\Large\bfseries}}
 
 \renewcommand{\subsection}{\@startsection
 {subsection}{3}{0mm}
 {-1.5ex \@plus -0.25ex \@minus -.1ex}
-{0.5ex \@plus.1ex}
+{1ex \@plus.1ex}
 {\normalfont\large\bf}}
 
 \renewcommand{\subsubsection}{\@startsection
 {subsubsection}{4}{0.63cm}
 {-1.5ex \@plus -0.25ex \@minus -.1ex}
-{0.5ex \@plus.1ex}
+{1ex \@plus.1ex}
 {\normalfont\bf}}
 
 \renewcommand{\chapter}{\@startsection
@@ -547,14 +548,14 @@
 %% ------------------------------------------------------------------------------
 %% Set up first page (header and footer)
 \fancypagestyle{firstPage}{%
-    \newgeometry{}
+    \newgeometry{top=0.90in}
     \fancyhf{}
     \fancyhead{}
     \lhead{\includegraphics[width=9.2cm]{\locRepo/images/Fip-stacked-DFO-EOS-eng_bw.png}\\
     \vspace{0.6cm}
     \textbf{\rdRegion{}}}
     \rhead{\textbf{Canadian Science Advisory Secretariat}\\
-    \textbf{Science Response \rdYear{}/\rdNumber{}}}
+    \textbf{Science Response \rdWorkDoneYear{}/\rdNumber{}}}
     \lfoot{\rdWorkDoneMonth{} \rdWorkDoneYear{}}
     \rfoot{\includegraphics[width=3.54cm]{\locRepo/images/canada_bw.png}}
     \afterpage{\cfoot{\thepage}}
@@ -566,7 +567,7 @@
   % Headers and footers for the first page
   \thispagestyle{firstPage}
   % Make the title -- needs a big space to print below the header
-  \vspace*{1.75cm}
+  \vspace*{2.20cm}
   \begin{center}
   \hypertarget{PageOne}{}
   \Large{\textbf{\MakeTextUppercase{\rdTitle{}}}}
@@ -639,14 +640,14 @@
 % English citation
 \newcommand{\citeEng}[1]{
 \hangindent=0.6cm
-DFO. \rdYear{}. \rdTitle{}.
+DFO. \rdWorkDoneYear{}. \rdTitle{}.
 DFO Can.\ Sci.\ Advis.\ Sec.\ Sci.\ Resp.
 #1.}
 
 % French citation
 \newcommand{\citeFr}[1]{
 \hangindent=0.6cm
-\emph{MPO. \rdYear{}. \rdTitleFr{}.
+\emph{MPO. \rdWorkDoneYear{}. \rdTitleFr{}.
 Secr.\ can.\ de consult.\ sci.\ du MPO, R\'{e}p.\ des Sci.\
 #1.}}
 
@@ -661,3 +662,10 @@ Secr.\ can.\ de consult.\ sci.\ du MPO, R\'{e}p.\ des Sci.\
   \fi
  }%
  {}
+
+% Footnote spacing
+\setlength{\footnotesep}{1.2pc} % Between footnotes
+\setlength{\skip\footins}{1.5pc plus 5pt minus 2pt} % Between text and footnote
+
+% Prevent widow and orphan lines (especially in the list of references)
+\usepackage[all]{nowidow}
