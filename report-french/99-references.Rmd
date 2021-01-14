@@ -1,10 +1,10 @@
 \clearpage
 
-# Contributors
+# Collaborateurs
 
 ```{r, echo=FALSE, include=FALSE}
 contributors <- tibble::tribble(
-  ~Name,          ~Affiliation,
+  ~"Collaborateur",          ~"Organisme d’appartenance",
   "Robyn Forrest",   "Secteur des sciences du MPO, région du Pacifique",
   "Chris Grandin",   "Secteur des sciences du MPO, région du Pacifique",
   "Sean Anderson",   "Secteur des sciences du MPO, région du Pacifique",
@@ -21,7 +21,7 @@ csasdown::csas_table(contributors)
 
 \MakeApproval
 
-# Sources of information {-}
+# Sources de renseignements {-}
 <!--
 This manually sets the header for this unnumbered chapter.
 -->

@@ -43,7 +43,7 @@ Depuis 1996, tous les navires de pêche au chalut de fond ont accueilli des obse
 Les données ont été extraites de bases de données du MPO au moyen des méthodes décrites dans le document de @forrest2020.
 Les données biologiques provenant des relevés indépendants de la pêche et des activités de pêche commerciale étaient disponibles jusqu’en 2019.
 Les données sur les prises ont été mises à jour pour l’année 2020 au moyen de données extrapolées pour la période du 1^er^  octobre 2020 jusqu’à la fin de l’année de pêche (voir ci-dessous).
-Pour chaque zone, les modèles choisis ont été ajustés aux données suivantes : prises commerciales, indices d’abondance provenant de relevés indépendants de la pêche, CPUE commerciales et poids moyen annuel des prises commerciales.
+Pour chaque zone, les modèles choisis ont été ajustés aux données suivantes: prises commerciales, indices d’abondance provenant de relevés indépendants de la pêche, CPUE commerciales et poids moyen annuel des prises commerciales.
 
 ### Prises commerciales
 
