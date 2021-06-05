@@ -102,7 +102,7 @@ for(i in 1:nyears){
                           bin_width=hexwidth, start_year=years[i],
                           show_historical=FALSE, return_data = FALSE,
                           fill_lab = paste(years[i], "Catch (t)"))
-  ggsave(here("NOAA_queries","figs",paste0("spatialcatch_pcod_",years[i], ".png")))
+  ggsave(here("NOAA_queries","figs",paste0("spatialCatch_pcod_",years[i], ".png")))
 
   if(i==1){
     plotDatByYear <- plotDat
@@ -140,7 +140,7 @@ for(i in 1:nyears){
                           bin_width=hexwidth, start_year=years[i],
                           show_historical=FALSE, return_data = FALSE,
                           fill_lab = paste(years[i], "CPUE (kg/h)"))
-  ggsave(here("NOAA_queries","figs",paste0("spatialcpue_pcod_",years[i], ".png")))
+  ggsave(here("NOAA_queries","figs",paste0("spatialCPUE_pcod_",years[i], ".png")))
 
   if(i==1){
     plotCPUEDatByYear <- plotDatCPUE

@@ -31,14 +31,16 @@ ggsave(here("NOAA_queries","figs","Model_averaged_biomass_pcod_5ABCD.png"))
 b3cd <- b.csv(avg.model.3cd,
             "Model average",
             depl = FALSE,
-            french=french)
-glimpse(b3cd)
+            french=french) %>%
+  select(Year, lowercv, median, uppercv)
+write_csv(b3cd, here("NOAA_queries","csvs","Model_averaged_biomass_pcod_3CD.csv"))
 
 b5abcd <- b.csv(avg.model.5abcd,
               "Model average",
               depl = FALSE,
-              french=french)
-glimpse(b5abcd)
+              french=french) %>%
+  select(Year, lowercv, median, uppercv)
+write_csv(b5abcd, here("NOAA_queries","csvs","Model_averaged_biomass_pcod_5ABCD.csv"))
 
 # Check
 p <- b3cd %>%
