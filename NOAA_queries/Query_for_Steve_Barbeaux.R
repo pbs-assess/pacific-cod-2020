@@ -65,14 +65,14 @@ plotcatchDat <- plot_catch_spatial(spatialCatch, n_minimum_vessels = minvessels,
                 rename("Easting"=x, "Northing"=y, "Total Catch (t)"=value)
 
 glimpse(plotcatchDat)
-write_csv(plotcatchDat, here("NOAA_queries","csvs",paste("spatialCatch_pcod_",startyear,"-",endyear,".csv")))
+write_csv(plotcatchDat, here("NOAA_queries","csvs",paste0("spatialCatch_pcod_",startyear,"-",endyear,".csv")))
 
 p <- plot_catch_spatial(spatialCatch, n_minimum_vessels = minvessels,
                         bin_width=hexwidth, start_year=startyear,
                         show_historical=FALSE, return_data = FALSE,
                         fill_lab = paste(startyear,"-",endyear, "Total Catch (t)"))
 p
-ggsave(here("NOAA_queries","figs",paste("spatialCatch_pcod_",startyear,"-",endyear,".png")))
+ggsave(here("NOAA_queries","figs",paste0("spatialCatch_pcod_",startyear,"-",endyear,".png")))
 
 # Total catch (test)
 totalCatch_t <- sum(plotcatchDat$`Total Catch (t)`)
@@ -102,7 +102,7 @@ for(i in 1:nyears){
                           bin_width=hexwidth, start_year=years[i],
                           show_historical=FALSE, return_data = FALSE,
                           fill_lab = paste(years[i], "Catch (t)"))
-  ggsave(here("NOAA_queries","figs",paste("spatialcatch_pcod_",years[i], ".png")))
+  ggsave(here("NOAA_queries","figs",paste0("spatialcatch_pcod_",years[i], ".png")))
 
   if(i==1){
     plotDatByYear <- plotDat
@@ -115,6 +115,44 @@ for(i in 1:nyears){
 totalCatchByYear <- as.data.frame(totalCatchByYear[,1:2])
 colnames(totalCatchByYear) <- c("Year", "Total Catch (t)")
 
-write_csv(plotDatByYear, here("NOAA_queries","csvs",paste("spatialcatch_pcod_by_year.csv")))
-write.csv(totalCatchByYear, here("NOAA_queries","csvs",paste("totalcatch_pcod_by_year.csv")), row.names = F)
+write_csv(plotDatByYear, here("NOAA_queries","csvs",paste0("spatialCatch_pcod_by_year.csv")))
+write.csv(totalCatchByYear, here("NOAA_queries","csvs",paste0("totalCatch_pcod_by_year.csv")), row.names = F)
+
+
+# ~~~~~ Make annual plots and csvs (CPUE only) ~~~~~~~~~~~~
+for(i in 1:nyears){
+  message(paste("Plotting cpue for year",years[i], "..."))
+
+  dat <- spatialCPUE %>%
+    dplyr::filter(year==years[i])
+  message("nrows=", nrow(dat))
+
+  plotDatCPUE <- gfplot::plot_cpue_spatial(dat, n_minimum_vessels = minvessels,
+                                bin_width=hexwidth, start_year=years[i],
+                                show_historical=FALSE, return_data = TRUE) %>%
+    mutate(year=years[i]) %>%
+    select(year,x,y,value) %>%
+    rename("Easting"=x, "Northing"=y, "Mean CPUE (kg/h)"=value)
+
+  meanCPUE <- c(years[i], mean(plotDatCPUE$`Mean CPUE (kg/h)`))
+
+  p <- gfplot::plot_cpue_spatial(dat, n_minimum_vessels = minvessels,
+                          bin_width=hexwidth, start_year=years[i],
+                          show_historical=FALSE, return_data = FALSE,
+                          fill_lab = paste(years[i], "CPUE (kg/h)"))
+  ggsave(here("NOAA_queries","figs",paste0("spatialcpue_pcod_",years[i], ".png")))
+
+  if(i==1){
+    plotCPUEDatByYear <- plotDatCPUE
+    meanCPUEByYear <- meanCPUE
+  }else{
+    plotCPUEDatByYear <- rbind(plotCPUEDatByYear,plotDatCPUE)
+    meanCPUEByYear <- rbind(meanCPUEByYear,meanCPUE)
+  }
+}
+meanCPUEByYear <- as.data.frame(meanCPUEByYear[,1:2])
+colnames(meanCPUEByYear) <- c("Year", "CPUE (kg/h)")
+
+write_csv(plotCPUEDatByYear, here("NOAA_queries","csvs",paste0("spatialCPUE_pcod_by_year.csv")))
+write.csv(meanCPUEByYear, here("NOAA_queries","csvs",paste0("meanCPUE_pcod_by_year.csv")), row.names = F)
 

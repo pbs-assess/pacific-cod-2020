@@ -98,7 +98,7 @@ for(i in 1:nyears){
                           bin_width=hexwidth, start_year=years[i],
                           show_historical=FALSE, return_data = FALSE,
                           fill_lab = paste(years[i], "Catch (t)"))
-  ggsave(here("NOAA_queries","ARF","figs",paste("spatialcatch_ARF_",years[i], ".png")))
+  ggsave(here("NOAA_queries","ARF","figs",paste0("spatialcatch_ARF_",years[i], ".png")))
 
   if(i==1){
     plotDatByYear <- plotDat
@@ -113,5 +113,5 @@ for(i in 1:nyears){
 totalCatchByYear <- as.data.frame(totalCatchByYear[,1:2])
 colnames(totalCatchByYear) <- c("Year", "Total Catch (t)")
 
-write_csv(plotDatByYear, here("NOAA_queries","ARF","csvs",paste("spatialcatch_ARF_by_year.csv")))
-write.csv(totalCatchByYear, here("NOAA_queries","ARF","csvs",paste("totalcatch_ARF_by_year.csv")), row.names = F)
+write_csv(plotDatByYear, here("NOAA_queries","ARF","csvs",paste0("spatialcatch_ARF_by_year.csv")))
+write.csv(totalCatchByYear, here("NOAA_queries","ARF","csvs",paste0("totalcatch_ARF_by_year.csv")), row.names = F)
